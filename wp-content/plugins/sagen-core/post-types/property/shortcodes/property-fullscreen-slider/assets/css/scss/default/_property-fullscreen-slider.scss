@@ -1,0 +1,172 @@
+.qodef-property-fullscreen-slider-holder {
+    height: 100vh;
+
+    .qodef-property-list-holder,
+    .qodef-pl-fullscreen-slider,
+    .owl-stage-outer,
+    .owl-stage,
+    .qodef-pl-item,
+    .qodef-pl-item-inner,
+    .qodef-outer-space,
+    .owl-item{
+        height: 100%;
+    }
+
+    article{
+        width: 100%!important;
+
+        .qodef-pli-link{
+            opacity: 0;
+            background: rgba(0,0,0,0.29);
+            background: -moz-linear-gradient(top, rgba(0,0,0,.2) 0,rgba(0,0,0,.6)100%);
+            background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0.29)), color-stop(100%, rgba(0,0,0,0.9)));
+            background: -webkit-linear-gradient(top, rgba(0,0,0,.2) 0,rgba(0,0,0,.6)100%);
+            background: -o-linear-gradient(top, rgba(0,0,0,.2) 0,rgba(0,0,0,.6)100%);
+            background: -ms-linear-gradient(top, rgba(0,0,0,.2) 0,rgba(0,0,0,.6)100%);
+            background:  linear-gradient(to bottom,rgba(0,0,0,.2) 0,rgba(0,0,0,.6)100%);
+            transition: opacity .25s ease-in-out;
+        }
+
+        &:hover{
+            .qodef-pli-link{
+                opacity: 1;
+            }
+            .qodef-pl-item-inner{
+                .qodef-pli-image-holder{
+                    .qodef-pli-text-holder{
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            }
+
+        }
+    }
+
+    article .qodef-pl-item-inner{
+        .qodef-pli-image-holder{
+            height: 100%;
+            background-size: cover;
+            position: relative;
+
+            .qodef-pli-text-wrapper{
+                position: relative;
+                display: block;
+            }
+
+            .qodef-pli-text-holder{
+                padding: 50px 53px 44px;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                box-sizing: border-box;
+                opacity: 0;
+                z-index: 10;
+                transform: translateY(10px);
+                transition: all .25s ease-in-out;
+
+                .qodef-pli-text{
+                    overflow: hidden;
+                    width: 100%;
+                    display: block;
+                }
+
+                .qodef-pli-title{
+                    margin-bottom: 9px;
+                }
+
+                .qodef-pli-category-holder{
+                    margin: 0 0 20px;
+                    display: inline-block;
+                    a{
+                        line-height: 28px;
+                        font-size: 18px;
+                        letter-spacing: 0.1em;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                    }
+                }
+                .qodef-svg-separator-holder{
+                    display: inline-block;
+                    padding-left: 8px;
+
+                    .qodef-svg-separator svg{
+                        stroke: #000;
+                    }
+                }
+
+                .qodef-pli-excerpt{
+                    margin: 10px 0 0;
+                    color: $default-heading-font;
+                    box-sizing: border-box;
+                    font-size: 18px;
+                    line-height: 30px;
+                    transition: all .2s ease-in-out;
+                }
+
+                .qodef-pli-read-more {
+                    position: relative;
+                    z-index: 10;
+                }
+            }
+        }
+    }
+
+    &.qodef-pfs-light-skin{
+        article .qodef-pl-item-inner{
+            .qodef-pli-text-holder{
+
+                .qodef-pli-category-holder{
+                    a{
+                        color: #fff;
+                    }
+                }
+
+                .qodef-svg-separator-holder{
+
+                    .qodef-svg-separator svg{
+                        stroke: #fff;
+                    }
+                }
+
+                .qodef-pli-excerpt,
+                .qodef-pli-title{
+                    color: #fff;
+                }
+
+                .qodef-pli-read-more{
+
+                    a{
+                        color: #fff;
+                        border-color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .qodef-pl-fullscreen-slider{
+        .owl-nav{
+            > div{
+                span{
+                    font-size: 14px;
+                    line-height: 18px;
+                    background-color: #151614;
+                    color: #fff;
+                    text-transform: uppercase;
+                    width: 100px;
+                    text-align: center;
+                    padding: 13px 13px;
+                    box-sizing: border-box;
+                }
+
+                &.owl-prev{
+                    left: 0;
+                }
+                &.owl-next{
+                    right: 0;
+                }
+            }
+        }
+    }
+}

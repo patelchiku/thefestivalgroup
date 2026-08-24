@@ -1,0 +1,27 @@
+/* ==========================================================================
+   Property Single - Small Images layout style - begin
+   ========================================================================== */
+
+.qodef-property-single-holder {
+    
+    &.qodef-ps-small-images-layout {
+    
+        .qodef-ps-image-holder {
+        
+            .qodef-ps-image {
+                margin: 0 0 30px;
+            
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+    
+        .qodef-ps-content-item {
+            margin: 0 0 30px;
+        }
+    }
+}
+/* ==========================================================================
+   Property Single - Small Images layout style - end
+   ========================================================================== */

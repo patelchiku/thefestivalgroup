@@ -1,0 +1,34 @@
+/* ==========================================================================
+   Property Single - Huge Images layout style - begin
+   ========================================================================== */
+
+.qodef-property-single-holder {
+    
+    &.qodef-ps-huge-images-layout {
+        padding: 0 4%;
+	    box-sizing: border-box;
+	    
+        .qodef-ps-image-holder {
+            margin: 0 0 40px;
+        
+            .qodef-ps-image {
+                margin: 0 0 30px;
+            
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+	    
+	    @include laptop-landscape {
+		    padding: 0 40px;
+	    }
+	
+	    @include ipad-portrait {
+		    padding: 0 30px;
+	    }
+    }
+}
+/* ==========================================================================
+   Property Single - Huge Images layout style - end
+   ========================================================================== */

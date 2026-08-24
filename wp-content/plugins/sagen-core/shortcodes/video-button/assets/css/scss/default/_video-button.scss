@@ -1,0 +1,178 @@
+/* ==========================================================================
+   Video Button shortcode start styles
+   ========================================================================== */
+
+.qodef-video-button-holder {
+	position: relative;
+	display: block;
+	vertical-align: middle;
+
+	&.qodef-vb-has-img {
+
+		.qodef-video-button-play,
+		.qodef-video-button-play-image {
+			@include qodefAbsoluteHolderLayout();
+			z-index: 1;
+
+			.qodef-video-button-play-inner {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				display: block;
+				text-align: center;
+				transform: translate(-50%, -50%);
+
+				svg {
+
+					@include phone-landscape {
+						width: 100px;
+					}
+
+					.video-button-stroke {
+						fill: none;
+						stroke: rgba(255, 255, 255, 0.3);
+						stroke-width: 2;
+						stroke-linejoin: round;
+						stroke-miterlimit: 10;
+						position: relative;
+						z-index: -1;
+					}
+
+					.video-button-circle {
+						fill: none;
+						stroke: rgba(255, 255, 255, 1);
+						transform-origin: center center;
+						stroke-dashoffset: 700;
+						stroke-dasharray: 700;
+						stroke-width: 2;
+						stroke-linejoin: round;
+						stroke-miterlimit: 10;
+						stroke-linecap: butt;
+						transform:rotate(-90deg);
+						transition: all 1.5s;
+					}
+				}
+			}
+
+			&:hover {
+
+				svg {
+					.video-button-circle {
+						stroke-dashoffset: 0;
+						stroke-dasharray: 700;
+						transition: all 2s cubic-bezier(0.46, 0.08, 0.12, 0.91);
+					}
+				}
+			}
+		}
+	}
+
+	.qodef-video-button-image {
+		@include qodefRelativeHolderLayout();
+
+		img {
+			display: block;
+			width: 100%;
+		}
+	}
+
+	.qodef-video-button-play,
+	.qodef-video-button-play-image {
+		position: relative;
+		display: block;
+		vertical-align: top;
+		z-index: 1;
+
+		.qodef-video-button-play-inner {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			display: block;
+			text-align: center;
+			transform: translate(-50%, -50%);
+
+			svg {
+
+				.video-button-stroke {
+					fill: none;
+					stroke: rgba(255, 255, 255, 0.3);
+					stroke-width: 2;
+					stroke-linejoin: round;
+					stroke-miterlimit: 10;
+					position: relative;
+					z-index: -1;
+				}
+
+				.video-button-circle {
+					fill: none;
+					stroke: rgba(255, 255, 255, 1);
+					transform-origin: center center;
+					stroke-dashoffset: 700;
+					stroke-dasharray: 700;
+					stroke-width: 2;
+					stroke-linejoin: round;
+					stroke-miterlimit: 10;
+					stroke-linecap: butt;
+					transform:rotate(-90deg);
+					transition: all 1s ease-out;
+				}
+			}
+		}
+
+		&:hover {
+
+			svg {
+				.video-button-circle {
+					stroke-dashoffset: 0;
+					stroke-dasharray: 700;
+				}
+			}
+		}
+	}
+	
+	.qodef-video-button-play-image {
+
+		&.qodef-vb-has-hover-image {
+			
+			&:hover {
+				
+				img {
+					
+					&:first-child {
+						opacity: 0;
+					}
+					
+					&:nth-child(2) {
+						opacity: 1;
+					}
+				}
+			}
+		}
+		
+		img {
+			display: block;
+			margin: 0 auto;
+			transition: opacity .3s ease-in-out;
+			
+			&:first-child {
+				position: relative;
+				opacity: 1;
+			}
+			
+			&:nth-child(2) {
+				position: absolute;
+				top: 0;
+				left: 50%;
+				opacity: 0;
+				transform: translateX(-50%) translateZ(0);
+				
+				.rev_slider_wrapper & {
+					transform: translateZ(0);
+				}
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Video Button shortcode end styles
+   ========================================================================== */

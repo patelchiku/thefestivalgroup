@@ -1,0 +1,4638 @@
+/* ==========================================================================
+   Global partials
+   ========================================================================== */
+/* ==========================================================================
+   Shortcodes styles
+   ========================================================================== */
+/* ==========================================================================
+   Accordions shortcode style - begin
+   ========================================================================== */
+.qodef-accordion-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-accordion-holder .qodef-accordion-title {
+  position: relative;
+  cursor: pointer;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transform: translateZ(0px);
+  transform: translateZ(0px);
+  -webkit-transition: color .2s ease-out, background-color .2s ease-out;
+  transition: color .2s ease-out, background-color .2s ease-out;
+}
+
+.qodef-accordion-holder .qodef-accordion-title .qodef-tab-title {
+  display: block;
+  line-height: inherit;
+}
+
+.qodef-accordion-holder .qodef-accordion-title .qodef-accordion-mark {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 20px;
+  height: 18px;
+  margin: -1px 0 0;
+  font-size: 18px;
+  line-height: 18px;
+  text-align: center;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.qodef-accordion-holder .qodef-accordion-title .qodef-accordion-mark span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: inherit;
+  line-height: inherit;
+  -webkit-transition: opacity .2s ease-out;
+  transition: opacity .2s ease-out;
+}
+
+.qodef-accordion-holder .qodef-accordion-title .qodef-accordion-mark span:before {
+  display: block;
+  line-height: inherit;
+}
+
+.qodef-accordion-holder .qodef-accordion-title .qodef-accordion-mark span.qodef_icon_minus {
+  opacity: 0;
+}
+
+.qodef-accordion-holder .qodef-accordion-title .qodef-accordion-mark span.qodef_icon_plus {
+  opacity: 1;
+}
+
+.qodef-accordion-holder .qodef-accordion-title.ui-state-active .qodef-accordion-mark span.qodef_icon_minus, .qodef-accordion-holder .qodef-accordion-title.ui-state-hover .qodef-accordion-mark span.qodef_icon_minus {
+  opacity: 1;
+}
+
+.qodef-accordion-holder .qodef-accordion-title.ui-state-active .qodef-accordion-mark span.qodef_icon_plus, .qodef-accordion-holder .qodef-accordion-title.ui-state-hover .qodef-accordion-mark span.qodef_icon_plus {
+  opacity: 0;
+}
+
+.qodef-accordion-holder .qodef-accordion-content {
+  margin: 0;
+}
+
+.qodef-accordion-holder .qodef-accordion-content p {
+  margin: 0;
+}
+
+.qodef-accordion-holder.qodef-ac-boxed.qodef-white-skin .qodef-accordion-title {
+  background-color: #fff;
+}
+
+.qodef-accordion-holder.qodef-ac-boxed .qodef-accordion-title {
+  margin: 15px 0 0;
+  padding: 13px 20px 13px 40px;
+  background-color: #f7f7f9;
+}
+
+.qodef-accordion-holder.qodef-ac-boxed .qodef-accordion-title:first-child {
+  margin: 0;
+}
+
+.qodef-accordion-holder.qodef-ac-boxed .qodef-accordion-title .qodef-accordion-mark {
+  left: 10px;
+}
+
+.qodef-accordion-holder.qodef-ac-boxed .qodef-accordion-title.ui-state-active, .qodef-accordion-holder.qodef-ac-boxed .qodef-accordion-title.ui-state-hover {
+  color: #fff;
+  background-color: #edf7fa;
+}
+
+.qodef-accordion-holder.qodef-ac-boxed .qodef-accordion-content {
+  padding: 21px 0 6px;
+}
+
+.qodef-accordion-holder.qodef-ac-simple {
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.qodef-accordion-holder.qodef-ac-simple .qodef-accordion-title {
+  padding: 17px 0 17px 30px;
+  border-top: 1px solid #f1f1f1;
+}
+
+.qodef-accordion-holder.qodef-ac-simple .qodef-accordion-content {
+  border-top: 1px solid transparent;
+}
+
+.qodef-accordion-holder.qodef-ac-simple .qodef-accordion-content.ui-accordion-content-active {
+  border-color: #f1f1f1;
+}
+
+.qodef-accordion-holder.qodef-ac-simple .qodef-accordion-content {
+  padding: 21px 0 16px;
+}
+
+/* ==========================================================================
+   Accordions shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Anchor Menu shortcode styles begin
+   ========================================================================== */
+.qodef-anchor-menu {
+  position: fixed;
+  top: 50%;
+  left: 48px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+  visibility: hidden;
+  z-index: 200;
+}
+
+.qodef-anchor-menu.qodef-init {
+  visibility: visible;
+}
+
+.qodef-anchor-menu .qodef-anchor-menu-items {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  counter-reset: section;
+}
+
+.qodef-anchor-menu .qodef-anchor {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  margin: 7px 0;
+  color: #222222;
+  font-size: 20px;
+  line-height: 1.25em;
+  -webkit-transition: font-size .2s ease;
+  transition: font-size .2s ease;
+}
+
+.qodef-anchor-menu .qodef-anchor:before {
+  position: relative;
+  top: -2px;
+  counter-increment: section;
+  content: counter(section, decimal-leading-zero);
+  margin-right: 8px;
+  font-family: "Playfair Display", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  opacity: .48;
+}
+
+.qodef-anchor-menu .qodef-anchor.qodef-active {
+  font-size: 30px;
+}
+
+/* ==========================================================================
+   Anchor Menu shortcode styles end
+   ========================================================================== */
+/* ==========================================================================
+   Banner shortcode style - begin
+   ========================================================================== */
+.qodef-banner-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.touch .qodef-banner-holder {
+  cursor: pointer;
+}
+
+.qodef-banner-holder:hover .qodef-banner-image img {
+  -webkit-transform: scale(1.05) translateX(3px);
+  -ms-transform: scale(1.05) translateX(3px);
+  transform: scale(1.05) translateX(3px);
+}
+
+.qodef-banner-holder.qodef-visible-on-hover:hover .qodef-banner-text-holder {
+  opacity: 1;
+}
+
+.qodef-banner-holder.qodef-visible-on-hover .qodef-banner-text-holder {
+  opacity: 0;
+  -webkit-transition: opacity .2s ease-out;
+  transition: opacity .2s ease-out;
+}
+
+.qodef-banner-holder.qodef-banner-disable-separator .qodef-separator-holder {
+  display: none;
+}
+
+.qodef-banner-holder.qodef-disabled .qodef-banner-text-holder {
+  display: none;
+}
+
+.qodef-banner-holder.qodef-banner-info-centered .qodef-banner-text-holder {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.qodef-banner-holder .qodef-banner-image {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.qodef-banner-holder .qodef-banner-image img {
+  display: block;
+  width: 100%;
+  -webkit-transform: scale(1.05) translateX(-3px);
+  -ms-transform: scale(1.05) translateX(-3px);
+  transform: scale(1.05) translateX(-3px);
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.qodef-banner-holder .qodef-banner-text-holder {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 50px 56px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 1370px) {
+  .qodef-banner-holder .qodef-banner-text-holder {
+    padding: 30px 36px;
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .qodef-banner-holder .qodef-banner-text-holder {
+    padding: 25px 26px;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .qodef-banner-holder .qodef-banner-text-holder {
+    padding: 22px 24px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-banner-holder .qodef-banner-text-holder {
+    padding: 50px 216px 50px 56px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .qodef-banner-holder .qodef-banner-text-holder {
+    padding: 30px 38px;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .qodef-banner-holder .qodef-banner-text-holder {
+    padding: 20px 24px;
+  }
+}
+
+.qodef-banner-holder .qodef-banner-text-outer {
+  position: relative;
+  display: table;
+  table-layout: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.qodef-banner-holder .qodef-banner-text-inner {
+  position: relative;
+  display: table-cell;
+  height: 100%;
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.qodef-banner-holder .qodef-banner-subtitle {
+  margin: 0;
+  color: #fff;
+}
+
+.qodef-banner-holder .qodef-banner-title {
+  margin: 0 0 9px 0;
+  color: #fff;
+}
+
+.qodef-banner-holder .qodef-banner-title .qodef-banner-title-light {
+  font-weight: 300;
+}
+
+.qodef-banner-holder .qodef-banner-link-text {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  margin: 11px 0 0;
+  color: #fff;
+  line-height: 1em;
+  z-index: 2;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.qodef-banner-holder .qodef-banner-link-text:hover .qodef-banner-link-hover {
+  width: 100%;
+}
+
+.qodef-banner-holder .qodef-banner-link-text .qodef-banner-link-original {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+}
+
+.qodef-banner-holder .qodef-banner-link-text .qodef-banner-link-original span {
+  color: inherit;
+}
+
+.qodef-banner-holder .qodef-banner-link-text .qodef-banner-link-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.1%;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-transition: width .4s ease-in-out;
+  transition: width .4s ease-in-out;
+}
+
+.qodef-banner-holder .qodef-banner-link-text .qodef-banner-link-hover span {
+  color: #edf7fa;
+}
+
+.qodef-banner-holder .qodef-banner-link-text .qodef-banner-link-icon,
+.qodef-banner-holder .qodef-banner-link-text .qodef-banner-link-label {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.qodef-banner-holder .qodef-banner-link-text .qodef-banner-link-icon {
+  margin: 0 2px 0 0;
+  font-size: 15px;
+}
+
+.qodef-banner-holder .qodef-banner-link-text .qodef-banner-link-label {
+  font-size: 14px;
+  line-height: inherit;
+}
+
+.qodef-banner-holder .qodef-banner-link {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   Banner shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Button shortcode style - begin
+   ========================================================================== */
+.qodef-btn {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: auto;
+  margin: 0;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 2em;
+  font-weight: 400;
+  letter-spacing: 0;
+  outline: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out;
+  transition: color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out;
+  padding: 8px 34px;
+  cursor: pointer;
+}
+
+.qodef-btn.qodef-btn-simple {
+  padding: 0 !important;
+  color: #000;
+  background-color: transparent;
+  border: 0;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.qodef-btn.qodef-btn-simple .qodef-btn-svg {
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
+}
+
+.qodef-btn.qodef-btn-simple .qodef-btn-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.qodef-btn.qodef-btn-simple:not(.qodef-btn-custom-hover-color):hover {
+  color: #9abcc9 !important;
+}
+
+.qodef-btn.qodef-btn-simple:not(.qodef-btn-custom-hover-bg):hover {
+  background-color: transparent !important;
+}
+
+.qodef-btn.qodef-btn-simple:not(.qodef-btn-custom-border-hover):hover {
+  border-color: transparent !important;
+}
+
+.qodef-btn.qodef-btn-solid {
+  color: #fff;
+  background-color: #000;
+  border: 1px solid transparent;
+}
+
+.qodef-btn.qodef-btn-solid:not(.qodef-btn-custom-hover-color):hover {
+  color: #fff !important;
+}
+
+.qodef-btn.qodef-btn-solid:not(.qodef-btn-custom-hover-bg):hover {
+  background-color: #222222 !important;
+}
+
+.qodef-btn.qodef-btn-solid:not(.qodef-btn-custom-border-hover):hover {
+  border-color: #1b1b1b !important;
+}
+
+.qodef-btn.qodef-btn-outline {
+  color: #222222;
+  background-color: transparent;
+  border: 1px solid #ddd;
+}
+
+.qodef-btn.qodef-btn-outline:not(.qodef-btn-custom-hover-color):hover {
+  color: #000 !important;
+}
+
+.qodef-btn.qodef-btn-outline:not(.qodef-btn-custom-hover-bg):hover {
+  background-color: transparent !important;
+}
+
+.qodef-btn.qodef-btn-outline:not(.qodef-btn-custom-border-hover):hover {
+  border: 1px solid #ddd !important;
+}
+
+.qodef-btn.qodef-btn-small {
+  padding: 6px 30px;
+}
+
+.qodef-btn.qodef-btn-large {
+  padding: 10px 38px;
+}
+
+.qodef-btn.qodef-btn-huge {
+  padding: 14px 53px;
+}
+
+.qodef-btn.qodef-btn-icon > i,
+.qodef-btn.qodef-btn-icon > span:not(.qodef-btn-text) {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 10px 0 0;
+  font-size: 1.142857142857143em;
+  line-height: inherit;
+  color: #bbb;
+}
+
+.qodef-btn.qodef-btn-icon > i:before,
+.qodef-btn.qodef-btn-icon > span:not(.qodef-btn-text):before {
+  display: block;
+  color: inherit;
+  line-height: inherit;
+  -webkit-transition: .2s;
+  transition: .2s;
+  -webkit-transition-delay: .2s;
+  transition-delay: .2s;
+}
+
+.qodef-btn.qodef-btn-icon > i:after,
+.qodef-btn.qodef-btn-icon > span:not(.qodef-btn-text):after {
+  content: '';
+  position: absolute;
+  background: currentColor;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -10%);
+  -ms-transform: translate(-50%, -10%);
+  transform: translate(-50%, -10%);
+  opacity: 0;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.qodef-btn.qodef-btn-icon .qodef-btn-svg {
+  display: none !important;
+}
+
+.qodef-btn .qodef-btn-svg {
+  width: 8px;
+  display: inline-block;
+  position: relative;
+  margin-right: 6px;
+  line-height: 20px;
+  max-height: 20px;
+}
+
+.qodef-btn .qodef-btn-svg svg {
+  max-height: 15px;
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
+  -webkit-transition: .2s;
+  transition: .2s;
+  -webkit-transition-delay: .2s;
+  transition-delay: .2s;
+}
+
+.qodef-btn .qodef-btn-svg svg path {
+  fill: #bbb;
+}
+
+.qodef-btn .qodef-btn-svg:after {
+  content: '';
+  position: absolute;
+  background: #bbb;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -10%);
+  -ms-transform: translate(-50%, -10%);
+  transform: translate(-50%, -10%);
+  opacity: 0;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.qodef-btn:hover .qodef-btn-svg svg {
+  opacity: 0;
+  -webkit-transform: translateY(-40%);
+  -ms-transform: translateY(-40%);
+  transform: translateY(-40%);
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+.qodef-btn:hover .qodef-btn-svg:after {
+  opacity: 1;
+  -webkit-transition-delay: .1s;
+  transition-delay: .1s;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.qodef-btn:hover.qodef-btn-icon > i:before,
+.qodef-btn:hover.qodef-btn-icon > span:not(.qodef-btn-text):before {
+  opacity: 0;
+  -webkit-transform: translateY(-40%);
+  -ms-transform: translateY(-40%);
+  transform: translateY(-40%);
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+.qodef-btn:hover.qodef-btn-icon > i:after,
+.qodef-btn:hover.qodef-btn-icon > span:not(.qodef-btn-text):after {
+  opacity: 1;
+  -webkit-transition-delay: .1s;
+  transition-delay: .1s;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* ==========================================================================
+   Button shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Call To Action shortcode style - begin
+   ========================================================================== */
+.qodef-call-to-action-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  /***** Layout Style - begin *****/
+  /***** Layout Style - end *****/
+  /***** Columns Space - begin *****/
+  /***** Columns Space - end *****/
+}
+
+.qodef-call-to-action-holder .qodef-cta-text-holder,
+.qodef-call-to-action-holder .qodef-cta-button-holder {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.qodef-call-to-action-holder .qodef-cta-text-holder h1, .qodef-call-to-action-holder .qodef-cta-text-holder h2, .qodef-call-to-action-holder .qodef-cta-text-holder h3, .qodef-call-to-action-holder .qodef-cta-text-holder h4, .qodef-call-to-action-holder .qodef-cta-text-holder h5, .qodef-call-to-action-holder .qodef-cta-text-holder h6 {
+  margin: 0;
+}
+
+.qodef-call-to-action-holder .qodef-cta-button-holder .qodef-btn {
+  white-space: nowrap;
+}
+
+.qodef-call-to-action-holder.qodef-normal-layout .qodef-cta-inner {
+  display: table;
+}
+
+.qodef-call-to-action-holder.qodef-normal-layout:not(.qodef-content-in-grid) .qodef-cta-inner {
+  width: 100%;
+}
+
+.qodef-call-to-action-holder.qodef-normal-layout .qodef-cta-text-holder,
+.qodef-call-to-action-holder.qodef-normal-layout .qodef-cta-button-holder {
+  display: table-cell;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-call-to-action-holder.qodef-normal-layout .qodef-cta-button-holder {
+  text-align: right;
+}
+
+.qodef-call-to-action-holder.qodef-simple-layout .qodef-cta-inner {
+  text-align: center;
+}
+
+.qodef-call-to-action-holder.qodef-simple-layout .qodef-cta-text-holder,
+.qodef-call-to-action-holder.qodef-simple-layout .qodef-cta-button-holder {
+  width: 100%;
+}
+
+.qodef-call-to-action-holder.qodef-simple-layout .qodef-cta-button-holder {
+  margin: 28px 0 0;
+}
+
+.qodef-call-to-action-holder.qodef-two-halves-columns .qodef-cta-text-holder,
+.qodef-call-to-action-holder.qodef-two-halves-columns .qodef-cta-button-holder {
+  width: 50%;
+}
+
+.qodef-call-to-action-holder.qodef-two-thirds-columns .qodef-cta-text-holder {
+  width: 66.66666666666667%;
+}
+
+.qodef-call-to-action-holder.qodef-two-thirds-columns .qodef-cta-button-holder {
+  width: 33.33333333333333%;
+}
+
+.qodef-call-to-action-holder.qodef-three-quarters-columns .qodef-cta-text-holder {
+  width: 75%;
+}
+
+.qodef-call-to-action-holder.qodef-three-quarters-columns .qodef-cta-button-holder {
+  width: 25%;
+}
+
+.qodef-call-to-action-holder.qodef-four-fifths-columns .qodef-cta-text-holder {
+  width: 80%;
+}
+
+.qodef-call-to-action-holder.qodef-four-fifths-columns .qodef-cta-button-holder {
+  width: 20%;
+}
+
+/* ==========================================================================
+   Call To Action shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Cards Gallery shortcode style - begin
+   ========================================================================== */
+.qodef-cards-gallery {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  padding: 10px 0;
+}
+
+.qodef-cards-gallery .qodef-cg-inner {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-cards-gallery img {
+  position: relative;
+  display: block;
+  -webkit-transition: opacity .3s ease-out;
+  transition: opacity .3s ease-out;
+}
+
+.qodef-cards-gallery img:not(.qodef-animation-done) {
+  opacity: 0;
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-cards-gallery img {
+    opacity: 1 !important;
+  }
+}
+
+.qodef-cards-gallery .qodef-cg-fake-card {
+  position: relative;
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.qodef-cards-gallery .qodef-cg-card {
+  position: absolute;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .15s ease;
+  transition: all .15s ease;
+}
+
+.qodef-cards-gallery .qodef-cg-card.qodef-animating {
+  -webkit-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  pointer-events: none;
+}
+
+.qodef-cards-gallery .qodef-cg-card.qodef-animating-siblings {
+  -webkit-transition: all 0.6s cubic-bezier(0, 0, 0, 1);
+  transition: all 0.6s cubic-bezier(0, 0, 0, 1);
+  pointer-events: none;
+}
+
+.qodef-cards-gallery.qodef-cg-shuffled-left .qodef-cg-card {
+  left: 0;
+  will-change: transform;
+}
+
+.qodef-cards-gallery.qodef-cg-shuffled-left .qodef-cg-card.qodef-out {
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+
+.qodef-cards-gallery.qodef-cg-shuffled-left .qodef-cg-card:nth-last-child(6) {
+  -webkit-transform: scale(0.56) translateX(73%);
+  -ms-transform: scale(0.56) translateX(73%);
+  transform: scale(0.56) translateX(73%);
+}
+
+.qodef-cards-gallery.qodef-cg-shuffled-left .qodef-cg-card:nth-last-child(5) {
+  -webkit-transform: scale(0.66) translateX(49%);
+  -ms-transform: scale(0.66) translateX(49%);
+  transform: scale(0.66) translateX(49%);
+}
+
+.qodef-cards-gallery.qodef-cg-shuffled-left .qodef-cg-card:nth-last-child(4) {
+  -webkit-transform: scale(0.76) translateX(31%);
+  -ms-transform: scale(0.76) translateX(31%);
+  transform: scale(0.76) translateX(31%);
+}
+
+.qodef-cards-gallery.qodef-cg-shuffled-left .qodef-cg-card:nth-last-child(3) {
+  -webkit-transform: scale(0.86) translateX(17.5%);
+  -ms-transform: scale(0.86) translateX(17.5%);
+  transform: scale(0.86) translateX(17.5%);
+}
+
+.qodef-cards-gallery.qodef-cg-shuffled-left .qodef-cg-card:nth-last-child(2) {
+  -webkit-transform: scale(0.96) translateX(6.5%);
+  -ms-transform: scale(0.96) translateX(6.5%);
+  transform: scale(0.96) translateX(6.5%);
+}
+
+.qodef-cards-gallery.qodef-cg-shuffled-left .qodef-cg-card:not(:last-of-type) {
+  cursor: pointer;
+}
+
+.qodef-cards-gallery.qodef-cg-shuffled-left .qodef-cg-card:not(:last-of-type):not(.active):hover {
+  margin-left: 10px !important;
+}
+
+.qodef-cards-gallery.qodef-cg-shuffled-right .qodef-cg-card {
+  right: 0;
+  will-change: transform;
+}
+
+.qodef-cards-gallery.qodef-cg-shuffled-right .qodef-cg-card.qodef-out {
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.qodef-cards-gallery.qodef-cg-shuffled-right .qodef-cg-card:nth-last-child(6) {
+  -webkit-transform: scale(0.5) translateX(-80%);
+  -ms-transform: scale(0.5) translateX(-80%);
+  transform: scale(0.5) translateX(-80%);
+}
+
+.qodef-cards-gallery.qodef-cg-shuffled-right .qodef-cg-card:nth-last-child(5) {
+  -webkit-transform: scale(0.6) translateX(-54%);
+  -ms-transform: scale(0.6) translateX(-54%);
+  transform: scale(0.6) translateX(-54%);
+}
+
+.qodef-cards-gallery.qodef-cg-shuffled-right .qodef-cg-card:nth-last-child(4) {
+  -webkit-transform: scale(0.7) translateX(-35%);
+  -ms-transform: scale(0.7) translateX(-35%);
+  transform: scale(0.7) translateX(-35%);
+}
+
+.qodef-cards-gallery.qodef-cg-shuffled-right .qodef-cg-card:nth-last-child(3) {
+  -webkit-transform: scale(0.8) translateX(-21%);
+  -ms-transform: scale(0.8) translateX(-21%);
+  transform: scale(0.8) translateX(-21%);
+}
+
+.qodef-cards-gallery.qodef-cg-shuffled-right .qodef-cg-card:nth-last-child(2) {
+  -webkit-transform: scale(0.9) translateX(-9.2%);
+  -ms-transform: scale(0.9) translateX(-9.2%);
+  transform: scale(0.9) translateX(-9.2%);
+}
+
+.qodef-cards-gallery.qodef-cg-shuffled-right .qodef-cg-card:not(:last-of-type) {
+  cursor: pointer;
+}
+
+.qodef-cards-gallery.qodef-cg-shuffled-right .qodef-cg-card:not(:last-of-type):not(.active):hover {
+  margin-right: 10px !important;
+}
+
+.no-touch .qodef-cards-gallery.qodef-bundle-animation img {
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+  opacity: 0;
+  will-change: opacity;
+}
+
+@-webkit-keyframes qodefCardAppearFromRight {
+  0% {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes qodefCardAppearFromRight {
+  0% {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.no-touch .qodef-cards-gallery.qodef-bundle-animation.qodef-cg-shuffled-right.qodef-appeared img {
+  -webkit-animation: qodefCardAppearFromRight 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation: qodefCardAppearFromRight 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+.no-touch .qodef-cards-gallery.qodef-bundle-animation.qodef-cg-shuffled-right.qodef-appeared .qodef-cg-card:nth-child(1) img:not(.qodef-animation-done) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+.no-touch .qodef-cards-gallery.qodef-bundle-animation.qodef-cg-shuffled-right.qodef-appeared .qodef-cg-card:nth-child(2) img:not(.qodef-animation-done) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.no-touch .qodef-cards-gallery.qodef-bundle-animation.qodef-cg-shuffled-right.qodef-appeared .qodef-cg-card:nth-child(3) img:not(.qodef-animation-done) {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.no-touch .qodef-cards-gallery.qodef-bundle-animation.qodef-cg-shuffled-right.qodef-appeared .qodef-cg-card:nth-child(4) img:not(.qodef-animation-done) {
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+
+.no-touch .qodef-cards-gallery.qodef-bundle-animation.qodef-cg-shuffled-right.qodef-appeared .qodef-cg-card:nth-child(5) img:not(.qodef-animation-done) {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.no-touch .qodef-cards-gallery.qodef-bundle-animation.qodef-cg-shuffled-right.qodef-appeared .qodef-cg-card:nth-child(6) img:not(.qodef-animation-done) {
+  -webkit-animation-delay: 1.2s;
+  animation-delay: 1.2s;
+}
+
+.no-touch .qodef-cards-gallery.qodef-bundle-animation.qodef-cg-shuffled-right.qodef-appeared .qodef-cg-card:nth-child(7) img:not(.qodef-animation-done) {
+  -webkit-animation-delay: 1.4s;
+  animation-delay: 1.4s;
+}
+
+.no-touch .qodef-cards-gallery.qodef-bundle-animation.qodef-cg-shuffled-right.qodef-appeared .qodef-cg-card:nth-child(8) img:not(.qodef-animation-done) {
+  -webkit-animation-delay: 1.6s;
+  animation-delay: 1.6s;
+}
+
+@-webkit-keyframes qodefCardAppearFromLeft {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  30% {
+    visibility: visible;
+    opacity: 1;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes qodefCardAppearFromLeft {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  30% {
+    visibility: visible;
+    opacity: 1;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.no-touch .qodef-cards-gallery.qodef-bundle-animation.qodef-cg-shuffled-left.qodef-appeared img {
+  -webkit-animation: qodefCardAppearFromLeft 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation: qodefCardAppearFromLeft 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+.no-touch .qodef-cards-gallery.qodef-bundle-animation.qodef-cg-shuffled-left.qodef-appeared .qodef-cg-card:nth-child(1) img:not(.qodef-animation-done) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+.no-touch .qodef-cards-gallery.qodef-bundle-animation.qodef-cg-shuffled-left.qodef-appeared .qodef-cg-card:nth-child(2) img:not(.qodef-animation-done) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.no-touch .qodef-cards-gallery.qodef-bundle-animation.qodef-cg-shuffled-left.qodef-appeared .qodef-cg-card:nth-child(3) img:not(.qodef-animation-done) {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.no-touch .qodef-cards-gallery.qodef-bundle-animation.qodef-cg-shuffled-left.qodef-appeared .qodef-cg-card:nth-child(4) img:not(.qodef-animation-done) {
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+
+.no-touch .qodef-cards-gallery.qodef-bundle-animation.qodef-cg-shuffled-left.qodef-appeared .qodef-cg-card:nth-child(5) img:not(.qodef-animation-done) {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.no-touch .qodef-cards-gallery.qodef-bundle-animation.qodef-cg-shuffled-left.qodef-appeared .qodef-cg-card:nth-child(6) img:not(.qodef-animation-done) {
+  -webkit-animation-delay: 1.2s;
+  animation-delay: 1.2s;
+}
+
+.no-touch .qodef-cards-gallery.qodef-bundle-animation.qodef-cg-shuffled-left.qodef-appeared .qodef-cg-card:nth-child(7) img:not(.qodef-animation-done) {
+  -webkit-animation-delay: 1.4s;
+  animation-delay: 1.4s;
+}
+
+.no-touch .qodef-cards-gallery.qodef-bundle-animation.qodef-cg-shuffled-left.qodef-appeared .qodef-cg-card:nth-child(8) img:not(.qodef-animation-done) {
+  -webkit-animation-delay: 1.6s;
+  animation-delay: 1.6s;
+}
+
+/* ==========================================================================
+   Cards Gallery shortcode style - begin
+   ========================================================================== */
+/* ==========================================================================
+   Clients Carousel shortcode style - begin
+   ========================================================================== */
+.qodef-clients-carousel-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-clients-carousel-holder .qodef-cc-inner {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-clients-carousel-holder .qodef-cc-item {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.touch .qodef-clients-carousel-holder .qodef-cc-item {
+  cursor: pointer;
+}
+
+.qodef-clients-carousel-holder .qodef-cc-item img {
+  display: block;
+}
+
+.qodef-clients-carousel-holder .qodef-cc-link {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/***** Hover Types - begin *****/
+.qodef-cc-hover-switch-images .qodef-cc-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.qodef-cc-hover-switch-images .qodef-cc-item.qodef-cci-has-link a:hover .qodef-cc-image {
+  opacity: 0;
+}
+
+.qodef-cc-hover-switch-images .qodef-cc-item.qodef-cci-has-link a:hover .qodef-cc-hover-image {
+  opacity: 1;
+}
+
+.qodef-cc-hover-switch-images .qodef-cc-item.qodef-cci-no-link:hover .qodef-cc-image {
+  opacity: 0;
+}
+
+.qodef-cc-hover-switch-images .qodef-cc-item.qodef-cci-no-link:hover .qodef-cc-hover-image {
+  opacity: 1;
+}
+
+.qodef-cc-hover-switch-images .qodef-cc-item.qodef-cci-no-link .qodef-cc-hover-image {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.qodef-cc-hover-switch-images .qodef-cc-item .qodef-cc-image {
+  width: auto;
+  opacity: 1;
+  will-change: opacity;
+  -webkit-transition: opacity .15s ease-out;
+  transition: opacity .15s ease-out;
+}
+
+.qodef-cc-hover-switch-images .qodef-cc-item .qodef-cc-hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  opacity: 0;
+  will-change: opacity;
+  -webkit-transition: opacity .15s ease-out;
+  transition: opacity .15s ease-out;
+}
+
+.qodef-cc-hover-roll-over .qodef-cc-item {
+  overflow: hidden;
+}
+
+.qodef-cc-hover-roll-over .qodef-cc-item.qodef-cci-has-link a:hover .qodef-cc-image {
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+.qodef-cc-hover-roll-over .qodef-cc-item.qodef-cci-has-link a:hover .qodef-cc-hover-image {
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+
+.qodef-cc-hover-roll-over .qodef-cc-item.qodef-cci-no-link:hover .qodef-cc-image {
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+.qodef-cc-hover-roll-over .qodef-cc-item.qodef-cci-no-link:hover .qodef-cc-hover-image {
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+
+.qodef-cc-hover-roll-over .qodef-cc-item .qodef-cc-image {
+  position: relative;
+  display: block;
+  width: auto;
+  margin: 0 auto;
+  -webkit-transition: -webkit-transform .4s ease;
+  transition: -webkit-transform .4s ease;
+  transition: transform .4s ease;
+  transition: transform .4s ease, -webkit-transform .4s ease;
+}
+
+.qodef-cc-hover-roll-over .qodef-cc-item .qodef-cc-hover-image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: auto;
+  -webkit-transform: translate(-50%, -100%);
+  -ms-transform: translate(-50%, -100%);
+  transform: translate(-50%, -100%);
+  -webkit-transition: -webkit-transform .4s ease;
+  transition: -webkit-transform .4s ease;
+  transition: transform .4s ease;
+  transition: transform .4s ease, -webkit-transform .4s ease;
+}
+
+/***** Hover Types - end *****/
+/* ==========================================================================
+   Clients Carousel shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   clients Holder shortcode style - begin
+   ========================================================================== */
+.qodef-clients-grid-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.qodef-clients-grid-holder.qodef-cg-alignment-left {
+  text-align: left;
+}
+
+.qodef-clients-grid-holder.qodef-cg-alignment-right {
+  text-align: right;
+}
+
+.qodef-clients-grid-holder .qodef-cc-link {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* ==========================================================================
+   clients Holder shortcode style - end
+   ========================================================================== */
+.qodef-comparision-table-holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+}
+
+.qodef-comparision-table-holder ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+.qodef-comparision-table-holder h6, .qodef-comparision-table-holder p {
+  margin: 0;
+}
+
+.qodef-comparision-table-holder * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-comparision-table-holder .qodef-ct-table {
+  -webkit-box-flex: 1;
+  -ms-flex: auto;
+  flex: auto;
+}
+
+.qodef-comparision-table-holder .qodef-ct-swipe {
+  display: none;
+}
+
+.qodef-comparision-table-holder .qodef-ct-table-title,
+.qodef-comparision-table-holder .qodef-ct-features-title {
+  line-height: 115px;
+  background: #edf7fa;
+  border: 2px solid #fff;
+}
+
+.qodef-comparision-table-holder .qodef-ct-table {
+  border-right: none;
+  border-left: none;
+}
+
+.qodef-comparision-table-holder .qodef-ct-table .qodef-ct-table-content li {
+  line-height: 61px;
+  background: #f8f8f8;
+  font-family: "Playfair Display", sans-serif;
+  font-size: 18px;
+  border: 2px solid #fff;
+}
+
+.qodef-comparision-table-holder .qodef-ct-table .qodef-ct-table-content li > h6 {
+  line-height: 61px;
+  background: #f4f4f4;
+}
+
+/* ==========================================================================
+   Countdown shortcode style - begin
+   ========================================================================== */
+.qodef-countdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-countdown.qodef-light-skin .countdown-row .countdown-section .countdown-amount,
+.qodef-countdown.qodef-light-skin .countdown-row .countdown-section .countdown-period {
+  color: #fff;
+}
+
+.qodef-countdown .countdown-rtl {
+  direction: rtl;
+}
+
+.qodef-countdown .countdown-row {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+  clear: both;
+}
+
+.qodef-countdown .countdown-row.countdown-show1 .countdown-section {
+  width: 100%;
+}
+
+.qodef-countdown .countdown-row.countdown-show2 .countdown-section {
+  width: 50%;
+}
+
+.qodef-countdown .countdown-row.countdown-show3 .countdown-section {
+  width: 33.33333%;
+}
+
+.qodef-countdown .countdown-row.countdown-show4 .countdown-section {
+  width: 25%;
+}
+
+.qodef-countdown .countdown-row.countdown-show5 .countdown-section {
+  width: 20%;
+}
+
+.qodef-countdown .countdown-row.countdown-show6 .countdown-section {
+  width: 16.66667%;
+}
+
+.qodef-countdown .countdown-row .countdown-section {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  padding: 0 5px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-countdown .countdown-row .countdown-section .countdown-amount {
+  position: relative;
+  display: block;
+  color: #222222;
+  font-size: 72px;
+  line-height: 1em;
+  font-weight: 600;
+}
+
+.qodef-countdown .countdown-row .countdown-section .countdown-period {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   Countdown shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Counter shortcode style - begin
+   ========================================================================== */
+.qodef-counter-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+  text-align: center;
+}
+
+.qodef-counter-holder .qodef-counter-inner {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.qodef-counter-holder .qodef-counter {
+  height: 1em;
+  display: inline-block !important;
+  vertical-align: middle;
+  color: #222222;
+  font-size: 47px;
+  line-height: 1em;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.qodef-counter-holder .qodef-counter-title {
+  margin: 12px 0 0;
+}
+
+.qodef-counter-holder .qodef-counter-text {
+  margin: 12px 0 0;
+}
+
+/* ==========================================================================
+   Counter shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Custom Font shortcode style - begin
+   ========================================================================== */
+.qodef-custom-font-holder .qodef-cf-typed-wrap {
+  width: 0;
+  white-space: nowrap;
+}
+
+.qodef-custom-font-holder .qodef-cf-typed {
+  display: inline-block;
+}
+
+.qodef-custom-font-holder .qodef-cf-typed span {
+  display: none;
+}
+
+.qodef-custom-font-holder .qodef-cf-typed ~ .typed-cursor {
+  display: inline-block;
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+  50% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+  50% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+}
+
+/* ==========================================================================
+   Custom Font shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Dropcaps shortcode style - begin
+   ========================================================================== */
+.qodef-dropcaps {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  float: left;
+  line-height: 42px;
+  font-size: 42px;
+  color: #999;
+  font-weight: 300;
+  text-align: center;
+  margin: 0 7px 0 0;
+}
+
+.qodef-dropcaps.qodef-square, .qodef-dropcaps.qodef-circle {
+  height: 35px;
+  width: 35px;
+  font-size: 22px;
+  line-height: 35px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #222222;
+  margin: 6px 9px 0 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-dropcaps.qodef-circle {
+  border-radius: 3em;
+}
+
+/* ==========================================================================
+   Dropcaps shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Elements Holder shortcode style - begin
+   ========================================================================== */
+.qodef-elements-holder {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+}
+
+.qodef-elements-holder.qodef-eh-full-height {
+  height: 100%;
+}
+
+.qodef-elements-holder.qodef-ehi-float .qodef-eh-item {
+  float: left;
+}
+
+.qodef-elements-holder.qodef-eh-shadow {
+  -webkit-box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.05);
+}
+
+.qodef-elements-holder.qodef-two-columns .qodef-eh-item {
+  width: 50%;
+}
+
+.qodef-elements-holder.qodef-three-columns .qodef-eh-item {
+  width: 33.33333%;
+}
+
+.qodef-elements-holder.qodef-four-columns .qodef-eh-item {
+  width: 25%;
+}
+
+.qodef-elements-holder.qodef-five-columns .qodef-eh-item {
+  width: 20%;
+}
+
+.qodef-elements-holder.qodef-six-columns .qodef-eh-item {
+  width: 16.66667%;
+}
+
+.qodef-elements-holder .qodef-eh-item {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.qodef-elements-holder .qodef-eh-item.qodef-vertical-alignment-top {
+  vertical-align: top;
+}
+
+.qodef-elements-holder .qodef-eh-item.qodef-vertical-alignment-bottom {
+  vertical-align: bottom;
+}
+
+.qodef-elements-holder .qodef-eh-item.qodef-horizontal-alignment-center {
+  text-align: center;
+}
+
+.qodef-elements-holder .qodef-eh-item.qodef-horizontal-alignment-right {
+  text-align: right;
+}
+
+.qodef-elements-holder .qodef-eh-item .qodef-elements-holder-item-inner {
+  width: 100%;
+}
+
+.qodef-elements-holder .qodef-ehi-content {
+  padding: 0 20px;
+}
+
+/* ==========================================================================
+   Elements Holder shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Google Map shortcode style - begin
+   ========================================================================== */
+.qodef-google-map-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-google-map-holder .qodef-google-map-direction {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 0 8px;
+  font-size: 13px;
+  line-height: 24px;
+  color: #000;
+  background-color: #fff;
+  z-index: 999;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-google-map-holder .qodef-google-map-direction:hover {
+  color: #222222;
+}
+
+.qodef-google-map-holder .qodef-google-map {
+  display: block;
+  width: 100%;
+  height: 300px;
+}
+
+.qodef-google-map-holder .qodef-google-map iframe,
+.qodef-google-map-holder .qodef-google-map object,
+.qodef-google-map-holder .qodef-google-map embed {
+  width: 100%;
+  display: block;
+}
+
+.qodef-google-map-holder .qodef-google-map img {
+  max-width: none;
+}
+
+.qodef-google-map-holder .qodef-snazzy-map {
+  display: none;
+}
+
+.qodef-google-map-holder .qodef-google-map-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 1000;
+}
+
+/* ==========================================================================
+   Google Map shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Icon List Item shortcode style - begin
+   ========================================================================== */
+.qodef-icon-list-holder {
+  position: relative;
+  display: table;
+  table-layout: fixed;
+  height: auto;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.qodef-icon-list-holder .qodef-il-icon-holder,
+.qodef-icon-list-holder .qodef-il-text {
+  position: relative;
+  display: table-cell;
+  vertical-align: top;
+}
+
+.qodef-icon-list-holder .qodef-il-icon-holder {
+  width: 1%;
+}
+
+.qodef-icon-list-holder .qodef-il-icon-holder > * {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  color: #222222;
+  font-size: 17px;
+  line-height: inherit;
+}
+
+.qodef-icon-list-holder .qodef-il-icon-holder > *:before {
+  display: block;
+  line-height: inherit;
+}
+
+.qodef-icon-list-holder .qodef-il-text {
+  width: 99%;
+  padding: 0 0 0 13px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Icon List Item shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Icon With Text shortcode style - begin
+   ========================================================================== */
+.qodef-iwt {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-iwt .qodef-iwt-icon a {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.qodef-iwt .qodef-iwt-icon .qodef-icon-shortcode {
+  line-height: 1;
+}
+
+.qodef-iwt .qodef-iwt-icon .qodef-icon-shortcode.qodef-circle, .qodef-iwt .qodef-iwt-icon .qodef-icon-shortcode.qodef-square, .qodef-iwt .qodef-iwt-icon .qodef-icon-shortcode.qodef-dropcaps.qodef-circle {
+  line-height: 2;
+}
+
+.qodef-iwt .qodef-iwt-title {
+  margin: 0;
+  line-height: 1.2em;
+  color: #1b1b1b;
+}
+
+.qodef-iwt .qodef-iwt-title a {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.qodef-iwt .qodef-iwt-title-text {
+  display: block;
+}
+
+.qodef-iwt .qodef-iwt-text {
+  margin: 10px 0 0;
+}
+
+.qodef-iwt.qodef-iwt-icon-left {
+  width: auto;
+}
+
+.qodef-iwt.qodef-iwt-icon-left .qodef-iwt-title {
+  margin: 27px 0 0;
+}
+
+.qodef-iwt.qodef-iwt-icon-left .qodef-iwt-icon,
+.qodef-iwt.qodef-iwt-icon-left .qodef-iwt-content {
+  display: block;
+}
+
+.qodef-iwt.qodef-iwt-icon-left .qodef-iwt-icon {
+  position: relative;
+  top: 1px;
+}
+
+.qodef-iwt.qodef-iwt-icon-left .qodef-iwt-icon img {
+  max-width: none;
+}
+
+.qodef-iwt.qodef-iwt-icon-left-from-title .qodef-iwt-icon,
+.qodef-iwt.qodef-iwt-icon-left-from-title .qodef-iwt-title-text {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.qodef-iwt.qodef-iwt-icon-left-from-title .qodef-iwt-icon .qodef-icon-element {
+  -webkit-transition: none;
+  transition: none;
+}
+
+.qodef-iwt.qodef-iwt-icon-left-from-title .qodef-iwt-icon img {
+  max-width: none;
+}
+
+.qodef-iwt.qodef-iwt-icon-left-from-title .qodef-iwt-title-text {
+  padding: 0 0 0 17px;
+}
+
+.qodef-iwt.qodef-iwt-icon-top {
+  text-align: center;
+}
+
+.qodef-iwt.qodef-iwt-icon-top .qodef-iwt-content {
+  padding: 21px 0 0;
+}
+
+/* ==========================================================================
+   Icon With Text shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Icon shortcode style - begin
+   ========================================================================== */
+.qodef-icon-shortcode {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.1em;
+}
+
+.qodef-icon-shortcode.qodef-circle, .qodef-icon-shortcode.qodef-square, .qodef-icon-shortcode.qodef-dropcaps.qodef-circle {
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  text-align: center;
+  background-color: #edf7fa;
+  -webkit-transition: background-color .15s ease-in-out, border-color .15s ease-in-out;
+  transition: background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+
+.qodef-icon-shortcode.qodef-circle a, .qodef-icon-shortcode.qodef-square a, .qodef-icon-shortcode.qodef-dropcaps.qodef-circle a {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  height: 100%;
+}
+
+.qodef-icon-shortcode.qodef-circle .qodef-icon-element, .qodef-icon-shortcode.qodef-square .qodef-icon-element, .qodef-icon-shortcode.qodef-dropcaps.qodef-circle .qodef-icon-element {
+  color: #fff;
+  line-height: inherit;
+}
+
+.qodef-icon-shortcode.qodef-circle {
+  border-radius: 50%;
+}
+
+.qodef-icon-shortcode .qodef-icon-element {
+  display: block;
+  line-height: inherit;
+  -webkit-transition: color .15s ease-in-out;
+  transition: color .15s ease-in-out;
+}
+
+.qodef-icon-shortcode .qodef-icon-element:before {
+  display: block;
+  line-height: inherit;
+}
+
+.qodef-icon-animation-holder {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: -webkit-transform 0.15s ease-in-out;
+  transition: -webkit-transform 0.15s ease-in-out;
+  transition: transform 0.15s ease-in-out;
+  transition: transform 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+}
+
+.qodef-icon-animation-holder.qodef-icon-animation-show {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.qodef-icon-tiny {
+  font-size: 1.33333333em;
+  line-height: .75em;
+  vertical-align: -15%;
+}
+
+.qodef-icon-small {
+  font-size: 2em;
+}
+
+.qodef-icon-medium {
+  font-size: 3em;
+}
+
+.qodef-icon-large {
+  font-size: 4em;
+}
+
+.qodef-icon-huge {
+  font-size: 5em;
+}
+
+/* ==========================================================================
+   Icon shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Image Gallery shortcode style - begin
+   ========================================================================== */
+.qodef-image-gallery {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  /***** Image Gallery Masonry Style - begin *****/
+  /***** Image Gallery Masonry Style - end *****/
+  /***** Custom Link Behavior Style - begin *****/
+  /***** Custom Link Behavior Style - end *****/
+  /***** Lightbox Behavior Style - begin *****/
+  /***** Lightbox Behavior Style - end *****/
+  /***** Zoom Behavior Style - begin *****/
+  /***** Zoom Behavior Style - end *****/
+  /***** Grayscale Behavior Style - begin *****/
+  /***** Grayscale Behavior Style - end *****/
+}
+
+.qodef-image-gallery.qodef-ig-slider-type .owl-stage-outer {
+  margin-left: 39px;
+}
+
+.qodef-image-gallery.qodef-ig-slider-type .owl-nav .owl-prev {
+  left: 60px;
+}
+
+.qodef-image-gallery.qodef-ig-slider-type .owl-dots {
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-transform: rotate(-90deg) translate(calc(-100% + 36px + 10px), 100%);
+  -ms-transform: rotate(-90deg) translate(calc(-100% + 36px + 10px), 100%);
+  transform: rotate(-90deg) translate(calc(-100% + 36px + 10px), 100%);
+}
+
+.qodef-image-gallery.qodef-ig-carousel-type .owl-dots {
+  margin: 37px 0 0;
+}
+
+.qodef-image-gallery.qodef-has-shadow .qodef-ig-image-inner {
+  -webkit-box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.05);
+}
+
+.qodef-image-gallery.qodef-has-shadow.qodef-ig-slider-type .owl-stage-outer, .qodef-image-gallery.qodef-has-shadow.qodef-ig-carousel-type .owl-stage-outer {
+  padding: 0 0 20px;
+}
+
+.qodef-image-gallery.qodef-has-shadow.qodef-ig-slider-type .qodef-ig-image, .qodef-image-gallery.qodef-has-shadow.qodef-ig-carousel-type .qodef-ig-image {
+  -webkit-box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.05);
+}
+
+.qodef-image-gallery .qodef-ig-image a, .qodef-image-gallery .qodef-ig-image img {
+  position: relative;
+  display: block;
+}
+
+.qodef-image-gallery .qodef-ig-image-inner {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-image-gallery .qodef-ig-slider {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-image-gallery.qodef-ig-masonry-type .qodef-ig-image.qodef-fixed-masonry-item .qodef-ig-image-inner,
+.qodef-image-gallery.qodef-ig-masonry-type .qodef-ig-image.qodef-fixed-masonry-item a {
+  height: 100%;
+}
+
+.qodef-image-gallery.qodef-image-behavior-custom-link .qodef-ig-image a {
+  overflow: hidden;
+}
+
+.qodef-image-gallery.qodef-image-behavior-custom-link .qodef-ig-image a img {
+  display: block;
+  width: 100%;
+  -webkit-transform: scale(1.05) translateX(-3px);
+  -ms-transform: scale(1.05) translateX(-3px);
+  transform: scale(1.05) translateX(-3px);
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.qodef-image-gallery.qodef-image-behavior-custom-link .qodef-ig-image a:hover img {
+  -webkit-transform: scale(1.05) translateX(3px);
+  -ms-transform: scale(1.05) translateX(3px);
+  transform: scale(1.05) translateX(3px);
+}
+
+.qodef-image-gallery.qodef-image-behavior-lightbox .qodef-ig-image a {
+  overflow: hidden;
+}
+
+.qodef-image-gallery.qodef-image-behavior-lightbox .qodef-ig-image a img {
+  display: block;
+  width: 100%;
+  -webkit-transform: scale(1.05) translateX(-3px);
+  -ms-transform: scale(1.05) translateX(-3px);
+  transform: scale(1.05) translateX(-3px);
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.qodef-image-gallery.qodef-image-behavior-lightbox .qodef-ig-image a:hover img {
+  -webkit-transform: scale(1.05) translateX(3px);
+  -ms-transform: scale(1.05) translateX(3px);
+  transform: scale(1.05) translateX(3px);
+}
+
+.touch .qodef-image-gallery.qodef-image-behavior-zoom .qodef-ig-image {
+  cursor: pointer;
+}
+
+.qodef-image-gallery.qodef-image-behavior-zoom .qodef-ig-image:hover img {
+  -webkit-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  transform: scale(1.04);
+}
+
+.qodef-image-gallery.qodef-image-behavior-zoom .qodef-ig-image .qodef-ig-image-inner {
+  overflow: hidden;
+}
+
+.qodef-image-gallery.qodef-image-behavior-zoom .qodef-ig-image img {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
+.qodef-image-gallery.qodef-image-behavior-grayscale .qodef-ig-image {
+  overflow: hidden;
+}
+
+.touch .qodef-image-gallery.qodef-image-behavior-grayscale .qodef-ig-image {
+  cursor: pointer;
+}
+
+.qodef-image-gallery.qodef-image-behavior-grayscale .qodef-ig-image:hover img {
+  -webkit-filter: grayscale(0);
+  filter: none;
+}
+
+.qodef-image-gallery.qodef-image-behavior-grayscale .qodef-ig-image img {
+  filter: url("img/desaturate.svg#grayscale");
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  filter: gray;
+  filter: grayscale(100%);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+/* ==========================================================================
+   Image Gallery shortcode style - end
+   ========================================================================== */
+.qodef-image-map-gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-image-map-gallery {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+.qodef-image-map-gallery .qodef-img-holder,
+.qodef-image-map-gallery .qodef-map-holder {
+  display: inline-block;
+}
+
+.qodef-image-map-gallery .qodef-img-holder {
+  position: relative;
+  float: right;
+}
+
+.qodef-image-map-gallery .qodef-img-holder .qodef-img-section {
+  z-index: -1;
+  opacity: 0;
+  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+
+.qodef-image-map-gallery .qodef-img-holder .qodef-img-section.active {
+  z-index: 10;
+  opacity: 1;
+}
+
+.qodef-image-map-gallery .qodef-img-holder .qodef-img-video-inner,
+.qodef-image-map-gallery .qodef-img-holder .qodef-img-360-video-inner {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.qodef-image-map-gallery .qodef-img-holder .qodef-img-slider {
+  margin-bottom: 15px;
+}
+
+.qodef-image-map-gallery .qodef-img-holder .qodef-img-slider .owl-dots {
+  display: none;
+}
+
+.qodef-image-map-gallery .qodef-img-holder .qodef-pagination-slider {
+  list-style: none;
+}
+
+.qodef-image-map-gallery .qodef-img-holder .qodef-pagination-slider .owl-item {
+  cursor: pointer;
+}
+
+.qodef-image-map-gallery .qodef-img-holder .qodef-pagination-slider .owl-item.qodef-active-pag-item .qodef-impp-item:after {
+  opacity: 0;
+}
+
+.qodef-image-map-gallery .qodef-img-holder .qodef-pagination-slider .owl-item .qodef-impp-item:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-image-map-gallery .qodef-map-holder {
+    margin-bottom: 75px;
+  }
+}
+
+.qodef-image-map-gallery .qodef-map-holder .qodef-map-navigation {
+  list-style: none;
+  text-align: center;
+  margin: 0 0 47px;
+}
+
+.qodef-image-map-gallery .qodef-map-holder .qodef-map-navigation .qodef-map-nav-item {
+  position: relative;
+  display: inline-block;
+  margin: 0 11px;
+  padding: 0 5px 4px;
+  cursor: pointer;
+  line-height: 1;
+  -webkit-transition: background-color .2s ease-in-out;
+  transition: background-color .2s ease-in-out;
+}
+
+.qodef-image-map-gallery .qodef-map-holder .qodef-map-navigation .qodef-map-nav-item:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  height: 10px;
+  width: 100%;
+  z-index: -1;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  background-color: #edf7fa;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+@media only screen and (max-width: 680px) {
+  .qodef-image-map-gallery .qodef-map-holder .qodef-map-navigation .qodef-map-nav-item {
+    padding: 0 11px 10px;
+  }
+}
+
+.qodef-image-map-gallery .qodef-map-holder .qodef-map-navigation .qodef-map-nav-item .qodef-map-nav-item-icon {
+  font-size: 16px;
+  color: #222222;
+  top: 3px;
+  position: relative;
+  padding-right: 5px;
+}
+
+.qodef-image-map-gallery .qodef-map-holder .qodef-map-navigation .qodef-map-nav-item.active:before, .qodef-image-map-gallery .qodef-map-holder .qodef-map-navigation .qodef-map-nav-item:hover:before {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transform-origin: 0 50%;
+  -ms-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+}
+
+.qodef-image-map-gallery .qodef-map-holder .qodef-map-navigation .qodef-map-nav-item .qodef-map-nav-item-text {
+  font-size: 14px;
+  color: #222222;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.qodef-image-map-gallery .qodef-map-holder .qodef-image-map-holder-overlay {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  top: 30px;
+}
+
+.qodef-image-map-gallery .qodef-map-holder .imp-container {
+  margin: 0 auto;
+}
+
+.imp-tooltip-content h1, .imp-tooltip-content h2, .imp-tooltip-content h3, .imp-tooltip-content h4, .imp-tooltip-content h5, .imp-tooltip-content h6 {
+  text-transform: none;
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   Image With Text shortcode style - begin
+   ========================================================================== */
+.qodef-image-with-text-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  /***** Custom Link Behavior Style - begin *****/
+  /***** Custom Link Behavior Style - end *****/
+  /***** Lightbox Behavior Style - begin *****/
+  /***** Lightbox Behavior Style - end *****/
+  /***** Zoom Behavior Style - begin *****/
+  /***** Zoom Behavior Style - end *****/
+  /***** Grayscale Behavior Style - begin *****/
+  /***** Grayscale Behavior Style - end *****/
+}
+
+.qodef-image-with-text-holder:not(.qodef-has-shadow) {
+  clip-path: inset(0 100% 0 0);
+  -webkit-clip-path: inset(0 100% 0 0);
+  -webkit-transform: translateX(40px);
+  -ms-transform: translateX(40px);
+  transform: translateX(40px);
+}
+
+.qodef-image-with-text-holder:not(.qodef-has-shadow).qodef-appear {
+  clip-path: inset(0 0 0 0);
+  -webkit-clip-path: inset(0 0 0 0);
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: 1s 0.1s cubic-bezier(0.71, 0.26, 0.26, 0.88);
+  transition: 1s 0.1s cubic-bezier(0.71, 0.26, 0.26, 0.88);
+}
+
+.qodef-image-with-text-holder.qodef-has-shadow .qodef-iwt-image {
+  -webkit-box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.05);
+}
+
+.qodef-image-with-text-holder .qodef-iwt-image {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-image-with-text-holder .qodef-iwt-image a, .qodef-image-with-text-holder .qodef-iwt-image img {
+  position: relative;
+  display: block;
+}
+
+.qodef-image-with-text-holder .qodef-iwt-text-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-image-with-text-holder .qodef-iwt-title {
+  margin: 28px 0 0;
+}
+
+.qodef-image-with-text-holder .qodef-iwt-back-title {
+  position: absolute;
+  font-size: 150px;
+  font-weight: 700;
+  top: 10px;
+  left: 7%;
+  z-index: -1;
+  color: #edf7fa;
+}
+
+.qodef-image-with-text-holder .qodef-iwt-subtitle {
+  margin: 22px 0 0;
+  font-size: 13px;
+}
+
+.qodef-image-with-text-holder .qodef-iwt-text {
+  margin: 4px 0 0;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-custom-link:hover .qodef-iwt-back-title {
+  -webkit-transform: translate(10px, 0);
+  -ms-transform: translate(10px, 0);
+  transform: translate(10px, 0);
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-custom-link .qodef-iwt-back-title {
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-lightbox .qodef-iwt-image a {
+  overflow: hidden;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-lightbox .qodef-iwt-image a img {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-lightbox .qodef-iwt-image a:hover img {
+  -webkit-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  transform: scale(1.04);
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-zoom .qodef-iwt-image {
+  overflow: hidden;
+}
+
+.touch .qodef-image-with-text-holder.qodef-image-behavior-zoom .qodef-iwt-image {
+  cursor: pointer;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-zoom .qodef-iwt-image:hover img {
+  -webkit-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  transform: scale(1.04);
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-zoom .qodef-iwt-image img {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-grayscale .qodef-iwt-image {
+  overflow: hidden;
+}
+
+.touch .qodef-image-with-text-holder.qodef-image-behavior-grayscale .qodef-iwt-image {
+  cursor: pointer;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-grayscale .qodef-iwt-image:hover img {
+  -webkit-filter: grayscale(0);
+  filter: none;
+}
+
+.qodef-image-with-text-holder.qodef-image-behavior-grayscale .qodef-iwt-image img {
+  filter: url("img/desaturate.svg#grayscale");
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  filter: gray;
+  filter: grayscale(100%);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+/* ==========================================================================
+   Image With Text shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Numbered Section shortcode styles - begin
+   ========================================================================== */
+.qodef-numbered-section-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-numbered-section-holder .qodef-ns-title {
+  position: relative;
+  margin: 0 0 21px;
+  z-index: 2;
+}
+
+.qodef-numbered-section-holder .qodef-ns-back-title {
+  position: absolute;
+  font-size: 180px;
+  font-weight: 700;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  color: #edf7fa;
+}
+
+.qodef-numbered-section-holder .qodef-separator-holder {
+  margin: 13px 0;
+  z-index: 2;
+}
+
+.qodef-numbered-section-holder .qodef-separator-holder .qodef-separator {
+  margin: 0;
+}
+
+.qodef-numbered-section-holder .qodef-ns-text {
+  display: block;
+  margin: 14px 0 0;
+  position: relative;
+  z-index: 2;
+}
+
+.qodef-numbered-section-holder.qodef-ns-back-title-exist {
+  padding: 30px 0 0 0;
+}
+
+/* ==========================================================================
+   Numbered Section shortcode styles - end
+   ========================================================================== */
+/* ==========================================================================
+   Pie Chart shortcode style - begin
+   ========================================================================== */
+.qodef-pie-chart-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  opacity: 0;
+  -webkit-transition: opacity .2s ease-in;
+  transition: opacity .2s ease-in;
+}
+
+.qodef-pie-chart-holder .qodef-pc-percentage {
+  position: relative;
+  display: block;
+  height: 191px;
+  width: 191px;
+  line-height: 191px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.qodef-pie-chart-holder .qodef-pc-percentage canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.qodef-pie-chart-holder .qodef-pc-percentage:after {
+  content: '';
+  display: block;
+  width: 180px;
+  height: 180px;
+  border: 5px solid #edf7fa;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-pie-chart-holder .qodef-pc-percentage .qodef-pc-percent {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  color: #111;
+  font-size: 40px;
+  line-height: inherit;
+  font-weight: 700;
+}
+
+.qodef-pie-chart-holder .qodef-pc-percentage .qodef-pc-percent:after {
+  content: '%';
+}
+
+.qodef-pie-chart-holder .qodef-pc-text-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+  margin: 34px 0 0;
+}
+
+.qodef-pie-chart-holder .qodef-pc-text-holder .qodef-pc-title {
+  margin: 0;
+}
+
+.qodef-pie-chart-holder .qodef-pc-text-holder .qodef-pc-text {
+  margin: 10px auto 0;
+  width: 75%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-pie-chart-holder .qodef-pc-text-holder .qodef-pc-text {
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   Pie Chart shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Pricing Tables shortcode style - begin
+   ========================================================================== */
+.qodef-pricing-tables {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-price-table .qodef-pt-inner {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  background-color: #f9f9f9;
+}
+
+.qodef-price-table .qodef-pt-inner ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.qodef-price-table .qodef-pt-inner ul li {
+  margin: 0;
+  padding: 17px 30px;
+  text-align: center;
+}
+
+.qodef-price-table .qodef-pt-inner ul li.qodef-pt-title-holder {
+  position: relative;
+  color: #222222;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.qodef-price-table .qodef-pt-inner ul li.qodef-pt-title-holder .qodef-pt-title {
+  display: block;
+  padding: 17px 0 32px;
+  border-bottom: 1px solid #7d7d7d;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-price-table .qodef-pt-inner ul li.qodef-pt-prices {
+  position: relative;
+  padding: 33px 15px 0;
+}
+
+.qodef-price-table .qodef-pt-inner ul li.qodef-pt-prices .qodef-pt-value {
+  position: relative;
+  vertical-align: super;
+  bottom: 2px;
+  font-size: 24px;
+  line-height: 1em;
+  font-weight: 600;
+  color: #222222;
+}
+
+.qodef-price-table .qodef-pt-inner ul li.qodef-pt-prices .qodef-pt-price {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  left: -5px;
+  font-size: 48px;
+  line-height: 1em;
+  font-weight: 600;
+  color: #222222;
+}
+
+.qodef-price-table .qodef-pt-inner ul li.qodef-pt-prices .qodef-pt-mark {
+  position: relative;
+  display: block;
+  margin: 1px 0 0;
+}
+
+.qodef-price-table .qodef-pt-inner ul li.qodef-pt-content {
+  padding: 16px 15px;
+}
+
+.qodef-price-table .qodef-pt-inner ul li.qodef-pt-button {
+  padding: 28px 15px 70px;
+}
+
+/* ==========================================================================
+   Pricing Tables shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Process shortcode style - begin
+   ========================================================================== */
+.qodef-process-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-process-holder.qodef-two-columns .qodef-mark-horizontal-holder .qodef-process-mark {
+  width: 50%;
+}
+
+.qodef-process-holder.qodef-two-columns .qodef-mark-vertical-holder .qodef-process-mark {
+  height: 50%;
+}
+
+.qodef-process-holder.qodef-two-columns .qodef-process-item {
+  width: 50%;
+}
+
+.qodef-process-holder.qodef-three-columns .qodef-mark-horizontal-holder .qodef-process-mark {
+  width: 33.33333%;
+}
+
+.qodef-process-holder.qodef-three-columns .qodef-mark-vertical-holder .qodef-process-mark {
+  height: 33.33333%;
+}
+
+.qodef-process-holder.qodef-three-columns .qodef-process-item {
+  width: 33.33333%;
+}
+
+.qodef-process-holder.qodef-four-columns .qodef-mark-horizontal-holder .qodef-process-mark {
+  width: 25%;
+}
+
+.qodef-process-holder.qodef-four-columns .qodef-mark-vertical-holder .qodef-process-mark {
+  height: 25%;
+}
+
+.qodef-process-holder.qodef-four-columns .qodef-process-item {
+  width: 25%;
+}
+
+.qodef-process-holder.qodef-process-appeared .qodef-process-circle {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.qodef-process-holder.qodef-process-appeared .qodef-mark-horizontal-holder .qodef-process-line {
+  width: 100%;
+}
+
+.qodef-process-holder.qodef-process-appeared .qodef-mark-vertical-holder .qodef-process-line {
+  height: 100%;
+}
+
+.qodef-process-holder.qodef-process-appeared .qodef-process-item {
+  opacity: 1;
+}
+
+.qodef-process-holder .qodef-mark-horizontal-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  clear: both;
+}
+
+.qodef-process-holder .qodef-mark-horizontal-holder .qodef-process-mark {
+  float: left;
+}
+
+.qodef-process-holder .qodef-mark-horizontal-holder .qodef-process-line {
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  -webkit-transition: width .4s ease .1s;
+  transition: width .4s ease .1s;
+}
+
+.qodef-process-holder .qodef-mark-vertical-holder {
+  position: absolute;
+  top: 26px;
+  left: 0;
+  display: none;
+  width: 46px;
+  height: 100%;
+}
+
+.qodef-process-holder .qodef-mark-vertical-holder .qodef-process-line {
+  top: 23px;
+  left: 50%;
+  width: 1px;
+  height: 0;
+  -webkit-transition: height .4s ease .1s;
+  transition: height .4s ease .1s;
+}
+
+.qodef-process-holder .qodef-process-mark {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+}
+
+.qodef-process-holder .qodef-process-mark:last-child .qodef-process-line {
+  display: none;
+}
+
+.qodef-process-holder .qodef-process-mark:nth-child(2) .qodef-process-circle {
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.qodef-process-holder .qodef-process-mark:nth-child(2) .qodef-process-line {
+  -webkit-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+}
+
+.qodef-process-holder .qodef-process-mark:nth-child(3) .qodef-process-circle {
+  -webkit-transition-delay: 1s;
+  transition-delay: 1s;
+}
+
+.qodef-process-holder .qodef-process-mark:nth-child(3) .qodef-process-line {
+  -webkit-transition-delay: 1.2s;
+  transition-delay: 1.2s;
+}
+
+.qodef-process-holder .qodef-process-mark:nth-child(4) .qodef-process-circle {
+  -webkit-transition-delay: 1.5s;
+  transition-delay: 1.5s;
+}
+
+.qodef-process-holder .qodef-process-mark:nth-child(4) .qodef-process-line {
+  -webkit-transition-delay: 1.8s;
+  transition-delay: 1.8s;
+}
+
+.qodef-process-holder .qodef-process-circle {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 46px;
+  height: 46px;
+  font-size: 18px;
+  line-height: 46px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #edf7fa;
+  border-radius: 100%;
+  opacity: 0;
+  -webkit-transition: opacity .2s ease, -webkit-transform .3s ease;
+  transition: opacity .2s ease, -webkit-transform .3s ease;
+  transition: opacity .2s ease, transform .3s ease;
+  transition: opacity .2s ease, transform .3s ease, -webkit-transform .3s ease;
+  -webkit-transform: scale(0.6);
+  -ms-transform: scale(0.6);
+  transform: scale(0.6);
+}
+
+.qodef-process-holder .qodef-process-line {
+  position: absolute;
+  background-color: #edf7fa;
+}
+
+.qodef-process-holder .qodef-process-inner {
+  margin: 0 -15px;
+}
+
+.qodef-process-holder .qodef-process-item {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  float: left;
+  padding: 0 15px;
+  opacity: 0;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: opacity .2s ease;
+  transition: opacity .2s ease;
+}
+
+.qodef-process-holder .qodef-process-item:nth-child(2) {
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.qodef-process-holder .qodef-process-item:nth-child(3) {
+  -webkit-transition-delay: 1s;
+  transition-delay: 1s;
+}
+
+.qodef-process-holder .qodef-process-item:nth-child(4) {
+  -webkit-transition-delay: 1.5s;
+  transition-delay: 1.5s;
+}
+
+.qodef-process-holder .qodef-pi-content {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  margin: 26px 0 10px;
+}
+
+.qodef-process-holder .qodef-pi-title {
+  margin: 0;
+}
+
+.qodef-process-holder .qodef-pi-text {
+  margin: 11px 0 0;
+}
+
+/* ==========================================================================
+   Process shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Progress Bar shortcode style - begin
+   ========================================================================== */
+.qodef-progress-bar {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-progress-bar.qodef-pb-percent-floating {
+  width: 100%;
+  height: 100%;
+}
+
+.qodef-progress-bar.qodef-pb-percent-floating .qodef-pb-percent {
+  position: absolute;
+  left: 0;
+  right: auto;
+  bottom: 0;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.qodef-progress-bar .qodef-pb-title-holder {
+  position: relative;
+  margin: 10px 0 4px;
+}
+
+.qodef-progress-bar .qodef-pb-title-holder .qodef-pb-title {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  z-index: 100;
+}
+
+.qodef-progress-bar .qodef-pb-percent {
+  position: absolute;
+  right: 0;
+  bottom: 1px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  opacity: 0;
+  z-index: 10;
+}
+
+.qodef-progress-bar .qodef-pb-percent:after {
+  content: '%';
+}
+
+.qodef-progress-bar .qodef-pb-content-holder {
+  position: relative;
+  height: 3px;
+  overflow: hidden;
+  background-color: #ebebeb;
+}
+
+.qodef-progress-bar .qodef-pb-content-holder .qodef-pb-content {
+  height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  background-color: #edf7fa;
+}
+
+/* ==========================================================================
+   Progress Bar shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Section Title shortcode styles - begin
+   ========================================================================== */
+.qodef-section-title-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-section-title-holder .qodef-st-title {
+  margin: 0 0 11px;
+}
+
+.qodef-section-title-holder .qodef-separator-holder {
+  margin: 13px 0;
+}
+
+.qodef-section-title-holder .qodef-st-text {
+  display: block;
+  margin: -2px 0 0;
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: 0;
+  color: #000;
+}
+
+.qodef-section-title-holder .qodef-st-button {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.qodef-section-title-holder .qodef-st-button .qodef-btn {
+  margin-top: 40px;
+}
+
+/* ==========================================================================
+   Section Title shortcode styles - end
+   ========================================================================== */
+/* ==========================================================================
+   Separator shortcode style - begin
+   ========================================================================== */
+.qodef-separator-holder {
+  position: relative;
+  height: auto;
+  font-size: 0;
+  line-height: 1em;
+}
+
+.qodef-separator-holder.qodef-separator-center {
+  text-align: center;
+}
+
+.qodef-separator-holder.qodef-separator-left {
+  text-align: left;
+}
+
+.qodef-separator-holder.qodef-separator-right {
+  text-align: right;
+}
+
+.qodef-separator-holder.qodef-separator-full-width .qodef-separator {
+  width: 100% !important;
+}
+
+.qodef-separator {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  border-bottom: 1px solid #222222;
+  margin: 10px 0;
+}
+
+/* ==========================================================================
+   Separator shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Single Image shortcode style - begin
+   ========================================================================== */
+.qodef-single-image-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  /***** Custom Link Behavior Style - begin *****/
+  /***** Custom Link Behavior Style - end *****/
+  /***** Lightbox Behavior Style - begin *****/
+  /***** Lightbox Behavior Style - end *****/
+  /***** Zoom Behavior Style - begin *****/
+  /***** Zoom Behavior Style - end *****/
+  /***** Grayscale Behavior Style - begin *****/
+  /***** Grayscale Behavior Style - end *****/
+  /***** Moving Behavior Style - begin *****/
+  /***** Moving Behavior Style - end *****/
+}
+
+.qodef-single-image-holder.qodef-has-shadow .qodef-si-inner {
+  -webkit-box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.05);
+}
+
+.qodef-single-image-holder .qodef-si-inner {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-single-image-holder .qodef-si-inner a, .qodef-single-image-holder .qodef-si-inner img {
+  position: relative;
+  display: block;
+}
+
+.qodef-single-image-holder.qodef-image-behavior-lightbox .qodef-si-inner a:hover:after {
+  opacity: 1;
+}
+
+.qodef-single-image-holder.qodef-image-behavior-lightbox .qodef-si-inner a:after {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  content: '';
+  background-color: rgba(34, 34, 34, 0.55);
+  opacity: 0;
+  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+
+.qodef-single-image-holder.qodef-image-behavior-zoom .qodef-si-inner {
+  overflow: hidden;
+}
+
+.touch .qodef-single-image-holder.qodef-image-behavior-zoom .qodef-si-inner {
+  cursor: pointer;
+}
+
+.qodef-single-image-holder.qodef-image-behavior-zoom .qodef-si-inner:hover img {
+  -webkit-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  transform: scale(1.04);
+}
+
+.qodef-single-image-holder.qodef-image-behavior-zoom .qodef-si-inner img {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
+.qodef-single-image-holder.qodef-image-behavior-grayscale .qodef-si-inner {
+  overflow: hidden;
+}
+
+.touch .qodef-single-image-holder.qodef-image-behavior-grayscale .qodef-si-inner {
+  cursor: pointer;
+}
+
+.qodef-single-image-holder.qodef-image-behavior-grayscale .qodef-si-inner:hover img {
+  -webkit-filter: grayscale(0);
+  filter: none;
+}
+
+.qodef-single-image-holder.qodef-image-behavior-grayscale .qodef-si-inner img {
+  filter: url("img/desaturate.svg#grayscale");
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  filter: gray;
+  filter: grayscale(100%);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.qodef-single-image-holder.qodef-image-behavior-moving .qodef-si-inner {
+  overflow: hidden;
+  padding: 10% 0;
+  background-repeat: no-repeat;
+  background-position: 0 center;
+  background-size: 120%;
+  -webkit-transition: background .7s ease-out;
+  transition: background .7s ease-out;
+}
+
+.qodef-single-image-holder.qodef-image-behavior-moving .qodef-si-inner:hover {
+  background-position: 90% center;
+}
+
+.touch .qodef-single-image-holder.qodef-image-behavior-moving .qodef-si-inner {
+  cursor: pointer;
+}
+
+.qodef-single-image-holder.qodef-image-behavior-moving .qodef-si-inner img {
+  z-index: -1;
+  max-width: 80%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-single-image-holder.qodef-image-behavior-moving .qodef-si-inner {
+    padding: 0;
+    background: none;
+  }
+  .qodef-single-image-holder.qodef-image-behavior-moving .qodef-si-inner img {
+    z-index: inherit;
+    max-width: 100%;
+  }
+}
+
+/* ==========================================================================
+   Single Image shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Social Share shortcode style - begin
+   ========================================================================== */
+.qodef-social-share-holder {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.qodef-social-share-holder .qodef-social-title {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 13px 0;
+}
+
+.qodef-social-share-holder ul {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.qodef-social-share-holder li {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+}
+
+.qodef-social-share-holder li a {
+  font-size: 14px;
+  line-height: 32px;
+  display: inline-block;
+}
+
+.qodef-social-share-holder.qodef-list li {
+  margin-right: 13px;
+}
+
+.qodef-social-share-holder.qodef-list li:last-child {
+  margin-right: 0;
+}
+
+.qodef-social-share-holder.qodef-text li {
+  font-size: 15px;
+  font-weight: 700;
+  margin-right: 45px;
+  position: relative;
+}
+
+.qodef-social-share-holder.qodef-text li:after {
+  content: '';
+  background: silver;
+  height: 1px;
+  width: 26px;
+  position: absolute;
+  top: 55%;
+  right: -33px;
+}
+
+.qodef-social-share-holder.qodef-text li:last-child {
+  margin-right: 0;
+}
+
+.qodef-social-share-holder.qodef-text li:last-child:after {
+  display: none;
+}
+
+.qodef-social-share-holder.qodef-dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.qodef-social-share-holder.qodef-dropdown:hover .qodef-social-share-dropdown ul li {
+  opacity: 1;
+  visibility: visible;
+  cursor: pointer;
+  /* opacity and visibility need to be different, but not background-color */
+}
+
+.qodef-social-share-holder.qodef-dropdown:hover .qodef-social-share-dropdown ul li:nth-child(2) {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+.qodef-social-share-holder.qodef-dropdown:hover .qodef-social-share-dropdown ul li:nth-child(3) {
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+.qodef-social-share-holder.qodef-dropdown:hover .qodef-social-share-dropdown ul li:nth-child(4) {
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+
+.qodef-social-share-holder.qodef-dropdown:hover .qodef-social-share-dropdown ul li:nth-child(5) {
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.qodef-social-share-holder.qodef-dropdown:hover .qodef-social-share-dropdown ul li:nth-child(6) {
+  -webkit-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+}
+
+.qodef-social-share-holder.qodef-dropdown:hover .qodef-social-share-dropdown ul li:nth-child(7) {
+  -webkit-transition-delay: 0.7s;
+  transition-delay: 0.7s;
+}
+
+.qodef-social-share-holder.qodef-dropdown .qodef-social-share-dropdown-opener {
+  display: block;
+}
+
+.qodef-social-share-holder.qodef-dropdown .qodef-social-share-dropdown-opener .qodef-social-share-title {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5px;
+}
+
+.qodef-social-share-holder.qodef-dropdown .qodef-social-share-dropdown {
+  position: absolute;
+  visibility: hidden;
+  z-index: 950;
+}
+
+.qodef-social-share-holder.qodef-dropdown .qodef-social-share-dropdown ul {
+  position: relative;
+  display: block;
+  z-index: 990;
+  margin: 0;
+  padding: 0 !important;
+}
+
+.qodef-social-share-holder.qodef-dropdown .qodef-social-share-dropdown li {
+  position: absolute;
+  display: block;
+  text-align: center;
+  visibility: hidden;
+  overflow: hidden;
+  opacity: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: opacity .2s ease-out, visibility .2s ease-out;
+  transition: opacity .2s ease-out, visibility .2s ease-out;
+}
+
+.qodef-social-share-holder.qodef-dropdown .qodef-social-share-dropdown li a {
+  -webkit-transition: color .2s ease-out, background-color .2s ease-out;
+  transition: color .2s ease-out, background-color .2s ease-out;
+}
+
+.qodef-social-share-holder.qodef-dropdown .qodef-social-share-dropdown li * {
+  display: block;
+  line-height: inherit;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown {
+  bottom: 0;
+  left: 0;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li {
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #f1f1f1;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li:not(:first-child) {
+  border-top: none;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li.qodef-facebook-share a:hover {
+  background-color: #3b5998;
+  color: #fff;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li.qodef-twitter-share a:hover {
+  background-color: #00aced;
+  color: #fff;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li.qodef-google_plus-share a:hover {
+  background-color: #dd4b39;
+  color: #fff;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li.qodef-linkedin-share a:hover {
+  background-color: #007bb5;
+  color: #fff;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li.qodef-tumblr-share a:hover {
+  background-color: #32506d;
+  color: #fff;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li.qodef-pinterest-share a:hover {
+  background-color: #cb2027;
+  color: #fff;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li.qodef-vk-share a:hover {
+  background-color: #45668e;
+  color: #fff;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li a {
+  font-size: 12px;
+  color: #000;
+  background-color: #fff;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li:nth-child(1) {
+  bottom: -30px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li:nth-child(2) {
+  bottom: -60px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li:nth-child(3) {
+  bottom: -90px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li:nth-child(4) {
+  bottom: -120px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li:nth-child(5) {
+  bottom: -150px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li:nth-child(6) {
+  bottom: -180px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-bottom .qodef-social-share-dropdown li:nth-child(7) {
+  bottom: -210px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-right .qodef-social-share-dropdown {
+  top: 0;
+  right: 0;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-right .qodef-social-share-dropdown li {
+  width: calc(90px / 3);
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-right .qodef-social-share-dropdown li:nth-child(1) {
+  left: 5px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-right .qodef-social-share-dropdown li:nth-child(2) {
+  left: 35px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-right .qodef-social-share-dropdown li:nth-child(3) {
+  left: 65px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-right .qodef-social-share-dropdown li:nth-child(4) {
+  left: 95px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-right .qodef-social-share-dropdown li:nth-child(5) {
+  left: 125px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-right .qodef-social-share-dropdown li:nth-child(6) {
+  left: 155px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-right .qodef-social-share-dropdown li:nth-child(7) {
+  left: 185px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-left .qodef-social-share-dropdown {
+  top: 0;
+  left: 0;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-left .qodef-social-share-dropdown li {
+  width: calc(90px / 3);
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-left .qodef-social-share-dropdown li:nth-child(1) {
+  right: 5px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-left .qodef-social-share-dropdown li:nth-child(2) {
+  right: 35px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-left .qodef-social-share-dropdown li:nth-child(3) {
+  right: 65px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-left .qodef-social-share-dropdown li:nth-child(4) {
+  right: 95px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-left .qodef-social-share-dropdown li:nth-child(5) {
+  right: 125px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-left .qodef-social-share-dropdown li:nth-child(6) {
+  right: 155px;
+}
+
+.qodef-social-share-holder.qodef-dropdown.qodef-left .qodef-social-share-dropdown li:nth-child(7) {
+  right: 185px;
+}
+
+/* ==========================================================================
+   Social Share shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Stacked Images style - begin
+   ========================================================================== */
+.qodef-stacked-images-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-stacked-images-holder.qodef-si-position-left .qodef-si-images {
+  margin: 35px 0 0 35px;
+}
+
+.qodef-stacked-images-holder.qodef-si-position-left .qodef-si-images .qodef-si-stack-image {
+  left: -35px;
+}
+
+.qodef-stacked-images-holder.qodef-si-position-right .qodef-si-images {
+  margin: 35px 35px 0 0;
+}
+
+.qodef-stacked-images-holder.qodef-si-position-right .qodef-si-images .qodef-si-stack-image {
+  right: -35px;
+}
+
+.qodef-stacked-images-holder.qodef-si-has-shadow .qodef-si-first-image {
+  -webkit-box-shadow: -5.13px -14.095px 21px 0px rgba(0, 0, 0, 0.03);
+  box-shadow: -5.13px -14.095px 21px 0px rgba(0, 0, 0, 0.03);
+}
+
+.qodef-stacked-images-holder.qodef-si-has-shadow .qodef-si-stack-image {
+  -webkit-box-shadow: 9.642px -11.491px 52.92px 1.08px rgba(0, 0, 0, 0.03);
+  box-shadow: 9.642px -11.491px 52.92px 1.08px rgba(0, 0, 0, 0.03);
+}
+
+.qodef-stacked-images-holder .qodef-si-images {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  top: 50px;
+  opacity: 0;
+  -webkit-transition: opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1), top 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1), top 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.qodef-stacked-images-holder .qodef-si-images.qodef-appeared {
+  opacity: 1;
+  top: 0;
+}
+
+.qodef-stacked-images-holder .qodef-si-images.qodef-appeared .qodef-si-stack-image {
+  top: -35px;
+}
+
+@media only screen and (max-width: 680px) {
+  .qodef-stacked-images-holder .qodef-si-images.qodef-appeared .qodef-si-stack-image {
+    width: 70%;
+  }
+}
+
+.qodef-stacked-images-holder .qodef-si-images .qodef-si-stack-image {
+  width: 50%;
+  position: absolute;
+  top: 100px;
+  display: block;
+  -webkit-transition: top 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: top 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* ==========================================================================
+   Stacked Images style - end
+   ========================================================================== */
+/* ==========================================================================
+   Tabs shortcode style - begin
+   ========================================================================== */
+.qodef-tabs {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-tabs .qodef-tabs-nav {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.qodef-tabs .qodef-tabs-nav li {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.qodef-tabs .qodef-tabs-nav li a {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: color .2s ease-out, background-color .2s ease-out, border-color .2s ease-out;
+  transition: color .2s ease-out, background-color .2s ease-out, border-color .2s ease-out;
+}
+
+.qodef-tabs .qodef-tab-container {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-tabs .qodef-tab-container p {
+  margin: 0;
+}
+
+.qodef-tabs.qodef-tabs-standard .qodef-tabs-nav li a {
+  padding: 3px 31px;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 47px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: #000000;
+  border-bottom: 2px solid #d6d6d6;
+  background-color: transparent;
+}
+
+.qodef-tabs.qodef-tabs-standard .qodef-tabs-nav li.ui-state-active a,
+.qodef-tabs.qodef-tabs-standard .qodef-tabs-nav li.ui-state-hover a {
+  border-bottom: 2px solid #000;
+}
+
+.qodef-tabs.qodef-tabs-standard .qodef-tab-container {
+  margin: 50px 0 0;
+}
+
+.qodef-tabs.qodef-tabs-boxed .qodef-tabs-nav li {
+  margin: 0 12px 0 0;
+}
+
+.qodef-tabs.qodef-tabs-boxed .qodef-tabs-nav li a {
+  padding: 7px 26px;
+  font-size: 16px;
+  line-height: 47px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fff;
+  background-color: #222222;
+}
+
+.qodef-tabs.qodef-tabs-boxed .qodef-tabs-nav li.ui-state-active a,
+.qodef-tabs.qodef-tabs-boxed .qodef-tabs-nav li.ui-state-hover a {
+  color: #000;
+  background-color: #edf7fa;
+}
+
+.qodef-tabs.qodef-tabs-boxed .qodef-tabs-nav li:last-child {
+  margin: 0;
+}
+
+.qodef-tabs.qodef-tabs-boxed .qodef-tab-container {
+  margin: 50px 0 0;
+}
+
+.qodef-tabs.qodef-tabs-simple .qodef-tabs-nav {
+  border-bottom: 2px solid #f1f1f1;
+}
+
+.qodef-tabs.qodef-tabs-simple .qodef-tabs-nav li {
+  margin: 0 31px 0 0;
+}
+
+.qodef-tabs.qodef-tabs-simple .qodef-tabs-nav li a {
+  padding: 13px 0;
+  font-size: 16px;
+  line-height: 47px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #999;
+}
+
+.qodef-tabs.qodef-tabs-simple .qodef-tabs-nav li.ui-state-active a,
+.qodef-tabs.qodef-tabs-simple .qodef-tabs-nav li.ui-state-hover a {
+  color: #222222;
+}
+
+.qodef-tabs.qodef-tabs-simple .qodef-tabs-nav li:last-child {
+  margin: 0;
+}
+
+.qodef-tabs.qodef-tabs-simple .qodef-tab-container {
+  padding: 50px 0;
+  border-bottom: 2px solid #f1f1f1;
+}
+
+.qodef-tabs.qodef-tabs-vertical {
+  display: table;
+}
+
+.qodef-tabs.qodef-tabs-vertical .qodef-tabs-nav {
+  display: table-cell;
+  vertical-align: top;
+  width: 140px;
+  height: 100%;
+  border-right: 2px solid #f1f1f1;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-tabs.qodef-tabs-vertical .qodef-tabs-nav li {
+  display: block;
+  float: none;
+  margin: 0 0 24px;
+}
+
+.qodef-tabs.qodef-tabs-vertical .qodef-tabs-nav li a {
+  font-size: 16px;
+  line-height: 26px;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #999;
+}
+
+.qodef-tabs.qodef-tabs-vertical .qodef-tabs-nav li.ui-state-active a,
+.qodef-tabs.qodef-tabs-vertical .qodef-tabs-nav li.ui-state-hover a {
+  color: #222222;
+}
+
+.qodef-tabs.qodef-tabs-vertical .qodef-tabs-nav li:last-child {
+  margin: 0;
+}
+
+.qodef-tabs.qodef-tabs-vertical .qodef-tab-container {
+  display: table-cell;
+  vertical-align: top;
+  width: calc(100% - 140px);
+  height: 100%;
+  padding: 0 0 0 45px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.ui-widget-content {
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  border-radius: 0;
+}
+
+.ui-widget-content .ui-widget-header {
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  color: initial;
+  background: none;
+  border: 0;
+  border-radius: 0;
+}
+
+.ui-widget-content .ui-tabs-nav li {
+  position: initial;
+  font-weight: inherit;
+  color: inherit;
+  background: initial;
+  border: 0;
+  border-radius: 0;
+}
+
+.ui-widget-content .ui-widget-content {
+  color: inherit;
+  background: none;
+  border: 0;
+  border-radius: 0;
+}
+
+/* ==========================================================================
+   Tabs shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Team shortcode style - begin
+   ========================================================================== */
+.qodef-team-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-team-holder .qodef-team-image {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-team-holder .qodef-team-image img {
+  display: block;
+  padding-right: 32px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 768px) {
+  .qodef-team-holder .qodef-team-image img {
+    padding-right: 0;
+  }
+}
+
+.qodef-team-holder .qodef-team-info {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  margin: 22px 0 0;
+}
+
+.qodef-team-holder .qodef-team-name {
+  margin: 0;
+}
+
+.qodef-team-holder .qodef-team-position {
+  font-size: 16px;
+  margin: 1px 0 0;
+}
+
+.qodef-team-holder .qodef-team-text {
+  margin: 10px 0 0;
+}
+
+.qodef-team-holder .qodef-team-social-wrapper {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 1;
+  opacity: 0;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+}
+
+.qodef-team-holder .qodef-team-social-outer {
+  position: relative;
+  display: table;
+  table-layout: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.qodef-team-holder .qodef-team-social-inner {
+  position: relative;
+  display: table-cell;
+  height: 100%;
+  width: 100%;
+  padding: 20px 40px 33px;
+  vertical-align: bottom;
+  -webkit-transform: translate3d(0, 40px, 0);
+  transform: translate3d(0, 40px, 0);
+  -webkit-transition: -webkit-transform .2s ease;
+  transition: -webkit-transform .2s ease;
+  transition: transform .2s ease;
+  transition: transform .2s ease, -webkit-transform .2s ease;
+}
+
+.qodef-team-holder .qodef-team-social-holder {
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-transform-origin: top right;
+  -ms-transform-origin: top right;
+  transform-origin: top right;
+  -webkit-transform: rotate(-90deg) translateY(-100%);
+  -ms-transform: rotate(-90deg) translateY(-100%);
+  transform: rotate(-90deg) translateY(-100%);
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-team-holder .qodef-team-social-holder {
+    position: relative;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    margin-top: 23px;
+  }
+}
+
+.qodef-team-holder .qodef-team-social-holder .qodef-team-social-text {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 16px;
+  margin-left: 45px;
+  position: relative;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: color .2s, -webkit-transform .2s;
+  transition: color .2s, -webkit-transform .2s;
+  transition: transform .2s, color .2s;
+  transition: transform .2s, color .2s, -webkit-transform .2s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+@media only screen and (max-width: 768px) {
+  .qodef-team-holder .qodef-team-social-holder .qodef-team-social-text {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  .qodef-team-holder .qodef-team-social-holder .qodef-team-social-text:first-child {
+    margin-left: 0;
+  }
+}
+
+.qodef-team-holder .qodef-team-social-holder .qodef-team-social-text:nth-child(2) {
+  -webkit-transition: color .2s, -webkit-transform .2s .1s;
+  transition: color .2s, -webkit-transform .2s .1s;
+  transition: transform .2s .1s, color .2s;
+  transition: transform .2s .1s, color .2s, -webkit-transform .2s .1s;
+}
+
+.qodef-team-holder .qodef-team-social-holder .qodef-team-social-text:nth-child(3) {
+  -webkit-transition: color .2s, -webkit-transform .2s .2s;
+  transition: color .2s, -webkit-transform .2s .2s;
+  transition: transform .2s .2s, color .2s;
+  transition: transform .2s .2s, color .2s, -webkit-transform .2s .2s;
+}
+
+.qodef-team-holder .qodef-team-social-holder .qodef-team-social-text:nth-child(4) {
+  -webkit-transition: color .2s, -webkit-transform .2s .3s;
+  transition: color .2s, -webkit-transform .2s .3s;
+  transition: transform .2s .3s, color .2s;
+  transition: transform .2s .3s, color .2s, -webkit-transform .2s .3s;
+}
+
+.qodef-team-holder .qodef-team-social-holder .qodef-team-social-text:nth-child(5) {
+  -webkit-transition: color .2s, -webkit-transform .2s .4s;
+  transition: color .2s, -webkit-transform .2s .4s;
+  transition: transform .2s .4s, color .2s;
+  transition: transform .2s .4s, color .2s, -webkit-transform .2s .4s;
+}
+
+.qodef-team-holder .qodef-team-social-holder .qodef-team-social-text:nth-child(6) {
+  -webkit-transition: color .2s, -webkit-transform .2s .5s;
+  transition: color .2s, -webkit-transform .2s .5s;
+  transition: transform .2s .5s, color .2s;
+  transition: transform .2s .5s, color .2s, -webkit-transform .2s .5s;
+}
+
+.qodef-team-holder .qodef-team-social-holder .qodef-team-social-text span:after {
+  content: '';
+  background: #c0c0c0;
+  height: 1px;
+  width: 26px;
+  position: absolute;
+  top: 55%;
+  right: -37px;
+}
+
+.qodef-team-holder .qodef-team-social-holder .qodef-team-social-text:last-child span:after {
+  display: none;
+}
+
+.qodef-team-holder:hover .qodef-team-social-holder .qodef-team-social-text {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.qodef-team-holder .qodef-team-link {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* ==========================================================================
+   Team shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Text Marquee shortcode style - begin
+   ========================================================================== */
+.qodef-text-marquee {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  white-space: nowrap;
+  color: #edf7fa;
+  font-size: 250px;
+  font-weight: 700;
+  overflow: hidden;
+  line-height: 1em;
+  padding: 5% 0;
+}
+
+.qodef-text-marquee .qodef-marquee-element {
+  padding: 0 25px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  will-change: transform;
+}
+
+/* ==========================================================================
+   Text Marquee shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Title Hero Section - begin
+   ========================================================================== */
+.qodef-title-hero-section-holder {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.qodef-title-hero-section-holder.qodef-title-hero-section-loaded .qodef-title-hero-section-main-title {
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.qodef-title-hero-section-holder.qodef-title-hero-section-loaded .qodef-title-hero-section-main-title h1 {
+  background-position: -48px 27px;
+}
+
+.qodef-title-hero-section-holder.qodef-title-hero-section-loaded .qodef-title-hero-section-main-title .qodef-sagen-bottom-underline {
+  background-position: -10px 191px;
+}
+
+.qodef-title-hero-section-holder.qodef-title-hero-section-loaded .svg-scroll-down {
+  opacity: 1;
+}
+
+.qodef-title-hero-section-holder .qodef-title-hero-section-main-title {
+  top: 46%;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, -60%);
+  -ms-transform: translate(-50%, -60%);
+  transform: translate(-50%, -60%);
+  z-index: 123;
+  opacity: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.qodef-title-hero-section-holder .qodef-title-hero-section-main-title h1 {
+  font-family: "Playfair Display", sans-serif;
+  font-size: 180px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: none;
+  background: url("/wp-content/plugins/sagen-core/assets/img/SagenBG.jpg") repeat-x;
+  background-clip: border-box;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-position: -48px 227px;
+  -webkit-transition: 1s cubic-bezier(0, 0.78, 0.42, 0.99);
+  transition: 1s cubic-bezier(0, 0.78, 0.42, 0.99);
+}
+
+.qodef-title-hero-section-holder .qodef-title-hero-section-main-title .qodef-sagen-bottom-underline {
+  font-family: "Playfair Display", sans-serif;
+  font-size: 154px;
+  font-weight: 700;
+  text-transform: none;
+  background: url("/wp-content/plugins/sagen-core/assets/img/SagenBG.jpg") repeat-x;
+  background-clip: border-box;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  line-height: 2em;
+  position: absolute;
+  top: 24px;
+  left: 40%;
+  background-position: -10px 251px;
+  -webkit-transition: 1s cubic-bezier(0, 0.78, 0.42, 0.99);
+  transition: 1s cubic-bezier(0, 0.78, 0.42, 0.99);
+}
+
+.qodef-title-hero-section-holder .qodef-title-hero-section-brush-svg {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+}
+
+.qodef-title-hero-section-holder .qodef-title-hero-section-brush-svg:nth-of-type(2) {
+  width: 600px;
+  height: 600px;
+}
+
+.qodef-title-hero-section-holder .qodef-title-hero-section-brush-svg:nth-of-type(3) {
+  width: 500px;
+  height: 500px;
+}
+
+.qodef-title-hero-section-holder .qodef-title-hero-section-brush-svg:nth-of-type(4) {
+  width: 400px;
+  height: 400px;
+}
+
+.qodef-title-hero-section-holder .qodef-title-hero-section-brush-svg mask path {
+  opacity: 0;
+  stroke-dasharray: 700;
+  stroke-dashoffset: 700;
+  -webkit-transition: opacity 1s, stroke-dashoffset .1s 1s;
+  transition: opacity 1s, stroke-dashoffset .1s 1s;
+}
+
+.qodef-title-hero-section-holder .qodef-title-hero-section-brush-svg.svg-animate mask path {
+  opacity: 1;
+  stroke-dashoffset: 0 !important;
+  -webkit-transition: opacity 1s, stroke-dashoffset 2s .3s;
+  transition: opacity 1s, stroke-dashoffset 2s .3s;
+}
+
+.qodef-title-hero-section-holder .svg-scroll-down {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -7px;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 115px;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 123;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-transition: 1s .5s;
+  transition: 1s .5s;
+}
+
+.qodef-title-hero-section-holder .svg-scroll-down p {
+  font-size: 13px;
+  font-family: "Oswald", sans-serif;
+  color: #1b1b1b;
+}
+
+.qodef-title-hero-section-holder .svg-scroll-down svg {
+  width: 150px;
+  height: 115px;
+  margin-top: -25px;
+}
+
+.qodef-title-hero-section-holder .svg-scroll-down .svg-scroll-down-arrow {
+  -webkit-animation: 2s qodef-move-down infinite;
+  animation: 2s qodef-move-down infinite;
+}
+
+.qodef-title-hero-section-holder .svg-scroll-down .svg-scroll-down-circle {
+  -webkit-animation: 2s qodef-move-down infinite;
+  animation: 2s qodef-move-down infinite;
+}
+
+@-webkit-keyframes qodef-move-down {
+  0%, 20%, 100% {
+    -webkit-transform: translateY(40px);
+    transform: translateY(40px);
+  }
+  50% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes qodef-move-down {
+  0%, 20%, 100% {
+    -webkit-transform: translateY(40px);
+    transform: translateY(40px);
+  }
+  50% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   Title Hero Section - end
+   ========================================================================== */
+/* ==========================================================================
+   Vertical Carousel shortcode style - begin
+   ========================================================================== */
+.qodef-vertical-carousel {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.qodef-vertical-carousel.qodef-initialized {
+  visibility: visible;
+}
+
+.qodef-vertical-carousel > div {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  width: 49.5%;
+}
+
+.qodef-vertical-carousel .qodef-vc-images-holder .qodef-vc-images-slider {
+  height: 692px;
+  position: relative;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+@media only screen and (max-width: 680px) {
+  .qodef-vertical-carousel .qodef-vc-images-holder .qodef-vc-images-slider {
+    height: 450px;
+  }
+}
+
+.qodef-vertical-carousel .qodef-vc-images-holder .qodef-vc-images-slider-item {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+.qodef-vertical-carousel .qodef-vc-images-holder .qodef-vc-item-image {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.qodef-vertical-carousel .qodef-vc-content-holder {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-vertical-carousel .qodef-vc-content {
+  padding-left: 12%;
+  padding-right: 33%;
+}
+
+.qodef-vertical-carousel .qodef-vc-content-tas {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-vertical-carousel .qodef-vc-content-tas > * {
+  margin: 0;
+}
+
+.qodef-vertical-carousel .qodef-vc-content-tas .qodef-vc-title {
+  position: relative;
+}
+
+.qodef-vertical-carousel .qodef-vc-content-tas .qodef-separator-holder {
+  border-bottom: 1px solid currentColor;
+  width: 40px;
+  margin-bottom: 25px;
+  margin-top: 2px;
+}
+
+.qodef-vertical-carousel .qodef-vc-content-tas .qodef-vc-subtitle {
+  margin-bottom: 18px;
+  font-size: 17px;
+  line-height: 1.5em;
+  letter-spacing: .02em;
+  width: 82%;
+}
+
+.qodef-vertical-carousel .qodef-vc-content-holder-inner {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-vertical-carousel .qodef-vc-content-holder-inner .qodef-vc-bottom-title {
+  margin-bottom: 14px;
+}
+
+.qodef-vertical-carousel .qodef-vc-item-content {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  padding: 6px 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.qodef-vertical-carousel .qodef-vc-item-content > span {
+  display: inline-block;
+  -webkit-transform: translateX(-2px);
+  -ms-transform: translateX(-2px);
+  transform: translateX(-2px);
+  -webkit-transition: .2s;
+  transition: .2s;
+  opacity: 0;
+}
+
+.qodef-vertical-carousel .qodef-vc-item-content .qodef-vc-item-title {
+  display: inline-block;
+  -webkit-transition: .3s;
+  transition: .3s;
+  -webkit-transform: translateX(-15px);
+  -ms-transform: translateX(-15px);
+  transform: translateX(-15px);
+}
+
+.qodef-vertical-carousel .qodef-vc-item-content:last-child {
+  border-bottom: 0;
+}
+
+.qodef-vertical-carousel .qodef-vc-item-content.qodef-active > span {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: .3s .2s;
+  transition: .3s .2s;
+}
+
+.qodef-vertical-carousel .qodef-vc-item-content.qodef-active .qodef-vc-item-title {
+  -webkit-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+}
+
+.qodef-vertical-carousel .qodef-vc-item-content > * {
+  margin: 0;
+}
+
+.qodef-vertical-carousel .qodef-vc-images-slider-item.qodef-prev {
+  z-index: 50;
+}
+
+.qodef-vertical-carousel .qodef-vc-images-slider-item.qodef-active {
+  z-index: 100;
+}
+
+.qodef-vertical-carousel .qodef-vc-images-slider-item {
+  -webkit-animation: qodefVcNonActiveImage 1s forwards;
+  animation: qodefVcNonActiveImage 1s forwards;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.qodef-vertical-carousel .qodef-vc-images-slider-item.qodef-active {
+  -webkit-animation: qodefVcActiveImage 1s forwards, qodefVcActiveImageClipPath 1s forwards;
+  animation: qodefVcActiveImage 1s forwards, qodefVcActiveImageClipPath 1s forwards;
+}
+
+.qodef-vertical-carousel .qodef-vc-images-slider-item.qodef-active .qodef-it-item-content {
+  visibility: visible;
+}
+
+@-webkit-keyframes qodefVcActiveImage {
+  0% {
+    clip-path: inset(0 100% 0 0);
+    -webkit-clip-path: inset(0 100% 0 0);
+    -webkit-transform: translateX(-100px) scale(1);
+    transform: translateX(-100px) scale(1);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    -webkit-clip-path: inset(0 0 0 0);
+    -webkit-transform: translateX(0) scale(1);
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes qodefVcActiveImage {
+  0% {
+    clip-path: inset(0 100% 0 0);
+    -webkit-clip-path: inset(0 100% 0 0);
+    -webkit-transform: translateX(-100px) scale(1);
+    transform: translateX(-100px) scale(1);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    -webkit-clip-path: inset(0 0 0 0);
+    -webkit-transform: translateX(0) scale(1);
+    transform: translateX(0) scale(1);
+  }
+}
+
+@-webkit-keyframes qodefVcActiveImageClipPath {
+  0% {
+    clip-path: inset(0 100% 0 0);
+    -webkit-clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    -webkit-clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes qodefVcActiveImageClipPath {
+  0% {
+    clip-path: inset(0 100% 0 0);
+    -webkit-clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    -webkit-clip-path: inset(0 0 0 0);
+  }
+}
+
+@-webkit-keyframes qodefVcNonActiveImage {
+  0% {
+    -webkit-transform: translateX(0) scale(1);
+    transform: translateX(0) scale(1);
+  }
+  100% {
+    -webkit-transform: translateX(100px) scale(1);
+    transform: translateX(100px) scale(1);
+  }
+}
+
+@keyframes qodefVcNonActiveImage {
+  0% {
+    -webkit-transform: translateX(0) scale(1);
+    transform: translateX(0) scale(1);
+  }
+  100% {
+    -webkit-transform: translateX(100px) scale(1);
+    transform: translateX(100px) scale(1);
+  }
+}
+
+/* ==========================================================================
+   Vertical Carousel shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Video Button shortcode start styles
+   ========================================================================== */
+.qodef-video-button-holder {
+  position: relative;
+  display: block;
+  vertical-align: middle;
+}
+
+.qodef-video-button-holder.qodef-vb-has-img .qodef-video-button-play,
+.qodef-video-button-holder.qodef-vb-has-img .qodef-video-button-play-image {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.qodef-video-button-holder.qodef-vb-has-img .qodef-video-button-play .qodef-video-button-play-inner,
+.qodef-video-button-holder.qodef-vb-has-img .qodef-video-button-play-image .qodef-video-button-play-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 680px) {
+  .qodef-video-button-holder.qodef-vb-has-img .qodef-video-button-play .qodef-video-button-play-inner svg,
+  .qodef-video-button-holder.qodef-vb-has-img .qodef-video-button-play-image .qodef-video-button-play-inner svg {
+    width: 100px;
+  }
+}
+
+.qodef-video-button-holder.qodef-vb-has-img .qodef-video-button-play .qodef-video-button-play-inner svg .video-button-stroke,
+.qodef-video-button-holder.qodef-vb-has-img .qodef-video-button-play-image .qodef-video-button-play-inner svg .video-button-stroke {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.3);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  position: relative;
+  z-index: -1;
+}
+
+.qodef-video-button-holder.qodef-vb-has-img .qodef-video-button-play .qodef-video-button-play-inner svg .video-button-circle,
+.qodef-video-button-holder.qodef-vb-has-img .qodef-video-button-play-image .qodef-video-button-play-inner svg .video-button-circle {
+  fill: none;
+  stroke: white;
+  -webkit-transform-origin: center center;
+  -ms-transform-origin: center center;
+  transform-origin: center center;
+  stroke-dashoffset: 700;
+  stroke-dasharray: 700;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  stroke-linecap: butt;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
+}
+
+.qodef-video-button-holder.qodef-vb-has-img .qodef-video-button-play:hover svg .video-button-circle,
+.qodef-video-button-holder.qodef-vb-has-img .qodef-video-button-play-image:hover svg .video-button-circle {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 700;
+  -webkit-transition: all 2s cubic-bezier(0.46, 0.08, 0.12, 0.91);
+  transition: all 2s cubic-bezier(0.46, 0.08, 0.12, 0.91);
+}
+
+.qodef-video-button-holder .qodef-video-button-image {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-video-button-holder .qodef-video-button-image img {
+  display: block;
+  width: 100%;
+}
+
+.qodef-video-button-holder .qodef-video-button-play,
+.qodef-video-button-holder .qodef-video-button-play-image {
+  position: relative;
+  display: block;
+  vertical-align: top;
+  z-index: 1;
+}
+
+.qodef-video-button-holder .qodef-video-button-play .qodef-video-button-play-inner,
+.qodef-video-button-holder .qodef-video-button-play-image .qodef-video-button-play-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.qodef-video-button-holder .qodef-video-button-play .qodef-video-button-play-inner svg .video-button-stroke,
+.qodef-video-button-holder .qodef-video-button-play-image .qodef-video-button-play-inner svg .video-button-stroke {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.3);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  position: relative;
+  z-index: -1;
+}
+
+.qodef-video-button-holder .qodef-video-button-play .qodef-video-button-play-inner svg .video-button-circle,
+.qodef-video-button-holder .qodef-video-button-play-image .qodef-video-button-play-inner svg .video-button-circle {
+  fill: none;
+  stroke: white;
+  -webkit-transform-origin: center center;
+  -ms-transform-origin: center center;
+  transform-origin: center center;
+  stroke-dashoffset: 700;
+  stroke-dasharray: 700;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  stroke-linecap: butt;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+.qodef-video-button-holder .qodef-video-button-play:hover svg .video-button-circle,
+.qodef-video-button-holder .qodef-video-button-play-image:hover svg .video-button-circle {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 700;
+}
+
+.qodef-video-button-holder .qodef-video-button-play-image.qodef-vb-has-hover-image:hover img:first-child {
+  opacity: 0;
+}
+
+.qodef-video-button-holder .qodef-video-button-play-image.qodef-vb-has-hover-image:hover img:nth-child(2) {
+  opacity: 1;
+}
+
+.qodef-video-button-holder .qodef-video-button-play-image img {
+  display: block;
+  margin: 0 auto;
+  -webkit-transition: opacity .3s ease-in-out;
+  transition: opacity .3s ease-in-out;
+}
+
+.qodef-video-button-holder .qodef-video-button-play-image img:first-child {
+  position: relative;
+  opacity: 1;
+}
+
+.qodef-video-button-holder .qodef-video-button-play-image img:nth-child(2) {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translateX(-50%) translateZ(0);
+  transform: translateX(-50%) translateZ(0);
+}
+
+.rev_slider_wrapper .qodef-video-button-holder .qodef-video-button-play-image img:nth-child(2) {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* ==========================================================================
+   Video Button shortcode end styles
+   ========================================================================== */
+
+/*# sourceMappingURL=../../../../plugins/sagen-core/assets/css/shortcodes-map.css.map */

@@ -1,0 +1,32 @@
+@include ipad-portrait {
+	.qodef-comparision-table-holder {
+		overflow-x: scroll;
+
+		.qodef-ct-swipe {
+			font-family: $default-heading-font;
+			display: block;
+			position: absolute;
+			top: -30px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		.qodef-ct-table-title,
+		.qodef-ct-features-title {
+
+		}
+
+		.qodef-ct-table {
+			min-width: 150px;
+
+			.qodef-ct-table-content {
+
+				li {
+					> h6 {
+						font-size: 12px;
+					}
+				}
+			}
+		}
+	}
+}

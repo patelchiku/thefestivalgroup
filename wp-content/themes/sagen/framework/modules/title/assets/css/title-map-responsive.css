@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Title responsive styles - begin
+   ========================================================================== */
+/* ==========================================================================
+   Title responsive style - begin
+   ========================================================================== */
+@media only screen and (max-width: 1024px) {
+  .qodef-title-holder:not(.qodef-bg-responsive-disabled).qodef-has-bg-image {
+    height: auto !important;
+    background-image: none !important;
+  }
+  .qodef-title-holder:not(.qodef-bg-responsive-disabled).qodef-has-bg-image .qodef-title-image {
+    display: block;
+  }
+  .qodef-title-holder:not(.qodef-bg-responsive-disabled).qodef-has-bg-image .qodef-title-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 100% !important;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  .qodef-title-holder:not(.qodef-bg-responsive-disabled).qodef-title-va-header-bottom {
+    height: auto !important;
+  }
+  .qodef-title-holder:not(.qodef-bg-responsive-disabled).qodef-title-va-header-bottom .qodef-title-wrapper {
+    padding-top: 0 !important;
+  }
+}
+
+/* ==========================================================================
+   Title responsive style - end
+   ========================================================================== */
+/* ==========================================================================
+   Centered Title type responsive style - begin
+   ========================================================================== */
+@media only screen and (max-width: 1024px) {
+  .qodef-title-holder.qodef-centered-type .qodef-page-subtitle {
+    padding: 0 !important;
+  }
+}
+
+/* ==========================================================================
+   Centered Title type responsive style - end
+   ========================================================================== */
+/* ==========================================================================
+   Standard With Breadcrumbs Title type responsive style - begin
+   ========================================================================== */
+@media only screen and (max-width: 1024px) {
+  .qodef-title-holder.qodef-standard-with-breadcrumbs-type .qodef-title-info,
+  .qodef-title-holder.qodef-standard-with-breadcrumbs-type .qodef-breadcrumbs-info {
+    display: block;
+    width: 100%;
+  }
+  .qodef-title-holder.qodef-standard-with-breadcrumbs-type .qodef-breadcrumbs-info {
+    margin: 10px 0 0;
+    text-align: initial;
+    white-space: inherit;
+  }
+}
+
+/* ==========================================================================
+   Standard With Breadcrumbs Title type responsive style - end
+   ========================================================================== */
+/* ==========================================================================
+   Title responsive styles - end
+   ========================================================================== */
+
+/*# sourceMappingURL=title-map-responsive.css.map */

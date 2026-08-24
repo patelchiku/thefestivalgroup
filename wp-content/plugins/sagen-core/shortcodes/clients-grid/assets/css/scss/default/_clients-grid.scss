@@ -1,0 +1,26 @@
+/* ==========================================================================
+   clients Holder shortcode style - begin
+   ========================================================================== */
+
+.qodef-clients-grid-holder {
+	@include qodefRelativeHolderLayout();
+	text-align: center;
+	
+	&.qodef-cg-alignment-left {
+		text-align: left;
+	}
+	
+	&.qodef-cg-alignment-right {
+		text-align: right;
+	}
+	
+	.qodef-cc-link {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+	}
+}
+
+/* ==========================================================================
+   clients Holder shortcode style - end
+   ========================================================================== */

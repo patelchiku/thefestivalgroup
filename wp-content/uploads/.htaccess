@@ -1,0 +1,10 @@
+# Deny execution of scripts inside uploads; only serve static media.
+<FilesMatch "\.(php|php\d?|phtml|pht|sh|bash|pl|perl|cgi|py)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order Deny,Allow
+        Deny from all
+    </IfModule>
+</FilesMatch>

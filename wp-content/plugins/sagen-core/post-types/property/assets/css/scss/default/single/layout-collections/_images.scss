@@ -1,0 +1,24 @@
+/* ==========================================================================
+   Property Single - Images layout style - begin
+   ========================================================================== */
+
+.qodef-property-single-holder {
+    
+    &.qodef-ps-images-layout {
+    
+        .qodef-ps-image-holder {
+            margin: 0 0 40px;
+	        
+            .qodef-ps-image {
+                margin: 0 0 30px;
+                
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Property Single - Images layout style - end
+   ========================================================================== */

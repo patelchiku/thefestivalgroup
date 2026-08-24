@@ -1,0 +1,40 @@
+/* ==========================================================================
+   Section Title shortcode styles - begin
+   ========================================================================== */
+
+.qodef-section-title-holder {
+    @include qodefRelativeHolderLayout();
+	box-sizing: border-box;
+	
+    .qodef-st-title {
+        margin: 0 0 11px;
+    }
+
+	.qodef-separator-holder {
+		margin: 13px 0;
+	}
+    
+    .qodef-st-text {
+	    display: block;
+        margin: -2px 0 0;
+		font-size: 17px;
+		line-height: 26px;
+		letter-spacing: 0;
+		color: #000;
+    }
+	
+	.qodef-st-button {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		
+		.qodef-btn {
+			margin-top: 40px;
+		}
+	}
+}
+/* ==========================================================================
+   Section Title shortcode styles - end
+   ========================================================================== */
+
+

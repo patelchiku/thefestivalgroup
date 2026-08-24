@@ -1,0 +1,122 @@
+/* ==========================================================================
+   Title Hero Section Responsive - begin
+   ========================================================================== */
+
+   .qodef-title-hero-section-holder {
+
+        @media (max-width: 1366px) {
+
+            .qodef-title-hero-section-brush-svg {
+                width: 400px;
+                height: 400px;
+                
+                &:nth-of-type(2) {
+                    width: 400px;
+                    height: 400px;
+                }
+        
+                &:nth-of-type(3) {
+                    width: 300px;
+                    height: 300px;
+                }
+        
+                &:nth-of-type(4) {
+                    width: 200px;
+                    height: 200px;
+                }
+            }
+        }
+
+        // First 2 svg elements get removed with JS from this stage, so first and second refer to different elements
+
+        @include ipad-landscape {
+
+            .qodef-title-hero-section-brush-svg {
+
+                &:nth-of-type(1) {
+                    width: 300px;
+                    height: 300px;
+                }
+                
+                &:nth-of-type(2) {
+                    width: 300px;
+                    height: 300px;
+                }
+            }
+        }
+
+        @include phone-landscape {
+
+            .qodef-title-hero-section-brush-svg {
+
+                &:nth-of-type(1) {
+                    width: 200px;
+                    height: 200px;
+                }
+        
+                &:nth-of-type(2) {
+                    width: 200px;
+                    height: 200px;
+                }
+            }
+        }
+
+        .qodef-title-hero-section-main-title {
+
+            h1 {
+                @include laptop-landscape-mac {
+                    font-size: 140px;
+                }
+
+                @include ipad-landscape {
+                    line-height: 1.3em;
+                }
+
+                @include phone-landscape {
+                    font-size: 80px;
+                    background-position: -51px -7px;
+                }
+            }
+
+            .qodef-sagen-bottom-underline {
+
+                @include laptop-landscape-mac {
+                    font-size: 104px;
+                    line-height: 3em;
+                    top: 0;
+                }
+                
+                @include phone-landscape {
+                    font-size: 78px;
+                    line-height: 4em;
+                    top: -70px;
+                    left: 39%;
+                    background-position: -10px 158px;
+                }
+            }
+        }
+
+        &.qodef-title-hero-section-loaded {
+
+            .qodef-title-hero-section-main-title {
+
+                h1 {
+    
+                    @include phone-landscape {
+                        background-position: -51px -7px;
+                    }
+                }
+    
+                .qodef-sagen-bottom-underline {
+                    
+                    @include phone-landscape {
+                        background-position: -10px 158px;
+                    }
+                }
+            }
+        }
+   }
+
+   /* ==========================================================================
+   Title Hero Section Responsive - end
+   ========================================================================== */

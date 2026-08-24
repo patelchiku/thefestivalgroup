@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Property Item Layout - Gallery Slide From Image Bottom style - begin
+   ========================================================================== */
+
+.qodef-property-list-holder {
+	
+	&.qodef-pl-gallery-slide-from-image-bottom {
+		
+		&.qodef-pl-has-shadow {
+			
+			.qodef-pl-item-inner {
+				box-shadow: $default-box-shadow;
+			}
+		}
+		
+		article {
+			
+			&:hover {
+				
+				.qodef-pli-text-holder {
+					transform: translateY(0);
+				}
+				
+				.qodef-pli-text-wrapper {
+					transform: translateY(0);
+				}
+			}
+			
+			.qodef-pl-item-inner {
+				overflow: hidden;
+			}
+		}
+		
+		.qodef-pli-text-holder {
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: auto;
+			bottom: 0;
+			left: 0;
+			padding: 28px 40px;
+			background-color: #000;
+			overflow: hidden;
+			box-sizing: border-box;
+			transform: translateY(100%);
+			transition: .5s cubic-bezier(0.26, 0.53, 0.58, 1);
+
+			.qodef-pli-text-left,
+			.qodef-pli-text-right {
+				display: inline-block;
+			}
+
+			.qodef-pli-title {
+				color: #fff;
+			}
+
+			.qodef-pli-category-holder {
+				margin: 0 0 3px;
+
+				a {
+					color: #a0a0a0;
+				}
+			}
+		}
+		
+		.qodef-pli-text-wrapper {
+			transform: translateY(-300%);
+			transition: .5s cubic-bezier(0.21, 0.53, 0.58, 1);
+		}
+
+		.qodef-pli-link {
+			@include qodefAbsoluteHolderLayout();
+		}
+	}
+}
+/* ==========================================================================
+   Property Item Layout - Gallery Slide From Image Bottom style - end
+   ========================================================================== */

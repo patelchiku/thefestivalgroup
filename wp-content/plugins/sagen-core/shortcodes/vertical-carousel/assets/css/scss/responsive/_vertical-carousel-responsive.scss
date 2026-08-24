@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Vertical Carousel shortcode responsive style - begin
+   ========================================================================== */
+.qodef-vertical-carousel {
+
+	@media (max-width: 1680px) {
+
+		.qodef-vc-content {
+			padding-right: 13%;
+		}
+	}
+	
+	@media (max-width: 1440px) {
+
+		.qodef-vc-content {
+			padding-right: 3%;
+		}
+		
+		.qodef-vc-images-holder {
+			
+			.swiper-container {
+				height: 562px;
+			}
+		}
+	}
+	
+	@include ipad-landscape {
+		
+		.qodef-vc-content {
+			padding: 32px 10%;
+		}
+		
+		.qodef-vc-content-tas {
+			
+			.qodef-vc-title {
+				margin: 20px 0;
+			}
+		}
+	}
+	
+	@include ipad-portrait {
+		> div {
+			width: 100%;
+		}
+
+		flex-direction: column-reverse;
+
+		.qodef-vc-images-holder {
+			
+			.swiper-container {
+				height: 300px;
+			}
+		}
+		
+		.qodef-vc-content {
+			padding: 0 10% 60px;
+		}
+		
+		.qodef-vc-content-tas {
+			margin: 20px 0;
+		}
+	}
+	
+	@include phone-landscape {
+		
+		.qodef-vc-content {
+			padding: 0 37px 90px;
+		}
+	}
+}
+/* ==========================================================================
+   Vertical Carousel shortcode responsive style - end
+   ========================================================================== */

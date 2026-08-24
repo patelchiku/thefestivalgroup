@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Social Text Group widget style - begin
+   ========================================================================== */
+.qodef-social-texts-group-widget .qodef-social-text-widget-holder {
+  font-size: 15px;
+  font-weight: 700;
+  margin-right: 45px;
+  position: relative;
+}
+
+.qodef-social-texts-group-widget .qodef-social-text-widget-holder:after {
+  content: '';
+  background: silver;
+  height: 1px;
+  width: 26px;
+  position: absolute;
+  top: 55%;
+  right: -33px;
+}
+
+.qodef-social-texts-group-widget .qodef-social-text-widget-holder:last-child {
+  margin-right: 0;
+}
+
+.qodef-social-texts-group-widget .qodef-social-text-widget-holder:last-child:after {
+  display: none;
+}
+
+/* ==========================================================================
+   Social Text Group widget style - end
+   ========================================================================== */
+
+/*# sourceMappingURL=social-icons-group-widget-map.css.map */

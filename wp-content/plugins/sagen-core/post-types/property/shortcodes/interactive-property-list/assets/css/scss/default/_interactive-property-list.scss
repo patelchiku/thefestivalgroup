@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Interactive portfolio showcase shortcode style - begin
+   ========================================================================== */
+
+.qodef-ips {
+    display: block;
+
+    .qodef-ips-holder {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+    }
+    .qodef-ips-image-holder {
+        position: relative;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .qodef-ips-content-holder {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .qodef-ips-content-table {
+        @include qodefTableLayout();
+    }
+    .qodef-ips-content-table-cell {
+        @include qodefTableCellLayout();
+        padding: 0 7.8%;
+        box-sizing: border-box;
+    }
+    .qodef-ips-item-content {
+        text-align: center;
+    }
+
+    .qodef-ips-item-content-copy {
+        display: none;
+        font-weight: 600;
+    }
+    .qodef-ips-item-link {
+        position: relative;
+        text-align: center !important;
+        display: inline-block;
+        opacity: 1;
+        font-size: 50px;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        line-height: 1.1em;
+        font-family: $default-heading-font;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .qodef-ips-item-content {
+        opacity: 1;
+    }
+
+    .qodef-ips-content-holder {
+        position: relative;
+    }
+
+
+    &.qodef-ips-light {
+        .qodef-ips-item-content .qodef-ips-item-link {
+            color: #fff!important;
+        }
+        .qodef-ips-item-content.active .qodef-ips-item-link{
+            color: $first-main-color!important;
+        }
+    }
+}
+
+/* ==========================================================================
+   Interactive portfolio showcase shortcode style - end
+   ========================================================================== */

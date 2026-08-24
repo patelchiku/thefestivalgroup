@@ -1,0 +1,208 @@
+/* ==========================================================================
+   Image Gallery shortcode style - begin
+   ========================================================================== */
+
+.qodef-image-gallery {
+	@include qodefRelativeHolderLayout();
+
+	&.qodef-ig-slider-type {
+		.owl-stage-outer {
+			margin-left: 39px;
+		}
+
+		.owl-nav {
+			.owl-prev {
+				left: 60px;
+			}
+		}
+
+		.owl-dots {
+			position: absolute;
+			left: 0;
+			top: 0;
+			transform-origin: 0 100%;
+			// 36px is height of holder, 10px is padding of the holder
+			transform: rotate(-90deg) translate(calc(-100% + 36px + 10px), 100%);
+		}
+	}
+
+	&.qodef-ig-carousel-type {
+		.owl-dots {
+			margin: 37px 0 0;
+		}
+	}
+	
+	&.qodef-has-shadow {
+	
+		.qodef-ig-image-inner {
+			box-shadow: $default-box-shadow;
+		}
+
+		&.qodef-ig-slider-type,
+		&.qodef-ig-carousel-type {
+			
+			.owl-stage-outer {
+				padding: 0 0 20px;
+			}
+			
+			.qodef-ig-image {
+				box-shadow: $default-box-shadow;
+			}
+		}
+	}
+	
+	.qodef-ig-image {
+		
+		a, img {
+			position: relative;
+			display: block;
+		}
+	}
+	
+	.qodef-ig-image-inner {
+		@include qodefRelativeHolderLayout();
+	}
+	
+	.qodef-ig-slider {
+		@include qodefRelativeHolderLayout();
+	}
+	
+	/***** Image Gallery Masonry Style - begin *****/
+	
+	&.qodef-ig-masonry-type {
+		
+		.qodef-ig-image {
+			
+			&.qodef-fixed-masonry-item {
+				
+				.qodef-ig-image-inner,
+				a {
+					height: 100%;
+				}
+			}
+		}
+	}
+	
+	/***** Image Gallery Masonry Style - end *****/
+	
+	/***** Custom Link Behavior Style - begin *****/
+	
+	&.qodef-image-behavior-custom-link {
+		
+		.qodef-ig-image {
+
+			a {
+				overflow: hidden;
+
+				img {
+					display: block;
+					width: 100%;
+					transform: scale(1.05) translateX(-3px);
+					transition: .5s;
+					backface-visibility: hidden;
+				}
+
+				&:hover {
+					img {
+						transform: scale(1.05) translateX(3px);
+					}
+				}
+			}
+		}
+	}
+	
+	/***** Custom Link Behavior Style - end *****/
+	
+	/***** Lightbox Behavior Style - begin *****/
+	
+	&.qodef-image-behavior-lightbox {
+		
+		.qodef-ig-image {
+
+			a {
+				overflow: hidden;
+
+				img {
+					display: block;
+					width: 100%;
+					transform: scale(1.05) translateX(-3px);
+					transition: .5s;
+					backface-visibility: hidden;
+				}
+
+				&:hover {
+					img {
+						transform: scale(1.05) translateX(3px);
+					}
+				}
+			}
+		}
+	}
+	
+	/***** Lightbox Behavior Style - end *****/
+	
+	/***** Zoom Behavior Style - begin *****/
+	
+	&.qodef-image-behavior-zoom {
+		
+		.qodef-ig-image {
+			
+			.touch & {
+				cursor: pointer;
+			}
+			
+			&:hover {
+				
+				img {
+					transform: scale(1.04);
+				}
+			}
+			
+			.qodef-ig-image-inner {
+				overflow: hidden;
+			}
+			
+			img {
+				transform: scale(1);
+				transition: transform .3s ease-in-out;
+			}
+		}
+	}
+	
+	/***** Zoom Behavior Style - end *****/
+	
+	/***** Grayscale Behavior Style - begin *****/
+	
+	&.qodef-image-behavior-grayscale {
+		
+		.qodef-ig-image {
+			overflow: hidden;
+			
+			.touch & {
+				cursor: pointer;
+			}
+			
+			&:hover {
+				
+				img {
+					-webkit-filter: grayscale(0);
+					filter: none;
+				}
+			}
+			
+			img {
+				filter: url('img/desaturate.svg#grayscale');
+				-webkit-filter: grayscale(100%);
+				-moz-filter: grayscale(100%);
+				filter: gray;
+				filter: grayscale(100%);
+				transition: all .3s ease-in-out;
+			}
+		}
+	}
+	
+	/***** Grayscale Behavior Style - end *****/
+}
+/* ==========================================================================
+   Image Gallery shortcode style - end
+   ========================================================================== */

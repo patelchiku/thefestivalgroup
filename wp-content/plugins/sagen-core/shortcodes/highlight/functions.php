@@ -1,0 +1,15 @@
+<?php
+
+if ( ! function_exists( 'sagen_core_add_highlight_shortcodes' ) ) {
+	function sagen_core_add_highlight_shortcodes( $shortcodes_class_name ) {
+		$shortcodes = array(
+			'SagenCore\CPT\Shortcodes\Highlight\Highlight'
+		);
+		
+		$shortcodes_class_name = array_merge( $shortcodes_class_name, $shortcodes );
+		
+		return $shortcodes_class_name;
+	}
+	
+	add_filter( 'sagen_core_filter_add_vc_shortcode', 'sagen_core_add_highlight_shortcodes' );
+}

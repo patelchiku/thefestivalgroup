@@ -1,0 +1,27 @@
+/* ==========================================================================
+   Property Single - Slider layout style - begin
+   ========================================================================== */
+
+.qodef-property-single-holder {
+	
+	&.qodef-ps-slider-layout {
+		
+		.qodef-ps-image-holder {
+			margin: 0 0 40px;
+			
+			.qodef-ps-image-inner {
+				visibility: hidden;
+			}
+			
+			.qodef-ps-image {
+				
+				img {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Property Single - Slider layout style - end
+   ========================================================================== */

@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Property Single - Small Gallery layout style - begin
+   ========================================================================== */
+
+.qodef-property-single-holder {
+    
+    &.qodef-ps-small-gallery-layout {
+    
+        .qodef-ps-image-holder {
+            width: 100%;
+        
+            .qodef-ps-image {
+                float: left;
+            
+                a {
+                    @include qodefImageOverlayHoverStyle();
+                }
+            }
+        }
+    
+        .qodef-ps-content-item {
+            margin: 0 0 30px;
+        }
+    }
+}
+/* ==========================================================================
+   Property Single - Small Gallery layout style - end
+   ========================================================================== */

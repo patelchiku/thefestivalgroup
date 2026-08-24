@@ -1,0 +1,175 @@
+/* ==========================================================================
+   Footer styles - begin
+   ========================================================================== */
+/* ==========================================================================
+   Footer style - begin
+   ========================================================================== */
+.qodef-page-footer {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  z-index: 100;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.no-touch body:not(.error404) .qodef-page-footer.qodef-footer-uncover {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  -webkit-transition: left 0.33s cubic-bezier(0.694, 0.0482, 0.335, 1);
+  transition: left 0.33s cubic-bezier(0.694, 0.0482, 0.335, 1);
+}
+
+.qodef-right-side-menu-opened .qodef-page-footer.qodef-footer-uncover {
+  left: -270px;
+}
+
+.qodef-page-footer .qodef-footer-top-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  background-color: #0c0c0c;
+  border-top: 0 solid #f1f1f1;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-page-footer .qodef-footer-top-holder .qodef-footer-top-alignment-center {
+  text-align: center;
+}
+
+.qodef-page-footer .qodef-footer-top-holder .qodef-footer-top-alignment-left {
+  text-align: left;
+}
+
+.qodef-page-footer .qodef-footer-top-holder .qodef-footer-top-alignment-right {
+  text-align: right;
+}
+
+.qodef-page-footer .qodef-footer-top-holder .qodef-footer-top-inner {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-page-footer .qodef-footer-top-holder .qodef-footer-top-inner.qodef-grid {
+  padding: 132px 0;
+}
+
+.qodef-page-footer .qodef-footer-top-holder .qodef-footer-top-inner.qodef-full-width {
+  padding: 132px 72px;
+}
+
+@media screen and (max-width: 680px) {
+  .qodef-page-footer .qodef-footer-top-holder .qodef-footer-top-inner.qodef-full-width {
+    padding: 132px 38px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .qodef-page-footer .qodef-footer-top-holder .qodef-footer-top-inner .qodef-grid-col-3 {
+    float: left;
+    width: 50%;
+    margin: 7px 0;
+  }
+  .qodef-page-footer .qodef-footer-top-holder .qodef-footer-top-inner .qodef-grid-col-3:nth-child(2n+1) {
+    clear: both;
+  }
+  .qodef-page-footer .qodef-footer-top-holder .qodef-footer-top-inner .qodef-grid-col-3:nth-child(1), .qodef-page-footer .qodef-footer-top-holder .qodef-footer-top-inner .qodef-grid-col-3:nth-child(2) {
+    margin-top: 0;
+  }
+  .qodef-page-footer .qodef-footer-top-holder .qodef-footer-top-inner .qodef-grid-col-3:nth-child(3), .qodef-page-footer .qodef-footer-top-holder .qodef-footer-top-inner .qodef-grid-col-3:nth-child(4) {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .qodef-page-footer .qodef-footer-top-holder .qodef-footer-top-inner .qodef-grid-col-3 {
+    margin: 18px 0;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .qodef-page-footer .qodef-footer-top-holder .qodef-footer-top-inner .qodef-grid-col-3 {
+    float: none;
+    width: 100%;
+    margin: 0;
+  }
+  .qodef-page-footer .qodef-footer-top-holder .qodef-footer-top-inner .qodef-grid-col-3:nth-child(1) {
+    margin-top: 0 !important;
+  }
+  .qodef-page-footer .qodef-footer-top-holder .qodef-footer-top-inner .qodef-grid-col-3:nth-child(4) {
+    margin-bottom: 0 !important;
+  }
+  .qodef-page-footer .qodef-footer-top-holder .qodef-footer-top-inner .qodef-grid-col-3 .qodef-social-texts-group-widget {
+    margin-bottom: 53px !important;
+  }
+}
+
+.qodef-page-footer .qodef-footer-bottom-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  background-color: #000;
+  border-top: 0 solid #f1f1f1;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-page-footer .qodef-footer-bottom-holder .qodef-footer-bottom-inner {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-page-footer .qodef-footer-bottom-holder .qodef-footer-bottom-inner.qodef-grid {
+  padding: 69px 0 0;
+}
+
+@media screen and (max-width: 768px) {
+  .qodef-page-footer .qodef-footer-bottom-holder .qodef-footer-bottom-inner.qodef-grid {
+    padding: 69px 0 0;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .qodef-page-footer .qodef-footer-bottom-holder .qodef-footer-bottom-inner.qodef-grid {
+    padding: 69px 0;
+  }
+}
+
+.qodef-page-footer .qodef-footer-bottom-holder .qodef-footer-bottom-inner.qodef-full-width {
+  padding: 69px 72px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .qodef-page-footer .qodef-footer-bottom-holder .qodef-footer-bottom-inner.qodef-full-width {
+    padding: 69px 72px;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .qodef-page-footer .qodef-footer-bottom-holder .qodef-footer-bottom-inner.qodef-full-width {
+    padding: 69px 38px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .qodef-page-footer .qodef-footer-bottom-holder .qodef-footer-bottom-inner .qodef-footer-bottom-column-1 {
+    padding-bottom: 30px;
+  }
+}
+
+/* ==========================================================================
+   Footer style - end
+   ========================================================================== */
+/* ==========================================================================
+   Footer styles - end
+   ========================================================================== */
+
+/*# sourceMappingURL=footer-map.css.map */

@@ -1,0 +1,336 @@
+/* ==========================================================================
+   Global partials
+   ========================================================================== */
+/* ==========================================================================
+   Custom Post Types responsive styles
+   ========================================================================== */
+/* ==========================================================================
+   Property Single page responsive style - begin
+   ========================================================================== */
+.qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-gallery-images {
+  /***** Columns Layout - begin *****/
+  /***** Columns Layout - end *****/
+}
+
+@media only screen and (max-width: 1200px) {
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-gallery-images.qodef-ps-four-columns .qodef-ps-image {
+    width: 33.33333%;
+  }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 1025px) {
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-gallery-images.qodef-ps-four-columns .qodef-ps-image:nth-child(3n+1) {
+    clear: both;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-gallery-images.qodef-ps-three-columns .qodef-ps-image {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 681px) {
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-gallery-images.qodef-ps-three-columns .qodef-ps-image:nth-child(2n+1) {
+    clear: both;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-gallery-images.qodef-ps-four-columns .qodef-ps-image {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 681px) {
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-gallery-images.qodef-ps-four-columns .qodef-ps-image:nth-child(2n+1) {
+    clear: both;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-gallery-images .qodef-ps-image {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-four-columns .qodef-ps-image,
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-four-columns .qodef-ps-grid-sizer {
+    width: 33.33333%;
+  }
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-four-columns .qodef-ps-image.qodef-ps-masonry-large-item {
+    width: 66.66667%;
+  }
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-five-columns .qodef-ps-image,
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-five-columns .qodef-ps-grid-sizer {
+    width: 33.33333%;
+  }
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-five-columns .qodef-ps-image.qodef-ps-masonry-large-item {
+    width: 66.66667%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-three-columns .qodef-ps-image,
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-three-columns .qodef-ps-grid-sizer {
+    width: 50%;
+  }
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-three-columns .qodef-ps-image.qodef-ps-masonry-large-item {
+    width: 100%;
+  }
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-four-columns .qodef-ps-image,
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-four-columns .qodef-ps-grid-sizer {
+    width: 50%;
+  }
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-four-columns .qodef-ps-image.qodef-ps-masonry-large-item {
+    width: 100%;
+  }
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-five-columns .qodef-ps-image,
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-five-columns .qodef-ps-grid-sizer {
+    width: 50%;
+  }
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-five-columns .qodef-ps-image.qodef-ps-masonry-large-item {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-two-columns .qodef-ps-image,
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-two-columns .qodef-ps-grid-sizer {
+    width: 100%;
+  }
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-three-columns .qodef-ps-image,
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-three-columns .qodef-ps-grid-sizer {
+    width: 100%;
+  }
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-four-columns .qodef-ps-image,
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-four-columns .qodef-ps-grid-sizer {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-property-single-holder .qodef-ps-info-holder {
+    margin: 30px 0 0 !important;
+  }
+}
+
+/* ==========================================================================
+   Property Single page responsive style - end
+   ========================================================================== */
+/* ==========================================================================
+   Interactive portfolio showcase shortcode responsive style - begin
+   ========================================================================== */
+@media only screen and (max-width: 1440px) {
+  .qodef-ipl .qodef-ipl-content-table-cell {
+    padding-left: 10%;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .qodef-ipl .qodef-ipl-item-link:after {
+    border-bottom-width: 10px;
+    bottom: 25px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .qodef-ipl .qodef-ipl-item-link:after {
+    bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .qodef-ipl .qodef-ipl-item-link:after {
+    bottom: 25px;
+    border-bottom-width: 3px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .qodef-ipl .qodef-ipl-item-link:after {
+    bottom: 15px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-ipl .qodef-ipl-content-holder {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-ipl .qodef-ipl-image-holder {
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-ipl .qodef-ipl-item-image {
+    display: block;
+    position: relative;
+    opacity: 1;
+  }
+  .qodef-ipl .qodef-ipl-item-image img {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-ipl .qodef-ipl-item-content-copy {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}
+
+/* ==========================================================================
+   Interactive portfolio showcase shortcode responsive style - end
+   ========================================================================== */
+@media only screen and (max-width: 1440px) {
+  .qodef-property-info-text-holder div.qodef-pit-title {
+    font-size: 90px;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .qodef-property-info-text-holder div.qodef-pit-title {
+    font-size: 40px;
+  }
+  .qodef-property-info-text-holder .qodef-pit-category-holder .qodef-pit-category {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-property-info-holder .qodef-property-info-item .qodef-pi-main-content .qodef-pi-text,
+  .qodef-property-info-holder .qodef-property-info-item .qodef-pi-main-content .qodef-pi-image {
+    display: block;
+    width: 100%;
+    padding: 0;
+  }
+  .qodef-property-info-holder .qodef-property-info-item .qodef-pi-main-content .qodef-pi-text {
+    margin-bottom: 90px;
+  }
+  .qodef-property-info-holder .qodef-property-info-item .qodef-pi-feature-slider {
+    display: block;
+    width: 100%;
+    position: relative;
+    top: auto;
+  }
+  .qodef-property-info-holder .qodef-property-info-item .qodef-pi-feature-slider .owl-nav {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Property shortcode responsive style - begin
+   ========================================================================== */
+@media only screen and (max-width: 1440px) {
+  .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-five-columns article,
+  .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-five-columns .qodef-pl-grid-sizer {
+    width: 25%;
+  }
+  .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-five-columns article.qodef-pl-masonry-large-width, .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-five-columns article.qodef-pl-masonry-large-width-height {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .qodef-property-list-holder.qodef-pl-standard-shader .qodef-pli-text-holder {
+    padding: 22px 15px 20px 0;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-property-list-holder.qodef-pl-gallery.qodef-pl-three-columns article {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 681px) {
+  .qodef-property-list-holder.qodef-pl-gallery.qodef-pl-three-columns article:nth-child(2n+1) {
+    clear: both;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-property-list-holder.qodef-pl-gallery.qodef-pl-four-columns article {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 681px) {
+  .qodef-property-list-holder.qodef-pl-gallery.qodef-pl-four-columns article:nth-child(2n+1) {
+    clear: both;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-property-list-holder.qodef-pl-gallery.qodef-pl-five-columns article {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 681px) {
+  .qodef-property-list-holder.qodef-pl-gallery.qodef-pl-five-columns article:nth-child(2n+1) {
+    clear: both;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-three-columns article,
+  .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-three-columns .qodef-pl-grid-sizer {
+    width: 50%;
+  }
+  .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-three-columns article.qodef-pl-masonry-large-width, .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-three-columns article.qodef-pl-masonry-large-width-height {
+    width: 100%;
+  }
+  .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-four-columns article,
+  .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-four-columns .qodef-pl-grid-sizer {
+    width: 50%;
+  }
+  .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-four-columns article.qodef-pl-masonry-large-width, .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-four-columns article.qodef-pl-masonry-large-width-height {
+    width: 100%;
+  }
+  .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-five-columns article,
+  .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-five-columns .qodef-pl-grid-sizer {
+    width: 50%;
+  }
+  .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-five-columns article.qodef-pl-masonry-large-width, .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-five-columns article.qodef-pl-masonry-large-width-height {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .qodef-property-list-holder.qodef-pl-gallery article {
+    width: 100% !important;
+  }
+  .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-two-columns article,
+  .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-two-columns .qodef-pl-grid-sizer {
+    width: 100%;
+  }
+  .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-three-columns article,
+  .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-three-columns .qodef-pl-grid-sizer {
+    width: 100%;
+  }
+  .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-four-columns article,
+  .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-four-columns .qodef-pl-grid-sizer {
+    width: 100%;
+  }
+  .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-five-columns article,
+  .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-five-columns .qodef-pl-grid-sizer {
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   Property shortcode responsive style - end
+   ========================================================================== */
+
+/*# sourceMappingURL=../../../../plugins/sagen-core/assets/css/custom-post-types-map-responsive.css.map */

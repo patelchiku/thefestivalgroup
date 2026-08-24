@@ -1,0 +1,49 @@
+/* ==========================================================================
+   Numbered Section shortcode styles - begin
+   ========================================================================== */
+
+.qodef-numbered-section-holder {
+    @include qodefRelativeHolderLayout();
+	box-sizing: border-box;
+	
+    .qodef-ns-title {
+		position: relative;
+        margin: 0 0 21px;
+		z-index: 2;
+    }
+
+	.qodef-ns-back-title {
+		position: absolute;
+		font-size: 180px;
+		font-weight: 700;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		color: $first-main-color;
+	}
+
+	.qodef-separator-holder {
+		margin: 13px 0;
+		z-index: 2;
+
+		.qodef-separator {
+			margin: 0;
+		}
+	}
+    
+    .qodef-ns-text {
+	    display: block;
+        margin: 14px 0 0;
+		position: relative;
+		z-index: 2;
+    }
+
+	&.qodef-ns-back-title-exist {
+		padding: 30px 0 0 0;
+	}
+}
+/* ==========================================================================
+   Numbered Section shortcode styles - end
+   ========================================================================== */
+
+

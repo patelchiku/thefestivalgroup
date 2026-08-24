@@ -1,0 +1,168 @@
+/* ==========================================================================
+   Image With Text shortcode style - begin
+   ========================================================================== */
+
+.qodef-image-with-text-holder {
+	@include qodefRelativeHolderLayout();
+
+	&:not(.qodef-has-shadow) {
+		clip-path: inset(0 100% 0 0);
+		-webkit-clip-path: inset(0 100% 0 0);
+		transform: translateX(40px);
+
+		&.qodef-appear {
+			clip-path: inset(0 0 0 0);
+			-webkit-clip-path: inset(0 0 0 0);
+			transform: translateX(0);
+			transition: 1s .1s cubic-bezier(0.71, 0.26, 0.26, 0.88);
+		}
+	}
+	
+	&.qodef-has-shadow {
+		
+		.qodef-iwt-image {
+			box-shadow: $default-box-shadow;
+		}
+	}
+	
+	.qodef-iwt-image {
+		@include qodefRelativeHolderLayout();
+		
+		a, img {
+			position: relative;
+			display: block;
+		}
+	}
+	
+	.qodef-iwt-text-holder {
+		@include qodefRelativeHolderLayout();
+	}
+	
+	.qodef-iwt-title {
+		margin: 28px 0 0;
+	}
+
+	.qodef-iwt-back-title {
+		position: absolute;
+		font-size: 150px;
+		font-weight: 700;
+		top: 10px;
+		left: 7%;
+		z-index: -1;
+		color: $first-main-color;
+	}
+
+	.qodef-iwt-subtitle {
+		margin: 22px 0 0;
+		font-size: 13px;
+	}
+	
+	.qodef-iwt-text {
+		margin: 4px 0 0;
+	}
+	
+	/***** Custom Link Behavior Style - begin *****/
+	
+	&.qodef-image-behavior-custom-link {
+
+		&:hover {
+
+			.qodef-iwt-back-title {
+				transform: translate(10px, 0);
+			}
+		}
+		
+		.qodef-iwt-back-title {
+			transition: .5s;
+		}
+	}
+	
+	/***** Custom Link Behavior Style - end *****/
+	
+	/***** Lightbox Behavior Style - begin *****/
+	
+	&.qodef-image-behavior-lightbox {
+		
+		.qodef-iwt-image {
+
+			a {
+				overflow: hidden;
+
+				img {
+					transform: scale(1);
+					transition: transform .3s ease-in-out;
+				}
+
+				&:hover {
+					img {
+						transform: scale(1.04);
+					}
+				}
+			}
+		}
+	}
+	
+	/***** Lightbox Behavior Style - end *****/
+	
+	/***** Zoom Behavior Style - begin *****/
+	
+	&.qodef-image-behavior-zoom {
+		
+		.qodef-iwt-image {
+			overflow: hidden;
+
+			.touch & {
+				cursor: pointer;
+			}
+			
+			&:hover {
+				
+				img {
+					transform: scale(1.04);
+				}
+			}
+			
+			img {
+				transform: scale(1);
+				transition: transform .3s ease-in-out;
+			}
+		}
+	}
+	
+	/***** Zoom Behavior Style - end *****/
+	
+	/***** Grayscale Behavior Style - begin *****/
+	
+	&.qodef-image-behavior-grayscale {
+		
+		.qodef-iwt-image {
+			overflow: hidden;
+			
+			.touch & {
+				cursor: pointer;
+			}
+			
+			&:hover {
+				
+				img {
+					-webkit-filter: grayscale(0);
+					filter: none;
+				}
+			}
+			
+			img {
+				filter: url('img/desaturate.svg#grayscale');
+				-webkit-filter: grayscale(100%);
+				-moz-filter: grayscale(100%);
+				filter: gray;
+				filter: grayscale(100%);
+				transition: all .3s ease-in-out;
+			}
+		}
+	}
+	
+	/***** Grayscale Behavior Style - end *****/
+}
+/* ==========================================================================
+   Image With Text shortcode style - end
+   ========================================================================== */

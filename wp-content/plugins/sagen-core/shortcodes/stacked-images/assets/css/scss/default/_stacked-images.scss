@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Stacked Images style - begin
+   ========================================================================== */
+
+.qodef-stacked-images-holder {
+	@include qodefRelativeHolderLayout();
+	
+	&.qodef-si-position-left {
+		
+		.qodef-si-images {
+			margin: 35px 0 0 35px;
+			
+			.qodef-si-stack-image {
+				left: -35px;
+			}
+		}
+	}
+	
+	&.qodef-si-position-right {
+		
+		.qodef-si-images {
+			margin: 35px 35px 0 0 ;
+			
+			.qodef-si-stack-image {
+				right: -35px;
+			}
+		}
+	}
+
+	&.qodef-si-has-shadow {
+
+		.qodef-si-first-image {
+			box-shadow: -5.13px -14.095px 21px 0px rgba(0, 0, 0, 0.03);
+		}
+
+		.qodef-si-stack-image {
+			box-shadow: 9.642px -11.491px 52.92px 1.08px rgba(0, 0, 0, 0.03);
+		}
+	}
+	
+	.qodef-si-images {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		top: 50px;
+		opacity: 0;
+		transition: opacity .55s cubic-bezier(0.23, 1, 0.32, 1), top .55s cubic-bezier(0.23, 1, 0.32, 1);
+		
+		&.qodef-appeared {
+			opacity: 1;
+			top: 0;
+			
+			.qodef-si-stack-image {
+				top: -35px;
+
+				@include phone-landscape {
+					width: 70%;
+				}
+			}
+		}
+		
+		.qodef-si-stack-image {
+			width: 50%;
+			position: absolute;
+			top: 100px;
+			display: block;
+			transition: top .7s cubic-bezier(0.23, 1, 0.32, 1);
+		}
+	}
+}
+/* ==========================================================================
+   Stacked Images style - end
+   ========================================================================== */

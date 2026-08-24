@@ -1,0 +1,381 @@
+/* ==========================================================================
+   Search styles - begin
+   ========================================================================== */
+/* ==========================================================================
+# Search opener - begin
+========================================================================== */
+.qodef-search-opener {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 15px;
+  line-height: 1;
+  min-width: 60px;
+  text-align: center;
+  padding-right: 15px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-search-opener .qodef-search-opener-wrapper {
+  display: table;
+  height: 100%;
+  margin: auto;
+}
+
+.qodef-search-opener .qodef-search-opener-wrapper > * {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  line-height: inherit;
+}
+
+.qodef-search-opener .qodef-search-opener-wrapper > *:before {
+  display: block;
+  line-height: inherit;
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
+}
+
+.qodef-search-opener.qodef-search-opener-svg-path .qodef-search-opener-wrapper > * {
+  vertical-align: middle;
+}
+
+.qodef-search-opener.qodef-search-opener-svg-path .qodef-search-opener-wrapper > *,
+.qodef-search-opener.qodef-search-opener-svg-path .qodef-search-opener-wrapper path {
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+.qodef-light-header .qodef-page-header > div:not(.qodef-sticky-header):not(.fixed) .qodef-search-opener,
+.qodef-light-header .qodef-top-bar .qodef-search-opener {
+  color: #fff !important;
+}
+
+.qodef-light-header .qodef-page-header > div:not(.qodef-sticky-header):not(.fixed) .qodef-search-opener:hover,
+.qodef-light-header .qodef-top-bar .qodef-search-opener:hover {
+  color: #edf7fa !important;
+}
+
+.qodef-dark-header .qodef-page-header > div:not(.qodef-sticky-header):not(.fixed) .qodef-search-opener,
+.qodef-dark-header .qodef-top-bar .qodef-search-opener {
+  color: #222222 !important;
+}
+
+.qodef-dark-header .qodef-page-header > div:not(.qodef-sticky-header):not(.fixed) .qodef-search-opener:hover,
+.qodef-dark-header .qodef-top-bar .qodef-search-opener:hover {
+  color: #edf7fa !important;
+}
+
+/* ==========================================================================
+# Search opener - end
+========================================================================== */
+/* ==========================================================================
+# Search template style - begin
+========================================================================== */
+.qodef-search-page-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  margin: 0 0 80px;
+}
+
+.qodef-search-page-holder .qodef-search-page-form {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  margin: 0 0 30px;
+}
+
+.qodef-search-page-holder .qodef-search-page-form .qodef-search-title {
+  margin: 0 0 20px;
+}
+
+.qodef-search-page-holder .qodef-search-page-form .qodef-search-label {
+  display: block;
+  font-size: 13px;
+}
+
+.qodef-search-page-holder .qodef-search-page-form .qodef-form-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  margin: 0 0 10px;
+  clear: both;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.qodef-search-page-holder .qodef-search-page-form .qodef-form-holder .qodef-column-left {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.qodef-search-page-holder .qodef-search-page-form .qodef-form-holder .qodef-column-right {
+  display: table-cell;
+  width: 1%;
+  text-align: left;
+  vertical-align: top;
+}
+
+.qodef-search-page-holder .qodef-search-page-form .qodef-form-holder .qodef-search-field {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  margin: 0;
+  padding: 0 20px 0 3px;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  outline: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-search-page-holder .qodef-search-page-form .qodef-form-holder .qodef-search-field::-webkit-input-placeholder {
+  color: inherit;
+}
+
+.qodef-search-page-holder .qodef-search-page-form .qodef-form-holder .qodef-search-field:-moz-placeholder {
+  color: inherit;
+  opacity: 1;
+}
+
+.qodef-search-page-holder .qodef-search-page-form .qodef-form-holder .qodef-search-field::-moz-placeholder {
+  color: inherit;
+  opacity: 1;
+}
+
+.qodef-search-page-holder .qodef-search-page-form .qodef-form-holder .qodef-search-field:-ms-input-placeholder {
+  color: inherit;
+}
+
+.qodef-search-page-holder .qodef-search-page-form .qodef-form-holder .qodef-search-submit {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  font-size: 18px;
+  color: #000;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  vertical-align: middle;
+  -webkit-transition: color .2s ease-in-out;
+  transition: color .2s ease-in-out;
+}
+
+.qodef-search-page-holder .qodef-search-page-form .qodef-form-holder .qodef-search-submit:hover {
+  color: #222222;
+}
+
+.qodef-search-page-holder article {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  padding: 30px 0;
+  margin: 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.qodef-search-page-holder article.sticky .qodef-post-title a {
+  background-color: #edf7fa;
+}
+
+.qodef-search-page-holder article.page .qodef-post-title-area .qodef-post-info > div.qodef-post-info-category {
+  display: none;
+}
+
+.qodef-search-page-holder article .qodef-post-content {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-search-page-holder article .qodef-post-image {
+  display: block;
+  float: left;
+  width: 130px;
+}
+
+.qodef-search-page-holder article .qodef-post-image a, .qodef-search-page-holder article .qodef-post-image img {
+  display: block;
+}
+
+.qodef-search-page-holder article .qodef-post-title-area {
+  min-height: 130px;
+  padding: 0 0 0 150px;
+}
+
+.qodef-search-page-holder article .qodef-post-title-area.qodef-no-thumbnail {
+  padding: 0;
+  min-height: inherit;
+}
+
+.qodef-search-page-holder article .qodef-post-title-area .qodef-post-title-area-inner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-search-page-holder article .qodef-post-title-area .qodef-post-title-area-inner .qodef-post-title {
+  margin: 0;
+}
+
+.qodef-search-page-holder article .qodef-post-title-area .qodef-post-title-area-inner .qodef-post-excerpt {
+  margin: 7px 0 0;
+}
+
+.qodef-search-page-holder .qodef-blog-pagination {
+  margin: 50px 0 0;
+}
+
+/* ==========================================================================
+# Search template style - end
+========================================================================== */
+/* ==========================================================================
+# Slide From Header Bottom search general style - start
+========================================================================== */
+.qodef-slide-from-header-bottom-holder {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  display: none;
+  padding: 40px;
+  margin: 0;
+  background-color: #fff;
+  border: 1px solid #f1f1f1;
+  overflow: hidden;
+  z-index: 9999;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-fixed-header-appear .qodef-slide-from-header-bottom-holder,
+.qodef-sticky-header-appear .qodef-slide-from-header-bottom-holder,
+.qodef-mobile-header.mobile-header-appear .qodef-slide-from-header-bottom-holder {
+  position: fixed;
+}
+
+.qodef-slide-from-header-bottom-holder .qodef-form-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-slide-from-header-bottom-holder .qodef-form-holder form {
+  width: calc(100% - 75px);
+}
+
+.qodef-slide-from-header-bottom-holder .qodef-form-holder .qodef-search-close {
+  text-align: center;
+  width: 74px;
+  color: #bbb;
+  font-size: 30px;
+  line-height: 44px;
+}
+
+.qodef-slide-from-header-bottom-holder .qodef-form-holder .qodef-search-close:hover {
+  color: #9abcc9;
+}
+
+.qodef-slide-from-header-bottom-holder .qodef-form-holder .qodef-search-field,
+.qodef-slide-from-header-bottom-holder .qodef-form-holder .qodef-search-submit {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  float: left;
+  margin: 0;
+  height: 44px;
+  line-height: 42px;
+  color: #000;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  -webkit-appearance: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: color 0.2s ease-out;
+  transition: color 0.2s ease-out;
+}
+
+.qodef-slide-from-header-bottom-holder .qodef-form-holder .qodef-search-field {
+  width: calc(100% - 40px);
+  padding: 0 10px;
+  font-family: inherit;
+  margin: 0 !important;
+  font-size: 16px;
+  color: #222 !important;
+}
+
+.qodef-slide-from-header-bottom-holder .qodef-form-holder .qodef-search-field:focus {
+  color: #9abcc9;
+}
+
+.qodef-slide-from-header-bottom-holder .qodef-form-holder .qodef-search-submit {
+  width: 40px;
+  padding: 0;
+  cursor: pointer;
+  color: #222 !important;
+}
+
+.qodef-slide-from-header-bottom-holder .qodef-form-holder .qodef-search-submit:hover {
+  color: #9abcc9;
+}
+
+.qodef-slide-from-header-bottom-holder .qodef-form-holder .qodef-search-submit.qodef-search-submit-icon-pack {
+  font-size: 15px;
+  line-height: 1em;
+}
+
+.qodef-slide-from-header-bottom-holder .qodef-form-holder .qodef-search-submit.qodef-search-submit-icon-pack * {
+  display: block;
+  line-height: inherit;
+}
+
+.qodef-slide-from-header-bottom-holder .qodef-form-holder .qodef-search-submit.qodef-search-submit-icon-pack *:before {
+  display: block;
+  line-height: inherit;
+}
+
+.qodef-slide-from-header-bottom-holder .qodef-form-holder .qodef-search-submit.qodef-search-submit-svg-path > * {
+  vertical-align: middle;
+}
+
+.qodef-slide-from-header-bottom-holder .qodef-form-holder .qodef-search-submit.qodef-search-submit-svg-path > *,
+.qodef-slide-from-header-bottom-holder .qodef-form-holder .qodef-search-submit.qodef-search-submit-svg-path path {
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+/* ==========================================================================
+# Slide From Header Bottom search general style - end
+========================================================================== */
+/* ==========================================================================
+   Search styles - end
+   ========================================================================== */
+
+/*# sourceMappingURL=search-map.css.map */

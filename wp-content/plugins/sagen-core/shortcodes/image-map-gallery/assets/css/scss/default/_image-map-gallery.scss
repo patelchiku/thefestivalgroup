@@ -1,0 +1,150 @@
+.qodef-image-map-gallery {
+    display: flex;
+    align-items: center;
+
+    @include ipad-landscape {
+        flex-direction: column;
+    }
+
+    .qodef-img-holder,
+    .qodef-map-holder{
+        display: inline-block;
+    }
+
+    .qodef-img-holder{
+        position: relative;
+        float: right;
+
+        .qodef-img-section{
+            z-index: -1;
+            opacity: 0;
+            transition: opacity .2s ease-in-out;
+
+            &.active{
+                z-index: 10;
+                opacity: 1;
+            }
+        }
+
+        .qodef-img-video-inner,
+        .qodef-img-360-video-inner{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .qodef-img-slider{
+            margin-bottom: 15px;
+
+            .owl-dots{
+                display: none;
+            }
+        }
+
+        .qodef-pagination-slider{
+            list-style: none;
+
+            .owl-item {
+                cursor: pointer;
+
+                &.qodef-active-pag-item {
+
+                    .qodef-impp-item:after {
+                        opacity: 0;
+                    }
+                }
+
+                .qodef-impp-item:after {
+                    content: "";
+                    @include qodefAbsoluteHolderLayout();
+                    background: rgba(0,0,0,.3);
+                    opacity: 1;
+                    transition: .3s;
+                }
+            }
+        }
+    }
+
+    .qodef-map-holder{
+
+        @include ipad-landscape {
+            margin-bottom: 75px;
+        }
+
+        .qodef-map-navigation{
+            list-style: none;
+            text-align: center;
+            margin: 0 0 47px;
+
+            .qodef-map-nav-item{
+                position: relative;
+                display: inline-block;
+                margin: 0 11px;
+                padding: 0 5px 4px;
+                cursor: pointer;
+                line-height: 1;
+                transition: background-color .2s ease-in-out;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: 2px;
+                    height: 10px;
+                    width: 100%;
+                    z-index: -1;
+                    transform: scaleX(0);
+                    transform-origin: 100% 50%;
+                    background-color: #edf7fa;
+                    transition: transform 0.3s;
+                }
+
+                @include phone-landscape {
+                    padding: 0 11px 10px;
+                }
+
+                .qodef-map-nav-item-icon{
+                    font-size: 16px;
+                    color:$default-heading-color;
+                    top: 3px;
+                    position: relative;
+                    padding-right: 5px;
+                }
+
+                &.active,
+                &:hover {
+                    &:before {
+                        transform: scaleX(1);
+                        transform-origin: 0 50%;
+                    }
+                }
+
+
+                .qodef-map-nav-item-text{
+                    font-size: 14px;
+                    color:$default-heading-color;
+                    font-family: $default-heading-font;
+                    text-transform: uppercase;
+                    position: relative;
+                }
+            }
+        }
+
+        .qodef-image-map-holder-overlay {
+            content: '';
+            @include qodefAbsoluteHolderLayout();
+            z-index: -1;
+            top: 30px;
+        }
+
+        .imp-container {
+            margin: 0 auto;
+        }
+    }
+}
+.imp-tooltip-content {
+    h1, h2, h3, h4, h5, h6 {
+        text-transform: none;
+        font-weight: 400;
+    }
+}

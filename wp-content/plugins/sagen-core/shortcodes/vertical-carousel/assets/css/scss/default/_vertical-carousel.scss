@@ -1,0 +1,196 @@
+/* ==========================================================================
+   Vertical Carousel shortcode style - begin
+   ========================================================================== */
+.qodef-vertical-carousel {
+    position: relative;
+    display: flex;
+	align-items: center;
+	overflow: hidden;
+
+    &.qodef-initialized {
+        visibility: visible;
+    }
+	
+	> div {
+		@include qodefRelativeHolderLayout();
+		width: 49.5%;
+	}
+	
+	.qodef-vc-images-holder {
+		
+		.qodef-vc-images-slider {
+			height: 692px;
+			position: relative;
+			overflow: hidden;
+			visibility: hidden;
+
+			@include phone-landscape {
+				height: 450px;
+			}
+		}
+
+		.qodef-vc-images-slider-item {
+			@include qodefAbsoluteHolderLayout();
+			display: flex;
+			align-items: flex-end;
+		}
+		
+		.qodef-vc-item-image {
+			width: 100%;
+			height: 100%;
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+	}
+	
+	.qodef-vc-content-holder {
+		box-sizing: border-box;
+	}
+	
+	.qodef-vc-content {
+		padding-left: 12%;
+		padding-right: 33%;
+	}
+	
+	.qodef-vc-content-tas {
+		@include qodefRelativeHolderLayout();
+		
+		> * {
+			margin: 0;
+		}
+
+		.qodef-vc-title {
+			position: relative;
+		}
+
+		.qodef-separator-holder {
+			border-bottom: 1px solid currentColor;
+			width: 40px;
+			margin-bottom: 25px;
+			margin-top: 2px;
+		}
+		
+		.qodef-vc-subtitle {
+			margin-bottom: 18px;
+			font-size: 17px;
+			line-height: 1.5em;
+			letter-spacing: .02em;
+			width: 82%;
+		}
+	}
+	
+	.qodef-vc-content-holder-inner {
+		@include qodefRelativeHolderLayout();
+
+		.qodef-vc-bottom-title {
+			margin-bottom: 14px;
+		}
+	}
+	
+	.qodef-vc-item-content {
+		@include qodefRelativeHolderLayout();
+		padding: 6px 0;
+		font-size: 14px;
+		cursor: pointer;
+
+		> span {
+			display: inline-block;
+			transform: translateX(-2px);
+			transition: .2s;
+			opacity: 0;
+		}
+
+		.qodef-vc-item-title {
+			display: inline-block;
+			transition: .3s;
+			transform: translateX(-15px);
+		}
+		
+		&:last-child {
+			border-bottom: 0;
+		}
+		
+		&.qodef-active {
+
+			> span {
+				opacity: 1;
+				transform: translateX(0);
+				transition: .3s .2s;
+			}
+			
+			.qodef-vc-item-title {
+				transform: translateX(10px);
+			}
+		}
+		
+		> * {
+			margin: 0;
+		}
+	}
+
+    .qodef-vc-images-slider-item {
+        &.qodef-prev {
+            z-index: 50;
+        
+        }
+        &.qodef-active {
+            z-index: 100;   
+        }
+    }
+
+    .qodef-vc-images-slider-item {
+		animation: qodefVcNonActiveImage 1s forwards;
+		will-change: transform;
+		backface-visibility: hidden;
+
+        &.qodef-active {
+            animation: qodefVcActiveImage 1s forwards, qodefVcActiveImageClipPath 1s forwards;
+
+            .qodef-it-item-content {
+                visibility: visible;
+            }
+        }
+    }
+	
+	//animations
+    @include keyframes(qodefVcActiveImage) {
+        0%{
+            clip-path: inset(0 100% 0 0);
+            -webkit-clip-path: inset(0 100% 0 0);
+            transform: translateX(-100px) scale(1);
+        }
+
+        100% {
+            clip-path: inset(0 0 0 0);
+            -webkit-clip-path: inset(0 0 0 0);
+            transform: translateX(0) scale(1);
+        }
+    }
+
+    @include keyframes(qodefVcActiveImageClipPath) {
+        0%{
+            clip-path: inset(0 100% 0 0);
+            -webkit-clip-path: inset(0 100% 0 0);
+        }
+
+        100% {
+            clip-path: inset(0 0 0 0);
+            -webkit-clip-path: inset(0 0 0 0);
+        }
+    }
+
+    @include keyframes(qodefVcNonActiveImage) {
+        0%{
+            transform: translateX(0) scale(1);
+        }
+
+        100% {
+            transform: translateX(100px) scale(1);
+        }
+    }
+}
+
+/* ==========================================================================
+   Vertical Carousel shortcode style - end
+   ========================================================================== */

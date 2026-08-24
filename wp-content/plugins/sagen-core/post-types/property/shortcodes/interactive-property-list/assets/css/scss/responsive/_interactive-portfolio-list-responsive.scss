@@ -1,0 +1,75 @@
+/* ==========================================================================
+   Interactive portfolio showcase shortcode responsive style - begin
+   ========================================================================== */
+
+.qodef-ipl {
+
+    .qodef-ipl-content-table-cell {
+        @include laptop-landscape-large {
+            padding-left: 10%;
+        }
+    }
+
+    .qodef-ipl-item-link {
+        @include laptop-landscape-large {
+            &:after {
+                border-bottom-width: 10px;
+                bottom: 25px;
+            }
+        }
+        @include ipad-portrait {
+            &:after {
+                bottom: 30px;
+            }
+        }
+        @include phone-landscape {
+            &:after {
+                bottom: 25px;
+                border-bottom-width: 3px;
+            }
+        }
+        @include phone-portrait {
+            &:after {
+                bottom: 15px;
+            }
+        }
+    }
+
+    .qodef-ipl-content-holder {
+        @include ipad-landscape {
+            display: none;
+        }
+    }
+
+    .qodef-ipl-image-holder {
+        @include ipad-landscape {
+            height: 100%;
+        }
+    }
+
+    .qodef-ipl-item-image {
+        @include ipad-landscape {
+            display: block;
+            position: relative;
+            opacity: 1;
+
+            img {
+                display: block;
+            }
+        }
+    }
+
+    .qodef-ipl-item-content-copy {
+        @include ipad-landscape {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+        }
+    }
+
+}
+/* ==========================================================================
+   Interactive portfolio showcase shortcode responsive style - end
+   ========================================================================== */

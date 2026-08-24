@@ -1,0 +1,30 @@
+.qodef-property-info-holder {
+    .qodef-property-info-item {
+
+
+        @include ipad-landscape{
+            .qodef-pi-main-content{
+                .qodef-pi-text,
+                .qodef-pi-image{
+                    display: block;
+                    width: 100%;
+                    padding: 0;
+                }
+                .qodef-pi-text{
+                    margin-bottom: 90px;
+                }
+            }
+            .qodef-pi-feature-slider{
+                display: block;
+                width: 100%;
+                position: relative;
+                top: auto;
+
+                .owl-nav{
+                    display: none;
+                }
+            }
+        }
+
+    }
+}

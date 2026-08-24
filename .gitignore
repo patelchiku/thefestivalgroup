@@ -1,0 +1,6 @@
+*.log
+error_log
+.DS_Store
+Thumbs.db
+wp-content/cache/
+wp-content/uploads/wpforms/cache/

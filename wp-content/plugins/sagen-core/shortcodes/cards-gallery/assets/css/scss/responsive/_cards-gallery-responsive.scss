@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Cards Gallery shortcode responsive style - begin
+   ========================================================================== */
+
+@include ipad-portrait {
+	
+    .qodef-cards-gallery {
+	    
+	    .qodef-cg-fake-card {
+	        transform: scale(.8);
+	    }
+
+    	&.qodef-cg-shuffled-left .qodef-cg-card {
+	        transform: scale(.8);
+
+    	    &.qodef-out {
+    	        transform: translateX(-100%);
+    	    }
+
+    	    &:nth-last-child(6) {
+    	        transform: scale(.3) translateX(84%);
+    	    }
+
+    	    &:nth-last-child(5) {
+    	        transform: scale(.4) translateX(60%);
+    	    }
+
+    	    &:nth-last-child(4) {
+    	        transform: scale(.5) translateX(39%);
+    	    }
+
+    	    &:nth-last-child(3) {
+    	        transform: scale(.6) translateX(25%);
+    	    }
+
+    	    &:nth-last-child(2) {
+    	        transform: scale(.7) translateX(11.2%);
+    	    }
+    	}
+
+    	&.qodef-cg-shuffled-right .qodef-cg-card {
+	        transform: scale(.8);
+
+    	    &.qodef-out {
+    	        transform: translateX(100%);
+    	    }
+
+    	    &:nth-last-child(6) {
+    	        transform: scale(.3) translateX(-84%);
+    	    }
+
+    	    &:nth-last-child(5) {
+    	        transform: scale(.4) translateX(-60%);
+    	    }
+
+    	    &:nth-last-child(4) {
+    	        transform: scale(.5) translateX(-39%);
+    	    }
+
+    	    &:nth-last-child(3) {
+    	        transform: scale(.6) translateX(-25%);
+    	    }
+
+    	    &:nth-last-child(2) {
+    	        transform: scale(.7) translateX(-11.2%);
+    	    }
+    	}
+    }
+}
+
+/* ==========================================================================
+   Cards Gallery shortcode responsive style - end
+   ========================================================================== */

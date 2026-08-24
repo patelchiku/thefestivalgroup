@@ -1,0 +1,23 @@
+/* ==========================================================================
+   Text Marquee shortcode style - begin
+   ========================================================================== */
+
+.qodef-text-marquee {
+	display: flex;
+	white-space: nowrap;
+	color: $first-main-color;
+	font-size: 250px;
+	font-weight: 700;
+	overflow: hidden;
+	line-height: 1em;
+	padding: 5% 0;
+
+	.qodef-marquee-element {
+		padding: 0 25px;
+		box-sizing: border-box;
+		will-change: transform;
+	}
+}
+/* ==========================================================================
+   Text Marquee shortcode style - end
+   ========================================================================== */

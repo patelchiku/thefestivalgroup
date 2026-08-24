@@ -1,0 +1,204 @@
+/* ==========================================================================
+   Cards Gallery shortcode style - begin
+   ========================================================================== */
+
+.qodef-cards-gallery {
+	@include qodefRelativeHolderLayout();
+	padding: 10px 0;
+	
+	.qodef-cg-inner {
+		@include qodefRelativeHolderLayout();
+	}
+	
+	img {
+		position: relative;
+		display: block;
+		transition: opacity .3s ease-out;
+
+		&:not(.qodef-animation-done){
+			opacity: 0;
+		}
+
+		@include ipad-landscape {
+			opacity: 1 !important;
+		}
+	}
+	
+	.qodef-cg-fake-card {
+		position: relative;
+		display: block;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+	}
+	
+	.qodef-cg-card {
+		position: absolute;
+		box-sizing: border-box;
+		transition: all .15s ease;
+		
+		&.qodef-animating {
+			transition: all 1s cubic-bezier(.19, 1, .22, 1);
+			pointer-events: none;
+		}
+		
+		&.qodef-animating-siblings {
+			transition: all .6s cubic-bezier(0, 0, 0, 1);
+			pointer-events: none;
+		}
+	}
+	
+	&.qodef-cg-shuffled-left .qodef-cg-card {
+		left: 0;
+		will-change: transform;
+		
+		&.qodef-out {
+			transform: translateX(-100%);
+		}
+		
+		&:nth-last-child(6) {
+			transform: scale(.56) translateX(73%);
+		}
+		
+		&:nth-last-child(5) {
+			transform: scale(.66) translateX(49%);
+		}
+		
+		&:nth-last-child(4) {
+			transform: scale(.76) translateX(31%);
+		}
+		
+		&:nth-last-child(3) {
+			transform: scale(.86) translateX(17.5%);
+		}
+		
+		&:nth-last-child(2) {
+			transform: scale(.96) translateX(6.5%);
+		}
+		
+		&:not(:last-of-type) {
+			cursor: pointer;
+		}
+		
+		&:not(:last-of-type):not(.active):hover {
+			margin-left: 10px !important;
+		}
+	}
+	
+	&.qodef-cg-shuffled-right .qodef-cg-card {
+		right: 0;
+		will-change: transform;
+		
+		&.qodef-out {
+			transform: translateX(100%);
+		}
+		
+		&:nth-last-child(6) {
+			transform: scale(.5) translateX(-80%);
+		}
+		
+		&:nth-last-child(5) {
+			transform: scale(.6) translateX(-54%);
+		}
+		
+		&:nth-last-child(4) {
+			transform: scale(.7) translateX(-35%);
+		}
+		
+		&:nth-last-child(3) {
+			transform: scale(.8) translateX(-21%);
+		}
+		
+		&:nth-last-child(2) {
+			transform: scale(.9) translateX(-9.2%);
+		}
+		
+		&:not(:last-of-type) {
+			cursor: pointer;
+		}
+		
+		&:not(:last-of-type):not(.active):hover {
+			margin-right: 10px !important;
+		}
+	}
+	
+	.no-touch &.qodef-bundle-animation {
+		
+		img {
+			transform: translate3d(100%, 0, 0);
+			opacity: 0;
+			will-change: opacity;
+		}
+		
+		&.qodef-cg-shuffled-right.qodef-appeared {
+			@include keyframes(qodefCardAppearFromRight) {
+				0% {
+					transform: translate3d(100%, 0, 0);
+					opacity: 0;
+				}
+				
+				30% {
+					opacity: 1;
+				}
+				
+				100% {
+					opacity: 1;
+					transform: translate3d(0, 0, 0);
+				}
+			}
+			
+			img {
+				animation: qodefCardAppearFromRight 1s cubic-bezier(.19, 1, .22, 1) forwards;
+			}
+			
+			.qodef-cg-card {
+				@for $i from 1 through 8 {
+					&:nth-child(#{$i}) {
+						img:not(.qodef-animation-done) {
+							animation-delay: $i * .2s;
+						}
+					}
+				}
+			}
+		}
+		
+		&.qodef-cg-shuffled-left.qodef-appeared {
+			@include keyframes(qodefCardAppearFromLeft) {
+				0% {
+					visibility: visible;
+					opacity: 0;
+					transform: translate3d(-100%, 0, 0);
+				}
+				
+				30% {
+					visibility: visible;
+					opacity: 1;
+				}
+				
+				100% {
+					visibility: visible;
+					opacity: 1;
+					transform: translate3d(0, 0, 0);
+				}
+			}
+			
+			img {
+				animation: qodefCardAppearFromLeft 1s cubic-bezier(.19, 1, .22, 1) forwards;
+			}
+			
+			.qodef-cg-card {
+				@for $i from 1 through 8 {
+					&:nth-child(#{$i}) {
+						img:not(.qodef-animation-done) {
+							animation-delay: $i * .2s;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Cards Gallery shortcode style - begin
+   ========================================================================== */

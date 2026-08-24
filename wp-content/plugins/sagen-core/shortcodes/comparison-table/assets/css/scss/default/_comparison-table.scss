@@ -1,0 +1,53 @@
+.qodef-comparision-table-holder {
+	display: flex;
+	text-align: center;
+
+	ul {
+		list-style-type: none;
+		margin: 0;
+	}
+
+	h6, p {
+		margin: 0;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	.qodef-ct-table {
+		flex: auto;
+	}
+
+	.qodef-ct-swipe {
+		display: none;
+	}
+
+	.qodef-ct-table-title,
+	.qodef-ct-features-title {
+		line-height: 115px;
+		background: $first-main-color;
+		border: 2px solid #fff;
+	}
+
+	.qodef-ct-table {
+		border-right: none;
+		border-left: none;
+
+		.qodef-ct-table-content {
+
+			li {
+				line-height: 61px;
+				background: #f8f8f8;
+				font-family: $default-text-font;
+				font-size: 18px;
+				border: 2px solid #fff;
+
+				> h6 {
+					line-height: 61px;
+					background: #f4f4f4;
+				}
+			}
+		}
+	}
+}

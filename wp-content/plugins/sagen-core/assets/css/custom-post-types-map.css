@@ -1,0 +1,2014 @@
+/* ==========================================================================
+   Global partials
+   ========================================================================== */
+/* ==========================================================================
+   Custom Post Types styles
+   ========================================================================== */
+/* ==========================================================================
+   Property Single page style - begin
+   ========================================================================== */
+.qodef-property-single-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.qodef-property-single-holder .qodef-ps-image-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-property-single-holder .qodef-ps-image-holder .qodef-ps-image {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-property-single-holder .qodef-ps-image-holder .qodef-ps-image a, .qodef-property-single-holder .qodef-ps-image-holder .qodef-ps-image img {
+  position: relative;
+  display: block;
+}
+
+.qodef-property-single-holder .qodef-ps-info-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-property-single-holder .qodef-ps-info-holder .qodef-ps-info-item {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  margin: 0 0 10px;
+}
+
+.qodef-property-single-holder .qodef-ps-info-holder .qodef-ps-info-item p, .qodef-property-single-holder .qodef-ps-info-holder .qodef-ps-info-item a {
+  margin: 0;
+}
+
+.qodef-property-single-holder .qodef-ps-info-holder .qodef-ps-info-title {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Property Single page style - end
+   ========================================================================== */
+/* ==========================================================================
+   Property Single page specific style for types - begin
+   ========================================================================== */
+.qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-gallery-images {
+  /***** Columns Layout - begin *****/
+  /***** Columns Layout - end *****/
+}
+
+.qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-gallery-images.qodef-ps-two-columns .qodef-ps-image {
+  width: 50%;
+}
+
+@media only screen and (min-width: 1025px) {
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-gallery-images.qodef-ps-two-columns .qodef-ps-image:nth-child(2n+1) {
+    clear: both;
+  }
+}
+
+.qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-gallery-images.qodef-ps-three-columns .qodef-ps-image {
+  width: 33.33333%;
+}
+
+@media only screen and (min-width: 1025px) {
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-gallery-images.qodef-ps-three-columns .qodef-ps-image:nth-child(3n+1) {
+    clear: both;
+  }
+}
+
+.qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-gallery-images.qodef-ps-four-columns .qodef-ps-image {
+  width: 25%;
+}
+
+@media only screen and (min-width: 1201px) {
+  .qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-gallery-images.qodef-ps-four-columns .qodef-ps-image:nth-child(4n+1) {
+    clear: both;
+  }
+}
+
+.qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images {
+  /***** Columns Layout - begin *****/
+  /***** Columns Layout - end *****/
+}
+
+.qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images .qodef-ps-image,
+.qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images .qodef-ps-grid-sizer {
+  width: 25%;
+}
+
+.qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images .qodef-ps-grid-gutter {
+  width: 0;
+}
+
+.qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-two-columns .qodef-ps-image,
+.qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-two-columns .qodef-ps-grid-sizer {
+  width: 50%;
+}
+
+.qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-two-columns .qodef-ps-image.qodef-ps-masonry-large-item {
+  width: 100%;
+}
+
+.qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-three-columns .qodef-ps-image,
+.qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-three-columns .qodef-ps-grid-sizer {
+  width: 33.33333%;
+}
+
+.qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-three-columns .qodef-ps-image.qodef-ps-masonry-large-item {
+  width: 66.66667%;
+}
+
+.qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-four-columns .qodef-ps-image,
+.qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-four-columns .qodef-ps-grid-sizer {
+  width: 25%;
+}
+
+.qodef-property-single-holder .qodef-ps-image-holder.qodef-ps-masonry-images.qodef-ps-four-columns .qodef-ps-image.qodef-ps-masonry-large-item {
+  width: 50%;
+}
+
+/* ==========================================================================
+   Property Single page specific style for types - end
+   ========================================================================== */
+/* ==========================================================================
+   Property Single - Gallery layout style - begin
+   ========================================================================== */
+.qodef-property-single-holder.qodef-ps-gallery-layout .qodef-ps-image-holder {
+  width: 100%;
+}
+
+.qodef-property-single-holder.qodef-ps-gallery-layout .qodef-ps-image-holder .qodef-ps-image {
+  float: left;
+}
+
+.qodef-property-single-holder.qodef-ps-gallery-layout .qodef-ps-image-holder .qodef-ps-image a:hover:after {
+  opacity: 1;
+}
+
+.qodef-property-single-holder.qodef-ps-gallery-layout .qodef-ps-image-holder .qodef-ps-image a:after {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  content: '';
+  background-color: rgba(34, 34, 34, 0.55);
+  opacity: 0;
+  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+
+.qodef-property-single-holder.qodef-ps-gallery-layout > .qodef-grid-row {
+  margin-top: 40px;
+}
+
+/* ==========================================================================
+   Property Single - Gallery layout style - end
+   ========================================================================== */
+/* ==========================================================================
+   Property Single - Huge Images layout style - begin
+   ========================================================================== */
+.qodef-property-single-holder.qodef-ps-huge-images-layout {
+  padding: 0 4%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-property-single-holder.qodef-ps-huge-images-layout .qodef-ps-image-holder {
+  margin: 0 0 40px;
+}
+
+.qodef-property-single-holder.qodef-ps-huge-images-layout .qodef-ps-image-holder .qodef-ps-image {
+  margin: 0 0 30px;
+}
+
+.qodef-property-single-holder.qodef-ps-huge-images-layout .qodef-ps-image-holder .qodef-ps-image:last-child {
+  margin: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .qodef-property-single-holder.qodef-ps-huge-images-layout {
+    padding: 0 40px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .qodef-property-single-holder.qodef-ps-huge-images-layout {
+    padding: 0 30px;
+  }
+}
+
+/* ==========================================================================
+   Property Single - Huge Images layout style - end
+   ========================================================================== */
+/* ==========================================================================
+   Property Single - Images layout style - begin
+   ========================================================================== */
+.qodef-property-single-holder.qodef-ps-images-layout .qodef-ps-image-holder {
+  margin: 0 0 40px;
+}
+
+.qodef-property-single-holder.qodef-ps-images-layout .qodef-ps-image-holder .qodef-ps-image {
+  margin: 0 0 30px;
+}
+
+.qodef-property-single-holder.qodef-ps-images-layout .qodef-ps-image-holder .qodef-ps-image:last-child {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Property Single - Images layout style - end
+   ========================================================================== */
+/* ==========================================================================
+   Property Single - Masonry layout style - begin
+   ========================================================================== */
+.qodef-property-single-holder.qodef-ps-masonry-layout .qodef-ps-image-holder .qodef-ps-image-inner {
+  opacity: 0;
+}
+
+.qodef-property-single-holder.qodef-ps-masonry-layout > .qodef-grid-row {
+  margin-top: 40px;
+}
+
+/* ==========================================================================
+   Property Single - Masonry layout style - end
+   ========================================================================== */
+/* ==========================================================================
+   Property Single - Slider layout style - begin
+   ========================================================================== */
+.qodef-property-single-holder.qodef-ps-slider-layout .qodef-ps-image-holder {
+  margin: 0 0 40px;
+}
+
+.qodef-property-single-holder.qodef-ps-slider-layout .qodef-ps-image-holder .qodef-ps-image-inner {
+  visibility: hidden;
+}
+
+.qodef-property-single-holder.qodef-ps-slider-layout .qodef-ps-image-holder .qodef-ps-image img {
+  width: 100%;
+}
+
+/* ==========================================================================
+   Property Single - Slider layout style - end
+   ========================================================================== */
+/* ==========================================================================
+   Property Single - Small Gallery layout style - begin
+   ========================================================================== */
+.qodef-property-single-holder.qodef-ps-small-gallery-layout .qodef-ps-image-holder {
+  width: 100%;
+}
+
+.qodef-property-single-holder.qodef-ps-small-gallery-layout .qodef-ps-image-holder .qodef-ps-image {
+  float: left;
+}
+
+.qodef-property-single-holder.qodef-ps-small-gallery-layout .qodef-ps-image-holder .qodef-ps-image a:hover:after {
+  opacity: 1;
+}
+
+.qodef-property-single-holder.qodef-ps-small-gallery-layout .qodef-ps-image-holder .qodef-ps-image a:after {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  content: '';
+  background-color: rgba(34, 34, 34, 0.55);
+  opacity: 0;
+  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+
+.qodef-property-single-holder.qodef-ps-small-gallery-layout .qodef-ps-content-item {
+  margin: 0 0 30px;
+}
+
+/* ==========================================================================
+   Property Single - Small Gallery layout style - end
+   ========================================================================== */
+/* ==========================================================================
+   Property Single - Small Images layout style - begin
+   ========================================================================== */
+.qodef-property-single-holder.qodef-ps-small-images-layout .qodef-ps-image-holder .qodef-ps-image {
+  margin: 0 0 30px;
+}
+
+.qodef-property-single-holder.qodef-ps-small-images-layout .qodef-ps-image-holder .qodef-ps-image:last-child {
+  margin: 0;
+}
+
+.qodef-property-single-holder.qodef-ps-small-images-layout .qodef-ps-content-item {
+  margin: 0 0 30px;
+}
+
+/* ==========================================================================
+   Property Single - Small Images layout style - end
+   ========================================================================== */
+/* ==========================================================================
+   Property Single - Small Masonry layout style - begin
+   ========================================================================== */
+.qodef-property-single-holder.qodef-ps-small-masonry-layout .qodef-ps-image-holder .qodef-ps-image-inner {
+  opacity: 0;
+}
+
+.qodef-property-single-holder.qodef-ps-small-masonry-layout .qodef-ps-content-item {
+  margin: 0 0 30px;
+}
+
+/* ==========================================================================
+   Property Single - Small Masonry layout style - end
+   ========================================================================== */
+/* ==========================================================================
+   Property Single - Small Slider layout style - begin
+   ========================================================================== */
+.qodef-property-single-holder.qodef-ps-small-slider-layout .qodef-ps-image-holder .qodef-ps-image-inner {
+  visibility: hidden;
+}
+
+.qodef-property-single-holder.qodef-ps-small-slider-layout .qodef-ps-image-holder .qodef-ps-image img {
+  width: 100%;
+}
+
+.qodef-property-single-holder.qodef-ps-small-slider-layout .qodef-ps-content-item {
+  margin: 0 0 30px;
+}
+
+/* ==========================================================================
+   Property Single - Small Slider layout style - end
+   ========================================================================== */
+.qodef-ps-feature-holder {
+  margin: 20px 0;
+}
+
+.qodef-ps-feature-holder .qodef-ps-feature-item {
+  text-align: center;
+}
+
+/* ==========================================================================
+   Property Single navigation style - begin
+   ========================================================================== */
+.qodef-ps-navigation {
+  position: relative;
+  display: table;
+  width: 100%;
+  vertical-align: middle;
+  padding: 0;
+  margin: 60px 0 0;
+  clear: both;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-ps-full-width-custom-layout .qodef-ps-navigation {
+  padding: 0 40px;
+}
+
+.qodef-ps-navigation .qodef-ps-back-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.qodef-ps-navigation .qodef-ps-back-btn a {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  cursor: pointer;
+  font-size: 23px;
+  line-height: 1;
+}
+
+.qodef-ps-navigation .qodef-ps-back-btn a span {
+  display: block;
+  line-height: inherit;
+}
+
+.qodef-ps-navigation .qodef-ps-back-btn a span:before, .qodef-ps-navigation .qodef-ps-back-btn a span:after {
+  display: block;
+  line-height: 14px;
+}
+
+.qodef-ps-navigation .qodef-ps-back-btn a span:after {
+  content: "\e0a6";
+}
+
+.qodef-ps-navigation .qodef-ps-prev,
+.qodef-ps-navigation .qodef-ps-next {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  width: 49%;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-ps-navigation .qodef-ps-prev a,
+.qodef-ps-navigation .qodef-ps-next a {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 46px;
+  line-height: 55px;
+}
+
+.qodef-ps-navigation .qodef-ps-prev a .qodef-ps-nav-mark,
+.qodef-ps-navigation .qodef-ps-next a .qodef-ps-nav-mark {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.qodef-ps-navigation .qodef-ps-prev a .qodef-ps-nav-mark:before,
+.qodef-ps-navigation .qodef-ps-next a .qodef-ps-nav-mark:before {
+  display: block;
+  line-height: inherit;
+}
+
+.qodef-ps-navigation .qodef-ps-prev a .qodef-ps-nav-mark {
+  left: 0;
+}
+
+.qodef-ps-navigation .qodef-ps-next {
+  text-align: right;
+}
+
+.qodef-ps-navigation .qodef-ps-next a .qodef-ps-nav-mark {
+  right: 0;
+}
+
+/* ==========================================================================
+   Property Single navigation style - end
+   ========================================================================== */
+/* ==========================================================================
+   Property Single navigation style - begin
+   ========================================================================== */
+.qodef-ps-related-posts-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  margin: 30px 0 0;
+  clear: both;
+}
+
+.qodef-ps-related-posts-holder .qodef-ps-related-posts {
+  margin: 0 -15px;
+}
+
+.qodef-ps-related-posts-holder .qodef-ps-related-post {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 25%;
+  float: left;
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-ps-related-posts-holder .qodef-ps-related-post {
+    width: 50%;
+  }
+  .qodef-ps-related-posts-holder .qodef-ps-related-post:nth-child(2n+1) {
+    clear: both;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .qodef-ps-related-posts-holder .qodef-ps-related-post {
+    width: 100%;
+  }
+}
+
+.qodef-ps-related-posts-holder .qodef-ps-related-image {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-ps-related-posts-holder .qodef-ps-related-image a, .qodef-ps-related-posts-holder .qodef-ps-related-image img {
+  display: block;
+}
+
+.qodef-ps-related-posts-holder .qodef-ps-related-text {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  margin: 20px 0 0;
+}
+
+.qodef-ps-related-posts-holder .qodef-ps-related-text .qodef-ps-related-title {
+  margin: 0;
+}
+
+.qodef-ps-related-posts-holder .qodef-ps-related-text .qodef-ps-related-categories {
+  margin: 6px 0 0;
+}
+
+/* ==========================================================================
+   Property Single navigation style - end
+   ========================================================================== */
+/* ==========================================================================
+   Interactive portfolio showcase shortcode style - begin
+   ========================================================================== */
+.qodef-ips {
+  display: block;
+}
+
+.qodef-ips .qodef-ips-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.qodef-ips .qodef-ips-image-holder {
+  position: relative;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.qodef-ips .qodef-ips-content-holder {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.qodef-ips .qodef-ips-content-table {
+  position: relative;
+  display: table;
+  table-layout: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.qodef-ips .qodef-ips-content-table-cell {
+  position: relative;
+  display: table-cell;
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
+  padding: 0 7.8%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-ips .qodef-ips-item-content {
+  text-align: center;
+}
+
+.qodef-ips .qodef-ips-item-content-copy {
+  display: none;
+  font-weight: 600;
+}
+
+.qodef-ips .qodef-ips-item-link {
+  position: relative;
+  text-align: center !important;
+  display: inline-block;
+  opacity: 1;
+  font-size: 50px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.1em;
+  font-family: "Oswald", sans-serif;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.qodef-ips .qodef-ips-item-content {
+  opacity: 1;
+}
+
+.qodef-ips .qodef-ips-content-holder {
+  position: relative;
+}
+
+.qodef-ips.qodef-ips-light .qodef-ips-item-content .qodef-ips-item-link {
+  color: #fff !important;
+}
+
+.qodef-ips.qodef-ips-light .qodef-ips-item-content.active .qodef-ips-item-link {
+  color: #edf7fa !important;
+}
+
+/* ==========================================================================
+   Interactive portfolio showcase shortcode style - end
+   ========================================================================== */
+.qodef-property-fullscreen-slider-holder {
+  height: 100vh;
+}
+
+.qodef-property-fullscreen-slider-holder .qodef-property-list-holder,
+.qodef-property-fullscreen-slider-holder .qodef-pl-fullscreen-slider,
+.qodef-property-fullscreen-slider-holder .owl-stage-outer,
+.qodef-property-fullscreen-slider-holder .owl-stage,
+.qodef-property-fullscreen-slider-holder .qodef-pl-item,
+.qodef-property-fullscreen-slider-holder .qodef-pl-item-inner,
+.qodef-property-fullscreen-slider-holder .qodef-outer-space,
+.qodef-property-fullscreen-slider-holder .owl-item {
+  height: 100%;
+}
+
+.qodef-property-fullscreen-slider-holder article {
+  width: 100% !important;
+}
+
+.qodef-property-fullscreen-slider-holder article .qodef-pli-link {
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.29);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.29)), color-stop(100%, rgba(0, 0, 0, 0.9)));
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.6)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.6) 100%);
+  -webkit-transition: opacity .25s ease-in-out;
+  transition: opacity .25s ease-in-out;
+}
+
+.qodef-property-fullscreen-slider-holder article:hover .qodef-pli-link {
+  opacity: 1;
+}
+
+.qodef-property-fullscreen-slider-holder article:hover .qodef-pl-item-inner .qodef-pli-image-holder .qodef-pli-text-holder {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.qodef-property-fullscreen-slider-holder article .qodef-pl-item-inner .qodef-pli-image-holder {
+  height: 100%;
+  background-size: cover;
+  position: relative;
+}
+
+.qodef-property-fullscreen-slider-holder article .qodef-pl-item-inner .qodef-pli-image-holder .qodef-pli-text-wrapper {
+  position: relative;
+  display: block;
+}
+
+.qodef-property-fullscreen-slider-holder article .qodef-pl-item-inner .qodef-pli-image-holder .qodef-pli-text-holder {
+  padding: 50px 53px 44px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  opacity: 0;
+  z-index: 10;
+  -webkit-transform: translateY(10px);
+  -ms-transform: translateY(10px);
+  transform: translateY(10px);
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+}
+
+.qodef-property-fullscreen-slider-holder article .qodef-pl-item-inner .qodef-pli-image-holder .qodef-pli-text-holder .qodef-pli-text {
+  overflow: hidden;
+  width: 100%;
+  display: block;
+}
+
+.qodef-property-fullscreen-slider-holder article .qodef-pl-item-inner .qodef-pli-image-holder .qodef-pli-text-holder .qodef-pli-title {
+  margin-bottom: 9px;
+}
+
+.qodef-property-fullscreen-slider-holder article .qodef-pl-item-inner .qodef-pli-image-holder .qodef-pli-text-holder .qodef-pli-category-holder {
+  margin: 0 0 20px;
+  display: inline-block;
+}
+
+.qodef-property-fullscreen-slider-holder article .qodef-pl-item-inner .qodef-pli-image-holder .qodef-pli-text-holder .qodef-pli-category-holder a {
+  line-height: 28px;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.qodef-property-fullscreen-slider-holder article .qodef-pl-item-inner .qodef-pli-image-holder .qodef-pli-text-holder .qodef-svg-separator-holder {
+  display: inline-block;
+  padding-left: 8px;
+}
+
+.qodef-property-fullscreen-slider-holder article .qodef-pl-item-inner .qodef-pli-image-holder .qodef-pli-text-holder .qodef-svg-separator-holder .qodef-svg-separator svg {
+  stroke: #000;
+}
+
+.qodef-property-fullscreen-slider-holder article .qodef-pl-item-inner .qodef-pli-image-holder .qodef-pli-text-holder .qodef-pli-excerpt {
+  margin: 10px 0 0;
+  color: "Oswald", sans-serif;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 18px;
+  line-height: 30px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.qodef-property-fullscreen-slider-holder article .qodef-pl-item-inner .qodef-pli-image-holder .qodef-pli-text-holder .qodef-pli-read-more {
+  position: relative;
+  z-index: 10;
+}
+
+.qodef-property-fullscreen-slider-holder.qodef-pfs-light-skin article .qodef-pl-item-inner .qodef-pli-text-holder .qodef-pli-category-holder a {
+  color: #fff;
+}
+
+.qodef-property-fullscreen-slider-holder.qodef-pfs-light-skin article .qodef-pl-item-inner .qodef-pli-text-holder .qodef-svg-separator-holder .qodef-svg-separator svg {
+  stroke: #fff;
+}
+
+.qodef-property-fullscreen-slider-holder.qodef-pfs-light-skin article .qodef-pl-item-inner .qodef-pli-text-holder .qodef-pli-excerpt,
+.qodef-property-fullscreen-slider-holder.qodef-pfs-light-skin article .qodef-pl-item-inner .qodef-pli-text-holder .qodef-pli-title {
+  color: #fff;
+}
+
+.qodef-property-fullscreen-slider-holder.qodef-pfs-light-skin article .qodef-pl-item-inner .qodef-pli-text-holder .qodef-pli-read-more a {
+  color: #fff;
+  border-color: #fff;
+}
+
+.qodef-property-fullscreen-slider-holder .qodef-pl-fullscreen-slider .owl-nav > div span {
+  font-size: 14px;
+  line-height: 18px;
+  background-color: #151614;
+  color: #fff;
+  text-transform: uppercase;
+  width: 100px;
+  text-align: center;
+  padding: 13px 13px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-property-fullscreen-slider-holder .qodef-pl-fullscreen-slider .owl-nav > div.owl-prev {
+  left: 0;
+}
+
+.qodef-property-fullscreen-slider-holder .qodef-pl-fullscreen-slider .owl-nav > div.owl-next {
+  right: 0;
+}
+
+/* ==========================================================================
+   Property info text shortcode style - begin
+   ========================================================================== */
+.qodef-property-info-text-holder {
+  text-align: center;
+}
+
+.qodef-property-info-text-holder .qodef-pit-category-holder {
+  display: table;
+  margin: 0 auto 45px;
+}
+
+.qodef-property-info-text-holder .qodef-pit-category-holder > * {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.qodef-property-info-text-holder .qodef-pit-category-holder .qodef-pit-category {
+  text-transform: uppercase;
+  font-size: 22px;
+  letter-spacing: .2em;
+}
+
+.qodef-property-info-text-holder .qodef-pit-category-holder .qodef-svg-separator-holder {
+  padding: 0 25px;
+}
+
+@media only screen and (max-width: 680px) {
+  .qodef-property-info-text-holder .qodef-pit-category-holder .qodef-svg-separator-holder {
+    display: none;
+  }
+}
+
+.qodef-property-info-text-holder div.qodef-pit-title {
+  font-size: 130px;
+  line-height: 1em;
+  font-family: "Oswald", sans-serif;
+  color: #2d2e32;
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+
+.qodef-property-info-text-holder.qodef-light-skin .qodef-pit-category-holder .qodef-svg-separator-holder .qodef-svg-separator svg {
+  stroke: #fff;
+}
+
+.qodef-property-info-text-holder.qodef-light-skin .qodef-pit-category-holder .qodef-pit-category {
+  color: #fff;
+}
+
+.qodef-property-info-text-holder.qodef-light-skin .qodef-pit-category-holder .qodef-pit-category:hover {
+  color: #fff;
+}
+
+.qodef-property-info-text-holder.qodef-light-skin .qodef-pit-title {
+  color: #fff;
+}
+
+/* ==========================================================================
+   Property info text shortcode style - end
+   ========================================================================== */
+.qodef-property-info-holder {
+  counter-reset: property-info-counter;
+}
+
+.qodef-property-info-holder.qodef-disable-counter .qodef-property-info-item .qodef-pi-title:before {
+  display: none;
+}
+
+.qodef-property-info-holder .qodef-property-info-item {
+  position: relative;
+  margin-bottom: 150px;
+  counter-increment: property-info-counter;
+}
+
+.qodef-property-info-holder .qodef-property-info-item:last-child {
+  margin-bottom: 0;
+}
+
+.qodef-property-info-holder .qodef-property-info-item .qodef-pi-main-content {
+  display: table;
+}
+
+.qodef-property-info-holder .qodef-property-info-item .qodef-pi-main-content .qodef-pi-text,
+.qodef-property-info-holder .qodef-property-info-item .qodef-pi-main-content .qodef-pi-image {
+  display: table-cell;
+  vertical-align: middle;
+  width: 50%;
+}
+
+.qodef-property-info-holder .qodef-property-info-item .qodef-pi-main-content .qodef-pi-text {
+  padding-right: 7%;
+}
+
+@media only screen and (max-width: 1440px) {
+  .qodef-property-info-holder .qodef-property-info-item .qodef-pi-main-content .qodef-pi-text {
+    padding-right: 0;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-property-info-holder .qodef-property-info-item .qodef-pi-main-content .qodef-pi-text {
+    margin-bottom: 90px;
+  }
+}
+
+.qodef-property-info-holder .qodef-property-info-item .qodef-pi-main-content .qodef-pi-text .qodef-pi-title {
+  margin: 0 0 14px;
+  position: relative;
+}
+
+.qodef-property-info-holder .qodef-property-info-item .qodef-pi-main-content .qodef-pi-text .qodef-pi-title:before {
+  content: counter(property-info-counter, decimal-leading-zero);
+  position: absolute;
+  font-size: 240px;
+  font-weight: 700;
+  top: -40px;
+  left: 0;
+  z-index: -1;
+  color: #edf7fa;
+  font-family: "Playfair Display", sans-serif;
+}
+
+.qodef-property-info-holder .qodef-property-info-item .qodef-pi-main-content .qodef-pi-text .qodef-pi-read-more {
+  margin: 26px 0 0;
+}
+
+.qodef-property-info-holder .qodef-property-info-item .qodef-pi-main-content .qodef-pi-text .qodef-pi-excerpt {
+  margin: 17px 90px 40px 0;
+  font-size: 17px;
+  line-height: 26px;
+}
+
+@media only screen and (max-width: 1440px) {
+  .qodef-property-info-holder .qodef-property-info-item .qodef-pi-main-content .qodef-pi-text .qodef-pi-excerpt {
+    margin: 17px 60px 40px 0;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-property-info-holder .qodef-property-info-item .qodef-pi-main-content .qodef-pi-text .qodef-pi-excerpt {
+    margin: 17px 120px 40px 0;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .qodef-property-info-holder .qodef-property-info-item .qodef-pi-main-content .qodef-pi-text .qodef-pi-excerpt {
+    margin: 17px 10px 40px 0;
+  }
+}
+
+.qodef-property-info-holder .qodef-property-info-item .qodef-pi-main-content .qodef-pi-image {
+  clip-path: inset(0 100% 0 0);
+  -webkit-clip-path: inset(0 100% 0 0);
+  -webkit-transform: translateX(40px);
+  -ms-transform: translateX(40px);
+  transform: translateX(40px);
+}
+
+.qodef-property-info-holder .qodef-property-info-item .qodef-pi-main-content .qodef-pi-image.qodef-appear {
+  clip-path: inset(0 0 0 0);
+  -webkit-clip-path: inset(0 0 0 0);
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: 1s 0.1s cubic-bezier(0.71, 0.26, 0.26, 0.88);
+  transition: 1s 0.1s cubic-bezier(0.71, 0.26, 0.26, 0.88);
+}
+
+.qodef-property-info-holder .qodef-property-info-item .qodef-pi-main-content .qodef-pi-image img {
+  display: block;
+}
+
+.qodef-property-info-holder .qodef-property-info-item .qodef-pi-feature-items {
+  margin: 38px 0 0;
+}
+
+.qodef-property-info-holder .qodef-property-info-item .qodef-pi-feature-items .qodef-pi-feature-item {
+  display: table;
+  width: 50%;
+  float: left;
+  margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 680px) {
+  .qodef-property-info-holder .qodef-property-info-item .qodef-pi-feature-items .qodef-pi-feature-item {
+    width: 100%;
+  }
+}
+
+.qodef-property-info-holder .qodef-property-info-item .qodef-pi-feature-items .qodef-pi-feature-item .qodef-pifi-image,
+.qodef-property-info-holder .qodef-property-info-item .qodef-pi-feature-items .qodef-pi-feature-item .qodef-pifi-content {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.qodef-property-info-holder .qodef-property-info-item .qodef-pi-feature-items .qodef-pi-feature-item .qodef-pifi-image {
+  height: 50px;
+  width: 50px;
+}
+
+.qodef-property-info-holder .qodef-property-info-item .qodef-pi-feature-items .qodef-pi-feature-item .qodef-pifi-content {
+  padding-left: 19px;
+}
+
+.qodef-property-info-holder .qodef-property-info-item .qodef-pi-feature-items .qodef-pi-feature-item .qodef-pifi-content .qodef-pifi-title {
+  margin: 0;
+}
+
+.qodef-property-info-holder .qodef-property-info-item .qodef-pi-feature-items .qodef-pi-feature-item .qodef-pifi-content .qodef-pifi-excerpt {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Property shortcode style - begin
+   ========================================================================== */
+.qodef-property-list-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  /***** Article Global Style - begin *****/
+  /***** Article Global Style - end *****/
+  /***** Specific Global Style - begin *****/
+  /***** Specific Global Style - end *****/
+  /***** Property Types - begin *****/
+  /***** Property Types - end *****/
+  /***** Additional Features - begin *****/
+  /***** Additional Features - end *****/
+}
+
+.qodef-property-list-holder article {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.touch .qodef-property-list-holder article {
+  cursor: pointer;
+}
+
+.qodef-property-list-holder article .qodef-pl-item-inner {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-property-list-holder article .qodef-pli-image {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-property-list-holder article .qodef-pli-image img {
+  display: block;
+  width: 100%;
+}
+
+.qodef-property-list-holder article .qodef-pli-link {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.qodef-property-list-holder article .qodef-pli-text-wrapper {
+  position: relative;
+  display: table;
+  table-layout: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.qodef-property-list-holder article .qodef-pli-text {
+  position: relative;
+  display: table-cell;
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-property-list-holder article .qodef-pli-text .qodef-pli-title {
+  margin: 0;
+}
+
+.qodef-property-list-holder article .qodef-pli-text .qodef-pli-category-holder {
+  position: relative;
+  display: block;
+  margin: 3px 0 5px;
+}
+
+.qodef-property-list-holder article .qodef-pli-text .qodef-pli-category-holder a {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 6px 0 0;
+  margin: 0 3px 0 0;
+  z-index: 8;
+}
+
+.qodef-property-list-holder article .qodef-pli-text .qodef-pli-category-holder a:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: ',';
+  color: inherit;
+  font-size: 12px;
+  line-height: inherit;
+}
+
+.qodef-property-list-holder article .qodef-pli-text .qodef-pli-category-holder a:last-child {
+  margin: 0;
+  padding: 0;
+}
+
+.qodef-property-list-holder article .qodef-pli-text .qodef-pli-category-holder a:last-child:after {
+  display: none;
+}
+
+.qodef-property-list-holder article .qodef-pli-text .qodef-pli-excerpt {
+  margin: 3px 0 0;
+}
+
+.qodef-property-list-holder.qodef-pl-has-shadow article .qodef-pli-image {
+  -webkit-box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.05);
+}
+
+.qodef-property-list-holder.qodef-pl-has-filter .qodef-pl-inner {
+  overflow: hidden;
+}
+
+.qodef-property-list-holder.qodef-pl-no-content .qodef-pli-text-holder {
+  display: none;
+}
+
+.qodef-property-list-holder.qodef-pl-gallery:not(.qodef-pl-one-column) article {
+  float: left;
+}
+
+.qodef-property-list-holder.qodef-pl-gallery.qodef-pl-two-columns article {
+  width: 50%;
+}
+
+@media only screen and (min-width: 1025px) {
+  .qodef-property-list-holder.qodef-pl-gallery.qodef-pl-two-columns article:nth-child(2n+1) {
+    clear: both;
+  }
+}
+
+.qodef-property-list-holder.qodef-pl-gallery.qodef-pl-three-columns article {
+  width: 33.33333%;
+}
+
+@media only screen and (min-width: 1025px) {
+  .qodef-property-list-holder.qodef-pl-gallery.qodef-pl-three-columns article:nth-child(3n+1) {
+    clear: both;
+  }
+}
+
+.qodef-property-list-holder.qodef-pl-gallery.qodef-pl-four-columns article {
+  width: 25%;
+}
+
+@media only screen and (min-width: 1281px) {
+  .qodef-property-list-holder.qodef-pl-gallery.qodef-pl-four-columns article:nth-child(4n+1) {
+    clear: both;
+  }
+}
+
+.qodef-property-list-holder.qodef-pl-gallery.qodef-pl-five-columns article {
+  width: 20%;
+}
+
+@media only screen and (min-width: 1281px) {
+  .qodef-property-list-holder.qodef-pl-gallery.qodef-pl-five-columns article:nth-child(5n+1) {
+    clear: both;
+  }
+}
+
+.qodef-property-list-holder.qodef-pl-masonry .qodef-pl-inner {
+  opacity: 0;
+}
+
+.qodef-property-list-holder.qodef-pl-masonry article,
+.qodef-property-list-holder.qodef-pl-masonry .qodef-pl-grid-sizer {
+  width: 100%;
+}
+
+.qodef-property-list-holder.qodef-pl-masonry .qodef-pl-grid-gutter {
+  width: 0;
+}
+
+.qodef-property-list-holder.qodef-pl-masonry.qodef-pl-two-columns article,
+.qodef-property-list-holder.qodef-pl-masonry.qodef-pl-two-columns .qodef-pl-grid-sizer {
+  width: 50%;
+}
+
+.qodef-property-list-holder.qodef-pl-masonry.qodef-pl-two-columns article.qodef-pl-masonry-large-width, .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-two-columns article.qodef-pl-masonry-large-width-height {
+  width: 100%;
+}
+
+.qodef-property-list-holder.qodef-pl-masonry.qodef-pl-three-columns article,
+.qodef-property-list-holder.qodef-pl-masonry.qodef-pl-three-columns .qodef-pl-grid-sizer {
+  width: 33.33333%;
+}
+
+.qodef-property-list-holder.qodef-pl-masonry.qodef-pl-three-columns article.qodef-pl-masonry-large-width, .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-three-columns article.qodef-pl-masonry-large-width-height {
+  width: 66.66667%;
+}
+
+.qodef-property-list-holder.qodef-pl-masonry.qodef-pl-four-columns article,
+.qodef-property-list-holder.qodef-pl-masonry.qodef-pl-four-columns .qodef-pl-grid-sizer {
+  width: 25%;
+}
+
+.qodef-property-list-holder.qodef-pl-masonry.qodef-pl-four-columns article.qodef-pl-masonry-large-width, .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-four-columns article.qodef-pl-masonry-large-width-height {
+  width: 50%;
+}
+
+.qodef-property-list-holder.qodef-pl-masonry.qodef-pl-five-columns article,
+.qodef-property-list-holder.qodef-pl-masonry.qodef-pl-five-columns .qodef-pl-grid-sizer {
+  width: 20%;
+}
+
+.qodef-property-list-holder.qodef-pl-masonry.qodef-pl-five-columns article.qodef-pl-masonry-large-width, .qodef-property-list-holder.qodef-pl-masonry.qodef-pl-five-columns article.qodef-pl-masonry-large-width-height {
+  width: 40%;
+}
+
+.qodef-property-list-holder.qodef-pl-masonry.qodef-pl-images-fixed article .qodef-pl-item-inner {
+  height: 100%;
+}
+
+.qodef-property-list-holder.qodef-pl-masonry.qodef-pl-images-fixed article .qodef-pli-image {
+  height: 100%;
+}
+
+.qodef-property-list-holder.qodef-pl-masonry.qodef-pl-images-fixed article .qodef-pli-image img {
+  height: 100%;
+}
+
+.qodef-property-list-holder.qodef-pl-has-animation article {
+  opacity: 0;
+  -webkit-transform: translateY(80px);
+  -ms-transform: translateY(80px);
+  transform: translateY(80px);
+  -webkit-transition: opacity 0.8s cubic-bezier(0.34, 0.52, 0.57, 1.04), -webkit-transform 0.8s cubic-bezier(0.34, 0.52, 0.57, 1.04);
+  transition: opacity 0.8s cubic-bezier(0.34, 0.52, 0.57, 1.04), -webkit-transform 0.8s cubic-bezier(0.34, 0.52, 0.57, 1.04);
+  transition: opacity 0.8s cubic-bezier(0.34, 0.52, 0.57, 1.04), transform 0.8s cubic-bezier(0.34, 0.52, 0.57, 1.04);
+  transition: opacity 0.8s cubic-bezier(0.34, 0.52, 0.57, 1.04), transform 0.8s cubic-bezier(0.34, 0.52, 0.57, 1.04), -webkit-transform 0.8s cubic-bezier(0.34, 0.52, 0.57, 1.04);
+}
+
+.qodef-property-list-holder.qodef-pl-has-animation article.qodef-item-show {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.qodef-property-list-holder.qodef-pl-has-animation article.qodef-item-show.qodef-item-shown {
+  -webkit-transition: none;
+  transition: none;
+}
+
+.touch .qodef-property-list-holder.qodef-pl-has-animation article {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   Property shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Property filter style - begin
+   ========================================================================== */
+.qodef-pl-filter-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  margin: 0 0 80px;
+  text-align: center;
+  font-size: 0;
+}
+
+.qodef-pl-filter-holder ul {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.qodef-pl-filter-holder ul li {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 10px;
+  padding: 0 22px;
+  cursor: pointer;
+}
+
+.qodef-pl-filter-holder ul li:after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 101%;
+  position: absolute;
+  opacity: 1;
+  left: 0;
+  bottom: -12px;
+  background-color: #d6d6d6;
+  -webkit-transition: width 0.2s ease-in-out;
+  transition: width 0.2s ease-in-out;
+}
+
+.qodef-pl-filter-holder ul li:before {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0%;
+  position: absolute;
+  opacity: 0;
+  z-index: 999;
+  left: 0;
+  bottom: -12px;
+  background-color: #000;
+  -webkit-transition: width 0.2s ease-in-out;
+  transition: width 0.2s ease-in-out;
+}
+
+@media only screen and (max-width: 1440px) {
+  .qodef-pl-filter-holder ul li {
+    padding: 0 16px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .qodef-pl-filter-holder ul li {
+    padding: 0 10px;
+    margin: 20px 0;
+  }
+}
+
+.qodef-pl-filter-holder ul li span {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  color: #000000;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  line-height: 35px;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  -webkit-transition: color .2s ease-out;
+  transition: color .2s ease-out;
+  -webkit-transform: translateX(2px);
+  -ms-transform: translateX(2px);
+  transform: translateX(2px);
+}
+
+.qodef-pl-filter-holder ul li.qodef-pl-current:before, .qodef-pl-filter-holder ul li:hover:before {
+  width: 101%;
+  opacity: 1;
+}
+
+/* ==========================================================================
+   Property filter style - end
+   ========================================================================== */
+/* ==========================================================================
+   Property standard pagination style - begin
+   ========================================================================== */
+.qodef-property-list-holder.qodef-pl-pag-standard .qodef-pl-inner {
+  opacity: 1;
+  -webkit-transition: opacity .2s ease-out;
+  transition: opacity .2s ease-out;
+}
+
+.qodef-property-list-holder.qodef-pl-pag-standard.qodef-pl-pag-standard-animate .qodef-pl-inner {
+  opacity: 0;
+}
+
+.qodef-pl-standard-pagination {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  margin: 20px 0 0;
+  clear: both;
+}
+
+.qodef-pl-standard-pagination ul {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.qodef-pl-standard-pagination ul li {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 12px;
+  padding: 0;
+}
+
+.qodef-pl-standard-pagination ul li a {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+}
+
+.qodef-pl-standard-pagination ul li.qodef-pl-pag-active a {
+  color: #edf7fa;
+}
+
+.qodef-pl-standard-pagination ul li.qodef-pl-pag-prev, .qodef-pl-standard-pagination ul li.qodef-pl-pag-next {
+  position: absolute;
+  top: 0;
+}
+
+.qodef-pl-standard-pagination ul li.qodef-pl-pag-prev a, .qodef-pl-standard-pagination ul li.qodef-pl-pag-next a {
+  font-size: 30px;
+  -webkit-transition: color .2s ease-out, opacity .2s ease-out;
+  transition: color .2s ease-out, opacity .2s ease-out;
+}
+
+.qodef-pl-standard-pagination ul li.qodef-pl-pag-prev a span, .qodef-pl-standard-pagination ul li.qodef-pl-pag-next a span {
+  display: block;
+  line-height: inherit;
+}
+
+.qodef-pl-standard-pagination ul li.qodef-pl-pag-prev a span:before, .qodef-pl-standard-pagination ul li.qodef-pl-pag-next a span:before {
+  display: block;
+  line-height: inherit;
+}
+
+.qodef-pl-standard-pagination ul li.qodef-pl-pag-prev {
+  left: 0;
+}
+
+.qodef-pl-standard-pagination ul li.qodef-pl-pag-prev a {
+  opacity: 0;
+}
+
+.qodef-pl-standard-pagination ul li.qodef-pl-pag-next {
+  right: 0;
+}
+
+.qodef-pl-standard-pagination ul li.qodef-pl-pag-next a {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   Property standard pagination style - end
+   ========================================================================== */
+/* ==========================================================================
+   Property load more pagination style - begin
+   ========================================================================== */
+.qodef-pl-load-more-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-pl-load-more-holder .qodef-pl-load-more {
+  margin: 40px 0 0;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Property load more pagination style - end
+   ========================================================================== */
+/* ==========================================================================
+   Property loading element style - begin
+   ========================================================================== */
+.qodef-pl-loading {
+  position: relative;
+  display: none;
+  width: 100%;
+  margin: 40px 0 20px;
+  color: #222222;
+  text-align: center;
+}
+
+.qodef-pl-loading.qodef-filter-trigger {
+  position: absolute;
+  top: 250px;
+  left: 0;
+}
+
+.qodef-pl-loading.qodef-standard-pag-trigger {
+  position: absolute;
+  top: 50px;
+  left: 0;
+}
+
+.qodef-pl-has-filter .qodef-pl-loading.qodef-standard-pag-trigger {
+  top: 150px;
+}
+
+.qodef-pl-loading.qodef-showing {
+  display: block;
+}
+
+.qodef-pl-loading > div {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 7px;
+  height: 7px;
+  margin: 0 3px;
+  background-color: #222222;
+  border-radius: 100%;
+}
+
+.qodef-pl-loading .qodef-pl-loading-bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.qodef-pl-loading .qodef-pl-loading-bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+/* ==========================================================================
+   Property loading element style - end
+   ========================================================================== */
+/* ==========================================================================
+   Property Item Layout - Gallery Slide From Image Bottom style - begin
+   ========================================================================== */
+.qodef-property-list-holder.qodef-pl-gallery-slide-from-image-bottom.qodef-pl-has-shadow .qodef-pl-item-inner {
+  -webkit-box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.05);
+}
+
+.qodef-property-list-holder.qodef-pl-gallery-slide-from-image-bottom article:hover .qodef-pli-text-holder {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.qodef-property-list-holder.qodef-pl-gallery-slide-from-image-bottom article:hover .qodef-pli-text-wrapper {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.qodef-property-list-holder.qodef-pl-gallery-slide-from-image-bottom article .qodef-pl-item-inner {
+  overflow: hidden;
+}
+
+.qodef-property-list-holder.qodef-pl-gallery-slide-from-image-bottom .qodef-pli-text-holder {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: auto;
+  bottom: 0;
+  left: 0;
+  padding: 28px 40px;
+  background-color: #000;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+  -webkit-transition: 0.5s cubic-bezier(0.26, 0.53, 0.58, 1);
+  transition: 0.5s cubic-bezier(0.26, 0.53, 0.58, 1);
+}
+
+.qodef-property-list-holder.qodef-pl-gallery-slide-from-image-bottom .qodef-pli-text-holder .qodef-pli-text-left,
+.qodef-property-list-holder.qodef-pl-gallery-slide-from-image-bottom .qodef-pli-text-holder .qodef-pli-text-right {
+  display: inline-block;
+}
+
+.qodef-property-list-holder.qodef-pl-gallery-slide-from-image-bottom .qodef-pli-text-holder .qodef-pli-title {
+  color: #fff;
+}
+
+.qodef-property-list-holder.qodef-pl-gallery-slide-from-image-bottom .qodef-pli-text-holder .qodef-pli-category-holder {
+  margin: 0 0 3px;
+}
+
+.qodef-property-list-holder.qodef-pl-gallery-slide-from-image-bottom .qodef-pli-text-holder .qodef-pli-category-holder a {
+  color: #a0a0a0;
+}
+
+.qodef-property-list-holder.qodef-pl-gallery-slide-from-image-bottom .qodef-pli-text-wrapper {
+  -webkit-transform: translateY(-300%);
+  -ms-transform: translateY(-300%);
+  transform: translateY(-300%);
+  -webkit-transition: 0.5s cubic-bezier(0.21, 0.53, 0.58, 1);
+  transition: 0.5s cubic-bezier(0.21, 0.53, 0.58, 1);
+}
+
+.qodef-property-list-holder.qodef-pl-gallery-slide-from-image-bottom .qodef-pli-link {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* ==========================================================================
+   Property Item Layout - Gallery Slide From Image Bottom style - end
+   ========================================================================== */
+/* ==========================================================================
+   Property Item Layout - Standard Shader style - begin
+   ========================================================================== */
+.qodef-property-list-holder.qodef-pl-standard-shader article .qodef-pl-item-inner {
+  padding-bottom: 40px;
+}
+
+.qodef-property-list-holder.qodef-pl-standard-shader article:hover .qodef-pli-image img {
+  -webkit-transform: scale(1.05) translateX(3px);
+  -ms-transform: scale(1.05) translateX(3px);
+  transform: scale(1.05) translateX(3px);
+}
+
+.qodef-property-list-holder.qodef-pl-standard-shader article .qodef-pli-image {
+  overflow: hidden;
+}
+
+.qodef-property-list-holder.qodef-pl-standard-shader article .qodef-pli-image img {
+  -webkit-transform: scale(1.05) translateX(-3px) translateZ(0);
+  transform: scale(1.05) translateX(-3px) translateZ(0);
+  -webkit-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.qodef-property-list-holder.qodef-pl-standard-shader article .qodef-pli-image .qodef-pli-category-holder {
+  display: inline-block;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 10;
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: rotate(270deg) translateX(-100%);
+  -ms-transform: rotate(270deg) translateX(-100%);
+  transform: rotate(270deg) translateX(-100%);
+}
+
+.qodef-property-list-holder.qodef-pl-standard-shader article .qodef-pli-image .qodef-pli-category-holder a {
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  padding: 6px 20px;
+  background-color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.qodef-property-list-holder.qodef-pl-standard-shader article .qodef-pli-link {
+  z-index: 2;
+}
+
+.qodef-property-list-holder.qodef-pl-standard-shader .qodef-pli-text-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  padding: 15px 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-property-list-holder.qodef-pl-standard-shader .qodef-pli-text-holder .qodef-pli-excerpt {
+  margin: 6px 0 0;
+}
+
+/* ==========================================================================
+   Property Item Layout - Standard Shader style - end
+   ========================================================================== */
+/* ==========================================================================
+   Property Slider shortcode style - begin
+   ========================================================================== */
+.qodef-property-slider-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-property-slider-holder .qodef-pl-inner {
+  margin: 0 !important;
+}
+
+.qodef-property-slider-holder article {
+  width: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  float: none !important;
+}
+
+.qodef-property-slider-holder .qodef-property-list-holder.qodef-nav-light-skin .owl-nav .owl-prev,
+.qodef-property-slider-holder .qodef-property-list-holder.qodef-nav-light-skin .owl-nav .owl-next {
+  color: #fff;
+}
+
+.qodef-property-slider-holder .qodef-property-list-holder.qodef-nav-light-skin .owl-nav .owl-prev:hover,
+.qodef-property-slider-holder .qodef-property-list-holder.qodef-nav-light-skin .owl-nav .owl-next:hover {
+  color: #edf7fa;
+}
+
+.qodef-property-slider-holder .qodef-property-list-holder.qodef-nav-dark-skin .owl-nav .owl-prev,
+.qodef-property-slider-holder .qodef-property-list-holder.qodef-nav-dark-skin .owl-nav .owl-next {
+  color: #222222;
+}
+
+.qodef-property-slider-holder .qodef-property-list-holder.qodef-nav-dark-skin .owl-nav .owl-prev:hover,
+.qodef-property-slider-holder .qodef-property-list-holder.qodef-nav-dark-skin .owl-nav .owl-next:hover {
+  color: #edf7fa;
+}
+
+.qodef-property-slider-holder .qodef-property-list-holder.qodef-pag-light-skin .owl-dots .owl-dot span {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.qodef-property-slider-holder .qodef-property-list-holder.qodef-pag-light-skin .owl-dots .owl-dot.active span, .qodef-property-slider-holder .qodef-property-list-holder.qodef-pag-light-skin .owl-dots .owl-dot:hover span {
+  background-color: #edf7fa;
+}
+
+.qodef-property-slider-holder .qodef-property-list-holder.qodef-pag-dark-skin .owl-dots .owl-dot span {
+  background-color: rgba(34, 34, 34, 0.2);
+}
+
+.qodef-property-slider-holder .qodef-property-list-holder.qodef-pag-dark-skin .owl-dots .owl-dot.active span, .qodef-property-slider-holder .qodef-property-list-holder.qodef-pag-dark-skin .owl-dots .owl-dot:hover span {
+  background-color: #edf7fa;
+}
+
+.qodef-property-slider-holder .qodef-property-list-holder.qodef-pag-on-slider .owl-nav .owl-prev,
+.qodef-property-slider-holder .qodef-property-list-holder.qodef-pag-on-slider .owl-nav .owl-next {
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.qodef-property-slider-holder .qodef-property-list-holder.qodef-pag-on-slider .owl-dots {
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  width: 100%;
+  margin: 0;
+}
+
+.qodef-grid-row .qodef-property-slider-holder .owl-nav .owl-prev {
+  left: -88px;
+}
+
+@media only screen and (max-width: 1280px) {
+  .qodef-grid-row .qodef-property-slider-holder .owl-nav .owl-prev {
+    left: -57px;
+  }
+}
+
+.qodef-grid-row .qodef-property-slider-holder .owl-nav .owl-next {
+  right: -88px;
+}
+
+@media only screen and (max-width: 1280px) {
+  .qodef-grid-row .qodef-property-slider-holder .owl-nav .owl-next {
+    right: -57px;
+  }
+}
+
+.qodef-property-slider-holder .owl-dots {
+  margin: 49px 0 0;
+}
+
+/* ==========================================================================
+   Property Slider shortcode style - end
+   ========================================================================== */
+/* ==========================================================================
+   Testimonials standard style - begin
+   ========================================================================== */
+.qodef-testimonials-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  opacity: 0;
+  /* Light/Dark styles */
+}
+
+.qodef-testimonials-holder .swiper-container-vertical {
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-testimonials-holder .qodef-testimonials {
+  background-image: url("../img/testimonials-quotes.svg");
+  background-position: 94% 64%;
+  background-repeat: no-repeat;
+  background-size: 29%;
+}
+
+.qodef-testimonials-holder .qodef-testimonial-content {
+  display: table;
+  padding: 50px 0 130px;
+}
+
+@media screen and (max-width: 768px) {
+  .qodef-testimonials-holder .qodef-testimonial-content {
+    padding: 50px 0;
+  }
+}
+
+.qodef-testimonials-holder .qodef-testimonial-content .qodef-testimonial-image {
+  display: table-cell;
+  vertical-align: top;
+  padding: 0;
+  width: 153px;
+}
+
+@media screen and (max-width: 768px) {
+  .qodef-testimonials-holder .qodef-testimonial-content .qodef-testimonial-image {
+    display: none;
+  }
+}
+
+.qodef-testimonials-holder .qodef-testimonial-content .qodef-testimonial-image img {
+  display: block;
+  margin: 0 auto;
+}
+
+.qodef-testimonials-holder .qodef-testimonial-content .qodef-testimonial-text-holder {
+  display: table-cell;
+  vertical-align: top;
+  padding: 0 20% 0 45px;
+}
+
+@media screen and (max-width: 1024px) {
+  .qodef-testimonials-holder .qodef-testimonial-content .qodef-testimonial-text-holder {
+    padding-right: 65px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .qodef-testimonials-holder .qodef-testimonial-content .qodef-testimonial-text-holder {
+    padding-left: 0;
+  }
+}
+
+.qodef-testimonials-holder .qodef-testimonial-content .qodef-testimonial-text-holder .qodef-testimonial-text {
+  margin: 0;
+  color: #222222;
+  font-size: 30px;
+  line-height: 40px;
+  letter-spacing: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .qodef-testimonials-holder .qodef-testimonial-content .qodef-testimonial-text-holder .qodef-testimonial-text {
+    font-size: 27px;
+    line-height: 37px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .qodef-testimonials-holder .qodef-testimonial-content .qodef-testimonial-text-holder .qodef-testimonial-text {
+    font-size: 25px;
+    line-height: 27px;
+  }
+}
+
+.qodef-testimonials-holder .qodef-testimonial-content .qodef-testimonial-text-holder .qodef-testimonials-author-name {
+  margin: 28px 0 0;
+  color: #000;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: .1em;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+}
+
+.qodef-testimonials-holder .qodef-testimonial-content .qodef-testimonial-text-holder .qodef-testimonials-author-job {
+  margin: 0;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0;
+}
+
+.qodef-testimonials-holder .qodef-testimonials-pag {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 36px;
+  -webkit-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+  -webkit-transform: rotate(90deg) translate(100%, 100%);
+  -ms-transform: rotate(90deg) translate(100%, 100%);
+  transform: rotate(90deg) translate(100%, 100%);
+  padding: 0 10px;
+}
+
+@media only screen and (max-width: 680px) {
+  .qodef-testimonials-holder .qodef-testimonials-pag {
+    position: relative;
+    bottom: 20px;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    padding: 0;
+  }
+}
+
+.qodef-testimonials-holder .qodef-testimonials-pag > a {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0;
+  padding: 0 6px;
+  font-family: "Oswald", sans-serif;
+  font-size: 13px;
+  letter-spacing: .25em;
+  cursor: pointer;
+  color: #000;
+  border: 0;
+  background: none;
+  outline: none;
+}
+
+.qodef-testimonials-holder .qodef-testimonials-pag > a:before {
+  content: '';
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  position: relative;
+  height: 1px;
+  width: 0;
+  -webkit-transition: width .25s ease;
+  transition: width .25s ease;
+  background: currentColor;
+}
+
+.qodef-testimonials-holder .qodef-testimonials-pag > a.swiper-pagination-bullet-active {
+  font-size: 16px;
+}
+
+.qodef-testimonials-holder .qodef-testimonials-pag > a.swiper-pagination-bullet-active:before {
+  width: 100px;
+  margin-right: 10px;
+}
+
+.qodef-testimonials-holder .qodef-testimonials-pag > a:first-child {
+  padding-left: 0;
+}
+
+.qodef-testimonials-holder .qodef-testimonials-pag > a:last-child {
+  padding-right: 0;
+}
+
+.qodef-testimonials-holder.qodef-testimonials-light .qodef-testimonials {
+  background-image: url("../img/testimonials-quotes-dark.svg");
+}
+
+.qodef-testimonials-holder.qodef-testimonials-light .qodef-testimonial-content .qodef-testimonial-text-holder .qodef-testimonial-text, .qodef-testimonials-holder.qodef-testimonials-light .qodef-testimonial-content .qodef-testimonial-text-holder .qodef-testimonials-author-name, .qodef-testimonials-holder.qodef-testimonials-light .qodef-testimonial-content .qodef-testimonial-text-holder .qodef-testimonials-author-job {
+  color: #fff;
+}
+
+.qodef-testimonials-holder.qodef-testimonials-light .qodef-testimonials-pag > a {
+  color: #fff;
+}
+
+/* ==========================================================================
+   Testimonials standard style - end
+   ========================================================================== */
+
+/*# sourceMappingURL=../../../../plugins/sagen-core/assets/css/custom-post-types-map.css.map */

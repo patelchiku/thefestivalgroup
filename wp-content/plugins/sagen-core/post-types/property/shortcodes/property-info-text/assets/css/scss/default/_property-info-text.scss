@@ -1,0 +1,62 @@
+/* ==========================================================================
+   Property info text shortcode style - begin
+   ========================================================================== */
+.qodef-property-info-text-holder{
+    text-align: center;
+
+    .qodef-pit-category-holder{
+        display: table;
+        margin: 0 auto 45px;
+
+        > *{
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .qodef-pit-category{
+            text-transform: uppercase;
+            font-size: 22px;
+            letter-spacing: .2em;
+        }
+
+        .qodef-svg-separator-holder{
+            padding: 0 25px;
+
+            @include phone-landscape{
+                display: none;
+            }
+        }
+    }
+
+    div.qodef-pit-title{
+        font-size: 130px;
+        line-height: 1em;
+        font-family: $default-heading-font;
+        color: #2d2e32;
+        font-weight: 700;
+        letter-spacing: .1em;
+    }
+
+    &.qodef-light-skin{
+        .qodef-pit-category-holder{
+            .qodef-svg-separator-holder .qodef-svg-separator svg{
+                stroke: #fff;
+            }
+            .qodef-pit-category{
+                color: #fff;
+
+                &:hover{
+                    color: #fff;
+                }
+            }
+        }
+        .qodef-pit-title{
+            color: #fff;
+        }
+    }
+}
+
+
+/* ==========================================================================
+   Property info text shortcode style - end
+   ========================================================================== */

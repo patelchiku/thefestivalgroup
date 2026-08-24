@@ -1,0 +1,183 @@
+/* ==========================================================================
+   Testimonials standard style - begin
+   ========================================================================== */
+
+.qodef-testimonials-holder {
+	@include qodefRelativeHolderLayout();
+	opacity: 0;
+
+	.swiper-container-vertical {
+		overflow: hidden;
+		box-sizing: border-box;
+	}
+
+	.qodef-testimonials{
+		background-image: url('../img/testimonials-quotes.svg');
+		background-position: 94% 64%;
+		background-repeat: no-repeat;
+		background-size: 29%;
+	}
+
+	.qodef-testimonial-content {
+		display: table;
+		padding: 50px 0 130px;
+
+		@media screen and (max-width: 768px){
+			padding: 50px 0;
+		}
+
+		.qodef-testimonial-image {
+			display: table-cell;
+			vertical-align: top;
+			padding: 0;
+			width: 153px;
+
+			@media screen and (max-width: 768px){
+				display: none;
+			}
+
+			img {
+				display: block;
+				margin: 0 auto;
+			}
+		}
+
+		.qodef-testimonial-text-holder {
+			display: table-cell;
+			vertical-align: top;
+			padding: 0 20% 0 45px;
+
+			@media screen and (max-width: 1024px){
+				padding-right: 65px;
+			}
+
+			@media screen and (max-width: 768px){
+				padding-left: 0;
+			}
+
+			.qodef-testimonial-text {
+				margin: 0;
+				color: $default-heading-color;
+				font-size: 30px;
+				line-height: 40px;
+				letter-spacing: 0;
+
+				@media screen and (max-width: 1024px){
+					font-size: 27px;
+					line-height: 37px;
+				}
+
+				@media screen and (max-width: 680px){
+					font-size: 25px;
+					line-height: 27px;
+				}
+			}
+
+			.qodef-testimonials-author-name {
+				margin: 28px 0 0;
+				color: #000;
+				font-size: 16px;
+				line-height: 30px;
+				letter-spacing: .1em;
+				font-family: $default-heading-font;
+				text-transform: uppercase;
+			}
+
+			.qodef-testimonials-author-job {
+				margin: 0;
+				font-size: 16px;
+				line-height: 18px;
+				letter-spacing: 0;
+			}
+		}
+
+	}
+
+	.qodef-testimonials-pag {
+		position: absolute;
+		right: 0;
+		top: 0;
+		height: 36px;
+		transform-origin: 100% 100%;
+		transform: rotate(90deg) translate(100%, 100%);
+		padding: 0 10px;
+
+		@include phone-landscape {
+			position: relative;
+			bottom: 20px;
+			transform: none;
+			padding: 0;
+		}
+
+		> a {
+			display: inline-flex;
+			align-items: center;
+			margin: 0;
+			padding: 0 6px;
+			font-family: $default-heading-font;
+			font-size: 13px;
+			letter-spacing: .25em;
+			cursor: pointer;
+			color: #000;
+			border: 0;
+			background: none;
+			outline: none;
+
+			&:before {
+				content: '';
+				flex: 1 0 auto;
+				position: relative;
+				height: 1px;
+				width: 0;
+				transition: width .25s ease;
+				background: currentColor;
+			}
+
+			&.swiper-pagination-bullet-active{
+				font-size: 16px;
+
+				&:before {
+					width: 100px;
+					margin-right: 10px;
+				}
+			}
+
+			&:first-child{
+				padding-left: 0;
+			}
+
+			&:last-child{
+				padding-right: 0;
+			}
+		}
+	}
+
+	/* Light/Dark styles */
+	&.qodef-testimonials-light {
+
+		.qodef-testimonials{
+			background-image: url('../img/testimonials-quotes-dark.svg');
+		}
+
+		.qodef-testimonial-content{
+
+			.qodef-testimonial-text-holder{
+
+				.qodef-testimonial-text, .qodef-testimonials-author-name, .qodef-testimonials-author-job{
+					color: #fff;
+				}
+			}
+		}
+
+		.qodef-testimonials-pag {
+
+			> a {
+				color: #fff;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Testimonials standard style - end
+   ========================================================================== */

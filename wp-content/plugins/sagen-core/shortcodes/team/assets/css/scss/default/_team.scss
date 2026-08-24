@@ -1,0 +1,153 @@
+/* ==========================================================================
+   Team shortcode style - begin
+   ========================================================================== */
+
+.qodef-team-holder {
+    @include qodefRelativeHolderLayout();
+
+    .qodef-team-image {
+        @include qodefRelativeHolderLayout();
+
+        img {
+            display: block;
+			padding-right: 32px;
+			box-sizing: border-box;
+
+			@include ipad-portrait {
+				padding-right: 0;
+			}
+        }
+    }
+	
+	.qodef-team-info {
+		@include qodefRelativeHolderLayout();
+		margin: 22px 0 0;
+	}
+
+    .qodef-team-name {
+        margin: 0;
+    }
+
+    .qodef-team-position {
+		font-size: 16px;
+        margin: 1px 0 0;
+    }
+	
+	.qodef-team-text {
+		margin: 10px 0 0;
+	}
+	
+	.qodef-team-social-wrapper {
+		@include qodefAbsoluteHolderLayout();
+		background-color: rgba(#fff, .85);
+		z-index: 1;
+		opacity: 0;
+		transform: translateZ(0);
+		transition: opacity .3s;
+	}
+	
+	.qodef-team-social-outer {
+		@include qodefTableLayout();
+	}
+	
+	.qodef-team-social-inner {
+		position: relative;
+		display: table-cell;
+		height: 100%;
+		width: 100%;
+		padding: 20px 40px 33px;
+		vertical-align: bottom;
+		transform: translate3d(0,40px,0);
+		transition: transform .2s ease;
+	}
+	
+	.qodef-team-social-holder {
+		position: absolute;
+		top: 0;
+		right: 0;
+		transform-origin: top right;
+		transform: rotate(-90deg) translateY(-100%);
+
+		@include ipad-landscape {
+			position: relative;
+			transform: none;
+			margin-top: 23px;
+		}
+		
+		.qodef-team-social-text {
+			display: inline-block;
+			font-weight: 700;
+			font-size: 16px;
+			margin-left: 45px;
+			position: relative;
+			transform: scale(0);
+			transition: transform .2s, color .2s;
+			backface-visibility: hidden;
+
+			@include ipad-portrait {
+				transform: scale(1);
+
+				&:first-child {
+					margin-left: 0;
+				}
+			}
+
+			&:nth-child(2) {
+				transition: transform .2s .1s, color .2s;
+			}
+
+			&:nth-child(3) {
+				transition: transform .2s .2s, color .2s;
+			}
+
+			&:nth-child(4) {
+				transition: transform .2s .3s, color .2s;
+			}
+
+			&:nth-child(5) {
+				transition: transform .2s .4s, color .2s;
+			}
+
+			&:nth-child(6) {
+				transition: transform .2s .5s, color .2s;
+			}
+
+			span {
+				&:after {
+					content: '';
+					background: #c0c0c0;
+					height: 1px;
+					width: 26px;
+					position: absolute;
+					top: 55%;
+					right: -37px;
+				}
+			}
+
+			&:last-child {
+				span:after {
+					display: none;
+				}
+			}
+		}
+
+	}
+
+	&:hover {
+		.qodef-team-social-holder {
+
+			.qodef-team-social-text {
+
+				transform: scale(1);
+			}
+		}
+	}
+
+    .qodef-team-link {
+        @include qodefAbsoluteHolderLayout();
+    }
+
+}
+/* ==========================================================================
+   Team shortcode style - end
+   ========================================================================== */

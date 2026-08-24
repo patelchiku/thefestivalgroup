@@ -1,0 +1,23 @@
+/* ==========================================================================
+   Property Single - Masonry layout style - begin
+   ========================================================================== */
+
+.qodef-property-single-holder {
+    
+    &.qodef-ps-masonry-layout {
+        
+        .qodef-ps-image-holder {
+    
+            .qodef-ps-image-inner {
+                opacity: 0;
+            }
+        }
+        
+        > .qodef-grid-row {
+            margin-top: 40px;
+        }
+    }
+}
+/* ==========================================================================
+   Property Single - Masonry layout style - end
+   ========================================================================== */

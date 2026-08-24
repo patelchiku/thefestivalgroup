@@ -1,0 +1,27 @@
+/* ==========================================================================
+   Skew Section styles - begin
+   ========================================================================== */
+/* ==========================================================================
+# Skewed Section responsive style - begin
+========================================================================== */
+@media only screen and (max-width: 1024px) {
+  .qodef-disable-header-ss-on-mobile .qodef-header-skewed-section-effect {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .qodef-disable-title-ss-on-mobile .qodef-title-skewed-section-effect,
+  .qodef-disable-ss-on-mobile .vc_row .qodef-skewed-section-effect {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+# Skewed Section responsive style - end
+========================================================================== */
+/* ==========================================================================
+   Skew Section styles - end
+   ========================================================================== */
+
+/*# sourceMappingURL=skewed-section-responsive-map.css.map */

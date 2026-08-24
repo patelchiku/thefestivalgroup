@@ -1,0 +1,198 @@
+/* ==========================================================================
+   Banner shortcode style - begin
+   ========================================================================== */
+
+.qodef-banner-holder {
+    @include qodefRelativeHolderLayout();
+	
+	.touch & {
+		cursor: pointer;
+	}
+
+	&:hover {
+
+		.qodef-banner-image {
+
+			img {
+				transform: scale(1.05) translateX(3px);
+			}
+		}
+	}
+	
+	&.qodef-visible-on-hover {
+		
+		&:hover {
+			
+			.qodef-banner-text-holder {
+				opacity: 1;
+			}
+		}
+		
+		.qodef-banner-text-holder {
+			opacity: 0;
+			transition: opacity .2s ease-out;
+		}
+	}
+
+	&.qodef-banner-disable-separator {
+
+		.qodef-separator-holder {
+			display: none;
+		}
+	}
+	
+	&.qodef-disabled {
+		
+		.qodef-banner-text-holder {
+			display: none;
+		}
+	}
+	
+	&.qodef-banner-info-centered {
+		
+		.qodef-banner-text-holder {
+			padding: 70px 20px;
+			text-align: center;
+		}
+	}
+	
+	.qodef-banner-image {
+		@include qodefRelativeHolderLayout();
+		overflow: hidden;
+		
+		img {
+			display: block;
+			width: 100%;
+			transform: scale(1.05) translateX(-3px);
+			transition: .5s;
+			backface-visibility: hidden;
+		}
+	}
+
+	.qodef-banner-text-holder {
+		@include qodefAbsoluteHolderLayout();
+		padding: 50px 56px;
+		box-sizing: border-box;
+
+		@include laptop-landscape-1370 {
+			padding: 30px 36px;
+		}
+
+		@include laptop-landscape-mac {
+			padding: 25px 26px;
+		}
+
+		@include laptop-landscape-medium {
+			padding: 22px 24px;
+		}
+
+		@include ipad-landscape {
+			padding: 50px 216px 50px 56px;
+		}
+		
+		@include ipad-portrait {
+			padding: 30px 38px;
+		}
+		@include phone-landscape {
+			padding: 20px 24px;
+		}
+
+	}
+	
+	.qodef-banner-text-outer {
+		@include qodefTableLayout();
+	}
+	
+	.qodef-banner-text-inner {
+		position: relative;
+		display: table-cell;
+		height: 100%;
+		width: 100%;
+		vertical-align: bottom;
+	}
+	
+	.qodef-banner-subtitle {
+		margin: 0;
+		color: #fff;
+	}
+	
+	.qodef-banner-title {
+		margin: 0 0 9px 0;
+		color: #fff;
+		
+		.qodef-banner-title-light {
+			font-weight: 300;
+		}
+	}
+	
+	.qodef-banner-link-text {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		margin: 11px 0 0;
+		color: #fff;
+		line-height: 1em;
+		z-index: 2;
+		transform: translateZ(0);
+		
+		&:hover {
+			
+			.qodef-banner-link-hover {
+				width: 100%;
+			}
+		}
+		
+		.qodef-banner-link-original {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			width: 100%;
+			
+			span {
+				color: inherit;
+			}
+		}
+		
+		.qodef-banner-link-hover {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 0.1%;
+			height: 100%;
+			display: inline-block;
+			vertical-align: top;
+			white-space: nowrap;
+			overflow: hidden;
+			transition: width .4s ease-in-out;
+			
+			span {
+				color: $first-main-color;
+			}
+		}
+		
+		.qodef-banner-link-icon,
+		.qodef-banner-link-label {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+		}
+		
+		.qodef-banner-link-icon {
+			margin: 0 2px 0 0;
+			font-size: 15px;
+		}
+		
+		.qodef-banner-link-label {
+			font-size: 14px;
+			line-height: inherit;
+		}
+	}
+
+	.qodef-banner-link {
+		@include qodefAbsoluteHolderLayout();
+		z-index: 1;
+	}
+}
+/* ==========================================================================
+   Banner shortcode style - end
+   ========================================================================== */

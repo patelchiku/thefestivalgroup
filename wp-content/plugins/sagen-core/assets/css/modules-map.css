@@ -1,0 +1,244 @@
+/* ==========================================================================
+   Global partials
+   ========================================================================== */
+/* ==========================================================================
+   Custom Post Types styles
+   ========================================================================== */
+.qodef-comment-rating-box {
+  display: inline-block;
+  margin-left: 18px;
+  vertical-align: middle;
+}
+
+.qodef-comment-rating-box .qodef-star-rating {
+  position: relative;
+  display: inline-block;
+  font-family: 'ElegantIcons';
+  color: #c8c8c8;
+  font-size: 16px;
+  letter-spacing: 5px;
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.qodef-comment-rating-box .qodef-star-rating.active {
+  color: #ffd740;
+}
+
+.qodef-comment-rating-box .qodef-star-rating:before {
+  content: '\e033';
+}
+
+.qodef-reviews-per-criteria .qodef-item-reviews-average-rating {
+  color: #edf7fa;
+  font-size: 60px;
+  line-height: 1em;
+  font-weight: 700;
+}
+
+.qodef-reviews-per-criteria .qodef-item-reviews-verbal-description {
+  vertical-align: middle;
+  margin: 2px 0 0;
+}
+
+.qodef-reviews-per-criteria .qodef-item-reviews-rating-icon {
+  vertical-align: middle;
+  font-size: 20px;
+}
+
+.qodef-reviews-per-criteria .qodef-item-reviews-display-right {
+  vertical-align: middle;
+  padding-left: 200px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-reviews-per-criteria .qodef-item-reviews-display-right .qodef-item-reviews-display-bar {
+  line-height: 28px;
+}
+
+.qodef-reviews-per-criteria .qodef-item-reviews-display-right .qodef-item-reviews-display-bar .qodef-item-reviews-display-bar-inner {
+  padding: 6px 0;
+}
+
+.qodef-reviews-per-mark .qodef-reviews-number-wrapper {
+  padding-top: 23%;
+  padding-left: 15%;
+  display: table;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.qodef-reviews-per-mark .qodef-reviews-number {
+  font-size: 72px;
+  color: #ffd740;
+  font-weight: 700;
+  line-height: 1em;
+  margin-right: 22px;
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  top: -6px;
+}
+
+.qodef-reviews-per-mark .qodef-stars-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.qodef-reviews-per-mark .qodef-stars-wrapper .qodef-stars {
+  display: block;
+}
+
+.qodef-reviews-per-mark .qodef-stars-wrapper .qodef-stars i {
+  color: #ffd740;
+}
+
+.qodef-reviews-per-mark .qodef-reviews-count {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.qodef-reviews-per-mark .qodef-rating-percentage-wrapper {
+  padding: 29px 50px 40px;
+  background-color: #fafafa;
+  border-left: 1px solid #e5e5e5;
+}
+
+.qodef-reviews-simple .qodef-reviews-number-wrapper .qodef-reviews-summary {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.qodef-reviews-simple .qodef-reviews-number-wrapper .qodef-stars-wrapper {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 0 0 15px;
+}
+
+.qodef-reviews-simple .qodef-reviews-number-wrapper .qodef-stars-wrapper-inner {
+  display: block;
+}
+
+.qodef-comment-list .qodef-comment-name {
+  float: none;
+}
+
+.qodef-comment-list .qodef-review-rating {
+  display: inline-block;
+  width: 100%;
+}
+
+.qodef-comment-list .qodef-rating-inner {
+  display: inline-block;
+  width: 100%;
+}
+
+.qodef-top-reviews-carousel-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  background-color: #fff;
+  border: 1px solid #f1f1f1;
+}
+
+.qodef-top-reviews-carousel-holder .qodef-top-reviews-carousel-inner {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  padding: 40px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-top-reviews-carousel-holder .qodef-top-reviews-carousel-title {
+  margin: 0 0 22px;
+}
+
+.qodef-top-reviews-carousel-holder .qodef-top-reviews-carousel {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.qodef-top-reviews-carousel-holder .qodef-top-reviews-carousel-item {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qodef-top-reviews-carousel-holder .qodef-top-reviews-item-title {
+  margin: 0 0 2px;
+}
+
+.qodef-top-reviews-carousel-holder .qodef-tour-reviews-criteria-holder {
+  display: block;
+  width: 100%;
+  float: none;
+  margin: 0;
+}
+
+.qodef-top-reviews-carousel-holder .qodef-top-reviews-item-content {
+  margin: 20px 0 0;
+}
+
+.qodef-top-reviews-carousel-holder .qodef-top-reviews-item-content p {
+  margin: 0;
+}
+
+.qodef-top-reviews-carousel-holder .qodef-top-reviews-item-author-info {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  margin: 32px 0 0;
+  padding: 0 100px 0 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.qodef-top-reviews-carousel-holder .qodef-top-reviews-item-author-avatar {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 21px 0 0;
+}
+
+.qodef-top-reviews-carousel-holder .qodef-top-reviews-item-author-avatar img {
+  display: block;
+  border-radius: 50%;
+}
+
+.qodef-top-reviews-carousel-holder .qodef-top-reviews-item-author-name {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.qodef-top-reviews-carousel-holder .owl-nav {
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+  width: 60px;
+}
+
+.qodef-top-reviews-carousel-holder .owl-nav .owl-prev {
+  left: 0;
+}
+
+.qodef-top-reviews-carousel-holder .owl-nav .owl-next {
+  right: 0;
+}
+
+/*# sourceMappingURL=../../../../plugins/sagen-core/assets/css/modules-map.css.map */
