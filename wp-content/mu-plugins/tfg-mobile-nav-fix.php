@@ -22,7 +22,10 @@ add_action( 'wp_head', function () {
 		.qodef-vertical-menu ul li.qodef-active-item > a,
 		.qodef-vertical-menu ul li.current-menu-item > h6,
 		.qodef-vertical-menu ul li.current_page_item > h6,
-		.qodef-vertical-menu ul li.qodef-active-item > h6 {
+		.qodef-vertical-menu ul li.qodef-active-item > h6,
+		.qodef-vertical-menu ul li.current-menu-item > a .item_text,
+		.qodef-vertical-menu ul li.current_page_item > a .item_text,
+		.qodef-vertical-menu ul li.qodef-active-item > a .item_text {
 			color: #1a1a1a !important;
 		}
 	</style>
