@@ -48,6 +48,13 @@ add_action( 'wp_head', function () {
 			margin: 6px 8px 6px 0 !important;
 			border: 1px solid #1a1a1a !important;
 		}
+		/* Footer column headings (CONTACT / USEFUL LINKS / PROJECTS) are
+		   custom_html widgets with no explicit color, so they inherit the
+		   theme's dark default (#222) - invisible against this footer's
+		   black background. */
+		footer .textwidget.custom-html-widget h6 {
+			color: #ffffff !important;
+		}
 	</style>
 	<?php
 }, 100 );
