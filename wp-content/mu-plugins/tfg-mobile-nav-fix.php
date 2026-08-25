@@ -28,6 +28,15 @@ add_action( 'wp_head', function () {
 		.qodef-vertical-menu ul li.qodef-active-item > a .item_text {
 			color: #1a1a1a !important;
 		}
+		/* Same issue: MetaSlider caption "Know More"/"Book Now" links are
+		   white text with a transparent background (theme assumes the
+		   caption sits directly over a dark photo). Here the caption sits
+		   in a plain white box (.caption-wrap), so the white text is
+		   invisible on both desktop and mobile. */
+		.caption-wrap .knowmore,
+		.caption-wrap .booknow {
+			color: #1a1a1a !important;
+		}
 	</style>
 	<?php
 }, 100 );
