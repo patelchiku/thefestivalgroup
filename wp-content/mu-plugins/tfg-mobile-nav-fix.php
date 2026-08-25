@@ -37,6 +37,17 @@ add_action( 'wp_head', function () {
 		.caption-wrap .booknow {
 			color: #1a1a1a !important;
 		}
+		/* Same caption links also had zero padding/margin, so "Book Now" and
+		   "Know More" ran together with no gap ("Book NowKnow More") and were
+		   too small to tap reliably. Give each its own padded touch target
+		   and space between them. */
+		.caption-wrap .knowmore,
+		.caption-wrap .booknow {
+			display: inline-block !important;
+			padding: 8px 14px !important;
+			margin: 6px 8px 6px 0 !important;
+			border: 1px solid #1a1a1a !important;
+		}
 	</style>
 	<?php
 }, 100 );
