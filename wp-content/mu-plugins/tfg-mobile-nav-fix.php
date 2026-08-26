@@ -64,6 +64,31 @@ add_action( 'wp_head', function () {
 		.qodef-mobile-header .qodef-mobile-nav ul li a:hover h6 {
 			color: #1a1a1a !important;
 		}
+		/* Selected/highlighted text is rendered white (theme default assumes
+		   a dark background) against a near-white selection highlight
+		   (#edf7fa), so selected text is effectively invisible site-wide -
+		   e.g. typing into the Contact Us "Message" textarea and selecting
+		   text shows nothing. */
+		::selection {
+			color: #1a1a1a !important;
+			background: #b3d4fc !important;
+		}
+		/* Contact Us page (page-id-1165) banner heading "CONTACT US" is
+		   plain black text sitting directly over a photo background with
+		   no overlay, so its low-contrast/hard to read. */
+		.page-id-1165 h1.qodef-custom-font-holder {
+			color: #ffffff !important;
+		}
+		/* Contact form Submit button (.qodef-btn-outline) has a hover
+		   state but no :active/:focus state at all, so clicking it gives
+		   no visual feedback - button just stays a near-invisible
+		   light-gray outline. Give it a clear pressed state. */
+		.wpcf7-submit.qodef-btn-outline:active,
+		.wpcf7-submit.qodef-btn-outline:focus {
+			background-color: #000000 !important;
+			color: #ffffff !important;
+			border-color: #000000 !important;
+		}
 	</style>
 	<?php
 }, 100 );
