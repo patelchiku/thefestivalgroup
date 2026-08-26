@@ -89,12 +89,13 @@ add_action( 'wp_head', function () {
 			color: #ffffff !important;
 			border-color: #000000 !important;
 		}
-		/* Property/project card "Know More" buttons (.knowmore, plain
-		   outline links outside the MetaSlider caption context) have no
-		   hover state at all - clicking/hovering gives zero visual
-		   feedback. Give them the standard outline-button hover: invert
-		   to a solid black fill. */
-		a.knowmore:hover {
+		/* Property/project card "Know More" / "Book Now" buttons (.knowmore,
+		   .booknow, plain outline links outside the MetaSlider caption
+		   context) have no hover state at all - clicking/hovering gives
+		   zero visual feedback. Give them the standard outline-button
+		   hover: invert to a solid black fill. */
+		a.knowmore:hover,
+		a.booknow:hover {
 			background-color: #000000 !important;
 			color: #ffffff !important;
 			border-color: #000000 !important;
