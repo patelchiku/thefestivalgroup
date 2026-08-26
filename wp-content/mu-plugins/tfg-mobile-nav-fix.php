@@ -79,12 +79,21 @@ add_action( 'wp_head', function () {
 		.page-id-1165 h1.qodef-custom-font-holder {
 			color: #ffffff !important;
 		}
-		/* Contact form Submit button (.qodef-btn-outline) has a hover
-		   state but no :active/:focus state at all, so clicking it gives
-		   no visual feedback - button just stays a near-invisible
-		   light-gray outline. Give it a clear pressed state. */
-		.wpcf7-submit.qodef-btn-outline:active,
-		.wpcf7-submit.qodef-btn-outline:focus {
+		/* Every CF7 form's Submit button (.wpcf7-submit.qodef-btn-outline,
+		   used site-wide - Contact Us, Get Redevelopment Offer, and any
+		   other form built with this theme) only gets a text/border color
+		   change from the theme's own :hover rule, and has no :active or
+		   :focus state at all - so hovering/clicking gives little to no
+		   visual feedback, button stays a near-invisible outline. Give it
+		   a clear solid-black state on hover, click, and keyboard focus.
+		   Selector needs the extra .qodef-btn class (not just
+		   .qodef-btn-outline) to match the specificity of the theme's own
+		   ":not(.qodef-btn-custom-hover-bg):hover" rule - otherwise that
+		   rule's higher specificity wins over ours despite !important and
+		   despite ours loading later. */
+		.wpcf7-submit.qodef-btn.qodef-btn-outline:hover,
+		.wpcf7-submit.qodef-btn.qodef-btn-outline:active,
+		.wpcf7-submit.qodef-btn.qodef-btn-outline:focus {
 			background-color: #000000 !important;
 			color: #ffffff !important;
 			border-color: #000000 !important;
