@@ -66,6 +66,12 @@ add_action( 'wp_head', function () {
 			-webkit-tap-highlight-color: transparent;
 			background-color: transparent !important;
 		}
+		/* No underline on hover either - plain text only, no visual change
+		   at all beyond the color safety fix above. */
+		.qodef-mobile-header .qodef-mobile-nav ul li a:hover,
+		.qodef-vertical-menu ul li a:hover {
+			text-decoration: none !important;
+		}
 		/* Same issue: MetaSlider caption "Know More"/"Book Now" links are
 		   white text with a transparent background (theme assumes the
 		   caption sits directly over a dark photo). Here the caption sits
