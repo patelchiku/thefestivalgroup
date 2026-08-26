@@ -72,6 +72,17 @@ add_action( 'wp_head', function () {
 		.qodef-vertical-menu ul li a:hover {
 			text-decoration: none !important;
 		}
+		/* The "underline" isn't text-decoration at all - it's the theme's
+		   own ::before/::after pseudo-elements on .item_text: a small dot
+		   and an expanding bar that slides in on hover. The bar's color is
+		   the same washed-out pale blue (rgb(237,247,250)) as the other
+		   invisible-text bugs above, which reads as a stray light-blue
+		   line. Remove both pseudo-elements entirely - no line, no dot,
+		   no animation. */
+		.qodef-vertical-menu .item_text::before,
+		.qodef-vertical-menu .item_text::after {
+			display: none !important;
+		}
 		/* Same issue: MetaSlider caption "Know More"/"Book Now" links are
 		   white text with a transparent background (theme assumes the
 		   caption sits directly over a dark photo). Here the caption sits
