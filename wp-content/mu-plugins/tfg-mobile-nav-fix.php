@@ -28,6 +28,18 @@ add_action( 'wp_head', function () {
 		.qodef-vertical-menu ul li.qodef-active-item > a .item_text {
 			color: #1a1a1a !important;
 		}
+		/* Mobile nav links flash a grey/blue highlight box on tap - that's
+		   the browser's default mobile tap-highlight overlay, not a theme
+		   style. Menu should just show plain black text with no highlight
+		   or animation on tap/hover. */
+		.qodef-mobile-header .qodef-mobile-nav ul li a,
+		.qodef-mobile-header .qodef-mobile-nav ul li h6,
+		.qodef-vertical-menu ul li a,
+		.qodef-vertical-menu ul li h6 {
+			-webkit-tap-highlight-color: transparent;
+			background-color: transparent !important;
+			transition: none !important;
+		}
 		/* Same issue: MetaSlider caption "Know More"/"Book Now" links are
 		   white text with a transparent background (theme assumes the
 		   caption sits directly over a dark photo). Here the caption sits
