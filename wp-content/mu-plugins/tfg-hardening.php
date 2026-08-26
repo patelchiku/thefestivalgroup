@@ -53,3 +53,38 @@ add_filter( 'xmlrpc_methods', function ( $methods ) {
 	unset( $methods['system.multicall'] );
 	return $methods;
 } );
+
+/**
+ * CF7 bot-submission hardening: honeypot field + minimum-fill-time check.
+ * No API keys, no visible UI, no per-form editing - applies to every CF7
+ * form on the site automatically via wpcf7_form_elements, so it covers
+ * Contact Us, Get Redevelopment Offer, and any form added later.
+ *
+ * Deliberately not using the bundled UACF7 "Spam Protection" addon: it
+ * shows a visible CAPTCHA to every visitor (friction we don't want) and
+ * its code calls a third-party IP-lookup API over plain HTTP and
+ * unserialize()s the response - an unnecessary and unsafe dependency for
+ * what a free honeypot achieves with none of that.
+ */
+add_filter( 'wpcf7_form_elements', function ( $html ) {
+	$html .= '<p class="tfg-hp" aria-hidden="true" style="position:absolute!important;left:-9999px!important;top:-9999px!important;width:1px;height:1px;overflow:hidden;margin:0;padding:0;">'
+		. '<label>Leave this field empty<input type="text" name="tfg_hp_website" tabindex="-1" autocomplete="off"></label>'
+		. '</p>'
+		. '<input type="hidden" name="tfg_hp_ts" value="' . time() . '">';
+	return $html;
+} );
+
+add_filter( 'wpcf7_spam', function ( $spam ) {
+	if ( $spam ) {
+		return $spam;
+	}
+	// Honeypot field: real visitors never see or fill it.
+	if ( ! empty( $_POST['tfg_hp_website'] ) ) {
+		return true;
+	}
+	// Minimum-fill-time: reject submissions faster than a human can fill the form.
+	if ( isset( $_POST['tfg_hp_ts'] ) && ( time() - (int) $_POST['tfg_hp_ts'] ) < 3 ) {
+		return true;
+	}
+	return $spam;
+} );
