@@ -55,15 +55,6 @@ add_action( 'wp_head', function () {
 		footer .textwidget.custom-html-widget h6 {
 			color: #ffffff !important;
 		}
-		/* Same washed-out color also shows up on :hover for every vertical
-		   menu / mobile menu link, not just the current-page item - text
-		   fades to near-white on mouseover, illegible on this light menu bg. */
-		.qodef-vertical-menu ul li a:hover,
-		.qodef-vertical-menu ul li a:hover .item_text,
-		.qodef-mobile-header .qodef-mobile-nav ul li a:hover,
-		.qodef-mobile-header .qodef-mobile-nav ul li a:hover h6 {
-			color: #1a1a1a !important;
-		}
 		/* Selected/highlighted text is rendered white (theme default assumes
 		   a dark background) against a near-white selection highlight
 		   (#edf7fa), so selected text is effectively invisible site-wide -
