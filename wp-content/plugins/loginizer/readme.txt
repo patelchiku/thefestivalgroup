@@ -4,7 +4,7 @@ Tags: security, access, admin, Loginizer, login, logs, ban ip, failed login, ip,
 Requires at least: 3.0
 Tested up to: 7.1
 Requires PHP: 5.5
-Stable tag: 2.1.0
+Stable tag: 2.1.3
 License: LGPLv2.1
 License URI: http://www.gnu.org/licenses/lgpl-2.1.html
 
@@ -87,6 +87,28 @@ That's it. You're done!
 3. Loginizer Brute Force Settings page
 
 == Changelog ==
+
+= 2.1.3 =
+* [Security] Fixed a security issue in the HybridAuth library used by Social Login. [Reported by Nathan Cross (CyberBadger)]
+* [Feature Pro] Passkeys: You can now log in to your website using passkeys, making authentication faster, easier, and more secure without the hassle of passwords.
+* [Improvement Pro] Microsoft Social Login now identifies users by their Microsoft account ID instead of their email. The first Microsoft login to an account, or a registration, is now confirmed with a code sent to the user's email.
+* [Improvement] Social Login error messages are now escaped before being shown on the login page.
+* [Improvement] The Backuply install option now requires the install plugins capability.
+* [Bug-Fix Pro] Resetting the 2FA app secret key is now only possible from the 2FA settings page, that has been fixed.
+* [Bug-Fix Pro] 2FA emergency codes were not always removed after use, that has been fixed.
+* [Bug-Fix Pro] Username enumeration protection was not blocking all variations of the REST users endpoint, that has been fixed.
+* [Bug-Fix Pro] Users were not able to save their account settings on the Ultimate Member account page, that has been fixed.
+* [Bug-Fix] Social Login now refuses a login when the provider returns an invalid email, instead of sanitizing it.
+* [Bug-Fix] Login notification email was causing a fatal error when Really Simple Security 2FA was used, that has been fixed.
+* [Bug-Fix] Security settings page input fields would show empty fields when saved, this has been fixed.
+
+= 2.1.2 =
+* [Pro Feature] Login Page Branding: customize the login page with your logo, colors, background image, a centered or left/right panel layout, a custom message, title and custom CSS.
+* [Bug-Fix Pro] There was an issue which was preventing users from updating user details on Ultimate Member plugin's user account page that has been fixed.
+
+= 2.1.1 =
+* [Improvement Pro] Added Code Signing: Every update now verifies the code signature to ensure secure updates.
+* [Bug-Fix Pro] There was an issue in 2FA when WP Slug access secretly only option was enabled that has been fixed.
 
 = 2.1.0 =
 * [Pro Feature] User enumeration protection, hiding unauthenticated access to username lists.

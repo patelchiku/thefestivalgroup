@@ -142,6 +142,13 @@ class Loginizer_Social_Login extends Loginizer_Social_Base{
 					self::trigger_error();
 					return;
 				}
+
+				// Refuse instead of sanitizing, sanitize_email() strips what is_email() rejects
+				if(!is_email($data['email'])){
+					self::$error['login_failed'] = __('The email returned by the provider is not a valid email.', 'loginizer');
+					self::trigger_error();
+					return;
+				}
 				
 				// If it is a test then, we are satisfied that the Provider is returning data
 				// As this verifies the provider is working.
@@ -150,8 +157,22 @@ class Loginizer_Social_Login extends Loginizer_Social_Base{
 					return;
 				}
 
+				// Pro can return the user linked to this social account, or a WP_Error to refuse the login
+				// or to send the user on to a step of its own, like entering an emailed code
+				$user = apply_filters('loginizer_social_user', false, $provider, $data);
+				if(is_wp_error($user)){
+					if($user->get_error_code() == 'loginizer_social_redirect'){
+						self::close_tab($user->get_error_data());
+						return;
+					}
+
+					self::$error['login_error'] = $user->get_error_message();
+					self::trigger_error();
+					return;
+				}
+
 				// Create an account if it does not exists.
-				if(empty(email_exists(sanitize_email($data['email'])))){
+				if(empty($user) && empty(email_exists($data['email']))){
 					if(self::$test === true){
 						self::$error['test_error'] = __('The email you are using for the test is not registered on this website. So register this email first.', 'loginizer');
 						self::trigger_error();
@@ -169,7 +190,10 @@ class Loginizer_Social_Login extends Loginizer_Social_Base{
 					return;
 				}
 
-				$user = get_user_by('email', sanitize_email($data['email']));
+				if(empty($user)){
+					$user = get_user_by('email', $data['email']);
+				}
+
 				if(empty($user)){
 					self::$error['login_error'] = __('User with this email does not exists.', 'loginizer');
 					self::trigger_error();
@@ -187,7 +211,8 @@ class Loginizer_Social_Login extends Loginizer_Social_Base{
 
 		}catch(\Exception $e){
 			@error_log('Loginizer Log(Social): '. esc_html($e->getMessage()));
-			self::$error['login_error'] = __('Oops, we ran into an issue! ', 'loginizer') . $e->getMessage();
+			// The message can carry the raw provider response and wp-login.php prints errors as HTML
+			self::$error['login_error'] = __('Oops, we ran into an issue! ', 'loginizer') . esc_html($e->getMessage());
 			self::trigger_error();
 			//wp_safe_redirect(wp_login_url());
 			return;

@@ -17,6 +17,10 @@ class MetaSlider
     public $slides = array(); // slides belonging to this slider
     public $settings = array(); // slider settings
 
+    // Memoized result of get_javascript_parameters() - some of its filters remove
+    // themselves after running, so a second call would silently lose their output.
+    private $javascript_parameters = null;
+
     /**
      * Constructor
      *
@@ -129,7 +133,10 @@ class MetaSlider
                     return $defaults[$name] ? 'true' : 'false';
                 }
 
-                return $defaults[$name] ? $defaults[$name] : 'false';
+                // strlen(), not a truthy check - a legitimate zero default
+                // (e.g. corner_radius, border_width) is falsy in PHP and
+                // would otherwise collapse to the string 'false'.
+                return strlen($defaults[$name]) > 0 ? $defaults[$name] : 'false';
             }
         } else {
             if (strlen($this->settings[$name]) > 0) {
@@ -197,8 +204,12 @@ class MetaSlider
             'carouselMargin' => 5,
             'minItems' => 2,
             'maxItems' => 0,
+            'carouselItems_smartphone' => 0,
+            'carouselItems_tablet' => 0,
+            'carouselItems_laptop' => 0,
+            'carouselItems_desktop' => 0,
             // @since 3.111.2 - MetaSlider Pro - Layer slide type
-            // @TODO - Handle through Pro plugin's own 'metaslider_default_parameters' filter
+            // @TODO - Remove 'layer_scaling' as was added through Pro plugin's own 'metaslider_default_parameters' filter at 2.60
             'layer_scaling' => 'up_and_down',
             'forceHeight' => false,
             'firstSlideFadeIn' => false,
@@ -289,6 +300,7 @@ class MetaSlider
             'post_status' => array('inherit', 'publish'),
             'lang' => '', // polylang, ingore language filter
             'suppress_filters' => 1, // wpml, ignore language filter
+            // phpcs:ignore WordPressVIPMinimum.Performance.NoPaging.posts_per_page_posts_per_page
             'posts_per_page' => -1,
             'tax_query' => array(
                 array(
@@ -477,8 +489,8 @@ class MetaSlider
     {
 
         // Add the version to the class name (if possible)
-        $version_string = str_replace('.', '-', urlencode(METASLIDER_VERSION));
-        $version_string .= defined('METASLIDERPRO_VERSION') ? ' ml-slider-pro-' . str_replace('.', '-', urlencode(METASLIDERPRO_VERSION)) : '';
+        $version_string = str_replace('.', '-', rawurlencode(METASLIDER_VERSION));
+        $version_string .= defined('METASLIDERPRO_VERSION') ? ' ml-slider-pro-' . str_replace('.', '-', rawurlencode(METASLIDERPRO_VERSION)) : '';
         $class = "ml-slider-{$version_string} metaslider metaslider-{$this->get_setting('type')} metaslider-{$this->id} ml-slider";
 
         // apply the css class setting
@@ -611,6 +623,8 @@ class MetaSlider
      * Delay execution of slider code until jQuery is ready (supports themes where
      * jQuery is loaded at the bottom of the page)
      *
+     * @since 3.114.0 Init with WordPress's own jQuery when the slider plugin is attached to it, not whatever window.jQuery is at ready time
+     *
      * @return string javascript
      */
     private function get_inline_javascript()
@@ -663,7 +677,10 @@ class MetaSlider
         $timer = "\n        var timer_" . $identifier . " = function() {";
         // this would be the sensible way to do it, but WordPress sometimes converts && to &#038;&
         // window.jQuery && jQuery.isReady ? {$identifier}(window.jQuery) : window.setTimeout(timer_{$identifier}, 1);";
-        $timer .= "\n            var slider = !window.jQuery ? window.setTimeout(timer_{$this->identifier}, 100) : !jQuery.isReady ? window.setTimeout(timer_{$this->identifier}, 1) : {$this->identifier}(window.jQuery);";
+        // WordPress's own jQuery (see MetaSliderPlugin::remember_core_jquery()), unless the slider plugin attached to a theme's copy instead
+        $timer .= "\n            var core = window.metaslider_jQuery;";
+        $timer .= "\n            var jq = !core ? window.jQuery : core.fn." . $this->js_function . " ? core : window.jQuery;";
+        $timer .= "\n            var slider = !jq ? window.setTimeout(timer_{$this->identifier}, 100) : !jq.isReady ? window.setTimeout(timer_{$this->identifier}, 1) : {$this->identifier}(jq);";
         $timer .= "\n        };";
         $timer .= "\n        timer_" . $identifier . "();";
 
@@ -747,6 +764,10 @@ class MetaSlider
      */
     private function get_javascript_parameters()
     {
+        if (null !== $this->javascript_parameters) {
+            return $this->javascript_parameters;
+        }
+
         $options = array();
 
         // construct an array of all parameters
@@ -780,7 +801,9 @@ class MetaSlider
             }
         }
 
-        return implode(",\n                ", $pairs);
+        $this->javascript_parameters = implode(",\n                ", $pairs);
+
+        return $this->javascript_parameters;
     }
 
 
@@ -971,7 +994,7 @@ class MetaSlider
 
         if (filter_var($this->get_setting('printCss'), FILTER_VALIDATE_BOOLEAN)) {
             wp_enqueue_style('metaslider-' . $this->get_setting('type') . '-slider', METASLIDER_ASSETS_URL . $this->css_path, false, METASLIDER_ASSETS_VERSION);
-            wp_enqueue_style('metaslider-public', METASLIDER_ASSETS_URL . 'metaslider/public.css', false, METASLIDER_ASSETS_VERSION);
+            wp_enqueue_style('metaslider-public', METASLIDER_ASSETS_URL . 'metaslider/public' . metaslider_asset_suffix() . '.css', false, METASLIDER_ASSETS_VERSION);
 
             if ($this->has_font_awesome_icons()) {
                 wp_enqueue_style('metaslider-fontawesome', METASLIDER_ADMIN_ASSETS_URL . 'vendor/fontawesome/css/fontawesome.min.css', false, METASLIDER_ASSETS_VERSION);
@@ -1044,7 +1067,7 @@ class MetaSlider
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 p-0.5 text-gray-dark"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                     </span>
                     <span>
-                        <?php _e( 'Add Slide', 'ml-slider' ) ?>
+                        <?php esc_html_e( 'Add Slide', 'ml-slider' ) ?>
                     </span>
                 </a>
             </div>

@@ -49,7 +49,7 @@ class Transient implements StorageInterface
      */
 	public function __construct()
 	{
-		if(!empty($_COOKIE['lz_social_login'])){
+		if(!empty($_COOKIE['lz_social_login']) && preg_match('/^lz_[0-9a-f]{24}$/', $_COOKIE['lz_social_login'])){
 			$this->key = sanitize_text_field(wp_unslash($_COOKIE['lz_social_login']));
 			
 			$transient = get_transient($this->key);

@@ -128,6 +128,11 @@ function loginizer_is_whitelisted(){
 
 	$current_ip_inet = inet_ptoi($loginizer['current_ip']);
 
+	// An empty / invalid IP gives false, which would match a range starting at 0.0.0.0
+	if($current_ip_inet === false){
+		return false;
+	}
+
 	foreach($whitelist as $k => $v){
 		$start_inet = inet_ptoi($v['start']);
 		$end_inet = inet_ptoi($v['end']);

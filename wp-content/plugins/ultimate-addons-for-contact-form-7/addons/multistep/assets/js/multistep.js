@@ -149,7 +149,7 @@
         }
         // console.log(uacf7_current_step_fields);
         var data = fields_to_check_serialized +
-            '&' + 'action=' + 'check_fields_validation' +
+            '&' + 'action=' + 'uacf7_check_fields_validation' +
             '&' + 'form_id=' + form_id +
             '&' + 'validation_fields=' + validation_fields +
             '&' + 'current_fields_to_check=' + uacf7_current_step_fields +
@@ -199,17 +199,19 @@
                     } else {
 
                         // show errors
-                        jQuery.each(json_result.invalid_fields, function (i, n) {
+                        if (json_result.invalid_fields && Array.isArray(json_result.invalid_fields)) {
+                            jQuery.each(json_result.invalid_fields, function (i, n) {
 
-                            jQuery(n.into, 'form').each(function () {
+                                jQuery(n.into, 'form').each(function () {
 
-                                jQuery('.wpcf7-form-control', this).addClass('wpcf7-not-valid');
-                                jQuery('[aria-invalid]', this).attr('aria-invalid', 'true');
+                                    jQuery('.wpcf7-form-control', this).addClass('wpcf7-not-valid');
+                                    jQuery('[aria-invalid]', this).attr('aria-invalid', 'true');
 
-                                jQuery(this).append('<span class="wpcf7-not-valid-tip" aria-hidden="true">' + n.message + '</span>');
+                                    jQuery(this).append('<span class="wpcf7-not-valid-tip" aria-hidden="true">' + n.message + '</span>');
 
+                                });
                             });
-                        });
+                        }
 
                     }
                 } catch (e) {

@@ -69,7 +69,12 @@ function loginizer_page_security(){
 	
 	// Reset the username
 	if(isset($_POST['save_lz_admin'])){
-		
+
+		if(is_multisite() && !is_super_admin()){
+			$lz_error['not_super_admin'] = __('Only a Super Admin can change usernames on a multisite network', 'loginizer');
+			return loginizer_page_security_T();
+		}
+
 		// Get the new username
 		$current_username = lz_optpost('current_username');
 		$new_username = lz_optpost('new_username');
@@ -84,6 +89,11 @@ function loginizer_page_security(){
 			return loginizer_page_security_T();
 		}
 		
+		if(!validate_username($new_username)){
+			$lz_error['new_username_invalid'] = __('The new username contains invalid characters', 'loginizer');
+			return loginizer_page_security_T();
+		}
+
 		// Is the starting of the username having 'admin' ?
 		if(@strtolower(substr($new_username, 0, 5)) == 'admin'){
 			$lz_error['user_exists'] = __('The username begins with <b>admin</b>. Please change it !', 'loginizer');
@@ -123,7 +133,9 @@ function loginizer_page_security(){
 		$format = array('%s');
 		$where_format = array('%d');
 		
-		$wpdb->update($wpdb->prefix.'users', $update_data, $where_data, $format, $where_format);
+		// $wpdb->users and not $wpdb->prefix as on multisite subsites the prefix has the blog ID
+		$wpdb->update($wpdb->users, $update_data, $where_data, $format, $where_format);
+		clean_user_cache($old_user);
 		
 		// Update the super admins list for multisite
 		if(!empty($is_super_admin)){
@@ -318,6 +330,13 @@ input[type="text"], textarea, select {
 }
 </style>
 
+<?php
+$loginizer_security = get_option('loginizer_security');
+if(!empty($loginizer_security) && is_array($loginizer_security)){
+	$loginizer = array_merge($loginizer, $loginizer_security);
+}
+?>
+
 <form action="" method="post" enctype="multipart/form-data" loginizer-premium-only="1">
 
 	<div id="" class="postbox">
@@ -343,7 +362,7 @@ input[type="text"], textarea, select {
 					<span class="exp"><?php echo __('Set blank to reset to the original login URL', 'loginizer'); ?></span>
 				</td>
 				<td>
-					<input type="text" size="50" value="<?php echo (!empty($loginizer['login_slug']) ? lz_POSTval('login_slug', $loginizer['login_slug']) : ''); ?>" name="login_slug" />
+					<input type="text" size="50" value="<?php echo (!empty($loginizer_security['login_slug']) ? esc_attr($loginizer_security['login_slug']) : ''); ?>" name="login_slug" />
 				</td>
 			</tr>
 	
@@ -358,7 +377,7 @@ if(!defined('SITEPAD')){
 					<span class="exp"><?php echo sprintf(__('If set, then all Login URL\'s will still point to %s and users will have to access the New Login Slug by typing it in the browser.', 'loginizer'), esc_html($loginizer['login_basename'])); ?></span>
 				</td>
 				<td>
-					<input type="checkbox" value="1" name="rename_login_secret" <?php echo lz_POSTchecked('rename_login_secret', (empty($loginizer['rename_login_secret']) ? false : true)); ?> />
+					<input type="checkbox" value="1" name="rename_login_secret" <?php echo (!empty($loginizer_security['rename_login_secret']) ? 'checked="checked"' : ''); ?> />
 				</td>
 			</tr>
 			<tr>
@@ -367,7 +386,7 @@ if(!defined('SITEPAD')){
 					<span class="exp"><?php echo __('If the user is not logged in they wont be able to access wp-admin url.', 'loginizer'); ?></span>
 				</td>
 				<td>
-					<input type="checkbox" value="1" name="hide_wp_admin" <?php echo lz_POSTchecked('hide_wp_admin', (empty($loginizer['hide_wp_admin']) ? false : true)); ?> />
+					<input type="checkbox" value="1" name="hide_wp_admin" <?php echo (!empty($loginizer_security['hide_wp_admin']) ? 'checked="checked"' : ''); ?> />
 				</td>
 			</tr>
 			<tr>
@@ -377,7 +396,7 @@ if(!defined('SITEPAD')){
 					<span class="exp"><?php echo __('Default: HomePage.', 'loginizer'); ?></span>
 				</td>
 				<td>
-					<?php echo esc_url(home_url('/')); ?>&nbsp;<input type="text" style="width:20%;" name="login_redirect_url" value="<?php echo (!empty($loginizer['login_redirect_url']) ? lz_POSTval('login_redirect_url', $loginizer['login_redirect_url']) : ''); ?>"/>
+					<?php echo esc_url(home_url('/')); ?>&nbsp;<input type="text" style="width:20%;" name="login_redirect_url" value="<?php echo (!empty($loginizer_security['login_redirect_url']) ? esc_attr($loginizer_security['login_redirect_url']) : ''); ?>"/>
 				</td>
 			</tr>
 	
@@ -420,7 +439,7 @@ if(!defined('SITEPAD')){
 					<label><?php echo __('Disable XML-RPC', 'loginizer'); ?></label>
 				</td>
 				<td>
-					<input type="checkbox" value="1" name="xmlrpc_disable" <?php echo lz_POSTchecked('xmlrpc_disable', (empty($loginizer['xmlrpc_disable']) ? false : true)); ?> />
+					<input type="checkbox" value="1" name="xmlrpc_disable" <?php echo (!empty($loginizer_security['xmlrpc_disable']) ? 'checked="checked"' : ''); ?> />
 				</td>
 			</tr>
 			<tr>
@@ -428,7 +447,7 @@ if(!defined('SITEPAD')){
 					<label><?php echo __('Disable Pingbacks', 'loginizer'); ?></label>
 				</td>
 				<td>
-					<input type="checkbox" value="1" name="pingbacks_disable" <?php echo lz_POSTchecked('pingbacks_disable', (empty($loginizer['pingbacks_disable']) ? false : true)); ?> />
+					<input type="checkbox" value="1" name="pingbacks_disable" <?php echo (!empty($loginizer_security['pingbacks_disable']) ? 'checked="checked"' : ''); ?> />
 				</td>
 			</tr>
 			<tr>
@@ -437,7 +456,7 @@ if(!defined('SITEPAD')){
 					<span class="exp"><?php echo __('Set blank to reset to the original XML-RPC URL', 'loginizer'); ?></span>
 				</td>
 				<td>
-					<input type="text" size="50" value="<?php echo (!empty($loginizer['xmlrpc_slug']) ? lz_optpost('xmlrpc_slug', $loginizer['xmlrpc_slug']) : ''); ?>" name="xmlrpc_slug" />
+					<input type="text" size="50" value="<?php echo (!empty($loginizer_security['xmlrpc_slug']) ? esc_attr($loginizer_security['xmlrpc_slug']) : ''); ?>" name="xmlrpc_slug" />
 				</td>
 			</tr>
 		</table><br />
@@ -515,6 +534,13 @@ function lz_test_wp_admin(){
 
 </script>
 
+<?php
+$loginizer_wp_admin = get_option('loginizer_wp_admin');
+if(!empty($loginizer_wp_admin) && is_array($loginizer_wp_admin)){
+	$loginizer = array_merge($loginizer, $loginizer_wp_admin);
+}
+?>
+
 <form action="" method="post" enctype="multipart/form-data" loginizer-premium-only="1">
 	<div id="" class="postbox">
 	
@@ -556,7 +582,7 @@ function lz_test_wp_admin(){
 					<span class="exp"><?php echo __('Set blank to reset to the original wp-admin URL', 'loginizer'); ?></span>
 				</td>
 				<td>
-					<input type="text" size="50" value="<?php echo (!empty($loginizer['admin_slug']) ? lz_optpost('admin_slug', $loginizer['admin_slug']) : ''); ?>" name="admin_slug" id="lz_admin_slug" onchange="lz_update_htaccess_admin(this)"/>
+					<input type="text" size="50" value="<?php echo (!empty($loginizer_wp_admin['admin_slug']) ? esc_attr($loginizer_wp_admin['admin_slug']) : ''); ?>" name="admin_slug" id="lz_admin_slug" onchange="lz_update_htaccess_admin(this)"/>
 				</td>
 			</tr>
 			<tr>
@@ -565,7 +591,7 @@ function lz_test_wp_admin(){
 					<span class="exp"><?php echo __('If set, then only the new admin slug will work and access to the Old Admin Slug i.e. wp-admin will be disabled. If anyone accesses wp-admin, a warning will be shown.<br><label>NOTE: Please use this option cautiously !</label>', 'loginizer'); ?></span>
 				</td>
 				<td>
-					<input type="checkbox" id="lz_restrict_wp_admin" onchange="lz_wp_admin_msg_toggle()" value="1" name="restrict_wp_admin" <?php echo lz_POSTchecked('restrict_wp_admin', (empty($loginizer['restrict_wp_admin']) ? false : true)); ?> />
+					<input type="checkbox" id="lz_restrict_wp_admin" onchange="lz_wp_admin_msg_toggle()" value="1" name="restrict_wp_admin" <?php echo (!empty($loginizer_wp_admin['restrict_wp_admin']) ? 'checked="checked"' : ''); ?> />
 				</td>
 			</tr>
 			<tr id="lz_wp_admin_msg_row" style="display:none">
@@ -574,7 +600,7 @@ function lz_test_wp_admin(){
 					<span class="exp"><?php echo __('Error message to show if someone accesses wp-admin', 'loginizer'); ?></span> Default : <?php echo (!empty($loginizer['wp_admin_d_msg']) ? $loginizer['wp_admin_d_msg'] : ''); ?>
 				</td>
 				<td>
-					<input type="text" size="50" value="<?php echo lz_htmlizer(!empty($_POST['wp_admin_msg']) ? stripslashes($_POST['wp_admin_msg']) : (!empty($loginizer['wp_admin_msg']) ? $loginizer['wp_admin_msg'] : '')); ?>" name="wp_admin_msg" id="lz_wp_admin_msg" />
+					<input type="text" size="50" value="<?php echo (!empty($loginizer_wp_admin['wp_admin_msg']) ? esc_attr($loginizer_wp_admin['wp_admin_msg']) : ''); ?>" name="wp_admin_msg" id="lz_wp_admin_msg" />
 				</td>
 			</tr>
 
@@ -673,7 +699,8 @@ function lz_show_rewrite_rule(e){
 						<span class="exp"><?php esc_html_e('If enabled, it will update the URL of wp-admin with a random session string in the URL making it hard to predict the URL.', 'loginizer'); ?></span>
 					</td>
 					<td valign="top">
-						<input type="checkbox" value="1" name="enable_csrf_protection" <?php echo lz_POSTchecked('enable_csrf_protection', (empty($loginizer['enable_csrf_protection']) ? false : true)); ?> />
+						<?php $loginizer_csrf_protection = get_option('loginizer_csrf_protection'); ?>
+						<input type="checkbox" value="1" name="enable_csrf_protection" <?php echo (!empty($loginizer_csrf_protection) ? 'checked="checked"' : ''); ?> />
 					</td>
 				</tr>
 				<?php
@@ -788,7 +815,8 @@ function add_lz_bl_users(){
 					<div id="lz_bl_users">
 					<?php
 					
-					$usernames = isset($_POST['lz_bl_users']) && is_array($_POST['lz_bl_users']) ? $_POST['lz_bl_users'] : (!empty($loginizer['username_blacklist']) ? $loginizer['username_blacklist'] : []);
+					$loginizer_username_blacklist = get_option('loginizer_username_blacklist', []);
+					$usernames = !empty($loginizer_username_blacklist) && is_array($loginizer_username_blacklist) ? $loginizer_username_blacklist : [];
 					
 					if(empty($usernames)){
 						$usernames = array();
@@ -853,7 +881,8 @@ function add_lz_bl_domains(){
 					<div id="lz_bl_domains">
 					<?php
 					
-					$domains = isset($_POST['lz_bl_domains']) && is_array($_POST['lz_bl_domains']) ? $_POST['lz_bl_domains'] : (!empty($loginizer['domains_blacklist']) ? $loginizer['domains_blacklist'] : []);
+					$loginizer_domains_blacklist = get_option('loginizer_domains_blacklist', []);
+					$domains = !empty($loginizer_domains_blacklist) && is_array($loginizer_domains_blacklist) ? $loginizer_domains_blacklist : [];
 					
 					if(empty($domains)){
 						$domains = array();
@@ -907,7 +936,8 @@ function add_lz_bl_domains(){
 					<span class="exp"><?php echo __('Enabling it will start limiting number of devices the user can login on concurrently', 'loginizer'); ?></span>
 				</td>
 				<td>
-					<input type="checkbox" value="1" name="limit_session[enable]" <?php echo (!empty($_POST['limit_session']['enable']) || (!empty($loginizer['limit_session']['enable']))) ? 'checked' : false; ?> />
+					<?php $loginizer_limit_session = get_option('loginizer_limit_session', []); ?>
+					<input type="checkbox" value="1" name="limit_session[enable]" <?php echo (!empty($loginizer_limit_session['enable']) ? 'checked="checked"' : ''); ?> />
 				</td>
 			</tr>
 			<tr>
@@ -915,9 +945,9 @@ function add_lz_bl_domains(){
 					<label><?php echo __('Limit Type', 'loginizer'); ?></label><br>
 				</td>
 				<td>
-					<input type="radio" value="block" name="limit_session[type]" <?php echo ((!empty($_POST['limit_session']['type']) && $_POST['limit_session']['type'] == 'block') || (!empty($loginizer['limit_session']['type']) && $loginizer['limit_session']['type'] == 'block' ) ? 'checked' : false); ?> />
+					<input type="radio" value="block" name="limit_session[type]" <?php echo (!empty($loginizer_limit_session['type']) && $loginizer_limit_session['type'] == 'block' ? 'checked="checked"' : ''); ?> />
 					<span class="exp"><?php echo '<strong>'.__('Block', 'loginizer') . ' : </strong>' . __('Blocks all the login attempts if limit is reached', 'loginizer'); ?></span><br/>
-					<input type="radio" value="destroy" name="limit_session[type]" <?php echo ((!empty($_POST['limit_session']['type']) && $_POST['limit_session']['type'] == 'destroy') || (!empty($loginizer['limit_session']['type']) && $loginizer['limit_session']['type'] == 'destroy' ) ? 'checked' : false); ?> />
+					<input type="radio" value="destroy" name="limit_session[type]" <?php echo (!empty($loginizer_limit_session['type']) && $loginizer_limit_session['type'] == 'destroy' ? 'checked="checked"' : ''); ?> />
 					<span class="exp"><?php echo '<strong>'.__('Destroy', 'loginizer') . ' : </strong>' . __('Revokes all the sessions on successful login', 'loginizer'); ?></span>
 				</td>
 			</tr>
@@ -927,7 +957,7 @@ function add_lz_bl_domains(){
 					<span class="exp"><?php echo __('Set Maximum number of sessions can be created', 'loginizer'); ?></span>
 				</td>
 				<td>
-					<input type="number" min="1" max="10" size="20" value="<?php echo (!empty($_POST['limit_session']['count']) ? esc_attr($_POST['limit_session']['count']) : (!empty($loginizer['limit_session']['count']) ? esc_attr($loginizer['limit_session']['count']) : 1)); ?>" name="limit_session[count]" />
+					<input type="number" min="1" max="10" size="20" value="<?php echo (!empty($loginizer_limit_session['count']) ? esc_attr($loginizer_limit_session['count']) : 1); ?>" name="limit_session[count]" />
 				</td>
 			</tr>
 			<tr>
@@ -944,8 +974,7 @@ function add_lz_bl_domains(){
 			foreach($wp_roles->roles as $key => $role){
 				$checked = '';
 
-				if(!empty($_POST['limit_session']['roles']) && in_array($key, $_POST['limit_session']['roles'])
-					|| !empty($loginizer['limit_session']['roles']) && in_array($key, $loginizer['limit_session']['roles'])){
+				if(!empty($loginizer_limit_session['roles']) && in_array($key, $loginizer_limit_session['roles'])){
 						$checked = 'checked';
 				}
 				

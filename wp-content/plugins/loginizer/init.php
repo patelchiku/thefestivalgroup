@@ -5,7 +5,7 @@ if(!function_exists('add_action')){
 	exit;
 }
 
-define('LOGINIZER_VERSION', '2.1.0');
+define('LOGINIZER_VERSION', '2.1.3');
 define('LOGINIZER_DIR', dirname(LOGINIZER_FILE));
 define('LOGINIZER_URL', plugins_url('', LOGINIZER_FILE));
 define('LOGINIZER_PRO_URL', 'https://loginizer.com/features#compare');
@@ -226,7 +226,7 @@ global $wpdb;
 	
 }
 
-// Add the action to load the plugin 
+// Add the action to load the plugin
 add_action('plugins_loaded', 'loginizer_load_plugin');
 
 // The function that will be called when the plugin is loaded
@@ -236,6 +236,16 @@ function loginizer_load_plugin(){
 	
 	// Check if the installed version is outdated
 	loginizer_update_check();
+	
+	// There was an issue were for some users update was stuck, and free was able to get updated through auto updater option
+	// removing these filters fixes that issue, and our Pro update blocker was improved in 2.1.1
+	// This check can be removed 1 year from 28.09.2026
+	if(defined('LOGINIZER_PRO_VERSION') && version_compare(LOGINIZER_PRO_VERSION, '2.1.1', '<')){
+		foreach(['site_transient_update_plugins', 'pre_site_transient_update_plugins'] as $hook){
+			remove_filter($hook, 'loginizer_pro_disable_manual_update_for_plugin'); // Older Pro used the default priority
+			remove_filter($hook, 'loginizer_pro_disable_manual_update_for_plugin', 99);
+		}
+	}
 
 	// Set the array
 	if(empty($loginizer)){
@@ -675,11 +685,12 @@ function loginizer_login_success($user_login, $user) {
 		return;
 	}
 
-	if(empty($user)){
-		$user = get_user_by('login', $user_login);
+	// Some plugins (e.g. Really Simple Security 2FA) pass the username instead of a WP_User
+	if(!($user instanceof \WP_User)){
+		$user = get_user_by('login', (empty($user_login) && is_string($user)) ? $user : $user_login);
 	}
 
-	if(empty($user)){
+	if(empty($user) || !is_object($user)){
 		error_log('Loginizer: Unable to get the user');
 		return;
 	}
@@ -689,7 +700,7 @@ function loginizer_login_success($user_login, $user) {
 	}
 
 	// Check if the user role is enabled for email notification.
-	if(!array_intersect($user->roles, $loginizer['login_mail']['roles'])){
+	if(empty($user->roles) || !is_array($user->roles) || !array_intersect($user->roles, $loginizer['login_mail']['roles'])){
 		return;
 	}
 

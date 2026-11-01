@@ -139,7 +139,7 @@ function loginizer_provider_settings($provider, $provider_defaults){
 		update_option('loginizer_social_login_url', wp_login_url());
 	}
 
-	if(!empty($_GET['test'])){
+	if(!empty($_GET['test']) && !empty($_GET['lz_test_nonce']) && wp_verify_nonce($_GET['lz_test_nonce'], 'loginizer_social_test')){
 		$provider_settings[$provider]['tested'] = true;
 		update_option('loginizer_provider_settings', $provider_settings);
 	}

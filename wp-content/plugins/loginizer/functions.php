@@ -674,6 +674,11 @@ function loginizer_get_social_error(){
 	}
 
 	$error_identifier = sanitize_text_field(wp_unslash($_COOKIE['lz_social_error']));
+
+	if(!preg_match('/^lz_social[0-9a-f]+\.[0-9]+$/', $error_identifier)){
+		return;
+	}
+
 	$social_errors = get_site_transient($error_identifier);
 
 	if(empty($social_errors['errors'])){

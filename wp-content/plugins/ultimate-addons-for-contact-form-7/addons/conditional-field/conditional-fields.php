@@ -13,13 +13,8 @@ class UACF7_CF {
 	 * Construct function
 	 */
 	public function __construct() {
-		global $pagenow;
-		if ( isset( $_GET['page'] ) ) {
-			if ( ( $pagenow == 'admin.php' ) && ( $_GET['page'] == 'wpcf7' ) || ( $_GET['page'] == 'wpcf7-new' ) ) {
-				add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_cf_admin_script' ) );
-			}
-		}
 
+		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_cf_admin_script' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_cf_frontend_script' ) );
 		add_action( 'wpcf7_init', array( __CLASS__, 'add_shortcodes' ) );
 		add_action( 'admin_init', array( $this, 'tag_generator' ) );
@@ -30,12 +25,8 @@ class UACF7_CF {
 		add_action( 'wpcf7_form_hidden_fields', array( $this, 'uacf7_form_hidden_fields' ), 10, 1 );
 
 		add_filter( 'wpcf7_posted_data', array( $this, 'remove_hidden_post_data' ) );
-		add_filter( 'wpcf7_validate', array( $this, 'skip_validation_for_hidden_fields' ), 2, 2 );
-
-		add_action( 'wpcf7_validate_checkbox*', array($this, 'skip_hidden_checkbox_required') , 10, 2 );
-
-		add_filter( 'wpcf7_validate_file*', array( $this, 'skip_validation_for_hidden_file_field' ), 30, 3 );
-		add_filter( 'wpcf7_validate_multifile*', array( $this, 'skip_validation_for_hidden_file_field' ), 30, 3 );
+		add_filter( 'wpcf7_validate', array( $this, 'skip_validation_for_hidden_fields' ), 20, 2 );
+		add_filter( 'wpcf7_acceptance', array( $this, 'skip_hidden_acceptance' ), 20, 2 );
 		
 		add_action( 'wpcf7_config_validator_validate', array( $this, 'uacf7_config_validator_validate' ) );
 
@@ -49,7 +40,10 @@ class UACF7_CF {
 	}
 
 	public function enqueue_cf_admin_script() {
-		wp_enqueue_script( 'uacf7-cf-script', UACF7_ADDONS . '/conditional-field/js/cf-script.js', array( 'jquery' ), UACF7_VERSION, true );
+		$screen = function_exists( 'get_current_screen' ) ? get_current_screen() : null;
+		if ( $screen && is_string( $screen->id ) && false !== strpos( $screen->id, 'wpcf7' ) ) {
+			wp_enqueue_script( 'uacf7-cf-script', UACF7_ADDONS . '/conditional-field/js/cf-script.js', array( 'jquery' ), UACF7_VERSION, true );
+		}
 	}
 
 	public function enqueue_cf_frontend_script() {
@@ -60,45 +54,59 @@ class UACF7_CF {
 	public function uacf7_post_meta_options_conditional_field( $value, $post_id ) {
 
 		$conditional = apply_filters( 'uacf7_post_meta_options_conditional_field_pro', $data = array(
-			'title' => __( 'Conditional Fields', 'ultimate-addons-cf7' ),
+			'title' => __( 'Conditional Fields', 'ultimate-addons-for-contact-form-7' ),
 			'icon' => 'fa-solid fa-fan',
 			'checked_field' => 'conditional_repeater',
 			'fields' => array(
 				'conditional_heading' => array(
-					'id' => 'conditional_heading',
-					'type' => 'heading',
-					'label' => __( 'Conditional Fields Settings', 'ultimate-addons-cf7' ),
+					'id'    => 'conditional_heading',
+					'type'  => 'heading',
+					'label' => __('Conditional Fields Settings','ultimate-addons-for-contact-form-7'),
 					'subtitle' => sprintf(
-						__( 'Show or hide Contact Form 7 fields based on Conditional Logic. See Demo %1s.', 'ultimate-addons-cf7' ),
-						'<a href="https://cf7addons.com/preview/contact-form-7-conditional-fields/" target="_blank">Example</a>'
-					)
+						/* translators: %1$s: Link to the Conditional Fields example/demo. */
+						__(
+							'Show or hide Contact Form 7 fields based on Conditional Logic. See Demo %1$s.',
+							'ultimate-addons-for-contact-form-7'
+						),
+						'<a href="' . esc_url( 'https://cf7addons.com/preview/contact-form-7-conditional-fields/' ) . '" target="_blank" rel="noopener noreferrer">' .
+							esc_html__( 'Example', 'ultimate-addons-for-contact-form-7' ) .
+						'</a>'
+					),
 				),
 				'conditional_field_docs' => array(
-					'id' => 'conditional_field_docs',
-					'type' => 'notice',
+					'id'    => 'conditional_field_docs',
+					'type'  => 'notice',
 					'style' => 'success',
 					'content' => sprintf(
-						__( 'Confused? Check our Documentation on  %1s and %2s.', 'ultimate-addons-cf7' ),
-						'<a href="https://themefic.com/docs/uacf7/free-addons/contact-form-7-conditional-fields/" target="_blank">Conditional Fields</a>',
-						'<a href="https://themefic.com/docs/uacf7/pro-addons/contact-form-7-conditional-fields-pro/" target="_blank">Conditional Fields (Pro)</a>'
-					)
+						/* translators: 1: Link to Conditional Fields documentation, 2: Link to Conditional Fields Pro documentation. */
+						__(
+							'Confused? Check our Documentation on %1$s and %2$s.',
+							'ultimate-addons-for-contact-form-7'
+						),
+						'<a href="' . esc_url( 'https://themefic.com/docs/uacf7/free-addons/contact-form-7-conditional-fields/' ) . '" target="_blank" rel="noopener noreferrer">' .
+							esc_html__( 'Conditional Fields', 'ultimate-addons-for-contact-form-7' ) .
+						'</a>',
+						'<a href="' . esc_url( 'https://themefic.com/docs/uacf7/pro-addons/contact-form-7-conditional-fields-pro/' ) . '" target="_blank" rel="noopener noreferrer">' .
+							esc_html__( 'Conditional Fields (Pro)', 'ultimate-addons-for-contact-form-7' ) .
+						'</a>'
+					),
 				),
 				'conditional_form_options_heading' => array(
 					'id' => 'conditional_form_options_heading',
 					'type' => 'heading',
-					'label' => __( 'Conditional Option ', 'ultimate-addons-cf7' ),
+					'label' => __( 'Conditional Option ', 'ultimate-addons-for-contact-form-7' ),
 				),
 				'conditional_repeater' => array(
 					'id' => 'conditional_repeater',
 					'type' => 'repeater',
-					'label' => __( 'Setup your Conditional Logic', 'ultimate-addons-cf7' ),
-					'subtitle' => __( "The process involves selecting a field and determining its visibility (either visible or hidden) based on whether any or all specified conditions are met. These conditions are triggered by the conditional value you establish for another field.", 'ultimate-addons-cf7' ),
+					'label' => __( 'Setup your Conditional Logic', 'ultimate-addons-for-contact-form-7' ),
+					'subtitle' => __( "The process involves selecting a field and determining its visibility (either visible or hidden) based on whether any or all specified conditions are met. These conditions are triggered by the conditional value you establish for another field.", 'ultimate-addons-for-contact-form-7' ),
 					'class' => 'tf-field-class',
 					'fields' => array(
 						'uacf7_cf_group' => array(
 							'id' => 'uacf7_cf_group',
 							'type' => 'select',
-							'label' => __( 'Choose Field', 'ultimate-addons-cf7' ),
+							'label' => __( 'Choose Field', 'ultimate-addons-for-contact-form-7' ),
 							'subtitle' => "Wrap a field with this shortcode: [conditional conditional-123][/conditional]. Replace 'conditional-123' with your specific ID.",
 							'class' => 'tf-field-class',
 							'options' => 'uacf7',
@@ -111,7 +119,7 @@ class UACF7_CF {
 						'uacf7_cf_hs' => array(
 							'id' => 'uacf7_cf_hs',
 							'type' => 'select',
-							'label' => __( 'Visibility', 'ultimate-addons-cf7' ),
+							'label' => __( 'Visibility', 'ultimate-addons-for-contact-form-7' ),
 							'subtitle' => "Select whether this field should be visible or hidden when the condition below is met.",
 							'class' => 'tf-field-class',
 							'options' => array(
@@ -123,7 +131,7 @@ class UACF7_CF {
 						'uacf7_cf_condition_for' => array(
 							'id' => 'uacf7_cf_condition_for',
 							'type' => 'select',
-							'label' => __( 'If', 'ultimate-addons-cf7' ),
+							'label' => __( 'If', 'ultimate-addons-for-contact-form-7' ),
 							'subtitle' => "Choose the trigger for the condition: it should activate if 'any' one of the conditions is met or when 'all' conditions.",
 							'class' => 'tf-field-class',
 							'options' => array(
@@ -136,26 +144,26 @@ class UACF7_CF {
 						'uacf7_cf_conditions' => array(
 							'id' => 'uacf7_cf_conditions',
 							'type' => 'repeater',
-							'label' => __( 'Add Condition', 'ultimate-addons-cf7' ),
+							'label' => __( 'Add Condition', 'ultimate-addons-for-contact-form-7' ),
 							'class' => 'tf-field-class',
 							'fields' => array(
 
 								'uacf7_cf_tn' => array(
 									'id' => 'uacf7_cf_tn',
 									'type' => 'select',
-									'label' => __( 'Conditional Field', 'ultimate-addons-cf7' ),
+									'label' => __( 'Conditional Field', 'ultimate-addons-for-contact-form-7' ),
 									'class' => 'tf-field-class',
 									'options' => 'uacf7',
 									'query_args' => array(
 										'post_id' => $post_id,
-										'exclude' => [ 'submit', 'conditional' ],
+										'exclude_types' => [ 'submit', 'conditional' ],
 									),
 									'field_width' => '50',
 								),
 								'uacf7_cf_operator' => array(
 									'id' => 'uacf7_cf_operator',
 									'type' => 'select',
-									'label' => __( 'is', 'ultimate-addons-cf7' ),
+									'label' => __( 'is', 'ultimate-addons-for-contact-form-7' ),
 									'class' => 'tf-field-class',
 									'options' => array(
 										'equal' => 'equal',
@@ -218,7 +226,7 @@ class UACF7_CF {
 
 		$tag_generator->add(
 			'conditional',
-			__( 'Conditional Wraper', 'ultimate-addons-cf7' ),
+			__( 'Conditional Wraper', 'ultimate-addons-for-contact-form-7' ),
 			[ $this, 'tg_pane_conditional' ],
 			array( 'version' => '2' )
 		);
@@ -227,9 +235,9 @@ class UACF7_CF {
 	static function tg_pane_conditional( $contact_form, $options ) {
 		$field_types = array(
 			'conditional' => array(
-				'display_name' => __( 'conditional area', 'contact-form-7' ),
-				'heading' => __( 'Generate a conditional tag to wrap the elements that can be shown conditionally.', 'ultimate-addons-cf7' ),
-				'description' => __( 'Check "Conditional Fields" tab located under the Addons for CF7 Options for additional settings. Make sure to set those, otherwise the conditions may not work correctly.', 'ultimate-addons-cf7' ),
+				'display_name' => __( 'conditional area', 'ultimate-addons-for-contact-form-7' ),
+				'heading' => __( 'Generate a conditional tag to wrap the elements that can be shown conditionally.', 'ultimate-addons-for-contact-form-7' ),
+				'description' => __( 'Check "Conditional Fields" tab located under the Addons for CF7 Options for additional settings. Make sure to set those, otherwise the conditions may not work correctly.', 'ultimate-addons-for-contact-form-7' ),
 			),
 		);
 
@@ -243,7 +251,7 @@ class UACF7_CF {
 			</h3>
 
 			<p><?php
-			$description = wp_kses(
+			echo wp_kses(
 				$field_types['conditional']['description'],
 				array(
 					'a' => array( 'href' => true ),
@@ -252,12 +260,11 @@ class UACF7_CF {
 				array( 'http', 'https' )
 			);
 
-			echo $description;
 			?></p>
 			<div class="uacf7-doc-notice">
-				Confused? Check our Documentation on
+				<?php esc_html_e('Confused? Check our Documentation on', 'ultimate-addons-for-contact-form-7'); ?>
 				<a href="https://themefic.com/docs/uacf7/free-addons/contact-form-7-conditional-fields/" target="_blank">
-					Conditional Fields
+					<?php esc_html_e('Conditional Fields', 'ultimate-addons-for-contact-form-7'); ?>
 				</a>.
 			</div>
 		</header>
@@ -372,10 +379,11 @@ class UACF7_CF {
 
 					array_push( $stack, $tag_html_type );
 
-					echo '<' . $tag_html_type . ' class="uacf7_conditional ' . esc_attr( $tag_id ) . '">';
+					echo '<div class="uacf7_conditional ' . esc_attr( $tag_id ) . '">';
 				} else if ( $form_part == '[/conditional]' ) {
-					echo '</' . array_pop( $stack ) . '>';
+					echo '</' . esc_attr(array_pop( $stack )) . '>';
 				} else {
+					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Preserve the CF7 form markup while rebuilding the conditional-field wrapper.
 					echo $form_part;
 				}
 			}
@@ -387,40 +395,43 @@ class UACF7_CF {
 	
 
 	function skip_validation_for_hidden_fields( $result, $tags ) {
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing -- CF7 handles request validation before hidden-field processing.
 		if ( isset( $_POST ) ) {
+			// phpcs:ignore WordPress.Security.NonceVerification.Missing -- CF7 handles request validation before hidden-field processing.
 			$this->set_hidden_fields_arrays( $_POST );
 		}
 
 		$invalid_fields = $result->get_invalid_fields();
-		$return_result = new WPCF7_Validation();
+		$return_result  = new WPCF7_Validation();
 
-		if ( count( $this->hidden_fields ) == 0 || ! is_array( $invalid_fields ) || count( $invalid_fields ) == 0 ) {
+		if ( count( $this->hidden_fields ) === 0 || ! is_array( $invalid_fields ) || count( $invalid_fields ) === 0 ) {
 			return $result;
 		}
 
 		// Normalize hidden field names (strip [] if exists)
-		$normalized_hidden_fields = array_map(function($field) {
-			return rtrim($field, '[]');
-		}, $this->hidden_fields);
+		$normalized_hidden_fields = array_map( function( $field ) {
+			return rtrim( $field, '[]' );
+		}, $this->hidden_fields );
 
 		foreach ( $invalid_fields as $invalid_field_key => $invalid_field_data ) {
-			$normalized_key = rtrim($invalid_field_key, '[]');
+			$normalized_key = rtrim( $invalid_field_key, '[]' );
 
-			if ( ! in_array( $normalized_key, $normalized_hidden_fields ) ) {
-
-				foreach ( $tags as $tag ) {
-					if ( ($tag->basetype == 'checkbox' && $tag->is_required()) || 
-						($tag->basetype == 'dragdropfile' && $tag->is_required()) ) {
-
-						$tag_name = rtrim($tag->name, '[]');
-						if ( $tag_name === $normalized_key && in_array($tag_name, $normalized_hidden_fields) ) {
-							$this->invalid_field_key = $invalid_field_key;
-							continue 2; // skip invalidation
+			if ( ! in_array( $normalized_key, $normalized_hidden_fields, true ) ) {
+				$matched_tag = null;
+				if ( is_array( $tags ) ) {
+					foreach ( $tags as $tag ) {
+						if ( $tag instanceof WPCF7_FormTag && ( $tag->name === $invalid_field_key || $tag->name === $normalized_key ) ) {
+							$matched_tag = $tag;
+							break;
 						}
 					}
 				}
 
-				$return_result->invalidate( $invalid_field_key, $invalid_field_data['reason'] );
+				if ( $matched_tag ) {
+					$return_result->invalidate( $matched_tag, $invalid_field_data['reason'] );
+				} else {
+					$return_result->invalidate( $invalid_field_key, $invalid_field_data['reason'] );
+				}
 			}
 		}
 
@@ -442,8 +453,13 @@ class UACF7_CF {
 
 		$this->set_hidden_fields_arrays( $posted_data );
 
-		foreach ( $this->hidden_fields as $name => $value ) {
-			unset( $posted_data[ $name ] );
+		if ( is_array( $this->hidden_fields ) && is_array( $posted_data ) ) {
+			foreach ( $this->hidden_fields as $field_name ) {
+				if ( is_string( $field_name ) ) {
+					unset( $posted_data[ $field_name ] );
+					unset( $posted_data[ rtrim( $field_name, '[]' ) ] );
+				}
+			}
 		}
 
 		return $posted_data;
@@ -452,59 +468,104 @@ class UACF7_CF {
 
 	public function set_hidden_fields_arrays( $posted_data = false ) {
 
-		if ( ! $posted_data ) {
-			$posted_data = WPCF7_Submission::get_instance()->get_posted_data();
-		}
-		if ( isset( $posted_data['_uacf7_hidden_conditional_fields'] ) ) {
-			$hidden_fields = json_decode( stripslashes( $posted_data['_uacf7_hidden_conditional_fields'] ) );
+		if ( false === $posted_data ) {
+			// phpcs:ignore WordPress.Security.NonceVerification.Missing -- CF7 handles request validation before hidden-field processing.
+			if ( isset( $_POST['_uacf7_hidden_conditional_fields'] ) ) {
+				// phpcs:ignore WordPress.Security.NonceVerification.Missing -- CF7 handles request validation before hidden-field processing.
+				$raw_hidden = wp_unslash( $_POST['_uacf7_hidden_conditional_fields'] );
+			} else {
+				$submission = WPCF7_Submission::get_instance();
+
+				if ( ! $submission ) {
+					return;
+				}
+
+				$posted_data = $submission->get_posted_data();
+				$raw_hidden  = isset( $posted_data['_uacf7_hidden_conditional_fields'] ) ? $posted_data['_uacf7_hidden_conditional_fields'] : '';
+			}
+		} elseif ( is_array( $posted_data ) && isset( $posted_data['_uacf7_hidden_conditional_fields'] ) ) {
+			$raw_hidden = wp_unslash( $posted_data['_uacf7_hidden_conditional_fields'] );
+		} elseif ( isset( $_POST['_uacf7_hidden_conditional_fields'] ) ) {
+			// phpcs:ignore WordPress.Security.NonceVerification.Missing -- CF7 handles request validation before hidden-field processing.
+			$raw_hidden = wp_unslash( $_POST['_uacf7_hidden_conditional_fields'] );
 		} else {
-			$hidden_fields = [];
+			$raw_hidden = '';
 		}
+
+		if ( is_string( $raw_hidden ) && '' !== $raw_hidden ) {
+			$hidden_fields = json_decode( $raw_hidden, true );
+		} elseif ( is_array( $raw_hidden ) ) {
+			$hidden_fields = $raw_hidden;
+		} else {
+			$hidden_fields = array();
+		}
+
+		$this->hidden_fields = array();
 		if ( is_array( $hidden_fields ) && count( $hidden_fields ) > 0 ) {
 			foreach ( $hidden_fields as $field ) {
-
-				$this->hidden_fields[] = $field;
+				if ( is_string( $field ) && '' !== $field && ! in_array( $field, $this->hidden_fields, true ) ) {
+					$this->hidden_fields[] = $field;
+				}
 			}
 		}
 
 	}
 
-	public function skip_hidden_checkbox_required($result, $tag){
-
-		if ( ! count( $result->get_invalid_fields() ) ) {
-			return $result;
-		}
-		if ( isset( $_POST ) ) {
-			$this->set_hidden_fields_arrays( $_POST );
-		}
-
-		$invalid_field_keys = array_keys( $result->get_invalid_fields() );
-		if ( isset( $this->hidden_fields ) && is_array( $this->hidden_fields ) && in_array( $tag->name. '[]', $this->hidden_fields ) ) {
-
-			return new WPCF7_Validation();
-		}
-
+	public function skip_hidden_checkbox_required( $result, $tag ) {
 		return $result;
-
 	}
 
 	/* Skip validation for hidden file field */
-	function skip_validation_for_hidden_file_field( $result, $tag, $args = [] ) {
-		
-		if ( ! count( $result->get_invalid_fields() ) ) {
-			return $result;
+	public function skip_validation_for_hidden_file_field( $result, $tag, $args = array() ) {
+		return $result;
+	}
+
+	public function skip_hidden_acceptance( $accepted, $submission ) {
+		if ( $accepted ) {
+			return $accepted;
 		}
+
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing -- CF7 handles request validation before hidden-field processing.
 		if ( isset( $_POST ) ) {
+			// phpcs:ignore WordPress.Security.NonceVerification.Missing -- CF7 handles request validation before hidden-field processing.
 			$this->set_hidden_fields_arrays( $_POST );
 		}
 
-		$invalid_field_keys = array_keys( $result->get_invalid_fields() );
-
-		if ( isset( $this->hidden_fields ) && is_array( $this->hidden_fields ) && in_array( $tag->name, $this->hidden_fields ) && count( $invalid_field_keys ) == 1 ) {
-			return new WPCF7_Validation();
+		if ( empty( $this->hidden_fields ) ) {
+			return $accepted;
 		}
 
-		return $result;
+		$normalized_hidden_fields = array_map( function( $field ) {
+			return rtrim( $field, '[]' );
+		}, $this->hidden_fields );
+
+		$contact_form = $submission->get_contact_form();
+		if ( ! $contact_form ) {
+			return $accepted;
+		}
+
+		$tags = $contact_form->scan_form_tags( array( 'type' => 'acceptance' ) );
+
+		foreach ( $tags as $tag ) {
+			if ( empty( $tag->name ) || $tag->has_option( 'optional' ) ) {
+				continue;
+			}
+
+			// If this acceptance field is hidden, skip it
+			if ( in_array( $tag->name, $normalized_hidden_fields, true ) ) {
+				continue;
+			}
+
+			// This is a visible required acceptance field; check if accepted
+			$value  = wpcf7_superglobal_post( $tag->name ) ? 1 : 0;
+			$invert = $tag->has_option( 'invert' );
+
+			if ( ( $invert && $value ) || ( ! $invert && ! $value ) ) {
+				return false;
+			}
+		}
+
+		return true;
 	}
 
 	public function uacf7_config_validator_validate( WPCF7_ConfigValidator $wpcf7_config_validator ) {

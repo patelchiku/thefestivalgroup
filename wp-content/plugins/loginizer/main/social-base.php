@@ -43,12 +43,41 @@ class Loginizer_Social_Base{
 	}
 	
 	/**
-	 * Creates a User account
+	 * Creates a User account and logs it in
 	 *
 	 * @param  mixed[] $data Data we get from the Social App
 	 * @return void
 	 */
 	protected static function register_account($data){
+
+		$user = self::create_account($data);
+
+		// TODO: Handle Error here.
+		if(is_wp_error($user)){
+			self::$error['registration_failed'] = $user->get_error_message();
+			return;
+		}
+
+		if(empty($user)){
+			self::$error['registration_failed'] =  __('Unable to register your account, try again later!', 'loginizer');
+			self::close_tab();
+			return;
+		}
+
+		// Logging In the new user.
+		self::login_user($user);
+
+		// Closing the tab and redirecting to the admin.
+		self::close_tab();
+	}
+
+	/**
+	 * Creates a User account
+	 *
+	 * @param  mixed[] $data Data we get from the Social App
+	 * @return WP_User|WP_Error|false
+	 */
+	protected static function create_account($data){
 		global $loginizer;
 
 		$username = $data['first_name'] . $data['last_name'];
@@ -81,16 +110,12 @@ class Loginizer_Social_Base{
 
 		$user_id = wp_insert_user($userdata);
 
-		// TODO: Handle Error here.
 		if(is_wp_error($user_id)){
-			self::$error['registration_failed'] = __('Something went wrong while creating the user', 'loginizer'). $user_id->get_error_message();
-			return;
+			return new WP_Error('registration_failed', __('Something went wrong while creating the user', 'loginizer'). $user_id->get_error_message());
 		}
 
 		if(empty($user_id)){
-			self::$error['registration_failed'] =  __('Unable to register your account, try again later!', 'loginizer');
-			self::close_tab();
-			return;
+			return false;
 		}
 
 		update_user_option($user_id, 'default_password_nag', true, true); // This will show alert to user to change the password.
@@ -105,14 +130,7 @@ class Loginizer_Social_Base{
 			self::save_avatar($data['photoURL'], $user->ID);
 		}
 
-		// Logging In the new user.
-		self::login_user($user);
-
-		// Closing the tab and redirecting to the admin.
-		$redirect_to = admin_url();
-
-		self::close_tab();
-
+		return $user;
 	}
 	
 	/**
@@ -121,12 +139,11 @@ class Loginizer_Social_Base{
 	 * @param  string $redirect_to URL where the user should be redirected, leave empty if want to redirect to admin.
 	 * @return void
 	 */
-	protected static function close_tab(){
+	protected static function close_tab($redirect_to = ''){
 		global $loginizer;
 
 		// Check if the URL is safe to use.
-		$redirect_to = '';
-		if(!empty(self::$ref)){
+		if(empty($redirect_to) && !empty(self::$ref)){
 			$redirect_to = self::handle_redirect(self::$ref);
 		}
 
@@ -138,7 +155,7 @@ class Loginizer_Social_Base{
 		} else if(!empty(self::$test)){
 			$target_window = 'popup';
 
-			$redirect_to .= '&provider='.self::$provider.'&test=1';
+			$redirect_to .= '&provider='.self::$provider.'&test=1&lz_test_nonce='.wp_create_nonce('loginizer_social_test');
 		}else if(!empty($loginizer['social_settings']['general']['target_window'])){
 			$target_window = $loginizer['social_settings']['general']['target_window'];
 		}
