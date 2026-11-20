@@ -888,25 +888,6 @@ window.jQuery(function ($) {
         })
     }
 
-    /**
-     * Marks the native router tab ("Upload files"/"Media Library") for whatever the frame is
-     * showing. Called after external API tabs are removed, since those are plain <a>s the
-     * router doesn't track, so removing an active one leaves no tab marked at all.
-     *
-     * @since 3.113.0
-     *
-     * @return void
-     */
-    var restore_native_router_tab = function () {
-        var frame = wp.media.frames.file_frame
-        var router = frame && frame.router && frame.router.get()
-        var mode = frame && frame.content && frame.content.mode()
-
-        if (router && router.select && mode) {
-            router.select(mode)
-        }
-    }
-
     var add_image_apis = window.metaslider.add_image_apis = function (slide_type, slide_id, show_external_apis = true) {
 
         var APP = window.metaslider.app.MetaSlider;
@@ -965,8 +946,8 @@ window.jQuery(function ($) {
         delete window.metaslider.slide_id
         delete window.metaslider.slide_type
 
-        // The removed tabs may have been the active one, so put the mark back on a native tab
-        restore_native_router_tab()
+        // Since we will destroy the container each time we should add the active class to whatever is first
+        $('.media-frame-router .media-router > a').first().trigger('click')
     }
 
     /**
@@ -1042,8 +1023,8 @@ window.jQuery(function ($) {
         }
         $(video_api_tab_selector).remove()
 
-        // The removed tabs may have been the active one, so put the mark back on a native tab
-        restore_native_router_tab()
+        // Since we will destroy the container each time we should add the active class to whatever is first
+        $('.media-frame-router .media-router > a').first().trigger('click')
     }
 
     /**
@@ -1678,6 +1659,26 @@ window.jQuery(function ($) {
         let id = $(this).data("id");
         $("#modal-" + id).fadeIn();
         $("#overlay-" + id).fadeIn();
+
+        // Empty when "Load Slideshow Usage on Demand" is on, so load it now (#2613)
+        let $results = $("#modal-" + id + " .usage-results");
+        if ($results.html() === '' || $results.data('failed')) {
+            $results.text(metaslider.loading).data('failed', false);
+            $.post(metaslider.ajaxurl, {
+                action: 'ms_get_slideshow_usage',
+                slideshow_id: id,
+                METASLIDER_NONCE: metaslider.request_nonce
+            }, function (response) {
+                if (response.success) {
+                    $results.html(response.data.html);
+                } else {
+                    $results.text(metaslider.usage_error).data('failed', true);
+                }
+            }).fail(function () {
+                // Flag it so reopening the window tries again
+                $results.text(metaslider.usage_error).data('failed', true);
+            });
+        }
     });
 
     $(".close-modal, .modal-overlay").on("click", function () {

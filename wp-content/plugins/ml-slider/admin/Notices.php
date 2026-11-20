@@ -239,9 +239,8 @@ class MetaSlider_Notices extends Updraft_Notices_1_0
     {
         global $wp_version;
 
-        // MetaSlider Downloads needs newer PHP and WordPress than MetaSlider does, so the install would fail
+        // MetaSlider Downloads needs newer WordPress than MetaSlider does, so the install would fail
         return current_user_can('install_plugins')
-            && version_compare(PHP_VERSION, '7.4', '>=')
             && version_compare($wp_version, '6.0', '>=');
     }
 

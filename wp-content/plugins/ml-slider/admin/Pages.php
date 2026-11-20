@@ -104,6 +104,7 @@ class MetaSlider_Admin_Pages extends MetaSliderPlugin
      * Loads in custom javascript
      *
      * @since 3.112.0-beta.4 Localized unsplashImageQuality/pixabayImageQuality/pixabayVideoQuality (#2365)
+     * @since 3.114.1 Localized request_nonce, loading and usage_error for the "View Usage" window (#2613)
      */
     public function load_javascript()
     {
@@ -175,6 +176,9 @@ class MetaSlider_Admin_Pages extends MetaSliderPlugin
             'duplicate_slide_nonce' => wp_create_nonce('metaslider_duplicate_slide'),
             'quickstart_slideshow_nonce' => wp_create_nonce('metaslider_quickstart_slideshow'),
             'legacy_notification_nonce' => wp_create_nonce('metaslider_legacy_notification'),
+            'request_nonce' => wp_create_nonce('metaslider_request'),
+            'loading' => esc_html__('Loading...', 'ml-slider'),
+            'usage_error' => esc_html__('Could not load the usage. Please try again.', 'ml-slider'),
             'useWithCaution' => esc_html__("Caution: This setting is for advanced developers only. If you're unsure, leave it checked.", "ml-slider"),
             'locale' => preg_replace('/[^a-z]/', '', get_locale()),
             'newSlideOrder' => isset( $global_settings['newSlideOrder'] ) 

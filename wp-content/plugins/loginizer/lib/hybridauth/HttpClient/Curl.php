@@ -28,6 +28,7 @@ class Curl implements HttpClientInterface
         CURLOPT_SSL_VERIFYHOST => 2,
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_REDIR_PROTOCOLS => CURLPROTO_HTTPS, // Follow redirects, but never downgrade to http.
         CURLOPT_MAXREDIRS => 5,
         CURLINFO_HEADER_OUT => true,
         CURLOPT_ENCODING => 'identity',

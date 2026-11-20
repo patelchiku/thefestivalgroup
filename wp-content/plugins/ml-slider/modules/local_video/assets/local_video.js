@@ -80,8 +80,7 @@ wp.media.view.MediaFrame.Post = oldMediaFrameLV.extend({
             new wp.media.controller.Library({
                 id: 'insert-local-video',
                 title: wp.media.view.l10n.insertLocalVideo,
-                // Lower than core's own 'insert' (Image) state at 20, so Local Video sits first
-                priority: 10,
+                priority: 25,
                 toolbar: 'add-local-video-slide',
                 filterable: 'video',
                 multiple: false,
@@ -94,10 +93,6 @@ wp.media.view.MediaFrame.Post = oldMediaFrameLV.extend({
                 }, this.options.library))
             }),
         ]);
-
-        // Core's parent initialize above defaulted this to 'insert' (Image); point it at the
-        // state added just now so the frame opens on Local Video (#2460)
-        this.options.state = 'insert-local-video';
 
         // Core adds every media_upload_tabs item - Livid included - at priority 200, so no
         // value can place this between two of them. Bound after core's own iframeMenu (set

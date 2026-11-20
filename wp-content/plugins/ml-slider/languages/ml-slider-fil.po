@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-09-16T17:25:49+00:00\n"
-"PO-Revision-Date: 2026-10-26 20:28+0000\n"
+"PO-Revision-Date: 2026-11-18 18:37+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ml-slider\n"
 "|| n % 10 == 6 || n % 10 == 9);\n"
@@ -73,7 +73,7 @@ msgstr "Masamang kahilingan. Ito ay hindi isang slideshow."
 #: admin/lib/helpers.php:360
 #: inc/slide/metaslide.image.class.php:420
 #: inc/slide/metaslide.livid.class.php:795
-#: ml-slider.php:1084
+#: ml-slider.php:1109
 #: modules/local_video/slide.php:205
 #: modules/local_video/slide.php:908
 #: modules/local_video/slide.php:973
@@ -161,50 +161,50 @@ msgstr "Gusto mo bang ipakita ang iyong slideshow media sa loob ng isang lightbo
 
 #: admin/Notices.php:163
 msgid ""
-"Do you share files on your site? Count and protect your downloads with "
-"MetaSlider Downloads."
+"Do you need to share files with your users? Display and protect "
+"downloadable files with MetaSlider Downloads"
 msgstr ""
-"Nagbahagi ka ba ng mga file sa iyong site? Bilangin at protektahan ang "
-"iyong mga pag-download gamit ang MetaSlider Downloads."
+"Kailangan mo bang magbahagi ng mga file sa iyong mga gumagamit? I-display "
+"at protektahan ang mga downloadable na file gamit ang MetaSlider Downloads"
 
-#: admin/Notices.php:386
+#: admin/Notices.php:385
 msgid "weeks"
 msgstr "mga linggo"
 
-#: admin/Notices.php:406
+#: admin/Notices.php:405
 msgid "Let's Start &rarr;"
 msgstr "Magsimula Tayo &rarr;"
 
-#: admin/Notices.php:408
+#: admin/Notices.php:407
 msgid "Find out more &rarr;"
 msgstr "Alamin pa &rarr;"
 
-#: admin/Notices.php:409
+#: admin/Notices.php:408
 msgid "Get MetaSlider Slideshow Pro &rarr;"
 msgstr "Kumuha ng MetaSlider Slideshow Pro &rarr;"
 
-#: admin/Notices.php:410
+#: admin/Notices.php:409
 msgid "Sign up &rarr;"
 msgstr "Mag-sign up &rarr;"
 
-#: admin/Notices.php:411
+#: admin/Notices.php:410
 msgid "Go there &rarr;"
 msgstr "Pumunta doon &rarr;"
 
-#: admin/Notices.php:415
+#: admin/Notices.php:414
 msgid "Click to install the MetaSlider Gallery plugin &rarr;"
 msgstr "I-click upang i-install ang MetaSlider Gallery plugin &rarr;"
 
-#: admin/Notices.php:419
+#: admin/Notices.php:418
 msgid "Click to install the MetaSlider Downloads plugin &rarr;"
 msgstr "I-click upang i-install ang MetaSlider Downloads plugin &rarr;"
 
-#: admin/Notices.php:422
+#: admin/Notices.php:421
 msgid "Read more"
 msgstr "Magbasa ng higit pa"
 
-#: admin/Notices.php:436
-#: admin/Notices.php:727
+#: admin/Notices.php:435
+#: admin/Notices.php:726
 #: inc/slide/metaslide.class.php:146
 #: inc/slide/metaslide.image.class.php:129
 #: inc/slide/metaslide.image.class.php:227
@@ -214,12 +214,12 @@ msgstr "Magbasa ng higit pa"
 #: inc/slide/metaslide.livid.class.php:409
 #: inc/slide/metaslide.livid.class.php:456
 #: inc/slide/metaslide.livid.class.php:787
-#: ml-slider.php:1054
-#: ml-slider.php:1151
-#: ml-slider.php:1270
-#: ml-slider.php:2952
-#: ml-slider.php:2997
-#: ml-slider.php:3072
+#: ml-slider.php:1079
+#: ml-slider.php:1176
+#: ml-slider.php:1295
+#: ml-slider.php:2976
+#: ml-slider.php:3021
+#: ml-slider.php:3096
 #: modules/local_video/slide.php:900
 #: modules/local_video/slide.php:965
 #: modules/local_video/slide.php:1076
@@ -231,9 +231,9 @@ msgstr ""
 "Nabigo ang pagsusuri sa seguridad. Mangyaring i-refresh ang pahina at "
 "subukang muli."
 
-#: admin/Notices.php:444
-#: admin/Notices.php:734
-#: admin/routes/api.php:145
+#: admin/Notices.php:443
+#: admin/Notices.php:733
+#: admin/routes/api.php:147
 #: inc/slide/metaslide.class.php:154
 #: inc/slide/metaslide.image.class.php:137
 #: inc/slide/metaslide.image.class.php:235
@@ -241,19 +241,19 @@ msgstr ""
 #: inc/slide/metaslide.livid.class.php:349
 #: inc/slide/metaslide.livid.class.php:417
 #: inc/slide/metaslide.livid.class.php:464
-#: ml-slider.php:1062
-#: ml-slider.php:1159
-#: ml-slider.php:1278
-#: ml-slider.php:2960
-#: ml-slider.php:3005
-#: ml-slider.php:3080
+#: ml-slider.php:1087
+#: ml-slider.php:1184
+#: ml-slider.php:1303
+#: ml-slider.php:2984
+#: ml-slider.php:3029
+#: ml-slider.php:3104
 msgid "Access denied. Sorry, you do not have permission to complete this task."
 msgstr ""
 "Access denied. Paumanhin, wala kang pahintulot upang tapusin ang gawaing "
 "ito."
 
-#: admin/Notices.php:452
-#: admin/Notices.php:741
+#: admin/Notices.php:451
+#: admin/Notices.php:740
 #: inc/slide/metaslide.class.php:163
 #: inc/slide/metaslide.image.class.php:146
 #: inc/slide/metaslide.image.class.php:244
@@ -264,12 +264,12 @@ msgstr ""
 #: inc/slide/metaslide.livid.class.php:471
 #: inc/slide/metaslide.livid.class.php:478
 #: inc/slide/metaslide.livid.class.php:804
-#: ml-slider.php:1071
-#: ml-slider.php:1168
-#: ml-slider.php:1287
-#: ml-slider.php:2969
-#: ml-slider.php:3013
-#: ml-slider.php:3089
+#: ml-slider.php:1096
+#: ml-slider.php:1193
+#: ml-slider.php:1312
+#: ml-slider.php:2993
+#: ml-slider.php:3037
+#: ml-slider.php:3113
 #: modules/local_video/slide.php:211
 #: modules/local_video/slide.php:917
 #: modules/local_video/slide.php:982
@@ -281,53 +281,53 @@ msgstr ""
 msgid "Bad request"
 msgstr "Masamang kahilingan"
 
-#: admin/Notices.php:460
+#: admin/Notices.php:459
 msgid "This item does not exist. Please refresh the page and try again."
 msgstr "Walang ganitong item. Mangyaring i-refresh ang pahina at subukang muli."
 
-#: admin/Notices.php:473
+#: admin/Notices.php:472
 msgid "The option was successfully updated"
 msgstr "Matagumpay na na-update ang opsyon"
 
-#: admin/Notices.php:539
+#: admin/Notices.php:538
 msgid "The requested data does not exist."
 msgstr "Walang ganitong data na hinihiling."
 
-#: admin/Notices.php:564
+#: admin/Notices.php:563
 msgid "The attempt to update the option failed."
 msgstr "Nabigo ang pagtatangkang i-update ang opsyon."
 
-#: admin/Notices.php:675
+#: admin/Notices.php:674
 msgid "Thanks for using MetaSlider, the WordPress slideshow plugin"
 msgstr "Salamat sa paggamit ng MetaSlider, ang WordPress slideshow plugin"
 
-#: admin/Notices.php:677
+#: admin/Notices.php:676
 msgid "Dismiss quick start notice"
 msgstr "Isara ang mabilis na simula na paunawa"
 
-#: admin/Notices.php:678
+#: admin/Notices.php:677
 #: admin/views/notices/header-notice.php:23
 msgid "Dismiss"
 msgstr "Isara"
 
-#: admin/Notices.php:754
+#: admin/Notices.php:753
 msgid "Invalid ad identifier"
 msgstr "Hindi wastong tag ng ad"
 
-#: admin/Notices.php:762
+#: admin/Notices.php:761
 msgid "There was an error dimissing the quickstart ad"
 msgstr "Nagkaroon ng error sa pag-dismiss ng quickstart ad"
 
-#: admin/Notices.php:767
+#: admin/Notices.php:766
 msgid "The quickstart ad was successfully hidden!"
 msgstr "Matagumpay na naitago ang quickstart ad!"
 
-#: admin/Pages.php:156
+#: admin/Pages.php:157
 #: admin/views/slides/tabs/link.php:15, fuzzy
 msgid "URL"
 msgstr "URL"
 
-#: admin/Pages.php:157
+#: admin/Pages.php:158
 #: modules/local_video/slide.php:426
 #: themes/architekt/customize.php:515
 #: themes/bitono/customize.php:629
@@ -351,49 +351,60 @@ msgstr "URL"
 msgid "Caption"
 msgstr "Caption"
 
-#: admin/Pages.php:158
+#: admin/Pages.php:159
 msgid "New Window"
 msgstr "Bago Bintana"
 
-#: admin/Pages.php:159
+#: admin/Pages.php:160
 msgid "Please confirm that you would like to delete this slideshow."
 msgstr "Mangyaring kumpirmahin na nais mong tanggalin ang slideshow na ito."
 
-#: admin/Pages.php:160
+#: admin/Pages.php:161
 msgid "Undo"
 msgstr "Bawiin"
 
-#: admin/Pages.php:161
+#: admin/Pages.php:162
 msgid "Slide restored"
 msgstr "Naibalik ang slide"
 
-#: admin/Pages.php:162
+#: admin/Pages.php:163
 msgid "Slide deleted"
 msgstr "Nawalang slide"
 
-#: admin/Pages.php:163
+#: admin/Pages.php:164
 #: admin/assets/dist/js/app.js:2
 #: admin/assets/js/app/globals.js:109
 msgid "Success"
 msgstr "Tagumpay"
 
-#: admin/Pages.php:164
+#: admin/Pages.php:165
 msgid "Item was copied to your clipboard"
 msgstr "Ang item ay nakopya sa iyong clipboard"
 
-#: admin/Pages.php:165
+#: admin/Pages.php:166
 msgid "Creating slideshow..."
 msgstr "Ngumawa ng slideshow..."
 
-#: admin/Pages.php:166
+#: admin/Pages.php:167
 msgid "Press to undo"
 msgstr "Pindutin upang mag-undo"
 
-#: admin/Pages.php:168
+#: admin/Pages.php:169
 msgid "Select replacement image"
 msgstr "Pumili ng kapalit na imahe"
 
-#: admin/Pages.php:178
+#: admin/Pages.php:180
+#: admin/views/pages/parts/slider-settings.php:65
+#: inc/slider/metaslider.flex.class.php:457
+#: admin/assets/dist/js/app.js:2
+msgid "Loading..."
+msgstr "Naglo-load..."
+
+#: admin/Pages.php:181
+msgid "Could not load the usage. Please try again."
+msgstr "Hindi ma-load ang paggamit. Pakisubukan muli."
+
+#: admin/Pages.php:182
 msgid ""
 "Caution: This setting is for advanced developers only. If you're unsure, "
 "leave it checked."
@@ -401,11 +412,11 @@ msgstr ""
 "Babala: Ang setting na ito ay para sa mga advanced na developer lamang. "
 "Kung hindi ka sigurado, iwanan itong naka-check."
 
-#: admin/Pages.php:185
+#: admin/Pages.php:189
 msgid "Tone"
 msgstr "Tono"
 
-#: admin/Pages.php:186
+#: admin/Pages.php:190
 #: admin/views/pages/parts/slider-settings.php:1427
 #: admin/views/slides/tabs/background.php:73
 #: admin/views/slides/tabs/background.php:74
@@ -431,126 +442,143 @@ msgstr "Tono"
 msgid "Opacity"
 msgstr "Opacity"
 
-#: admin/Pages.php:187, fuzzy
+#: admin/Pages.php:191, fuzzy
 msgid "Shortcodes"
 msgstr "Shortcodes"
 
-#: admin/Pages.php:188
+#: admin/Pages.php:192
 msgid "Hide on Smartphone"
 msgstr "Itago sa Smartphone"
 
-#: admin/Pages.php:189
+#: admin/Pages.php:193
 msgid "Hide on Tablet"
 msgstr "Itago sa Tablet"
 
-#: admin/Pages.php:190
+#: admin/Pages.php:194
 msgid "Hide on Laptop"
 msgstr "Itago sa Laptop"
 
-#: admin/Pages.php:191
+#: admin/Pages.php:195
 msgid "Hide on Desktop"
 msgstr "Itago sa Desktop"
 
-#: admin/Pages.php:192
+#: admin/Pages.php:196
 msgid "Add Button"
 msgstr "Magdagdag ng Button"
 
-#: admin/Pages.php:193
+#: admin/Pages.php:197
 msgid "Add Image"
 msgstr "Magdagdag ng Imahe"
 
-#: admin/Pages.php:194
+#: admin/Pages.php:198
 msgid "Add Icon"
 msgstr "Magdagdag ng Icon"
 
-#: admin/Pages.php:195
+#: admin/Pages.php:199
 msgid "Search icons..."
 msgstr "Maghanap ng mga icon..."
 
-#: admin/Pages.php:196
+#: admin/Pages.php:200
 msgid "No icons found."
 msgstr "Walang nahanap na mga icon."
 
-#: admin/Pages.php:197
+#: admin/Pages.php:201
 #: admin/views/pages/parts/slider-settings.php:30
 #: admin/views/pages/parts/slider-settings.php:31
 msgid "Clear search"
 msgstr "I-clear ang paghahanap"
 
-#: admin/Pages.php:203
+#: admin/Pages.php:207
 msgid "Close"
 msgstr "Isara"
 
-#: admin/Pages.php:204
+#: admin/Pages.php:208
 msgid "Insert"
 msgstr "Ipasok"
 
-#: admin/Pages.php:206
+#: admin/Pages.php:210
 msgid "Please enter a valid URL."
 msgstr "Mangyaring maglagay ng wastong URL."
 
-#: admin/Pages.php:207
+#: admin/Pages.php:211
 msgid "Please enter link text for the button."
 msgstr "Mangyaring maglagay ng teksto ng link para sa button."
 
-#: admin/Pages.php:208
+#: admin/Pages.php:212
 msgid "Open in new window"
 msgstr "Buksan sa bagong bintana"
 
-#: admin/Pages.php:209, fuzzy
+#: admin/Pages.php:213, fuzzy
 msgid "Button Color"
 msgstr "Button Color"
 
-#: admin/Pages.php:210
+#: admin/Pages.php:214
 #: themes/radix/customize.php:47
 #: themes/radix/customize.php:61, fuzzy
 msgid "Text Color"
 msgstr "Text Color"
 
-#: admin/Pages.php:211, fuzzy
+#: admin/Pages.php:215, fuzzy
 msgid "Link Text"
 msgstr "Link Text"
 
-#: admin/routes/api.php:466
+#: admin/routes/api.php:266
+#: admin/Table.php:425
+#: admin/Table.php:438
+#: admin/Table.php:504
+msgid "Not found."
+msgstr "Hindi natagpuan."
+
+#: admin/routes/api.php:267
+msgid "This slideshow is not used in any published content."
+msgstr ""
+"Ang slideshow na ito ay hindi ginagamit sa anumang naka-publish na "
+"nilalaman."
+
+#: admin/routes/api.php:493
 msgid "The request format was not valid."
 msgstr "Ang format ng request ay hindi wasto."
 
-#: admin/routes/api.php:474
-#: admin/routes/api.php:606
+#: admin/routes/api.php:501
+#: admin/routes/api.php:633
 msgid "This slideshow is no longer available."
 msgstr "Ang slideshow na ito ay hindi na available."
 
-#: admin/routes/api.php:561
+#: admin/routes/api.php:588
 msgid "Nothing to import."
 msgstr "Walang ma-import."
 
-#: admin/routes/api.php:613
+#: admin/routes/api.php:640
 msgid "This was not a slideshow, so we cannot delete it."
 msgstr "Ito ay hindi isang slideshow, kaya hindi namin ito ma-delete."
 
-#: admin/routes/api.php:837
+#: admin/routes/api.php:864
 msgid "This was not a slideshow, so we cannot update the setting."
 msgstr "Ito ay hindi isang slideshow, kaya hindi namin ma-update ang setting."
 
-#: admin/routes/api.php:945
+#: admin/routes/api.php:955
+msgid "This answer could not be saved."
+msgstr "Ang sagot na ito ay hindi ma-save."
+
+#: admin/routes/api.php:1001
 msgid "The title cannot be empty."
 msgstr "Ang pamagat ay hindi maaaring walang laman."
 
-#: admin/routes/api.php:949
-#: admin/routes/api.php:1235
+#: admin/routes/api.php:1005
+#: admin/routes/api.php:1293
 #, php-format
 msgid "The field (%s) cannot be empty"
 msgstr "Ang field (%s) ay hindi maaaring walang laman"
 
-#: admin/routes/api.php:1225
+#: admin/routes/api.php:1283
 msgid "Maximum Number of Custom Field in Post Feed Sliders"
 msgstr "Maximum na Bilang ng Custom Field sa Post Feed Sliders"
 
-#: admin/routes/api.php:1269
+#: admin/routes/api.php:1327
 msgid "No video file was received by the server."
 msgstr "Walang na-receive na video file ang server."
 
-#: admin/routes/api.php:1285
+#: admin/routes/api.php:1343
 #. translators: 1: uploaded filename, 2: mime type WordPress detected, or "none"
 #, php-format
 msgid ""
@@ -561,19 +589,19 @@ msgstr ""
 "%2$s). Maaaring ito ay isang unsupported na format o lumampas sa upload "
 "limit ng server na ito."
 
-#: admin/routes/api.php:1287
+#: admin/routes/api.php:1345
 msgid "none"
 msgstr "wala"
 
-#: admin/routes/api.php:1295
+#: admin/routes/api.php:1353
 msgid "The video could not be imported."
 msgstr "Hindi ma-import ang video."
 
-#: admin/routes/api.php:1432
+#: admin/routes/api.php:1490
 msgid "Import slug not found"
 msgstr "Hindi natagpuan ang import slug"
 
-#: admin/routes/api.php:1448
+#: admin/routes/api.php:1506
 msgid "Import data could not be processed"
 msgstr "Ang import data ay hindi ma-proseso"
 
@@ -641,6 +669,57 @@ msgid ""
 msgstr ""
 "Inalis namin ang iyong napiling tema dahil hindi ito matagpuan. Nabura ba "
 "ang folder?"
+
+#: admin/support/campaign-list.php:24
+msgid "Thanks for being a loyal MetaSlider user!"
+msgstr "Salamat sa pagiging tapat na gumagamit ng MetaSlider!"
+
+#: admin/support/campaign-list.php:27
+#. translators: %s: the discount, e.g. 50%
+#, php-format
+msgid "Get Slideshow Pro and save %s!"
+msgstr "Kumuha ng Slideshow Pro at makatipid ng %s!"
+
+#: admin/support/campaign-list.php:33
+msgid "Animated slides"
+msgstr "Mga animated na slide"
+
+#: admin/support/campaign-list.php:34
+msgid "YouTube & TikTok slides"
+msgstr "Mga slide ng YouTube & TikTok"
+
+#: admin/support/campaign-list.php:35
+msgid "WooCommerce slides"
+msgstr "Mga slide ng WooCommerce"
+
+#: admin/support/campaign-list.php:36
+msgid "Scheduled slides"
+msgstr "Mga naka-schedule na slide"
+
+#: admin/support/campaign-list.php:37
+msgid "Theme editor"
+msgstr "Tagapag-edit ng tema"
+
+#: admin/support/campaign-list.php:38
+#: admin/views/pages/upgrade.php:190
+msgid "Premium support"
+msgstr "Premium na suporta"
+
+#: admin/support/campaign-list.php:39
+msgid "Post feed slides"
+msgstr "Mga slide ng post feed"
+
+#: admin/support/campaign-list.php:40
+msgid "And many more features"
+msgstr "At marami pang ibang tampok"
+
+#: admin/support/campaign-list.php:42
+msgid "Get Slideshow Pro"
+msgstr "Kumuha ng Slideshow Pro"
+
+#: admin/support/Campaigns.php:195
+msgid "Maybe later"
+msgstr "Siguro mamaya"
 
 #: admin/Table.php:126
 msgid "You don't have any trashed slideshows."
@@ -725,38 +804,32 @@ msgstr "I-edit"
 msgid "Click to copy shortcode."
 msgstr "I-click upang kopyahin ang shortcode."
 
-#: admin/Table.php:422
-#: admin/Table.php:435
-#: admin/Table.php:495
-msgid "Not found."
-msgstr "Hindi natagpuan."
-
-#: admin/Table.php:424
+#: admin/Table.php:427
 msgid "View Usage"
 msgstr "Tingnan ang Paggamit"
 
-#: admin/Table.php:430
+#: admin/Table.php:433
 msgid "Content Using This Slideshow"
 msgstr "Nilalaman na Gumagamit ng Slideshow na Ito"
 
-#: admin/Table.php:472
+#: admin/Table.php:481
 msgid "Theme Setting"
 msgstr "Setting ng Tema"
 
-#: admin/Table.php:486
+#: admin/Table.php:495
 msgid "Option"
 msgstr "Opsyon"
 
-#: admin/Table.php:543
+#: admin/Table.php:552
 #: admin/views/pages/start.php:192
 msgid "All Themes"
 msgstr "Lahat ng Tema"
 
-#: admin/Table.php:556
+#: admin/Table.php:565
 msgid "(No Theme)"
 msgstr "(Walang Tema)"
 
-#: admin/Table.php:560
+#: admin/Table.php:569
 #: admin/views/slides/tabs/background.php:32
 #: inc/metaslider.imagestyles.class.php:388
 msgid "Filter"
@@ -773,7 +846,7 @@ msgid "(%s Weeks)"
 msgstr "( %s Linggo)"
 
 #: admin/views/pages/dashboard.php:8
-#: ml-slider.php:636
+#: ml-slider.php:661
 #: admin/assets/dist/js/app.js:2
 msgid "Slideshows"
 msgstr "Mga Slideshow"
@@ -850,12 +923,6 @@ msgstr "Mga setting ng paghahanap"
 #: admin/views/pages/parts/slider-settings.php:38
 msgid "No settings found."
 msgstr "Walang nahanap na mga setting."
-
-#: admin/views/pages/parts/slider-settings.php:65
-#: inc/slider/metaslider.flex.class.php:457
-#: admin/assets/dist/js/app.js:2
-msgid "Loading..."
-msgstr "Naglo-load..."
 
 #: admin/views/pages/parts/slider-settings.php:71
 msgid "Main Options"
@@ -2039,7 +2106,7 @@ msgid "Toggle Shortcode"
 msgstr "I-toggle ang Shortcode"
 
 #: admin/views/pages/parts/slider-settings.php:1712
-#: ml-slider.php:2019
+#: ml-slider.php:2043
 msgid "Trashed Slides"
 msgstr "Nakatapon na Slides"
 
@@ -2111,7 +2178,7 @@ msgid "Save"
 msgstr "I-save"
 
 #: admin/views/pages/parts/toolbar.php:155
-#: ml-slider.php:2084
+#: ml-slider.php:2108
 msgid "Return to Published Slides"
 msgstr "Bumalik sa Na-publish na mga Slide"
 
@@ -2151,7 +2218,7 @@ msgid "Redirecting..."
 msgstr "Nire-redirect..."
 
 #: admin/views/pages/start.php:106
-#: ml-slider.php:637
+#: ml-slider.php:662
 msgid "Quick Start"
 msgstr "Mabilis na Simula"
 
@@ -2186,54 +2253,54 @@ msgstr "Uri ng Slide"
 
 #: admin/views/pages/start.php:145
 #: inc/metaslider.quickstart.class.php:773
-#: ml-slider.php:907
+#: ml-slider.php:932
 msgid "Image"
 msgstr "Larawan"
 
 #: admin/views/pages/start.php:150
 #: inc/metaslider.quickstart.class.php:623
 #: inc/metaslider.quickstart.class.php:785
-#: ml-slider.php:951
+#: ml-slider.php:976
 msgid "External Image"
 msgstr "Panlabas na Larawan"
 
 #: admin/views/pages/start.php:151
 #: inc/metaslider.quickstart.class.php:635
 #: inc/metaslider.quickstart.class.php:788
-#: ml-slider.php:952
+#: ml-slider.php:977
 msgid "External Video"
 msgstr "Panlabas na Video"
 
 #: admin/views/pages/start.php:152
 #: inc/metaslider.quickstart.class.php:647
 #: inc/metaslider.quickstart.class.php:797
-#: ml-slider.php:953, fuzzy
+#: ml-slider.php:978, fuzzy
 msgid "Custom HTML"
 msgstr "Custom HTML"
 
 #: admin/views/pages/start.php:153
 #: inc/metaslider.quickstart.class.php:695
 #: inc/metaslider.quickstart.class.php:806
-#: ml-slider.php:954, fuzzy
+#: ml-slider.php:979, fuzzy
 msgid "Background Color"
 msgstr "Background Color"
 
 #: admin/views/pages/start.php:154
 #: admin/views/pages/start.php:185
-#: ml-slider.php:957
+#: ml-slider.php:982
 msgid "WooCommerce"
 msgstr "WooCommerce"
 
 #: admin/views/pages/start.php:155
 #: inc/metaslider.quickstart.class.php:611
 #: inc/metaslider.quickstart.class.php:803
-#: ml-slider.php:958, fuzzy
+#: ml-slider.php:983, fuzzy
 msgid "Post Feed"
 msgstr "Post Feed"
 
 #: admin/views/pages/start.php:156
 #: inc/metaslider.quickstart.class.php:800
-#: ml-slider.php:959, fuzzy
+#: ml-slider.php:984, fuzzy
 msgid "Layer Slide"
 msgstr "Layer Slide"
 
@@ -2374,7 +2441,7 @@ msgid "Introducing the Theme Editor in MetaSlider Slideshow Pro"
 msgstr "Ipinapakilala ang Theme Editor sa MetaSlider Slideshow Pro"
 
 #: admin/views/pages/theme-editor.php:18
-#: ml-slider.php:641, fuzzy
+#: ml-slider.php:666, fuzzy
 msgid "Theme Editor"
 msgstr "Theme Editor"
 
@@ -2605,10 +2672,6 @@ msgstr "Suporta para sa Paulit-ulit na Slides"
 #: admin/views/pages/upgrade.php:183
 msgid "Repeat a slide multiple times."
 msgstr "Ulitin ang isang slide ng maraming beses."
-
-#: admin/views/pages/upgrade.php:190
-msgid "Premium support"
-msgstr "Premium na suporta"
 
 #: admin/views/pages/upgrade.php:191
 msgid "Have your specific queries addressed directly by our experts."
@@ -3625,7 +3688,7 @@ msgid "TikTok Carousel"
 msgstr "Carousel ng TikTok"
 
 #: inc/metaslider.quickstart.class.php:587
-#: ml-slider.php:948, fuzzy
+#: ml-slider.php:973, fuzzy
 msgid "Vimeo"
 msgstr "Vimeo"
 
@@ -3645,7 +3708,7 @@ msgstr "Matapang na Galaw"
 msgid "Playful Pets"
 msgstr "Masayahing Mga Alaga"
 
-#: inc/metaslider.systemcheck.class.php:91
+#: inc/metaslider.systemcheck.class.php:87
 #, php-format
 msgid ""
 "Your settings might not be saving properly due to a configuration on your "
@@ -3658,11 +3721,11 @@ msgstr ""
 "inirerekomenda naming itakda ito sa 4000. Mangyaring tingnan ang %s para sa "
 "karagdagang impormasyon. Ang php.ini file ay niloload mula dito: %s"
 
-#: inc/metaslider.systemcheck.class.php:94
+#: inc/metaslider.systemcheck.class.php:90
 msgid "this article"
 msgstr "artikulong ito"
 
-#: inc/metaslider.systemcheck.class.php:216
+#: inc/metaslider.systemcheck.class.php:212
 msgid "Warning:"
 msgstr "Babala:"
 
@@ -3675,7 +3738,7 @@ msgid "Select Slider:"
 msgstr "Pumili ng Slider:"
 
 #: inc/metaslider.widget.class.php:126
-#: ml-slider.php:2213
+#: ml-slider.php:2237
 #: admin/assets/dist/js/app.js:2
 msgid "No slideshows found"
 msgstr "Walang natagpuang slideshow"
@@ -3794,7 +3857,7 @@ msgid "Enter the URL of a Livid video:"
 msgstr "I-enter ang URL ng isang Livid na video:"
 
 #: inc/slide/metaslide.livid.class.php:293
-#: ml-slider.php:908
+#: ml-slider.php:933
 #: modules/local_video/slide.php:112
 #: admin/assets/dist/js/admin.js:1
 #: admin/assets/js/admin.js:240
@@ -3821,7 +3884,7 @@ msgstr ""
 #: inc/slide/metaslide.livid.class.php:326
 #: admin/assets/dist/js/admin.js:1
 #: admin/assets/js/admin.js:438
-#: modules/local_video/assets/local_video.js:925
+#: modules/local_video/assets/local_video.js:920
 msgid "Duplicating the slide failed."
 msgstr "Bumagsak ang pag-duplicate ng slide."
 
@@ -3857,7 +3920,18 @@ msgstr "I-play"
 msgid "Pause"
 msgstr "I-pause"
 
-#: ml-slider.php:309
+#: ml-slider.php:38
+#. translators: 1: the PHP version MetaSlider needs, 2: the site's PHP version
+#, php-format
+msgid ""
+"MetaSlider Slideshow needs PHP %1$s or higher, but this site runs PHP %2$s. "
+"MetaSlider Slideshow is turned off until PHP is updated."
+msgstr ""
+"Kailangan ng MetaSlider Slideshow ang PHP %1$s o mas mataas, ngunit ang "
+"site na ito ay tumatakbo sa PHP %2$s. Ang MetaSlider Slideshow ay naka-off "
+"hanggang ma-update ang PHP."
+
+#: ml-slider.php:334
 #, php-format
 msgid ""
 "MetaSlider Slideshow Pro is installed but is out of date. You may update it "
@@ -3867,64 +3941,64 @@ msgstr ""
 "Maaari mo itong i-update %shere%s. Alamin ang higit pa tungkol sa paunawang "
 "ito %shere%s"
 
-#: ml-slider.php:638
+#: ml-slider.php:663
 msgid "Settings & Help"
 msgstr "Mga Setting & Tulong"
 
-#: ml-slider.php:642
+#: ml-slider.php:667
 msgid "Upgrade to Pro"
 msgstr "Mag-upgrade sa Pro"
 
-#: ml-slider.php:672
-#: ml-slider.php:675
+#: ml-slider.php:697
+#: ml-slider.php:700
 #: themes/customize.php:24, fuzzy
 msgid "Slideshow"
 msgstr "Slideshow"
 
-#: ml-slider.php:681
-#: ml-slider.php:684
+#: ml-slider.php:706
+#: ml-slider.php:709
 msgid "All Slideshows"
 msgstr "Lahat ng Slideshows"
 
-#: ml-slider.php:692
-#: ml-slider.php:695
+#: ml-slider.php:717
+#: ml-slider.php:720
 msgid "Create Slideshow"
 msgstr "Lumikha ng Slideshow"
 
-#: ml-slider.php:949, fuzzy
+#: ml-slider.php:974, fuzzy
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ml-slider.php:950, fuzzy
+#: ml-slider.php:975, fuzzy
 msgid "TikTok"
 msgstr "TikTok"
 
-#: ml-slider.php:955
+#: ml-slider.php:980
 msgid "Image Folder"
 msgstr "Folder ng Imahe"
 
-#: ml-slider.php:956
+#: ml-slider.php:981
 #: admin/assets/dist/js/app.js:2
 msgid "Post Images"
 msgstr "Mga Post ng Imahe"
 
-#: ml-slider.php:1099
+#: ml-slider.php:1124
 msgid "The slide was successfully restored"
 msgstr "Ang slide ay matagumpay na naibalik"
 
-#: ml-slider.php:1122
+#: ml-slider.php:1147
 msgid "The attempt to restore the slide failed."
 msgstr "Nabigo ang pagtatangkang ibalik ang slide."
 
-#: ml-slider.php:1188
+#: ml-slider.php:1213
 msgid "The slide was successfully trashed"
 msgstr "Ang slide ay matagumpay na na-trash"
 
-#: ml-slider.php:1305
+#: ml-slider.php:1330
 msgid "The slide was permanently deleted"
 msgstr "Ang slide ay permanenteng natanggal"
 
-#: ml-slider.php:1598
+#: ml-slider.php:1623
 #, php-format
 msgid ""
 "Please consider moving your slides to <b>FlexSlider</b>. We're adding all "
@@ -3935,19 +4009,19 @@ msgstr ""
 "<b>FlexSlider</b>. Idinadagdag namin ang lahat ng bagong tampok ng "
 "MetaSlider Slideshow sa opsyong ito. <a href=\"%s\">Alamin ang higit pa</a>."
 
-#: ml-slider.php:2002
+#: ml-slider.php:2026
 msgid "Slide permanently deleted."
 msgstr "Slide permanenteng natanggal."
 
-#: ml-slider.php:2005
+#: ml-slider.php:2029
 msgid "Slide restored."
 msgstr "Slide naibalik."
 
-#: ml-slider.php:2037
+#: ml-slider.php:2061
 msgid "Toggle slide reorder panel"
 msgstr "I-toggle ang panel ng reorder ng slide"
 
-#: ml-slider.php:2074
+#: ml-slider.php:2098
 #, php-format
 msgid ""
 "You are viewing slides that have been trashed, which will be automatically "
@@ -3956,29 +4030,29 @@ msgstr ""
 "Tinutukoy mo ang mga slide na na-trash, na awtomatikong mabubura sa loob ng "
 "%s na araw."
 
-#: ml-slider.php:2107
+#: ml-slider.php:2131
 msgid "Move slideshow to trash"
 msgstr "Ilipat ang slideshow sa trash"
 
-#: ml-slider.php:2162
+#: ml-slider.php:2186
 msgid "Add slideshow"
 msgstr "Magdagdag ng slideshow"
 
-#: ml-slider.php:2198
+#: ml-slider.php:2222
 msgid "Choose slideshow"
 msgstr "Pumili ng slideshow"
 
-#: ml-slider.php:2208
+#: ml-slider.php:2232
 msgid "Insert slideshow"
 msgstr "Ipasok ang slideshow"
 
-#: ml-slider.php:2243
+#: ml-slider.php:2267
 msgid "Create slides by adding text, videos and more to your images"
 msgstr ""
 "Gumawa ng mga slide sa pamamagitan ng pagdaragdag ng teksto, mga video at "
 "higit pa sa iyong mga larawan"
 
-#: ml-slider.php:2247
+#: ml-slider.php:2271
 msgid ""
 "With Layer slides, you can create beautiful, stylish layers of different "
 "elements."
@@ -3986,7 +4060,7 @@ msgstr ""
 "Sa Layer slides, makakagawa ka ng maganda at modernong mga layer ng iba't "
 "ibang elemento."
 
-#: ml-slider.php:2251
+#: ml-slider.php:2275
 msgid ""
 "You start with an image and then can add text, video, colors, animations, "
 "more images, and even shortcodes."
@@ -3994,27 +4068,27 @@ msgstr ""
 "Nagsisimula ka sa isang larawan at pagkatapos ay makakagdag ka ng teksto, "
 "video, kulay, animations, higit pang mga larawan, at kahit na mga shortcode."
 
-#: ml-slider.php:2257
-#: ml-slider.php:2298
-#: ml-slider.php:2339
-#: ml-slider.php:2382
-#: ml-slider.php:2425
-#: ml-slider.php:2468
-#: ml-slider.php:2507
-#: ml-slider.php:2550
-#: ml-slider.php:2589
-#: ml-slider.php:2660
-#: ml-slider.php:2695
-#: ml-slider.php:2730
+#: ml-slider.php:2281
+#: ml-slider.php:2322
+#: ml-slider.php:2363
+#: ml-slider.php:2406
+#: ml-slider.php:2449
+#: ml-slider.php:2492
+#: ml-slider.php:2531
+#: ml-slider.php:2574
+#: ml-slider.php:2613
+#: ml-slider.php:2684
+#: ml-slider.php:2719
+#: ml-slider.php:2754
 #: admin/assets/dist/js/app.js:2
 msgid "Find out more about MetaSlider Slideshow Pro"
 msgstr "Alamin ang higit pa tungkol sa MetaSlider Slideshow Pro"
 
-#: ml-slider.php:2286
+#: ml-slider.php:2310
 msgid "Create slideshows with your Vimeo videos"
 msgstr "Gumawa ng mga slideshow gamit ang iyong mga video sa Vimeo"
 
-#: ml-slider.php:2290
+#: ml-slider.php:2314
 msgid ""
 "With Vimeo slides, you can build beautiful slideshows with your Vimeo "
 "videos."
@@ -4022,7 +4096,7 @@ msgstr ""
 "Sa Vimeo slides, makakagawa ka ng magaganda at kaakit-akit na slideshow "
 "gamit ang iyong mga video sa Vimeo."
 
-#: ml-slider.php:2294
+#: ml-slider.php:2318
 msgid ""
 "Vimeo slides will display your videos with auto play, mute, the ability to "
 "hide controls, and much more."
@@ -4030,11 +4104,11 @@ msgstr ""
 "Ipinapakita ng Vimeo slides ang iyong mga video na may auto play, mute, "
 "kakayahang itago ang mga kontrol, at marami pang iba."
 
-#: ml-slider.php:2327
+#: ml-slider.php:2351
 msgid "Create slideshows with your YouTube videos"
 msgstr "Gumawa ng mga slideshow gamit ang iyong mga video sa YouTube"
 
-#: ml-slider.php:2331
+#: ml-slider.php:2355
 msgid ""
 "With YouTube slides, you can build beautiful slideshows with your YouTube "
 "videos."
@@ -4042,7 +4116,7 @@ msgstr ""
 "Sa YouTube slides, makakagawa ka ng magaganda at kaakit-akit na slideshow "
 "gamit ang iyong mga video sa YouTube."
 
-#: ml-slider.php:2335
+#: ml-slider.php:2359
 msgid ""
 "YouTube slides will display your videos with auto play, mute, lazy load, "
 "the ability to hide controls, and much more."
@@ -4050,11 +4124,11 @@ msgstr ""
 "Ipinapakita ng YouTube slides ang iyong mga video na may auto play, mute, "
 "lazy load, kakayahang itago ang mga kontrol, at marami pang iba."
 
-#: ml-slider.php:2368
+#: ml-slider.php:2392
 msgid "Create slideshows with your posts"
 msgstr "Gumawa ng mga slideshow gamit ang iyong mga post"
 
-#: ml-slider.php:2372
+#: ml-slider.php:2396
 msgid ""
 "With Post Feed slides, you can build slideshows with your latest posts, "
 "events, or WooCommerce products."
@@ -4062,7 +4136,7 @@ msgstr ""
 "Sa Post Feed slides, makakagawa ka ng mga slideshow gamit ang iyong "
 "pinakabagong mga post, mga kaganapan, o mga produkto ng WooCommerce."
 
-#: ml-slider.php:2376
+#: ml-slider.php:2400
 msgid ""
 "Post Feed slides will automatically display your posts with images, text, "
 "custom fields, and much more."
@@ -4070,13 +4144,13 @@ msgstr ""
 "Awtomatikong ipapakita ng Post Feed slides ang iyong mga post na may mga "
 "larawan, teksto, mga custom field, at marami pang iba."
 
-#: ml-slider.php:2411
+#: ml-slider.php:2435
 msgid "Create slideshows with images stored outside of WordPress"
 msgstr ""
 "Gumawa ng mga slideshow gamit ang mga larawan na nakaimbak sa labas ng "
 "WordPress"
 
-#: ml-slider.php:2415
+#: ml-slider.php:2439
 msgid ""
 "With External URL slides, you can load images directly from non-WordPress "
 "sources such as CDNs or image hosts."
@@ -4085,7 +4159,7 @@ msgstr ""
 "direkta mula sa mga hindi WordPress na pinagmulan tulad ng mga CDN o mga "
 "host ng imahe."
 
-#: ml-slider.php:2419
+#: ml-slider.php:2443
 msgid ""
 "External URL slides give you all the power of MetaSlider Slideshow, using "
 "images stored anywhere you want."
@@ -4094,11 +4168,11 @@ msgstr ""
 "kapangyarihan ng MetaSlider Slideshow, gamit ang mga imaheng naka-imbak "
 "kahit saan mo gusto."
 
-#: ml-slider.php:2454
+#: ml-slider.php:2478
 msgid "Create slideshows with videos stored outside of WordPress"
 msgstr "Gumawa ng mga slideshow na may mga video na naka-imbak sa labas ng WordPress"
 
-#: ml-slider.php:2458
+#: ml-slider.php:2482
 msgid ""
 "With External Video slides, you can add videos directly from non-WordPress "
 "sources."
@@ -4106,7 +4180,7 @@ msgstr ""
 "Sa mga slide na may External Video, maaari mong idagdag ang mga video nang "
 "direkta mula sa mga hindi WordPress na pinagmulan."
 
-#: ml-slider.php:2462
+#: ml-slider.php:2486
 msgid ""
 "External Video Slides will display your MP4, WebM, and MOV videos. Features "
 "include text captions, cover images, auto play, mute, lazy load, the "
@@ -4117,11 +4191,11 @@ msgstr ""
 "image, auto play, mute, lazy load, ang kakayahang itago ang mga control, at "
 "marami pang iba."
 
-#: ml-slider.php:2497
+#: ml-slider.php:2521
 msgid "Create slideshows with custom HTML"
 msgstr "Gumawa ng mga slideshow na may custom HTML"
 
-#: ml-slider.php:2501
+#: ml-slider.php:2525
 msgid ""
 "With Custom HTML slides, you can design slides using images, HTML and CSS. "
 "This gives you complete control over the layout and styling."
@@ -4130,11 +4204,11 @@ msgstr ""
 "ang mga imahe, HTML at CSS. Ito ay nagbibigay sa iyo ng kumpletong kontrol "
 "sa layout at styling."
 
-#: ml-slider.php:2540
+#: ml-slider.php:2564
 msgid "Create slides with background colors and text"
 msgstr "Lumikha ng mga slide na may mga background color at teksto"
 
-#: ml-slider.php:2544
+#: ml-slider.php:2568
 msgid ""
 "With Background Color slides, you can create slides using a solid or "
 "gradient background color. Perfect for text-only slides, calls to action or "
@@ -4144,11 +4218,11 @@ msgstr ""
 "ang isang solid o gradient na background color. Perpekto para sa mga slide "
 "na may teksto lamang, mga tawag sa aksyon o mabilis na banner."
 
-#: ml-slider.php:2579
+#: ml-slider.php:2603
 msgid "Create slideshows with Tiktok Videos"
 msgstr "Gumawa ng mga slideshow na may mga Tiktok Videos"
 
-#: ml-slider.php:2583
+#: ml-slider.php:2607
 msgid ""
 "A TikTok Slide will display a video in your slideshow directly from "
 "TikTok.com."
@@ -4156,11 +4230,11 @@ msgstr ""
 "Ang isang TikTok Slide ay ipapakita ang isang video sa iyong slideshow nang "
 "direkta mula sa TikTok.com."
 
-#: ml-slider.php:2646
+#: ml-slider.php:2670
 msgid "Create slideshows with images from a folder"
 msgstr "Gumawa ng mga slideshow na may mga imahe mula sa isang folder"
 
-#: ml-slider.php:2650
+#: ml-slider.php:2674
 msgid ""
 "The Image Folder slide type extracts images from a specified folder and "
 "displays them as slides."
@@ -4168,7 +4242,7 @@ msgstr ""
 "Ang uri ng slide na Image Folder ay kumukuha ng mga imahe mula sa isang "
 "tinukoy na folder at ipinapakita ang mga ito bilang mga slide."
 
-#: ml-slider.php:2654
+#: ml-slider.php:2678
 msgid ""
 "This slide type displays images from folders in your WordPress Media "
 "Library."
@@ -4176,11 +4250,11 @@ msgstr ""
 "Ang uri ng slide na ito ay nagpapakita ng mga imahe mula sa mga folder sa "
 "iyong WordPress Media Library."
 
-#: ml-slider.php:2681
+#: ml-slider.php:2705
 msgid "Create slideshows with Post Images"
 msgstr "Gumawa ng mga slideshow na may mga Post Images"
 
-#: ml-slider.php:2685
+#: ml-slider.php:2709
 msgid ""
 "The Post Images slide type extracts images from the current post and "
 "displays them as slides."
@@ -4188,7 +4262,7 @@ msgstr ""
 "Ang uri ng slide na Post Images ay kumukuha ng mga imahe mula sa "
 "kasalukuyang post at ipinapakita ang mga ito bilang mga slide."
 
-#: ml-slider.php:2689
+#: ml-slider.php:2713
 msgid ""
 "This slide type supports featured images, post content images, WooCommerce "
 "galleries, Advanced Custom Fields images and galleries."
@@ -4197,11 +4271,11 @@ msgstr ""
 "nilalaman ng post, mga WooCommerce gallery, mga advanced custom fields "
 "images at galleries."
 
-#: ml-slider.php:2716
+#: ml-slider.php:2740
 msgid "Create slideshows with your WooCommerce products"
 msgstr "Gumawa ng mga slideshow na may iyong mga produkto sa WooCommerce"
 
-#: ml-slider.php:2720
+#: ml-slider.php:2744
 msgid ""
 "With WooCommerce slides, you can build slideshows with your WooCommerce "
 "products."
@@ -4209,7 +4283,7 @@ msgstr ""
 "Sa mga slide na WooCommerce, maaari kang bumuo ng mga slideshow na may "
 "iyong mga produkto sa WooCommerce."
 
-#: ml-slider.php:2724
+#: ml-slider.php:2748
 msgid ""
 "WooCommerce slides will automatically display your products with images, "
 "text, custom fields, and much more."
@@ -4218,41 +4292,41 @@ msgstr ""
 "produkto na may mga larawan, teksto, pasadyang mga patlang, at marami pang "
 "iba."
 
-#: ml-slider.php:2768
+#: ml-slider.php:2792
 msgid "Premium Support"
 msgstr "Premium na Suporta"
 
-#: ml-slider.php:2774
+#: ml-slider.php:2798
 msgid "MetaSlider Slideshow Pro"
 msgstr "MetaSlider Slideshow Pro"
 
-#: ml-slider.php:2778
+#: ml-slider.php:2802
 msgid "Support"
 msgstr "Suporta"
 
-#: ml-slider.php:2783
+#: ml-slider.php:2807
 #: modules/local_video/slide.php:542
 msgid "Documentation"
 msgstr "Dokumentasyon"
 
-#: ml-slider.php:2787
-#: ml-slider.php:2790
+#: ml-slider.php:2811
+#: ml-slider.php:2814
 msgid "Leave a review"
 msgstr "Mag-iwan ng pagsusuri"
 
-#: ml-slider.php:2909
+#: ml-slider.php:2933
 msgid "Uploading..."
 msgstr "Nag-upload..."
 
-#: ml-slider.php:2916
+#: ml-slider.php:2940
 msgid "Upload Complete"
 msgstr "Kumpletong Pag-upload"
 
-#: ml-slider.php:3043
+#: ml-slider.php:3067
 msgid "Import file is missing"
 msgstr "Nawawala ang import na file"
 
-#: ml-slider.php:3194
+#: ml-slider.php:3218
 msgid ""
 "You attempted to edit a slideshow that does not exist. Perhaps it was moved "
 "to trash?"
@@ -7443,8 +7517,8 @@ msgstr "Isang hindi natukoy na error ang nangyari"
 #: admin/assets/dist/js/admin.js:1
 #: admin/assets/dist/js/app.js:2
 #: admin/assets/js/admin.js:190
-#: admin/assets/js/admin.js:1570
-#: admin/assets/js/admin.js:1613
+#: admin/assets/js/admin.js:1551
+#: admin/assets/js/admin.js:1594
 msgid "1 slide added successfully"
 msgstr "1 slide naidagdag nang matagumpay"
 
@@ -7465,16 +7539,16 @@ msgstr "Isinasara ang UI para magdagdag ng slide..."
 
 #: admin/assets/dist/js/admin.js:1
 #: admin/assets/js/admin.js:336
-#: modules/local_video/assets/local_video.js:212
-#: modules/local_video/assets/local_video.js:646
+#: modules/local_video/assets/local_video.js:207
+#: modules/local_video/assets/local_video.js:641
 msgid "Updating slide..."
 msgstr "Nina-update ang slide..."
 
 #: admin/assets/dist/js/admin.js:1
 #: admin/assets/js/admin.js:357
-#: modules/local_video/assets/local_video.js:247
-#: modules/local_video/assets/local_video.js:398
-#: modules/local_video/assets/local_video.js:707
+#: modules/local_video/assets/local_video.js:242
+#: modules/local_video/assets/local_video.js:393
+#: modules/local_video/assets/local_video.js:702
 msgid "There is an error"
 msgstr "Mayroong isang error"
 
@@ -7495,22 +7569,22 @@ msgstr "Unsplash Library"
 
 #: admin/assets/dist/js/admin.js:1
 #: admin/assets/js/admin.js:830
-#: admin/assets/js/admin.js:980, fuzzy
+#: admin/assets/js/admin.js:961, fuzzy
 msgid "Pixabay Library"
 msgstr "Pixabay Library"
 
 #: admin/assets/dist/js/admin.js:1
-#: admin/assets/js/admin.js:1398
+#: admin/assets/js/admin.js:1379
 msgid "Crop position saved and image cropped"
 msgstr "Naisave ang posisyon ng crop at na-crop ang larawan"
 
 #: admin/assets/dist/js/admin.js:1
-#: admin/assets/js/admin.js:1415
+#: admin/assets/js/admin.js:1396
 msgid "There was an error when saving crop position or cropping the image"
 msgstr "Nagkaroon ng error sa pag-save ng posisyon ng crop o sa pag-crop ng larawan"
 
 #: admin/assets/dist/js/admin.js:1
-#: admin/assets/js/admin.js:1628
+#: admin/assets/js/admin.js:1609
 msgid "Device options are enabled for this slide. Adjust using the Device tab."
 msgstr ""
 "Ang mga opsyon sa device ay nakabukas para sa slide na ito. Ayusin gamit "
@@ -8706,6 +8780,19 @@ msgstr ""
 "pumipili ng tema. Papalitan nito ang ilan sa mga naunang opsyon."
 
 #: admin/assets/dist/js/app.js:2
+msgid "Load Slideshow Usage on Demand"
+msgstr "I-load ang Paggamit ng Slideshow sa Demand"
+
+#: admin/assets/dist/js/app.js:2
+msgid ""
+"On the slideshows list, find the content that uses a slideshow only when "
+"you click \"View Usage\". This makes the list faster on large sites."
+msgstr ""
+"Sa listahan ng mga slideshow, hanapin ang nilalaman na gumagamit ng "
+"slideshow lamang kapag nag-click ka sa \"Tingnan ang Paggamit\". Ginagawa "
+"nitong mas mabilis ang listahan sa malalaking site."
+
+#: admin/assets/dist/js/app.js:2
 msgid "Dashboard Settings"
 msgstr "Mga Setting ng Dashboard"
 
@@ -9310,39 +9397,39 @@ msgstr "gallery"
 
 #: admin/assets/js/livid-iframe.js:142
 #: modules/local_video/assets/local_video.js:46
-#: modules/local_video/assets/local_video.js:168
+#: modules/local_video/assets/local_video.js:163
 #, js-format
 msgid "Preparing %s slide..."
 msgstr "Naghahanda ng %s slide..."
 
 #: modules/local_video/assets/local_video.js:63
-#: modules/local_video/assets/local_video.js:185
+#: modules/local_video/assets/local_video.js:180
 msgid "This isn't a supported video format. Please use MP4, WebM, or MOV videos."
 msgstr ""
 "Ito ay hindi suportadong format ng video. Mangyaring gumamit ng mga video "
 "na MP4, WebM, o MOV."
 
-#: modules/local_video/assets/local_video.js:271
-#: modules/local_video/assets/local_video.js:760
+#: modules/local_video/assets/local_video.js:266
+#: modules/local_video/assets/local_video.js:755
 msgid "Video source added successfully"
 msgstr "Matagumpay na nadagdag ang video source"
 
-#: modules/local_video/assets/local_video.js:288
-#: modules/local_video/assets/local_video.js:781
+#: modules/local_video/assets/local_video.js:283
+#: modules/local_video/assets/local_video.js:776
 msgid "Video updated successfully"
 msgstr "Matagumpay na na-update ang video"
 
-#: modules/local_video/assets/local_video.js:330
+#: modules/local_video/assets/local_video.js:325
 msgid "Create slideshows with videos hosted in your media library"
 msgstr ""
 "Lumikha ng mga slideshow gamit ang mga video na naka-host sa iyong media "
 "library"
 
-#: modules/local_video/assets/local_video.js:332
+#: modules/local_video/assets/local_video.js:327
 msgid "Create slideshows with images in your media library"
 msgstr "Lumikha ng mga slideshow gamit ang mga larawan sa iyong media library"
 
-#: modules/local_video/assets/local_video.js:334
+#: modules/local_video/assets/local_video.js:329
 msgid ""
 "Layer Slides allow you to add text, colors, shortcodes and media on top of "
 "an image or video."
@@ -9350,59 +9437,59 @@ msgstr ""
 "Ang Layer Slides ay nagbibigay-daan sa iyo upang magdagdag ng teksto, mga "
 "kulay, shortcodes at media sa itaas ng isang imahe o video."
 
-#: modules/local_video/assets/local_video.js:410
+#: modules/local_video/assets/local_video.js:405
 msgid "Cover removed successfully."
 msgstr "Matagumpay na naalis ang cover."
 
-#: modules/local_video/assets/local_video.js:444
+#: modules/local_video/assets/local_video.js:439
 msgid "You can't delete this video. This slide requires at least one video source."
 msgstr ""
 "Hindi mo ma-delete ang video na ito. Nangangailangan ang slide na ito ng "
 "hindi bababa sa isang video source."
 
-#: modules/local_video/assets/local_video.js:475
+#: modules/local_video/assets/local_video.js:470
 msgid "Video source removed successfully"
 msgstr "Matagumpay na naalis ang video source"
 
-#: modules/local_video/assets/local_video.js:494
+#: modules/local_video/assets/local_video.js:489
 msgid "No text track has beed selected for this slide."
 msgstr "Walang napiling text track para sa slide na ito."
 
-#: modules/local_video/assets/local_video.js:517
+#: modules/local_video/assets/local_video.js:512
 msgid "There was an error removing the text track"
 msgstr "Nagkaroon ng error sa pagtanggal ng text track"
 
-#: modules/local_video/assets/local_video.js:534
+#: modules/local_video/assets/local_video.js:529
 msgid "Text track removed successfully"
 msgstr "Matagumpay na naalis ang text track"
 
-#: modules/local_video/assets/local_video.js:560
+#: modules/local_video/assets/local_video.js:555
 #, js-format
 msgid "Select Replacement %s Video"
 msgstr "Pumili ng Kapalit na %s Video"
 
-#: modules/local_video/assets/local_video.js:622
+#: modules/local_video/assets/local_video.js:617
 #, js-format
 msgid "Please select a %s video for this source!"
 msgstr "Mangyaring pumili ng %s video para sa source na ito!"
 
-#: modules/local_video/assets/local_video.js:721
+#: modules/local_video/assets/local_video.js:716
 msgid "This isn't a supported image format. Please use JPG, PNG, or GIF images."
 msgstr ""
 "Ito ay hindi suportadong format ng imahe. Mangyaring gumamit ng JPG, PNG, o "
 "GIF na mga imahe."
 
-#: modules/local_video/assets/local_video.js:727
+#: modules/local_video/assets/local_video.js:722
 msgid "This isn't a supported text track format. Please use TXT or VTT files."
 msgstr ""
 "Ito ay hindi suportadong format ng text track. Mangyaring gumamit ng TXT o "
 "VTT na mga file."
 
-#: modules/local_video/assets/local_video.js:807
+#: modules/local_video/assets/local_video.js:802
 msgid "Text track updated successfully"
 msgstr "Matagumpay na na-update ang text track"
 
-#: modules/local_video/assets/local_video.js:880
+#: modules/local_video/assets/local_video.js:875
 msgid "Cover image updated successfully"
 msgstr "Matagumpay na na-update ang cover image"
 
@@ -9415,12 +9502,12 @@ msgstr ""
 "Gusto mo ba ang MetaSlider Slideshow? Mangyaring tulungan kami sa "
 "pamamagitan ng pagbibigay ng positibong pagsusuri sa WordPress.org"
 
-#: admin/Notices.php:407
+#: admin/Notices.php:406
 msgctxt "Keep the plugin name \"MetaSlider Slideshow\" when possible"
 msgid "Review MetaSlider Slideshow &rarr;"
 msgstr "Suriin ang MetaSlider Slideshow &rarr;"
 
-#: ml-slider.php:2192
+#: ml-slider.php:2216
 msgctxt "Keep the plugin name \"MetaSlider Slideshow\" when possible"
 msgid "Select slideshow to insert into post"
 msgstr "Pumili ng slideshow upang ipasok sa post"

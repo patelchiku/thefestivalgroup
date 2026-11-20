@@ -4,7 +4,7 @@ Tags: security, access, admin, Loginizer, login, logs, ban ip, failed login, ip,
 Requires at least: 3.0
 Tested up to: 7.1
 Requires PHP: 5.5
-Stable tag: 2.1.3
+Stable tag: 2.1.4
 License: LGPLv2.1
 License URI: http://www.gnu.org/licenses/lgpl-2.1.html
 
@@ -87,6 +87,18 @@ That's it. You're done!
 3. Loginizer Brute Force Settings page
 
 == Changelog ==
+
+= 2.1.4 =
+* [Important-Fix] Brute force lockout could be bypassed with special characters in the request URL, that has been fixed. [Reported by Nathan Cross (CyberBadger)]
+* [Improvement] Failed Social Login requests could fill the database with temporary error entries, Social Login now only runs when a provider is enabled and the IP is not locked out.
+* [Improvement] The username in the lockout notification email is now sanitized the same way as in the CSV export.
+* [Improvement] Hardened Social Login session storage so data returned by a provider can never be turned into PHP objects, and Social Login requests no longer follow redirects from HTTPS to HTTP. [Reported by Nathan Cross (CyberBadger)]
+* [Improvement] Application passwords (REST API) now respect the IP Blacklist, Trusted IPs and brute force lockout, and failed application password attempts now count towards the lockout.
+* [Improvement] The Blocked Screen is now also shown on the Lost Password and Register pages.
+* [Improvement] The IP detection method setting now explains when header based methods (X-Forwarded-For, Client-IP, Custom) are safe to use.
+* [Bug-Fix] The Blocked Screen was not shown when the login page URL had query parameters (e.g. redirect_to), that has been fixed.
+* [Bug-Fix] Opening a Social Login URL while locked out logged PHP warnings, that has been fixed.
+* [Bug-Fix] Login attempt statistics could cause a fatal error when the object cache returned an unreadable value, that has been fixed.
 
 = 2.1.3 =
 * [Security] Fixed a security issue in the HybridAuth library used by Social Login. [Reported by Nathan Cross (CyberBadger)]

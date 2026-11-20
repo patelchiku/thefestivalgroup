@@ -146,6 +146,9 @@ input[type="text"], textarea, select {
 	<?php 
 
 	$login_attempt_stats = get_option('loginizer_login_attempt_stats', []);
+	if(!is_array($login_attempt_stats)){
+		$login_attempt_stats = [];
+	}
 	$success_logins = 1;
 	$failed_logins = 0;
 	$stats_dataset = [];
@@ -275,6 +278,7 @@ input[type="text"], textarea, select {
 						<input name="lz_custom_ip_method" id="lz_custom_ip_method" type="text" value="'.lz_optpost('lz_custom_ip_method',(empty($loginizer['custom_ip_method']) ? '' : $loginizer['custom_ip_method'])).'" style="font-size:11px; width:100px; display:none" />
 						<input name="save_lz_ip_method" class="button button-primary" value="Save" type="submit" />
 					</div>
+					<div class="exp" style="clear:both; padding-top:5px">'.esc_html__('Use a method other than REMOTE_ADDR only if your site is behind a proxy or CDN, and make sure the proxy overwrites that header instead of appending to it (e.g. nginx: proxy_set_header X-Forwarded-For $remote_addr; or the CF-Connecting-IP header on Cloudflare). Otherwise visitors can send a fake IP to get around the lockout, Blacklist and Trusted IPs.', 'loginizer').'</div>
 				</td>
 			</tr>
 			<tr>				

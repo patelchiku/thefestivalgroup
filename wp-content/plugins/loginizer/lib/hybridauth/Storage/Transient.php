@@ -88,7 +88,8 @@ class Transient implements StorageInterface
 			$value = $this->transient[$key];
 
 			if(is_array($value) && array_key_exists('lateObject', $value)){
-				$value = unserialize($value['lateObject']);
+				// shortcut: no objects allowed; the OpenID adapter (unused by any offered provider) stores a Profile and would break, switch to allowed_classes => [Profile::class] if one is added
+				$value = unserialize($value['lateObject'], ['allowed_classes' => false]);
 			}
 
 			return $value;

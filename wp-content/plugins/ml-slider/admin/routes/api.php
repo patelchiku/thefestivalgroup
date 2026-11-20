@@ -67,6 +67,7 @@ class MetaSlider_Api
         add_action('wp_ajax_ms_get_single_slideshow', array(self::$instance, 'get_single_slideshow'));
         add_action('wp_ajax_ms_get_legacy_slideshows', array(self::$instance, 'get_legacy_slideshows'));
         add_action('wp_ajax_ms_get_preview', array(self::$instance, 'get_preview'));
+        add_action('wp_ajax_ms_get_slideshow_usage', array(self::$instance, 'get_slideshow_usage'));
         add_action('wp_ajax_ms_delete_slideshow', array(self::$instance, 'delete_slideshow'));
         add_action('wp_ajax_ms_duplicate_slideshow', array(self::$instance, 'duplicate_slideshow'));
         add_action('wp_ajax_ms_save_slideshow', array(self::$instance, 'save_slideshow'));
@@ -87,6 +88,7 @@ class MetaSlider_Api
 
         // Settings
         add_action('wp_ajax_ms_update_user_setting', array(self::$instance, 'save_user_setting'));
+        add_action('wp_ajax_ms_campaign_response', array(self::$instance, 'save_campaign_response'));
         add_action('wp_ajax_ms_get_user_details', array(self::$instance, 'get_user_details'));
         add_action('wp_ajax_ms_update_all_slideshow_settings', array(self::$instance, 'save_all_slideshow_settings'));
         add_action('wp_ajax_ms_update_single_slideshow_setting', array(self::$instance, 'save_single_slideshow_setting'));
@@ -243,6 +245,31 @@ class MetaSlider_Api
         }
 
         wp_send_json_success($slideshows, 200);
+    }
+
+    /**
+     * Returns the content that uses a slideshow, for the "View Usage" window
+     *
+     * @since 3.114.1
+     *
+     * @param object|null $request The request
+     */
+    public function get_slideshow_usage($request = null)
+    {
+        if (!$this->can_access()) {
+            $this->deny_access();
+        }
+
+        $data = $this->get_request_data($request, array('slideshow_id'));
+        $html = MetaSlider_Admin_Table::get_posts_using_slideshow(absint($data['slideshow_id']));
+
+        if (esc_html__('Not found.', 'ml-slider') === $html) {
+            $html = esc_html__('This slideshow is not used in any published content.', 'ml-slider');
+        }
+
+        wp_send_json_success(array(
+            'html' => $html
+        ), 200);
     }
 
     /**
@@ -650,7 +677,7 @@ class MetaSlider_Api
         }
 
         // If we are missing the count, then it's likely the payload was truncated
-        if (!$data['count'] && version_compare(phpversion(), '5.3.9', '>=')) {
+        if (!$data['count']) {
             // If the input vars count is close to the max allowed, assume that the data was truncated and inform the user to increase the value
             // phpcs:ignore WordPress.Security.NonceVerification.Missing
             $current_vars = count($_POST, COUNT_RECURSIVE);
@@ -903,6 +930,35 @@ class MetaSlider_Api
     }
 
     /**
+     * Record the site's answer to a campaign popup
+     *
+     * @since 3.114.1
+     *
+     * @param object $request The request
+     */
+    public function save_campaign_response($request)
+    {
+        if (!$this->can_access()) {
+            $this->deny_access();
+        }
+
+        // Matches MetaSlider_Campaigns::for_editor(): only users who see the popup can answer it
+        if (!current_user_can(MetaSlider_Campaigns::CAPABILITY)) {
+            $this->deny_access();
+        }
+
+        $data = $this->get_request_data($request, array('campaign', 'response'));
+
+        $response = is_scalar($data['response']) ? sanitize_key((string) $data['response']) : '';
+
+        if (!is_scalar($data['campaign']) || !MetaSlider_Campaigns::respond((string) $data['campaign'], $response)) {
+            wp_send_json_error(array('message' => __('This answer could not be saved.', 'ml-slider')), 400);
+        }
+
+        wp_send_json_success('OK', 200);
+    }
+
+    /**
      * Get current user's email for optin email
      */
     public function get_user_details()
@@ -1006,6 +1062,7 @@ class MetaSlider_Api
      * @param object $request The request
      *
      * @since 3.112.0-beta.4 Added unsplashImageQuality/pixabayImageQuality/pixabayVideoQuality (#2365)
+     * @since 3.114.1 Added dashboardUsageOnClick (#2613)
      */
     public function save_global_settings($request)
     {
@@ -1034,6 +1091,7 @@ class MetaSlider_Api
             'tinyMce'         => isset($raw['tinyMce'])          ? (bool) $raw['tinyMce']                : true,
             'fixTouchSwipe'   => isset($raw['fixTouchSwipe'])    ? (bool) $raw['fixTouchSwipe']          : false,
             'autoThemeConfig' => isset($raw['autoThemeConfig'])  ? (bool) $raw['autoThemeConfig']        : true,
+            'dashboardUsageOnClick' => isset($raw['dashboardUsageOnClick']) ? (bool) $raw['dashboardUsageOnClick'] : false,
             // sanitize_key() would lowercase 'ID' to 'id', breaking both the
             // select's display and WP_Query's case-sensitive orderby match.
             'dashboardSort'   => isset($raw['dashboardSort']) && in_array($raw['dashboardSort'], array('ID', 'post_title', 'post_date'), true)
@@ -1651,6 +1709,12 @@ if (class_exists('WP_REST_Controller')) :
             register_rest_route($this->namespace, '/settings/user/save', array(array(
                 'methods' => 'POST',
                 'callback' => array($this->api, 'save_user_setting'),
+                'permission_callback' => array($this->api, 'can_access')
+            )));
+
+            register_rest_route($this->namespace, '/campaigns/response', array(array(
+                'methods' => 'POST',
+                'callback' => array($this->api, 'save_campaign_response'),
                 'permission_callback' => array($this->api, 'can_access')
             )));
 

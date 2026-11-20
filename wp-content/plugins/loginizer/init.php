@@ -5,7 +5,7 @@ if(!function_exists('add_action')){
 	exit;
 }
 
-define('LOGINIZER_VERSION', '2.1.3');
+define('LOGINIZER_VERSION', '2.1.4');
 define('LOGINIZER_DIR', dirname(LOGINIZER_FILE));
 define('LOGINIZER_URL', plugins_url('', LOGINIZER_FILE));
 define('LOGINIZER_PRO_URL', 'https://loginizer.com/features#compare');
@@ -302,7 +302,7 @@ function loginizer_load_plugin(){
 	$loginizer['last_reset']  = get_option('loginizer_last_reset');
 
 	if(!isset($loginizer['ultimate-member-active'])){
-		$um_is_active = in_array('ultimate-member/ultimate-member.php', apply_filters('active_plugins', get_option('active_plugins', [])));
+		$um_is_active = in_array('ultimate-member/ultimate-member.php', (array) apply_filters('active_plugins', get_option('active_plugins', [])));
 		
 		$loginizer['ultimate-member-active'] = !empty($um_is_active) ? true : false;
 	}
@@ -338,7 +338,20 @@ function loginizer_load_plugin(){
 		// Is called when a login attempt fails
 		// Hence Update our records that the login failed
 		add_action('wp_login_failed', 'loginizer_login_failed');
-		
+
+		// REST application passwords never reach the 'authenticate' filter
+		add_action('wp_authenticate_application_password_errors', 'loginizer_app_password_errors');
+		add_action('application_password_failed_authentication', 'loginizer_app_password_failed');
+
+		add_filter('rest_request_after_callbacks', 'loginizer_rest_app_password_error');
+
+		// Lost password and register don't run 'authenticate' either, so show the Blocked Screen there ourselves
+		if(!empty($loginizer['blocked_screen'])){
+			foreach(array('lostpassword', 'retrievepassword', 'register') as $lz_action){
+				add_action('login_form_'.$lz_action, 'loginizer_blocked_screen_check');
+			}
+		}
+
 		// Is called before displaying the error message so that we dont show that the username is wrong or the password
 		// Update Error message
 		add_action('wp_login_errors', 'loginizer_error_handler', 10001, 2);
@@ -375,9 +388,19 @@ function loginizer_load_plugin(){
 	// ----------------
 	
 	// Secuity checks for social login.
-	if(!empty($_GET['lz_social_provider']) && loginizer_can_login() && empty($_GET['lz_api'])){
-		add_action('init', 'loginizer_social_login_load');
-		return;
+	// Only when a provider is enabled, else every probe stores an error transient for nothing
+	// Settings are read only inside this check, so a bad value can only affect social login requests
+	if(!empty($_GET['lz_social_provider']) && empty($_GET['lz_api'])){
+		$social_provider_settings = get_option('loginizer_provider_settings', []);
+
+		if(is_array($social_provider_settings)){
+			foreach($social_provider_settings as $provider){
+				if(is_array($provider) && !empty($provider['enabled'])){
+					add_action('init', 'loginizer_social_login_load');
+					return;
+				}
+			}
+		}
 	}
 }
 
@@ -453,6 +476,98 @@ function loginizer_wp_authenticate($user, $username, $password){
 	
 	return new WP_Error('ip_blocked', implode('', $lz_error), 'loginizer');
 
+}
+
+// Same IP rules and lockout as loginizer_wp_authenticate() for application passwords
+function loginizer_app_password_errors($error){
+
+	global $loginizer, $lz_error;
+
+	if(loginizer_is_whitelisted()){
+		return;
+	}
+
+	if(!empty($loginizer['trusted_ips'])){
+		$error->add('ip_blacklisted', __('You are restricted from logging in as your IP is not whitelisted.', 'loginizer'));
+	}elseif(loginizer_is_blacklisted()){
+		$error->add('ip_blacklisted', $loginizer['msg']['ip_blacklisted']);
+	}elseif(!loginizer_can_login()){
+		$error->add('ip_blocked', $lz_error['ip_blocked']);
+	}
+}
+
+// Core checks the application password only after it reports its errors, so a refused one came back as rest_not_logged_in.
+// Shown only when the endpoint refused the guest, so public endpoints still work. This filter doesn't run when an auth
+// handler refused the request itself (e.g. WooCommerce's invalid API key), so their error is kept
+function loginizer_rest_app_password_error($response){
+
+	global $wp_rest_application_password_status;
+
+	$error = $wp_rest_application_password_status;
+
+	$data = is_wp_error($response) ? $response->get_error_data() : null;
+
+	if(!is_wp_error($error) || !isset($data['status']) || $data['status'] != 401){
+		return $response;
+	}
+
+	// Don't reveal which usernames exist
+	if(array_intersect($error->get_error_codes(), array('invalid_username', 'invalid_email'))){
+		$error = new WP_Error('incorrect_password', __('The provided password is an invalid application password.'));
+	}
+
+	$error->add_data(array('status' => 401));
+
+	return $error;
+}
+
+// Counts a wrong password of a real user. Not unknown usernames, a server-level Basic auth login (staging) would count
+// on every REST request. Not a blocked IP either, same as wp-login, else each request would extend the lockout
+function loginizer_app_password_failed($error){
+
+	$codes = $error->get_error_codes();
+
+	// Inside wp_authenticate() (XML-RPC) loginizer_wp_authenticate() and wp_login_failed handle it already
+	if(doing_filter('authenticate') || !array_intersect($codes, array('incorrect_password', 'invalid_username', 'invalid_email'))){
+		return;
+	}
+
+	// While blocked a wrong password gets the same error as a right one, else the response would tell them apart
+	$blocked = new WP_Error();
+	loginizer_app_password_errors($blocked);
+
+	if($blocked->has_errors()){
+		foreach($codes as $code){
+			$error->remove($code);
+		}
+		$error->merge_from($blocked);
+		return;
+	}
+
+	if(!in_array('incorrect_password', $codes, true) || loginizer_is_whitelisted()){
+		return;
+	}
+
+	// Same as the username wp_authenticate() passes to wp_login_failed: unslashed (wp_magic_quotes()) and sanitized
+	loginizer_login_failed(isset($_SERVER['PHP_AUTH_USER']) ? sanitize_user(wp_unslash($_SERVER['PHP_AUTH_USER'])) : '');
+}
+
+// IP rules and lockout only, not the username blacklist: there is no username here, and a '*' rule would match ''
+function loginizer_blocked_screen_check(){
+
+	global $loginizer, $lz_error;
+
+	if(loginizer_is_whitelisted()){
+		return;
+	}
+
+	if(!empty($loginizer['trusted_ips'])){
+		$lz_error['trusted_ip'] = __('You are restricted from logging in as your IP is not whitelisted.', 'loginizer');
+	}elseif(!loginizer_is_blacklisted() && loginizer_can_login()){
+		return;
+	}
+
+	loginizer_blocked_page($lz_error);
 }
 
 function loginizer_can_login(){
@@ -554,9 +669,11 @@ function loginizer_login_failed($username, $is_2fa = ''){
 	global $wpdb, $loginizer, $lz_cannot_login;
 	
 	// Some plugins are changing the value for username as null so we need to handle it before using it for the INSERT OR UPDATE query
-	if(empty($username) || is_null($username)){
+	// Arrays/objects (e.g. log[]= in the POST) would warn or fatal in preg_replace_callback(), substr() and sanitize_user() below
+	if(empty($username) || !is_scalar($username)){
 		$username = '';
 	}
+	$username = (string) $username;
 	
 	$fail_type = 'Login';
 	
@@ -578,6 +695,13 @@ function loginizer_login_failed($username, $is_2fa = ''){
 
 		// No addslashes() here, $wpdb->prepare() below does the escaping
 		$url = esc_url((!empty($_SERVER['HTTPS']) ? 'https://' : 'http://').$http_host.$server_uri);
+
+		// wpdb refuses the whole query if the utf8 table can't hold a byte (invalid UTF-8, emoji), so no failure gets counted. esc_url() and sanitize_user() both keep such bytes
+		list($username, $url) = preg_replace_callback('/[\x80-\xff]/', function($m){ return rawurlencode($m[0]); }, array($username, $url));
+
+		// Columns are varchar(255), if a site turns MySQL strict mode back on a longer value would fail the query
+		$username = (string) substr($username, 0, 255);
+		$url = (string) substr($url, 0, 255);
 		
 		// Must never be 0, we divide by it below
 		$max_retries = (int) $loginizer['max_retries'] < 1 ? 1 : (int) $loginizer['max_retries'];
@@ -640,7 +764,7 @@ function loginizer_login_failed($username, $is_2fa = ''){
 '.home_url().'
 
 Last '.$fail_type.' Attempt : '.date('d/M/Y H:i:s P', time()).'
-Last User Attempt : '.$username.'
+Last User Attempt : '.sanitize_user($username, true).'
 IP has been blocked until : '.date('d/M/Y H:i:s P', time() + $lockout_time).'
 
 Regards,
@@ -756,8 +880,29 @@ function loginizer_update_attempt_stats($type){
 
 	$stats = get_option('loginizer_login_attempt_stats', []);
 	$time = strtotime(date('Y-m-d H:00:00'));
-	
-	if(empty($stats[$time][$type])){
+
+	// An unreadable value (e.g. a bad object-cache read) made the nested write fatal; drop the cached copy and re-read from the DB
+	if(!is_array($stats)){
+		if(defined('WP_DEBUG') && WP_DEBUG){
+			error_log('Loginizer: login stats read as '.gettype($stats));
+		}
+		wp_cache_delete('loginizer_login_attempt_stats', 'options');
+		$stats = get_option('loginizer_login_attempt_stats', []);
+	}
+
+	// Still unreadable; skip rather than overwrite stored stats
+	if(!is_array($stats)){
+		return;
+	}
+
+	if(!isset($stats[$time]) || !is_array($stats[$time])){
+		if(isset($stats[$time]) && defined('WP_DEBUG') && WP_DEBUG){
+			error_log('Loginizer: login stats bucket '.$time.' read as '.gettype($stats[$time]).', reset');
+		}
+		$stats[$time] = [];
+	}
+
+	if(empty($stats[$time][$type]) || !is_int($stats[$time][$type])){
 		$stats[$time][$type] = 0;
 	}
 
@@ -931,6 +1076,15 @@ $sitename','loginizer');
 }
 
 function loginizer_social_login_load(){
+
+	global $loginizer;
+
+	// Checked here and not on plugins_loaded, as the lockout messages are only loaded on init
+	// Same IP rules as loginizer_wp_authenticate(), since social-base.php ignores the 'authenticate' result
+	if(!loginizer_is_whitelisted() && (!empty($loginizer['trusted_ips']) || loginizer_is_blacklisted() || !loginizer_can_login())){
+		return;
+	}
+
 	include_once LOGINIZER_DIR . '/main/social-login.php';
 }
 

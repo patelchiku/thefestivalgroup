@@ -5,7 +5,7 @@
  * Plugin Name: MetaSlider Slideshow
  * Plugin URI:  https://www.metaslider.com
  * Description: MetaSlider gives you the power to create a beautiful slideshow, carousel, or gallery on your WordPress site.
- * Version:     3.114.0
+ * Version:     3.114.1
  * Author:      MetaSlider
  * Author URI:  https://www.metaslider.com
  * License:     GPL-2.0+
@@ -14,11 +14,35 @@
  * Text Domain: ml-slider
  * Domain Path: /languages
  * Requires at least: 5.9
- * Requires PHP: 7.0
+ * Requires PHP: 7.4
  */
 
 if (! defined('ABSPATH')) {
     die('No direct access.');
+}
+
+// Keep equal to "Requires PHP" above, in readme.txt, composer.json and PP_MIN_PHP_VERSION in .env.example
+define('METASLIDER_MIN_PHP_VERSION', '7.4');
+
+// Stop before loading anything on older PHP; this block must itself run on old PHP
+if (version_compare(PHP_VERSION, METASLIDER_MIN_PHP_VERSION, '<')) {
+    add_action('admin_notices', function () {
+        if (! current_user_can('update_php')) {
+            return;
+        }
+
+        printf(
+            '<div class="notice notice-error"><p>%s</p></div>',
+            esc_html(sprintf(
+                /* translators: 1: the PHP version MetaSlider needs, 2: the site's PHP version */
+                __('MetaSlider Slideshow needs PHP %1$s or higher, but this site runs PHP %2$s. MetaSlider Slideshow is turned off until PHP is updated.', 'ml-slider'),
+                METASLIDER_MIN_PHP_VERSION,
+                PHP_VERSION
+            ))
+        );
+    });
+
+    return;
 }
 
 if (! class_exists('MetaSliderPlugin')) {
@@ -44,7 +68,7 @@ if (! class_exists('MetaSliderPlugin')) {
          *
          * @var string
          */
-        public $version = '3.114.0';
+        public $version = '3.114.1';
 
         /**
          * Pro installed version number
@@ -175,7 +199,7 @@ if (! class_exists('MetaSliderPlugin')) {
             if (! defined('METASLIDER_VERSION')) {
                 $assets_version = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? uniqid() : $this->version;
 
-                define('METASLIDER_VERSION', '3.114.0'); // We need it defined as string due `composer build` doesn't detect $this->version
+                define('METASLIDER_VERSION', '3.114.1'); // We need it defined as string due `composer build` doesn't detect $this->version
                 define('METASLIDER_ASSETS_VERSION', $assets_version);
                 define('METASLIDER_BASE_URL', plugin_dir_url(metaslider_plugin_is_installed('ml-slider')));
                 define('METASLIDER_ASSETS_URL', METASLIDER_BASE_URL . 'assets/');
@@ -216,6 +240,7 @@ if (! class_exists('MetaSliderPlugin')) {
                 'metaslider_image' => METASLIDER_PATH . 'admin/Slideshows/Image.php',
                 'metaslider_gutenberg' => METASLIDER_PATH . 'admin/Gutenberg.php',
                 'metaslider_email_collection' => METASLIDER_PATH . 'admin/support/EmailCollection.php',
+                'metaslider_campaigns' => METASLIDER_PATH . 'admin/support/Campaigns.php',
                 'metasliderquickstart' => METASLIDER_PATH . 'inc/metaslider.quickstart.class.php',
             );
 
@@ -1955,6 +1980,13 @@ if (! class_exists('MetaSliderPlugin')) {
                 <?php
                 $slider_settings = get_post_meta($slider_id, 'ml-slider_settings', true);
                 $tour_position = get_option('metaslider_tour_cancelled_on');
+                // Off by default. Force it on to re-test the opt-in popup regardless of dismissal/opt-in state, e.g.
+                // from wp-config.php: add_filter('metaslider_always_show_optin_notice', '__return_true');
+                $show_optin = apply_filters('metaslider_always_show_optin_notice', false) || (
+                    // A new flag, so users who answered the old opt-in prompt are asked once more
+                    ! MetaSlider_Email_Collection::site_is_optin() && ! get_user_option('metaslider_email_signup_status')
+                );
+                $campaign = MetaSlider_Campaigns::for_editor_page($slider_id, $show_optin);
                 ?>
 
                 <metaslider
@@ -1965,18 +1997,10 @@ if (! class_exists('MetaSliderPlugin')) {
                         tour-status="<?php
                         echo $tour_position ? esc_attr($tour_position) : false ?>"
                         show-opt-in="<?php
-                        echo esc_attr(
-                            // Off by default. Force it on to re-test the opt-in
-                            // popup regardless of dismissal/opt-in state, e.g.
-                            // from wp-config.php:
-                            // add_filter('metaslider_always_show_optin_notice', '__return_true');
-                            apply_filters('metaslider_always_show_optin_notice', false) || (
-                                // A new flag, so users who answered the old opt-in prompt are asked once more
-                                ! MetaSlider_Email_Collection::site_is_optin() && ! get_user_option(
-                                    'metaslider_email_signup_status'
-                                )
-                            ) ? 1 : ''
-                        ); ?>"
+                        echo $show_optin ? 1 : ''; ?>"
+                        v-bind:campaign='<?php
+                        // HEX flags so entities in the campaign can't decode back into markup inside this attribute
+                        echo esc_attr(wp_json_encode($campaign, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT)); ?>'
                         inline-template>
                 <span>
                 <form @submit.prevent="" @keydown.enter.prevent="" autocomplete="off" id="ms-form-settings"

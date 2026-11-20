@@ -315,8 +315,11 @@ function lz_valid_email($email){
 
 function loginizer_blocked_page($lz_error){
 
-	// We are checking if this is a login page or not
-	if(false === stripos(wp_login_url(), $_SERVER['REQUEST_URI'])){
+	// We are checking if this is a login page or not, by path only so a query string (?redirect_to=, ?loggedout) doesn't hide the screen
+	$request_path = isset($_SERVER['REQUEST_URI']) ? (string) parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) : '';
+	$login_path = (string) parse_url(wp_login_url(), PHP_URL_PATH);
+
+	if(empty($request_path) || strcasecmp(untrailingslashit($request_path), untrailingslashit($login_path)) !== 0){
 		return;
 	}
 

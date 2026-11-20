@@ -1045,7 +1045,7 @@ class MetaFlexSlider extends MetaSlider
 HTML;
 
             $threshold = 1;
-            // phpcs:ignore PluginCheck.CodeAnalysis.Heredoc.NotAllowed -- needs {$threshold} interpolation; closing marker kept unindented for PHP 7.0-7.2 compatibility.
+            // phpcs:ignore PluginCheck.CodeAnalysis.Heredoc.NotAllowed -- needs {$threshold} interpolation.
             $load_images = <<<HTML
             var load_images = function() {
                 var next = slider.animatingTo;

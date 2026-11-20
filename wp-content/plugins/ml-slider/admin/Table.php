@@ -417,9 +417,12 @@ class MetaSlider_Admin_Table extends WP_List_table
     public function column_used_on($item)
     {
         $slideshow_id = $item['ID'];
-        $pages = $this->get_posts_using_slideshow($slideshow_id);
+        $global_settings = metaslider_global_settings();
+        // Load usage on click, the lookup can be slow on large sites (#2613)
+        $on_click = !empty($global_settings['dashboardUsageOnClick']);
+        $pages = $on_click ? '' : self::get_posts_using_slideshow($slideshow_id);
         
-        if ($pages !== esc_html__('Not found.', 'ml-slider')) {
+        if ($on_click || $pages !== esc_html__('Not found.', 'ml-slider')) {
             return '<button class="open-modal button" data-id="' . esc_attr($slideshow_id) . '">'
                 . esc_html__('View Usage', 'ml-slider') . '</button>
                 <div class="modal-overlay" id="overlay-' . esc_attr($slideshow_id) . '" style="display: none;"></div>
@@ -427,8 +430,8 @@ class MetaSlider_Admin_Table extends WP_List_table
                     <div class="modal-content">
                         <span class="close-modal" data-id="' . esc_attr($slideshow_id) . '">&times;</span>
                         <h3 class="text-lg font-medium m-0 leading-6 text-gray-darkest">'
-                            . esc_html__('Content Using This Slideshow', 'ml-slider') . '</h3>' 
-                            . $pages . '
+                            . esc_html__('Content Using This Slideshow', 'ml-slider') . '</h3>
+                            <div class="usage-results">' . $pages . '</div>
                     </div>
                 </div>';
         } else {
@@ -437,17 +440,19 @@ class MetaSlider_Admin_Table extends WP_List_table
     }
     
     
-    private function get_posts_using_slideshow($slideshow_id)
+    /**
+     * @since 3.114.1 Public and static, so the "View Usage" AJAX request can use it (#2613)
+     */
+    public static function get_posts_using_slideshow($slideshow_id)
     {
         global $wpdb;
         $results = [];
 
         $posts = $wpdb->get_results(
             $wpdb->prepare(
-                "SELECT ID, post_title, post_type FROM {$wpdb->posts} WHERE post_status = %s AND (post_content LIKE %s OR post_content REGEXP %s)",
+                "SELECT ID, post_title, post_type, post_content FROM {$wpdb->posts} WHERE post_status = %s AND post_content LIKE %s",
                 'publish',
-                '%' . $wpdb->esc_like("[metaslider id=\"$slideshow_id\"") . '%',
-                '\\[metaslider[^]]*id=[\"\\\']?' . $slideshow_id . '[\"\\\']?[^]]*\\]'
+                '%' . $wpdb->esc_like('[metaslider') . '%'
             )
         );
 
@@ -455,6 +460,10 @@ class MetaSlider_Admin_Table extends WP_List_table
         $grouped_results = [];
     
         foreach ($posts as $post) {
+            // REGEXP in SQL is too slow on large sites, so match the ID here (#2613)
+            if (!preg_match('/\[metaslider[^]]*id=["\']?' . $slideshow_id . '["\']?[^]]*]/', $post->post_content)) {
+                continue;
+            }
             $post_type_obj = get_post_type_object($post->post_type);
             $post_type_label = $post_type_obj ? $post_type_obj->labels->singular_name : ucfirst($post->post_type);
     
